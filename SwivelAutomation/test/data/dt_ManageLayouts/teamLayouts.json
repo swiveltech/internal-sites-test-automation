@@ -1,0 +1,47 @@
+{
+  "All_All": [
+    { "column1": "Premiership Season", "column2": "Squad (Extended Bench)" },
+    { "column1": "Premiership Season", "column2": "Team" },
+    { "column1": "Premiership Season", "column2": "Matchday" },
+    { "column1": "Pre-Season", "column2": "Squad (Extended Bench)" },
+    { "column1": "Pre-Season", "column2": "Team" },
+    { "column1": "Pre-Season", "column2": "Matchday" }
+  ],
+  "All_Squad (Extended Bench)": [
+    { "column1": "Premiership Season", "column2": "Squad (Extended Bench)" },
+    { "column1": "Pre-Season", "column2": "Squad (Extended Bench)" }
+  ],
+  "All_Team": [
+    { "column1": "Premiership Season", "column2": "Team" },
+    { "column1": "Pre-Season", "column2": "Team" }
+  ],
+  "All_Matchday": [
+    { "column1": "Premiership Season", "column2": "Matchday" },
+    { "column1": "Pre-Season", "column2": "Matchday" }
+  ],
+
+  "Premiership Season_All": [
+    { "column1": "Premiership Season", "column2": "Squad (Extended Bench)" },
+    { "column1": "Premiership Season", "column2": "Team" },
+    { "column1": "Premiership Season", "column2": "Matchday" }
+  ],
+  "Premiership Season_Squad (Extended Bench)": [
+    { "column1": "Premiership Season", "column2": "Squad (Extended Bench)" }
+  ],
+  "Premiership Season_Team": [
+    { "column1": "Premiership Season", "column2": "Team" }
+  ],
+  "Premiership Season_Matchday": [
+    { "column1": "Premiership Season", "column2": "Matchday" }
+  ],
+  "Pre-Season_All": [
+    { "column1": "Pre-Season", "column2": "Squad (Extended Bench)" },
+    { "column1": "Pre-Season", "column2": "Team" },
+    { "column1": "Pre-Season", "column2": "Matchday" }
+  ],
+  "Pre-Season_Squad (Extended Bench)": [
+    { "column1": "Pre-Season", "column2": "Squad (Extended Bench)" }
+  ],
+  "Pre-Season_Team": [{ "column1": "Pre-Season", "column2": "Team" }],
+  "Pre-Season_Matchday": [{ "column1": "Pre-Season", "column2": "Matchday" }]
+}
