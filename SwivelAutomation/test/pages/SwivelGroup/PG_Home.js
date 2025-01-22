@@ -1,38 +1,52 @@
-class AFLHomePage {
+class HomePage {
   /**
    * define selectors using getter methods
    */
-  get img_AFLLogo() {
-    return $('//img[@alt="logo"]');
+  get img_SwivelGroupLogo() {
+    return $('//div[@class="image-min-width"]/a/img');
   }
 
-  ele_Logout(Index) {
-    return $(`(//div[text()='Log out'])[${Index}]`);
+  ele_HeaderTab(tabName) {
+    return $(`//div[@id='header-nav']/descendant::a[text()='${tabName}']`);
   }
 
-  get ele_LogoutDialogBox() {
-    return $("//h5[contains(text(),'logout?')]/../../../..");
+  ele_ContactNumber(contactNumber) {
+    return $(
+      `//div[@id='contact']/descendant::span[text()='${contactNumber}']`,
+    );
   }
 
-  get btn_Settings() {
-    return $("//*[local-name()='svg' and @data-testid='SettingsIcon']/..");
+  get btn_LetsTalk() {
+    return $(`//div[@id='contact']/descendant::button[text()="Let's Talk"]`);
   }
 
-  get btn_SystemLog() {
-    return $("//*[local-name()='svg' and @data-testid='ErrorIcon']/..");
+  ele_TitleInExpertsIn(textValue, index) {
+    return $(
+      `//span[text()='Experts In']/../following-sibling::div/div[${index}]/span[text()='${textValue}']`,
+    );
   }
 
-  ele_AFLorAFLW(leagueType) {
-    return $(`//div[text()="${leagueType}"]`);
+  ele_TitleInCenter(textValueForTitle, textValueForDescription, index) {
+    return $(
+      `//span[text()='0${index}']/following-sibling::span[text()='${textValueForTitle}']/following-sibling::span[text()="${textValueForDescription}"]`,
+    );
   }
 
-  ele_AFLHomeHeaderTabLabels(HeaderLabel) {
-    return $(`//div[text()="${HeaderLabel}"]`);
+  ele_OurBrands(title, description) {
+    return $(
+      `//img[contains(@alt,'${title}')]/../../p[text()="${description}"]`,
+    );
   }
 
-  get btn_HamburgerMenu(){
-    return $(`//*[local-name()="svg" and @data-testid="DensityMediumIcon"]/..`);
+  ele_OurBrandsWithLink(title, link) {
+    return $(
+      `//img[contains(@alt,'${title}')]/../..//following-sibling::a/p[text()='${link}']`,
+    );
+  }
+
+  lnk_OurBrandsWithLink(title) {
+    return $(`//img[contains(@alt,'${title}')]/../..//following-sibling::a`);
   }
 }
 
-export default new AFLHomePage();
+export default new HomePage();
