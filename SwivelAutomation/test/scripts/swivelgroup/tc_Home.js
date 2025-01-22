@@ -103,13 +103,14 @@ describe("Swivel Group Site", () => {
       "Swivel_Foundation_Brand_",
       "Visit SwivelFoundation",
     );
-
+    await LIB_Common.bc_TakeScreenShot("Our Brands");
     //Verify the 'Our Clients' Section
     await LIB_Common.bc_VerifyPageHeader("Our Clients", 1);
-    await LIB_Common.bc_TakeScreenShot("Our Brands");
+    await LIB_Common.bc_TakeScreenShot("Our Clients");
 
     //Verify the 'Newsroom' Section
     await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    await LIB_Common.bc_TakeScreenShot("Newsroom");
 
     // Verify the Top Description
     await LIB_Common.bc_VerifyPageHeader(
