@@ -20,6 +20,69 @@ class Home {
   }
 
   /**
+   * a method to Verify the Top panel
+   */
+  async bc_VerifyHomeScreenTopPanel(tabNames) {
+    let tabNamesToVerify;
+
+    if (tabNames.includes(";")) {
+      tabNamesToVerify = tabNames.split(";");
+    } else {
+      tabNamesToVerify = tabNames;
+    }
+
+    for (let i = 0; i < tabNamesToVerify.length; i++) {
+      await assertionHandler.assertElementDisplayed(
+        PG_Home.ele_HeaderTab(tabNamesToVerify[i]),
+        "Element not exist",
+      );
+      allureReporter.step(
+        "Verify the Swivel Group Tab name " +
+          tabNamesToVerify[i] +
+          " is present. ",
+        () => {
+          console.log(
+            "Verify the Swivel Group Tab name " +
+              tabNamesToVerify[i] +
+              " is present. ",
+          );
+        },
+      );
+    }
+  }
+
+  /**
+   * a method to Verify Contact panel on the top of the site
+   */
+  async bc_VerifyContactDetailsInTopPanel(contactNumber) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_ContactNumber(contactNumber),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Swivel Group Contact number on top of the site. Contact number : " +
+        contactNumber,
+      () => {
+        console.log(
+          "Verify the Swivel Group Contact number on top of the site. Contact number : " +
+            contactNumber,
+        );
+      },
+    );
+
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.btn_LetsTalk,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Swivel Group Let's Talk button is present.",
+      () => {
+        console.log("Verify the Swivel Group Let's Talk button is present.");
+      },
+    );
+  }
+
+  /**
    * a method to navigate to tab from navigation
    */
   async bc_NavigateToTabFromTopNavigation(tabName) {
@@ -148,6 +211,36 @@ class Home {
         );
       },
     );
+  }
+
+  /**
+   * a method to Verify the footer panel
+   */
+  async bc_VerifyHomeScreenFooterPanel(tabNames) {
+    let tabNamesToVerify;
+
+    if (tabNames.includes(";")) {
+      tabNamesToVerify = tabNames.split(";");
+    } else {
+      tabNamesToVerify = tabNames;
+    }
+
+    for (let i = 0; i < tabNamesToVerify.length; i++) {
+      await assertionHandler.assertElementDisplayed(
+        PG_Home.ele_FooterTab(tabNamesToVerify[i], i + 1),
+        "Element not exist",
+      );
+      allureReporter.step(
+        "Verify the Footer Tab name " + tabNamesToVerify[i] + " is present. ",
+        () => {
+          console.log(
+            "Verify the Footer Tab name " +
+              tabNamesToVerify[i] +
+              " is present. ",
+          );
+        },
+      );
+    }
   }
 }
 export default new Home();

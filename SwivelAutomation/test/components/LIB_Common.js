@@ -69,7 +69,8 @@ class Common {
       pageHeader,
       index,
     );
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    // await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView();
     assertionHandler.assertTrue(element, "element not visible");
     allureReporter.step("Verify the page header as " + pageHeader, () => {
       console.log("Verify the page header as " + pageHeader);

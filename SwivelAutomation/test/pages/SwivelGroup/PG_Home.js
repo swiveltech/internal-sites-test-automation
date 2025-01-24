@@ -47,6 +47,12 @@ class HomePage {
   lnk_OurBrandsWithLink(title) {
     return $(`//img[contains(@alt,'${title}')]/../..//following-sibling::a`);
   }
+
+  ele_FooterTab(textValue, index) {
+    return $(
+      `//div[@class='footer-wrapper']/descendant::div[1]/div[2]/ul/li[${index}]/a[text()='${textValue}']`,
+    );
+  }
 }
 
 export default new HomePage();

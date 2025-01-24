@@ -11,8 +11,14 @@ describe("Swivel Group Site", () => {
     allureReporter.addStory("Home Page");
     allureReporter.startStep("Swivel Group -> Home Page Verification");
     await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
-    // Verify the Headers
+    // Verify the Headers and top panel
     await LIB_Home.bc_VerifyHomePageLogo();
+    await LIB_Home.bc_VerifyHomeScreenTopPanel(
+      "Home;About Us;Newsroom;Careers",
+    );
+    await LIB_Home.bc_VerifyContactDetailsInTopPanel(Data_Home.ContactNumber);
+
+    // Navigate to home tab
     await LIB_Home.bc_NavigateToTabFromTopNavigation("Home");
 
     // Verify the Top Description
@@ -122,5 +128,10 @@ describe("Swivel Group Site", () => {
       1,
     );
     await LIB_Common.bc_VerifyTheButton("Chat To Us", 1);
+
+    // Verify the footer panel
+    await LIB_Home.bc_VerifyHomeScreenFooterPanel(
+      "Home;About Us;Newsroom;Careers;Sitemap",
+    );
   });
 });
