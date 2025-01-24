@@ -53,6 +53,22 @@ class HomePage {
       `//div[@class='footer-wrapper']/descendant::div[1]/div[2]/ul/li[${index}]/a[text()='${textValue}']`,
     );
   }
+
+  get icn_Facebook() {
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[1]");
+  }
+
+  get icn_Instagram() {
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[2]");
+  }
+
+  get icn_Twitter() {
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[3]");
+  }
+
+  get icn_Linkedin() {
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[4]");
+  }
 }
 
 export default new HomePage();

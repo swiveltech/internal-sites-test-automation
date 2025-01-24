@@ -242,5 +242,42 @@ class Home {
       );
     }
   }
+
+  /**
+   * a method to verify the social media icon
+   */
+  async bc_VerifyTheSocialMediaIcon() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_Facebook,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Facebook icon on Footer ", () => {
+      console.log("Verify the Facebook icon on Footer ");
+    });
+
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_Instagram,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Instagram icon on Footer ", () => {
+      console.log("Verify the Instagram icon on Footer ");
+    });
+
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_Twitter,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Twitter icon on Footer ", () => {
+      console.log("Verify the Twitter icon on Footer ");
+    });
+
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_Linkedin,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Linkedin icon on Footer ", () => {
+      console.log("Verify the Linkedin icon on Footer ");
+    });
+  }
 }
 export default new Home();

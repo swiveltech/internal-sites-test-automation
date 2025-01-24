@@ -6,8 +6,8 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
 
 describe("Swivel Group Site", () => {
-  allureReporter.addFeature("Verify the Swivel group Home Page");
   it("Verify the Home Page", async () => {
+    allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
     allureReporter.startStep("Swivel Group -> Home Page Verification");
     await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
@@ -133,5 +133,6 @@ describe("Swivel Group Site", () => {
     await LIB_Home.bc_VerifyHomeScreenFooterPanel(
       "Home;About Us;Newsroom;Careers;Sitemap",
     );
+    await LIB_Home.bc_VerifyTheSocialMediaIcon();
   });
 });
