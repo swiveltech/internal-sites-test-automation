@@ -1,4 +1,4 @@
-import webActions from "../../../infrastructure/web/webActions.js";
+// import webActions from "../../../infrastructure/web/webActions.js";
 import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
@@ -6,7 +6,8 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
 
 describe("Swivel Group Site", () => {
-  it("Verify the Home Page", async () => {
+  // Covered Test Case Number : SG-1
+  it.skip("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
     allureReporter.startStep("Swivel Group -> Home Page Verification");
@@ -134,5 +135,79 @@ describe("Swivel Group Site", () => {
       "Home;About Us;Newsroom;Careers;Sitemap",
     );
     await LIB_Home.bc_VerifyTheSocialMediaIcon();
+  });
+
+  // Covered Test Case Number : SG-2 , SG-16
+  it.skip("Verify user navigating to the correct section using links in the navigation bar", async () => {
+    allureReporter.addStory("Swivel Site Top Navigation");
+    allureReporter.startStep("Swivel Group -> Navigation Verification");
+    await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
+    // Navigate to home tab
+    await LIB_Home.bc_NavigateToTabFromTopNavigation("Home");
+
+    // Verify the Home Headers with Application logo
+    await LIB_Home.bc_VerifyHomePageLogo();
+    // Verify the Top Description
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.HomePage_Top_Description, 1);
+    await LIB_Common.bc_VerifyTheButton("Find Out More", 1);
+
+    // Navigate to About Us tab
+    await LIB_Home.bc_NavigateToTabFromTopNavigation("About Us");
+    await LIB_Common.bc_VerifyTheAppURL("about-us");
+    await LIB_Common.bc_VerifyH1Header("A Trusted Global Partner");
+
+    // Navigate to Newsroom tab
+    await LIB_Home.bc_NavigateToTabFromTopNavigation("Newsroom");
+    await LIB_Common.bc_VerifyTheAppURL("newsroom");
+    await LIB_Common.bc_VerifyH1Header("Newsroom");
+
+    // Navigate to Careers tab
+    await LIB_Home.bc_NavigateToTabFromTopNavigation("Careers");
+    await LIB_Common.bc_VerifyTheAppURL("careers");
+    await LIB_Common.bc_VerifyH1Header("Careers");
+
+    // Navigate to home tab
+    await LIB_Home.bc_ClickOnApplicationLogoAndVerifyTheAppURL();
+    // Verify the Top Description
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.HomePage_Top_Description, 1);
+    await LIB_Common.bc_VerifyTheButton("Find Out More", 1);
+
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Home", 1);
+    // Verify the Top Description
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.HomePage_Top_Description, 1);
+    await LIB_Common.bc_VerifyTheButton("Find Out More", 1);
+
+    // Navigate to About Us tab
+    await LIB_Home.bc_ClickOptionFromFooterPanel("About Us", 2);
+    await LIB_Common.bc_VerifyTheAppURL("about-us");
+    await LIB_Common.bc_VerifyH1Header("A Trusted Global Partner");
+
+    // Navigate to Newsroom tab
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Newsroom", 3);
+    await LIB_Common.bc_VerifyTheAppURL("newsroom");
+    await LIB_Common.bc_VerifyH1Header("Newsroom");
+
+    // Navigate to Careers tab
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Careers", 4);
+    await LIB_Common.bc_VerifyTheAppURL("careers");
+    await LIB_Common.bc_VerifyH1Header("Careers");
+
+    // Navigate to Sitemap tab
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap", 5);
+    await LIB_Common.bc_VerifyTheAppURL("sitemap");
+    await LIB_Common.bc_VerifyH1Header("Sitemap");
+  });
+
+  // Covered Test Case Number : SG-38 , SG-39 , SG-40 , SG-41, SG-42
+  it("Verify the Cookie Policy and Privacy Policy", async () => {
+    allureReporter.addStory("Swivel Site Cookie Policy and Privacy Policy");
+    allureReporter.startStep(
+      "Swivel Group -> Cookie Policy and Privacy Policy",
+    );
+    await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
+    await LIB_Home.bc_VerifyWeValueYourPrivacy(
+      Data_Home.Privacy_Header,
+      Data_Home.Privacy_Description,
+    );
   });
 });

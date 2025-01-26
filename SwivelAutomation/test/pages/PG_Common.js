@@ -9,6 +9,10 @@ class CommonPage {
   btn_ButtonWithLabel(Label, Index) {
     return $(`(//button[text()='${Label}'])[${Index}]`);
   }
+
+  ele_lblH1Header(Label) {
+    return $(`//h1[text()='${Label}']`);
+  }
 }
 
 export default new CommonPage();

@@ -82,7 +82,7 @@ class Common {
     const element = await PG_Common.btn_ButtonWithLabel(label, Index);
 
     await element.scrollIntoView({ block: "center", inline: "center" });
-    // await browser.pause(1000);
+    await browser.pause(1000);
     await PG_Common.btn_ButtonWithLabel(label, Index).click();
     await browser.pause(1000);
     allureReporter.step("Click on button and button value is " + label, () => {
@@ -100,6 +100,46 @@ class Common {
     assertionHandler.assertTrue(element, "element not visible");
     allureReporter.step("Verify button and button value is " + label, () => {
       console.log("Verify button and button value is " + label);
+    });
+  }
+
+  //Common component to verify the application url
+  async bc_VerifyTheAppURL(expectedSegment) {
+    // Get the current URL
+    const currentUrl = await browser.getUrl();
+    console.log("Full URL After Navigating : " + currentUrl);
+    // Extract the last segment of the URL
+    const lastPathSegment = currentUrl.split("/").filter(Boolean).pop();
+
+    // Verify the last path segment
+    assertionHandler.assertEqual(
+      lastPathSegment,
+      expectedSegment,
+      `Expected "${expectedSegment}" but got "${lastPathSegment}"`,
+    );
+    allureReporter.step(
+      "You have navigate correct page and application URL is " +
+        currentUrl +
+        " You have passed data is : " +
+        expectedSegment,
+      () => {
+        console.log(
+          "You have navigate correct page and application URL is " +
+            currentUrl +
+            " You have passed data is : " +
+            expectedSegment,
+        );
+      },
+    );
+  }
+  //Common component to verify H1 Header
+  async bc_VerifyH1Header(pageHeader) {
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblH1Header(pageHeader),
+      "element not visible",
+    );
+    allureReporter.step("Verify the H1 page header as " + pageHeader, () => {
+      console.log("Verify the H1 page header as " + pageHeader);
     });
   }
 }

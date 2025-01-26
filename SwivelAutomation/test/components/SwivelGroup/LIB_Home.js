@@ -1,7 +1,8 @@
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
-
+import config from "../../../config.json" assert { type: "json" };
+import PG_Common from "../../pages/PG_Common.js";
 class Home {
   /**
    * a method to Verify the Swivel Group logo
@@ -15,6 +16,30 @@ class Home {
       "Verify the Swivel Group logo on top of the Home page",
       () => {
         console.log("Verify the Swivel Group logo on top of the Home page");
+      },
+    );
+  }
+
+  /**
+   * a method to Click on the Swivel Group logo
+   */
+  async bc_ClickOnApplicationLogoAndVerifyTheAppURL() {
+    await PG_Home.img_SwivelGroupLogo.click();
+    await browser.pause(2000);
+    // Get the current URL
+    const currentUrl = await browser.getUrl();
+    console.log("Full URL After Navigating : " + currentUrl);
+    assertionHandler.assertEqual(
+      currentUrl,
+      config.DEFAULT_URL,
+      `Expected "${config.DEFAULT_URL}" but got "${currentUrl}"`,
+    );
+    allureReporter.step(
+      "Click on Application logo and Verify the App URL to the Home Screen",
+      () => {
+        console.log(
+          "Click on Application logo and Verify the App URL to the Home Screen",
+        );
       },
     );
   }
@@ -87,6 +112,7 @@ class Home {
    */
   async bc_NavigateToTabFromTopNavigation(tabName) {
     await PG_Home.ele_HeaderTab(tabName).click();
+    await browser.pause(2000);
     allureReporter.step(
       "Navigate to the " + tabName + " tab from the top navigation ",
       () => {
@@ -278,6 +304,75 @@ class Home {
     allureReporter.step("Verify the Linkedin icon on Footer ", () => {
       console.log("Verify the Linkedin icon on Footer ");
     });
+  }
+
+  /**
+   * a method to Click option from the footer panel
+   */
+  async bc_ClickOptionFromFooterPanel(tabName, index) {
+    let element = await PG_Home.ele_FooterTab(tabName, index);
+
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await browser.pause(1000);
+    await PG_Home.ele_FooterTab(tabName, index).click();
+    await browser.pause(1000);
+    allureReporter.step(
+      "Click on the Footer Tab name " + tabName + " is present. ",
+      () => {
+        console.log(
+          "Click on the Footer Tab name " + tabName + " is present. ",
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify We Value your Privacy
+   */
+  async bc_VerifyWeValueYourPrivacy(header, description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblPageHeader(header, 1),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Privacy popup header as : " + header,
+      () => {
+        console.log("Verify the Privacy popup header as : " + header);
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblPageHeader(description, 1),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Privacy popup description as : " + description,
+      () => {
+        console.log("Verify the Privacy popup description as : " + description);
+      },
+    );
+
+    // Button Decline All
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.btn_ButtonWithLabel("Decline All", 1),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Privacy popup Decline All button is present. ",
+      () => {
+        console.log("Verify the Privacy popup Decline All button is present. ");
+      },
+    );
+    // Button Accept All
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.btn_ButtonWithLabel("Accept All", 1),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Privacy popup Accept All button is present. ",
+      () => {
+        console.log("Verify the Privacy popup Accept All button is present. ");
+      },
+    );
   }
 }
 export default new Home();
