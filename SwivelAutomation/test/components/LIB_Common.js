@@ -142,5 +142,16 @@ class Common {
       console.log("Verify the H1 page header as " + pageHeader);
     });
   }
+
+  /**
+   * method to Click on links
+   */
+  async bc_ClickOnLinks(name) {
+    await PG_Common.lnk_Navigation(name).click();
+    allureReporter.step("Click on the link name : " + name, () => {
+      console.log("Click on the link name : " + name);
+    });
+    await browser.pause(1000);
+  }
 }
 export default new Common();

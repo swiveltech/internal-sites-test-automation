@@ -4,9 +4,10 @@ import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
+import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
 
 describe("Swivel Group Site", () => {
-  // Covered Test Case Number : SG-1
+  // Covered Test Case Number : SG-1, SG-7,SG-12, SG-13
   it.skip("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
@@ -209,5 +210,92 @@ describe("Swivel Group Site", () => {
       Data_Home.Privacy_Header,
       Data_Home.Privacy_Description,
     );
+
+    await LIB_Common.bc_ClickOnLinks("Cookie Policy");
+    // const handle = await browser.getWindowHandle();
+    await browser.switchWindow("https://swivelgroup.com.au/cookie-policy");
+    await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Cookie_Header, 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Top_Description, 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.WhatAreCookies_Description,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Title_WhatAreCookies, 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Title_HowWeUseCookies, 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.HowWeUseCookies_Description1,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.HowWeUseCookies_Description2,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.HowWeUseCookies_Description3,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.Title_DisablingCookies,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.DisablingCookies_Description,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Title_TheCookiesWeSet, 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description1,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description2,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description3,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description4,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description5,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description6,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.TheCookiesWeSet_Description7,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Title_MoreInformation, 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Cookies.MoreInformation_Description,
+      1,
+    );
+    /*
+    // Click on Decline All Button
+    await LIB_Common.bc_ClickOnButton("Decline All", 1);
+    await LIB_Home.bc_VerifyWeValueYourPrivacyNotPresent(
+      Data_Home.Privacy_Header,
+      Data_Home.Privacy_Description,
+    );
+
+    await LIB_Home.bc_ClearCacheAndCookiesAndReload();
+    await LIB_Home.bc_VerifyWeValueYourPrivacy(
+      Data_Home.Privacy_Header,
+      Data_Home.Privacy_Description,
+    );
+
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await LIB_Home.bc_VerifyWeValueYourPrivacyNotPresent(
+      Data_Home.Privacy_Header,
+      Data_Home.Privacy_Description,
+    );
+    */
   });
 });

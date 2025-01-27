@@ -374,5 +374,94 @@ class Home {
       },
     );
   }
+
+  /**
+   * a method to Verify We Value your Privacy not present
+   */
+  async bc_VerifyWeValueYourPrivacyNotPresent(header, description) {
+    let pageHeaderFlag = await PG_Common.ele_lblPageHeader(
+      header,
+      1,
+    ).isDisplayed();
+    await assertionHandler.assertFalse(pageHeaderFlag);
+    allureReporter.step(
+      "Verify the Privacy popup header as : " + header + " is not present.",
+      () => {
+        console.log(
+          "Verify the Privacy popup header as : " + header + " is not present.",
+        );
+      },
+    );
+    let pageDescriptionFlag = await PG_Common.ele_lblPageHeader(
+      description,
+      1,
+    ).isDisplayed();
+    await assertionHandler.assertFalse(pageDescriptionFlag);
+    allureReporter.step(
+      "Verify the Privacy popup description as : " +
+        description +
+        " is not present.",
+      () => {
+        console.log(
+          "Verify the Privacy popup description as : " +
+            description +
+            " is not present.",
+        );
+      },
+    );
+
+    // Button Decline All
+    let declineAllFlag = await PG_Common.btn_ButtonWithLabel(
+      "Decline All",
+      1,
+    ).isDisplayed();
+    await assertionHandler.assertFalse(declineAllFlag);
+    allureReporter.step(
+      "Verify the Privacy popup Decline All button is not present. ",
+      () => {
+        console.log(
+          "Verify the Privacy popup Decline All button is not present. ",
+        );
+      },
+    );
+    // Button Accept All
+    let acceptAllFlag = await PG_Common.btn_ButtonWithLabel(
+      "Accept All",
+      1,
+    ).isDisplayed();
+    await assertionHandler.assertFalse(acceptAllFlag);
+    allureReporter.step(
+      "Verify the Privacy popup Accept All button is not present. ",
+      () => {
+        console.log(
+          "Verify the Privacy popup Accept All button is not present. ",
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Clear Cache and cookies and reload the url
+   *
+   */
+  async bc_ClearCacheAndCookiesAndReload() {
+    await browser.deleteAllCookies();
+    await browser.refresh();
+    allureReporter.step("Clear Cache and cookies and reload the url", () => {
+      console.log("Clear Cache and cookies and reload the url");
+    });
+  }
+
+  /**
+   * a method to
+   *
+   */
+  async bc_() {
+    await browser.deleteAllCookies();
+    await browser.refresh();
+    allureReporter.step("Clear Cache and cookies and reload the url", () => {
+      console.log("Clear Cache and cookies and reload the url");
+    });
+  }
 }
 export default new Home();
