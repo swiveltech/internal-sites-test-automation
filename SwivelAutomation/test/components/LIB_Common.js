@@ -12,6 +12,7 @@ class Common {
     allureReporter.step("Load the URL " + url, () => {
       console.log("Load the URL " + url);
     });
+    await browser.pause(2000);
   }
 
   /**
@@ -80,11 +81,10 @@ class Common {
   //Common component for click on button
   async bc_ClickOnButton(label, Index) {
     const element = await PG_Common.btn_ButtonWithLabel(label, Index);
-
     await element.scrollIntoView({ block: "center", inline: "center" });
     await browser.pause(1000);
     await PG_Common.btn_ButtonWithLabel(label, Index).click();
-    await browser.pause(1000);
+    await browser.pause(2000);
     allureReporter.step("Click on button and button value is " + label, () => {
       console.log("Click on button and button value is " + label);
     });
@@ -152,6 +152,25 @@ class Common {
       console.log("Click on the link name : " + name);
     });
     await browser.pause(1000);
+  }
+
+  /**
+   * method to Close the current Tab and force to first tab
+   */
+  async bc_CloseTheCurrentTabAndForceToFirstTab() {
+    await browser.closeWindow();
+    const handles = await browser.getWindowHandles();
+    console.log(handles.length); // returns `1`
+
+    const err = await browser.getTitle().catch((err) => err);
+    console.log(err.message); // returns "no such window: target window already closed"
+
+    //make sure to switch to previous window before continuing
+    await browser.switchToWindow(handles[0]);
+    await browser.pause(1000);
+    allureReporter.step("Close the current Tab and force to first tab", () => {
+      console.log("Close the current Tab and force to first tab");
+    });
   }
 }
 export default new Common();

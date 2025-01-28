@@ -1,8 +1,9 @@
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
+import PG_Common from "../../pages/PG_Common.js";
+import PG_SocialMedia from "../../pages/SwivelGroup/PG_SocialMedia.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
 import config from "../../../config.json" assert { type: "json" };
-import PG_Common from "../../pages/PG_Common.js";
 class Home {
   /**
    * a method to Verify the Swivel Group logo
@@ -453,14 +454,140 @@ class Home {
   }
 
   /**
-   * a method to
+   * a method to click on facebook icon
    *
    */
-  async bc_() {
-    await browser.deleteAllCookies();
-    await browser.refresh();
-    allureReporter.step("Clear Cache and cookies and reload the url", () => {
-      console.log("Clear Cache and cookies and reload the url");
+  async bc_ClickOnFacebookIcon() {
+    const element = await PG_Home.icn_Facebook;
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await browser.pause(1000);
+    await PG_Home.icn_Facebook.click();
+    await browser.pause(2000);
+    allureReporter.step("Click on Facebook in home page.", () => {
+      console.log("Click on Facebook in home page.");
+    });
+  }
+
+  /**
+   * a method to Verify on facebook popup and close it
+   *
+   */
+  async bc_VerifyTheFacebookPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_FacebookTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Facebook title in facebook page popup.",
+      () => {
+        console.log("Verify the Facebook title in facebook page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_FacebookClosePoopUp.click();
+    allureReporter.step("Click on Facebook close icon on popup.", () => {
+      console.log("Click on Facebook close icon on popup.");
+    });
+  }
+
+  /**
+   * a method to click on Instagram icon
+   *
+   */
+  async bc_ClickOnInstagramIcon() {
+    const element = await PG_Home.icn_Facebook;
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await browser.pause(1000);
+    await PG_Home.icn_Instagram.click();
+    await browser.pause(2000);
+    allureReporter.step("Click on Instagram in home page.", () => {
+      console.log("Click on Instagram in home page.");
+    });
+  }
+
+  /**
+   * a method to verify on Instagram popup and close it
+   *
+   */
+  async bc_VerifyTheInstagramPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_InstagramTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Instagram title in Instagram page popup.",
+      () => {
+        console.log("Verify the Instagram title in Instagram page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_InstagramClosePoopUp.click();
+    allureReporter.step("Click on Instagram close icon on popup.", () => {
+      console.log("Click on Instagram close icon on popup.");
+    });
+  }
+
+  /**
+   * a method to click on Twitter icon
+   *
+   */
+  async bc_ClickOnTwitterIcon() {
+    await PG_Home.icn_Twitter.click();
+    await browser.pause(2000);
+    allureReporter.step("Click on Twitter in home page.", () => {
+      console.log("Click on Twitter in home page.");
+    });
+  }
+
+  /**
+   * a method to verify on Twitter popup and close it
+   *
+   */
+  async bc_VerifyTheTwitterPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_TwitterTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Twitter title in Twitter page popup.",
+      () => {
+        console.log("Verify the Twitter title in Twitter page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_TwitterClosePoopUp.click();
+    allureReporter.step("Click on Twitter close icon on popup.", () => {
+      console.log("Click on Twitter close icon on popup.");
+    });
+  }
+
+  /**
+   * a method to click on Linkedin icon
+   *
+   */
+  async bc_ClickOnLinkedinIcon() {
+    await PG_Home.icn_Linkedin.click();
+    await browser.pause(2000);
+    allureReporter.step("Click on Linkedin in home page.", () => {
+      console.log("Click on Linkedin in home page.");
+    });
+  }
+
+  /**
+   * a method to Verify on Linkedin popup and close it
+   *
+   */
+  async bc_VerifyTheLinkedinPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_LinkedinTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Linkedin title in Linkedin page popup.",
+      () => {
+        console.log("Verify the Linkedin title in Linkedin page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_LinkedinClosePoopUp.click();
+    allureReporter.step("Click on Linkedin close icon on popup.", () => {
+      console.log("Click on Linkedin close icon on popup.");
     });
   }
 }

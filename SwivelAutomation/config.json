@@ -12,12 +12,11 @@
   "appiumPort": 4723,
   "BS_User": "amali_XycYz2",
   "BS_Key": "6oKgNPk3mSqhuUHE7WVL",
-  "DEFAULT_URL": "https://swivelgroup.com.au/",
+  "DEFAULT_URL": "",
   "URLS": {
-    "QA": "https://qa.comet.afl.championdata.com",
-    "DEV": "https://qa.comet.afl.championdata.com",
-    "STAGING": "https://qa.comet.afl.championdata.com",
-    "PROD": "https://qa.comet.afl.championdata.com"
+    "SWIVEL_GROUP": "https://swivelgroup.com.au/",
+    "SWIVEL_TECH": "",
+    "SWIVEL_FINANCE": "https://swivelfinance.com.au/"
   },
   "RETRY": "1",
   "RETRY_INTERVAL": "5000",

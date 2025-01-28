@@ -1,4 +1,3 @@
-// import webActions from "../../../infrastructure/web/webActions.js";
 import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
@@ -7,12 +6,12 @@ import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json
 import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
 
 describe("Swivel Group Site", () => {
-  // Covered Test Case Number : SG-1, SG-7,SG-12, SG-13
-  it.skip("Verify the Home Page", async () => {
+  // Covered Test Case Number : SG-1, SG-7,SG-12, SG-13, SG-17
+  it("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
     allureReporter.startStep("Swivel Group -> Home Page Verification");
-    await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     // Verify the Headers and top panel
     await LIB_Home.bc_VerifyHomePageLogo();
     await LIB_Home.bc_VerifyHomeScreenTopPanel(
@@ -139,10 +138,10 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-2 , SG-16
-  it.skip("Verify user navigating to the correct section using links in the navigation bar", async () => {
+  it("Verify user navigating to the correct section using links in the navigation bar", async () => {
     allureReporter.addStory("Swivel Site Top Navigation");
     allureReporter.startStep("Swivel Group -> Navigation Verification");
-    await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     // Navigate to home tab
     await LIB_Home.bc_NavigateToTabFromTopNavigation("Home");
 
@@ -205,15 +204,14 @@ describe("Swivel Group Site", () => {
     allureReporter.startStep(
       "Swivel Group -> Cookie Policy and Privacy Policy",
     );
-    await LIB_Common.bc_OpenApplication(config.DEFAULT_URL);
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     await LIB_Home.bc_VerifyWeValueYourPrivacy(
       Data_Home.Privacy_Header,
       Data_Home.Privacy_Description,
     );
 
     await LIB_Common.bc_ClickOnLinks("Cookie Policy");
-    // const handle = await browser.getWindowHandle();
-    await browser.switchWindow("https://swivelgroup.com.au/cookie-policy");
+    await browser.switchWindow(config.URLS.SWIVEL_GROUP + "cookie-policy");
     await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Cookie_Header, 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Cookies.Top_Description, 1);
     await LIB_Common.bc_VerifyPageHeader(
@@ -276,7 +274,7 @@ describe("Swivel Group Site", () => {
       Data_Cookies.MoreInformation_Description,
       1,
     );
-    /*
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
     // Click on Decline All Button
     await LIB_Common.bc_ClickOnButton("Decline All", 1);
     await LIB_Home.bc_VerifyWeValueYourPrivacyNotPresent(
@@ -296,6 +294,46 @@ describe("Swivel Group Site", () => {
       Data_Home.Privacy_Header,
       Data_Home.Privacy_Description,
     );
-    */
+  });
+
+  // Covered Test Case Number : SG-18
+  it("Verify social media links are clickable and redirecting to correct page", async () => {
+    allureReporter.addStory(
+      "Swivel Site Verify the social media links and navigation",
+    );
+    allureReporter.startStep(
+      "Swivel Group -> Home Page -> Navigation of Social Media",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+
+    // Click on Facebook and verify it
+    await LIB_Home.bc_ClickOnFacebookIcon();
+    await browser.switchWindow("Swivel Group | Facebook");
+    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Click on Twitter and verify it
+    await LIB_Home.bc_ClickOnTwitterIcon();
+    await browser.pause(8000);
+    await browser.switchWindow("Log in to X / X");
+    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Click on Linkedin and verify it
+    await LIB_Home.bc_ClickOnLinkedinIcon();
+    await browser.switchWindow("Swivel Group | LinkedIn");
+    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Click on Instagram and verify it
+    await LIB_Home.bc_ClickOnInstagramIcon();
+    await browser.switchWindow(
+      "Swivel Group (@swivel.group) • Instagram photos and videos",
+    );
+    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 });
