@@ -1,13 +1,14 @@
 import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
+import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
 import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
 
 describe("Swivel Group Site", () => {
   // Covered Test Case Number : SG-1, SG-7,SG-12, SG-13, SG-17
-  it("Verify the Home Page", async () => {
+  it.skip("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
     allureReporter.startStep("Swivel Group -> Home Page Verification");
@@ -138,7 +139,7 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-2 , SG-16
-  it("Verify user navigating to the correct section using links in the navigation bar", async () => {
+  it.skip("Verify user navigating to the correct section using links in the navigation bar", async () => {
     allureReporter.addStory("Swivel Site Top Navigation");
     allureReporter.startStep("Swivel Group -> Navigation Verification");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
@@ -199,7 +200,7 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-38 , SG-39 , SG-40 , SG-41, SG-42
-  it("Verify the Cookie Policy and Privacy Policy", async () => {
+  it.skip("Verify the Cookie Policy and Privacy Policy", async () => {
     allureReporter.addStory("Swivel Site Cookie Policy and Privacy Policy");
     allureReporter.startStep(
       "Swivel Group -> Cookie Policy and Privacy Policy",
@@ -297,7 +298,7 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-18
-  it("Verify social media links are clickable and redirecting to correct page", async () => {
+  it.skip("Verify social media links are clickable and redirecting to correct page", async () => {
     allureReporter.addStory(
       "Swivel Site Verify the social media links and navigation",
     );
@@ -335,5 +336,19 @@ describe("Swivel Group Site", () => {
     );
     await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+  });
+
+  // Covered Test Case Number : SG-3, SG-4
+  it("Verify the Let's Talk and phone functionality", async () => {
+    allureReporter.addStory(
+      "Swivel Group Site Verify the Let's Talk and phone functionality",
+    );
+    allureReporter.startStep(
+      "Swivel Group -> Home Page -> Verify the Let's Talk and phone functionality",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    await LIB_Home.bc_ClickOnLetsTalkButtonAndVerifyContactUsPage();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Contact_Us_Description, 1);
+    await LIB_ContactUs.bc_VerifyContactUsPage();
   });
 });

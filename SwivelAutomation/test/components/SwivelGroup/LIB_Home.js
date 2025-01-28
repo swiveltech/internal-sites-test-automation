@@ -1,6 +1,7 @@
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
 import PG_SocialMedia from "../../pages/SwivelGroup/PG_SocialMedia.js";
+import LIB_Common from "../../components/LIB_Common.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
 import config from "../../../config.json" assert { type: "json" };
@@ -589,6 +590,19 @@ class Home {
     allureReporter.step("Click on Linkedin close icon on popup.", () => {
       console.log("Click on Linkedin close icon on popup.");
     });
+  }
+
+  /**
+   * a method to Click on Lets talk button and Verify Contact Us Page
+   */
+  async bc_ClickOnLetsTalkButtonAndVerifyContactUsPage() {
+    await PG_Home.btn_LetsTalk.click();
+    allureReporter.step("Click on Lets Talk button in Home page", () => {
+      console.log("Click on Lets Talk button in Home page");
+    });
+    await browser.pause(1000);
+    await LIB_Common.bc_VerifyH1Header("Contact Us");
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
   }
 }
 export default new Home();
