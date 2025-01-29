@@ -91,12 +91,12 @@ class Common {
   }
 
   async bc_VerifyTheButton(label, Index) {
-    const elementToScroll = await PG_Common.btn_ButtonWithLabel(label, Index);
-    const element = await PG_Common.btn_ButtonWithLabel(
+    let elementToScroll = await PG_Common.btn_ButtonWithLabel(label, Index);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    let element = await PG_Common.btn_ButtonWithLabel(
       label,
       Index,
     ).isDisplayed();
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
     assertionHandler.assertTrue(element, "element not visible");
     allureReporter.step("Verify button and button value is " + label, () => {
       console.log("Verify button and button value is " + label);
@@ -148,11 +148,27 @@ class Common {
    * method to Click on links
    */
   async bc_ClickOnLinks(name) {
+    let elementToScroll = await PG_Common.lnk_Navigation(name);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await browser.pause(1000);
     await PG_Common.lnk_Navigation(name).click();
     allureReporter.step("Click on the link name : " + name, () => {
       console.log("Click on the link name : " + name);
     });
     await browser.pause(1000);
+  }
+
+  /**
+   * method to Verify links
+   */
+  async bc_VerifyLinks(name) {
+    assertionHandler.assertElementDisplayed(
+      PG_Common.lnk_Navigation(name),
+      "element not visible",
+    );
+    allureReporter.step("Verify the link : " + name, () => {
+      console.log("Verify the link : " + name);
+    });
   }
 
   /**

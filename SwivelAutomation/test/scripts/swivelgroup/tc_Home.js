@@ -7,6 +7,7 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
 import Data_Careers from "../../data/swivelGroup/dt_careers.json" assert { type: "json" };
 import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
+import Data_PrivacyPolicy from "../../data/swivelGroup/dt_privacyPolicy.json" assert { type: "json" };
 import Data_ContactUs from "../../data/swivelGroup/dt_contactUs.json" assert { type: "json" };
 import Data_Newsroom from "../../data/swivelGroup/dt_newsroom.json" assert { type: "json" };
 import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
@@ -204,12 +205,10 @@ describe("Swivel Group Site", () => {
     await LIB_Common.bc_VerifyH1Header("Sitemap");
   });
 
-  // Covered Test Case Number : SG-38 , SG-39 , SG-40 , SG-41, SG-42
-  it("Verify the Cookie Policy and Privacy Policy", async () => {
-    allureReporter.addStory("Swivel Site Cookie Policy and Privacy Policy");
-    allureReporter.startStep(
-      "Swivel Group -> Cookie Policy and Privacy Policy",
-    );
+  // Covered Test Case Number : SG-38 , SG-39 , SG-40 , SG-42
+  it("Verify the Cookie Policy", async () => {
+    allureReporter.addStory("Swivel Site Cookie Policy");
+    allureReporter.startStep("Swivel Group -> Cookie Policy");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     await LIB_Home.bc_VerifyWeValueYourPrivacy(
       Data_Home.Privacy_Header,
@@ -568,5 +567,122 @@ describe("Swivel Group Site", () => {
       Data_Careers.Careers_Header,
       Data_Careers.Top_Description,
     );
+  });
+
+  // Covered Test Case Number : SG-41
+  it("Verify the Privacy Policy", async () => {
+    allureReporter.addStory("Swivel Site Privacy Policy");
+    allureReporter.startStep("Swivel Group -> Privacy Policy");
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    await LIB_Home.bc_VerifyWeValueYourPrivacy(
+      Data_Home.Privacy_Header,
+      Data_Home.Privacy_Description,
+    );
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+
+    // Click on Privacy Policy Button in bottom
+    await LIB_Common.bc_ClickOnLinks("Privacy Policy");
+
+    await LIB_Common.bc_VerifyH1Header(Data_PrivacyPolicy.PrivacyPolicy_Header);
+    await LIB_Common.bc_VerifyPageHeader(Data_PrivacyPolicy.Top_Description, 1);
+
+    // Verify the Sub contains "Personal Information We Collect"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_PersonalInformationWeCollect,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.PersonalInformationWeCollect_Description,
+      1,
+    );
+
+    // Verify the Sub contains "How We Use Your Personal Information"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_HowWeUseYourPersonalInformation,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description1,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description2,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description3,
+      1,
+    );
+
+    // Verify the Sub contains "Transfers of personal data"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_TransfersOfPersonalData,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.TransfersOfPersonalData_Description1,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.TransfersOfPersonalData_Description2,
+      1,
+    );
+
+    // Verify the Sub contains "Cookies and Similar Technologies"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_CookiesAndSimilarTechnologies,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.CookiesAndSimilarTechnologies_Description,
+      1,
+    );
+
+    // Verify the Sub contains "Personal Data Retention"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_PersonalDataRetention,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.PersonalDataRetention_Description,
+      1,
+    );
+
+    // Verify the Sub contains "Third-Party Websites"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_ThirdPartyWebsites,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.ThirdPartyWebsites_Description,
+      1,
+    );
+
+    // Verify the Sub contains "Your Rights"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_YourRights,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.YourRights_Description,
+      1,
+    );
+    await LIB_Common.bc_VerifyLinks(Data_PrivacyPolicy.YourRights_EmailAddress);
+
+    // Verify the Sub contains "Changes to this Privacy Policy"
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.Title_ChangesToThisPrivacyPolicy,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.ChangesToThisPrivacyPolicy_Description1,
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_PrivacyPolicy.ChangesToThisPrivacyPolicy_EffectiveDate,
+      1,
+    );
+    await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
   });
 });
