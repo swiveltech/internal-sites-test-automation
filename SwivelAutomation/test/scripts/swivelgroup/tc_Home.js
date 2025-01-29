@@ -5,10 +5,11 @@ import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
 import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
+import Data_ContactUs from "../../data/swivelGroup/dt_contactUs.json" assert { type: "json" };
 
 describe("Swivel Group Site", () => {
   // Covered Test Case Number : SG-1, SG-7,SG-12, SG-13, SG-17
-  it.skip("Verify the Home Page", async () => {
+  it("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
     allureReporter.startStep("Swivel Group -> Home Page Verification");
@@ -139,7 +140,7 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-2 , SG-16
-  it.skip("Verify user navigating to the correct section using links in the navigation bar", async () => {
+  it("Verify user navigating to the correct section using links in the navigation bar", async () => {
     allureReporter.addStory("Swivel Site Top Navigation");
     allureReporter.startStep("Swivel Group -> Navigation Verification");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
@@ -200,7 +201,7 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-38 , SG-39 , SG-40 , SG-41, SG-42
-  it.skip("Verify the Cookie Policy and Privacy Policy", async () => {
+  it("Verify the Cookie Policy and Privacy Policy", async () => {
     allureReporter.addStory("Swivel Site Cookie Policy and Privacy Policy");
     allureReporter.startStep(
       "Swivel Group -> Cookie Policy and Privacy Policy",
@@ -298,7 +299,7 @@ describe("Swivel Group Site", () => {
   });
 
   // Covered Test Case Number : SG-18
-  it.skip("Verify social media links are clickable and redirecting to correct page", async () => {
+  it("Verify social media links are clickable and redirecting to correct page", async () => {
     allureReporter.addStory(
       "Swivel Site Verify the social media links and navigation",
     );
@@ -338,7 +339,7 @@ describe("Swivel Group Site", () => {
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 
-  // Covered Test Case Number : SG-3, SG-4
+  // Covered Test Case Number : SG-3, SG-4, SG-5
   it("Verify the Let's Talk and phone functionality", async () => {
     allureReporter.addStory(
       "Swivel Group Site Verify the Let's Talk and phone functionality",
@@ -350,5 +351,47 @@ describe("Swivel Group Site", () => {
     await LIB_Home.bc_ClickOnLetsTalkButtonAndVerifyContactUsPage();
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Contact_Us_Description, 1);
     await LIB_ContactUs.bc_VerifyContactUsPage();
+    await LIB_ContactUs.bc_VerifyEmailUs(Data_ContactUs.EmailAddress);
+    // Verify the Australia location
+    await LIB_ContactUs.bc_VerifyVisitUsLocations(
+      Data_ContactUs.Australia_SubHeader,
+      Data_ContactUs.Australia_OfficeName,
+      Data_ContactUs.Australia_Location_AddressLine1,
+      Data_ContactUs.Australia_Location_AddressLine2,
+      Data_ContactUs.Australia_Office_Number,
+    );
+    // Verify the Sri Lanka location 1
+    await LIB_ContactUs.bc_VerifyVisitUsLocations(
+      Data_ContactUs.SriLanka_SubHeader,
+      Data_ContactUs.SriLanka_OfficeName,
+      Data_ContactUs.SriLanka_Location_AddressLine1,
+      Data_ContactUs.SriLanka_Location_AddressLine2,
+      Data_ContactUs.SriLanka_Office_Number,
+    );
+    // Verify the Sri Lanka tech Office Location
+    await LIB_ContactUs.bc_VerifyVisitUsLocations(
+      Data_ContactUs.SriLanka_SubHeader,
+      Data_ContactUs.SriLanka_TechOfficeName,
+      Data_ContactUs.SriLanka_TechOffice_Location_AddressLine1,
+      Data_ContactUs.SriLanka_TechOffice_Location_AddressLine2,
+      Data_ContactUs.SriLanka_TechOffice_Number,
+    );
+
+    await LIB_ContactUs.bc_VerifyFooterCopyRightWithLogo(
+      Data_ContactUs.Footer_CopyRight,
+    );
+    await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
+
+    // Click on Find out more button in home page and verify the contact us page
+    await LIB_Common.bc_ClickOnButton("Find Out More", 1);
+    await LIB_Common.bc_VerifyH1Header("Contact Us");
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Contact_Us_Description, 1);
+    await LIB_ContactUs.bc_VerifyContactUsPage();
+    await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
+
+    // Verify the phone functionality in home page
+    await LIB_Home.bc_ClickOnPhoneNumberInHomePage(Data_Home.ContactNumber);
+    // This browser alert is not captured in the screenshot.
+    await LIB_Common.bc_TakeScreenShot("Calling Phone Number");
   });
 });

@@ -45,6 +45,30 @@ class ContactUs {
       `//h3[text()="Email Us"]/following-sibling::div/a[text()="${email}"]`,
     );
   }
+
+  ele_lblFooter(word) {
+    return $(`//span[text()="${word}"]`);
+  }
+
+  ele_lblErrorMessage(errorMessage) {
+    return $(`//div[text()="${errorMessage}" and @class="_error-inner"]`);
+  }
+
+  get icn_FooterLogo() {
+    return $('//img[contains(@alt,"Footer_Swivel_Logo_")]');
+  }
+
+  ele_VisitUsLocation(
+    subLocationHeader,
+    companyName,
+    addressLine1,
+    addressLine2,
+    phoneNumber,
+  ) {
+    return $(
+      `//h5[text()="${subLocationHeader}"]/following-sibling::div/div[text()="${companyName}"]/following-sibling::div[text()="${addressLine1}"]/following-sibling::div[text()="${addressLine2}"]/following-sibling::div[text()="${phoneNumber}"]`,
+    );
+  }
 }
 
 export default new ContactUs();

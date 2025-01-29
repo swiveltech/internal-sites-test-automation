@@ -2,6 +2,7 @@ import PG_ContactUs from "../../pages/SwivelGroup/PG_ContactUs.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../LIB_Common.js";
+import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 class ContactUs {
   /**
    * a method to Verify the Contact Us
@@ -34,7 +35,7 @@ class ContactUs {
       "Element not exist",
     );
     allureReporter.step("Verify the Email text Box", () => {
-      console.log("Verify the Email text Box");
+      console.log("Verify the Email text box");
     });
     await assertionHandler.assertElementDisplayed(
       PG_ContactUs.tf_Name,
@@ -65,6 +66,115 @@ class ContactUs {
       console.log("Verify the Message text area");
     });
     await LIB_Common.bc_VerifyTheButton("Send", 1);
+  }
+
+  /**
+   * a method to Verify the Visit Us Location
+   */
+  async bc_VerifyVisitUsLocations(
+    subLocationHeader,
+    companyName,
+    addressLine1,
+    addressLine2,
+    phoneNumber,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_ContactUs.ele_VisitUsLocation(
+        subLocationHeader,
+        companyName,
+        addressLine1,
+        addressLine2,
+        phoneNumber,
+      ),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Visit Us location as " +
+        subLocationHeader +
+        " and company name : " +
+        companyName +
+        " and address line 1 : " +
+        addressLine1 +
+        " and address line 2 : " +
+        addressLine2 +
+        " and phone number : " +
+        phoneNumber,
+      () => {
+        console.log(
+          "Verify the Visit Us location as " +
+            subLocationHeader +
+            " and company name : " +
+            companyName +
+            " and address line 1 : " +
+            addressLine1 +
+            " and address line 2 : " +
+            addressLine2 +
+            " and phone number : " +
+            phoneNumber,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the Email us
+   */
+  async bc_VerifyEmailUs(emailAddress) {
+    await assertionHandler.assertElementDisplayed(
+      PG_ContactUs.ele_lblEmailUsWithAddress(emailAddress),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Email us as " + emailAddress, () => {
+      console.log("Verify the Email us as " + emailAddress);
+    });
+  }
+
+  /**
+   * a method to Verify Footer
+   */
+  async bc_VerifyFooterCopyRightWithLogo(footerWord) {
+    await assertionHandler.assertElementDisplayed(
+      PG_ContactUs.ele_lblFooter(footerWord),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Footer as " + footerWord, () => {
+      console.log("Verify the Footer as " + footerWord);
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_ContactUs.icn_FooterLogo,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Footer Application Logo", () => {
+      console.log("Verify the Footer Application Logo");
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_CookiePolicy,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Footer Cookie Policy link", () => {
+      console.log("Verify the Footer Cookie Policy link");
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_PrivacyPolicy,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Privacy Policy link in Footer", () => {
+      console.log("Verify the Privacy Policy link in Footer");
+    });
+  }
+
+  /**
+   * a method to Click on Footer logo and verify the home page
+   */
+  async bc_ClickOnFooterLogoAndVerifyHomePage() {
+    let element = await PG_ContactUs.icn_FooterLogo;
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await PG_ContactUs.icn_FooterLogo.click();
+    await browser.pause(1000);
+    await LIB_Common.bc_VerifyTheButton("Find Out More", 1);
+    allureReporter.step("Click on Footer logo", () => {
+      console.log("Click on Footer logo");
+    });
   }
 }
 export default new ContactUs();

@@ -600,9 +600,25 @@ class Home {
     allureReporter.step("Click on Lets Talk button in Home page", () => {
       console.log("Click on Lets Talk button in Home page");
     });
-    await browser.pause(1000);
+    await browser.pause(2000);
     await LIB_Common.bc_VerifyH1Header("Contact Us");
     await LIB_Common.bc_VerifyTheAppURL("contact-us");
+  }
+
+  /**
+   * a method to Click on Phone number in home page
+   */
+  async bc_ClickOnPhoneNumberInHomePage(phoneNumber) {
+    await PG_Home.ele_ContactNumber(phoneNumber).click();
+    await browser.pause(2000);
+    allureReporter.step(
+      "Click on Phone number as : " + phoneNumber + " in Home page",
+      () => {
+        console.log(
+          "Click on Phone number as : " + phoneNumber + " in Home page",
+        );
+      },
+    );
   }
 }
 export default new Home();

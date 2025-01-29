@@ -69,6 +69,14 @@ class HomePage {
   get icn_Linkedin() {
     return $("//nav[@class='navbar navbar-expand social-media']/ul/li[4]");
   }
+
+  get lnk_PrivacyPolicy() {
+    return $("//a[text()='Privacy Policy']");
+  }
+
+  get lnk_CookiePolicy() {
+    return $("//a[text()='Cookie Policy']");
+  }
 }
 
 export default new HomePage();

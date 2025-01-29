@@ -105,6 +105,7 @@ class Common {
 
   //Common component to verify the application url
   async bc_VerifyTheAppURL(expectedSegment) {
+    await browser.pause(2000);
     // Get the current URL
     const currentUrl = await browser.getUrl();
     console.log("Full URL After Navigating : " + currentUrl);
