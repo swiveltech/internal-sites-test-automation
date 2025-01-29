@@ -620,5 +620,44 @@ class Home {
       },
     );
   }
+
+  /**
+   * a method to Click on Our Brands links in home page
+   */
+  async bc_ClickOnOurBrandsLinksInHomePage(brandTitle, brandLink) {
+    let element = await PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink);
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await browser.pause(1000);
+    await PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink).click();
+    await browser.pause(3000);
+    allureReporter.step(
+      "Click on Our Brand title is " +
+        brandTitle +
+        " and brand link is " +
+        brandLink,
+      () => {
+        console.log(
+          "Click on Our Brand title is " +
+            brandTitle +
+            " and brand link is " +
+            brandLink,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Click on For more news in home page
+   */
+  async bc_ClickOnForMoreNewsInHomePage() {
+    let element = await PG_Home.lnk_ForMoreNews;
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await browser.pause(1000);
+    await PG_Home.lnk_ForMoreNews.click();
+    await browser.pause(3000);
+    allureReporter.step("Click on For more news link in home page", () => {
+      console.log("Click on For more news link in home page");
+    });
+  }
 }
 export default new Home();

@@ -1,14 +1,18 @@
 import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
+import LIB_Newsroom from "../../components/SwivelGroup/LIB_Newsroom.js";
 import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json" };
+import Data_Careers from "../../data/swivelGroup/dt_careers.json" assert { type: "json" };
 import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
 import Data_ContactUs from "../../data/swivelGroup/dt_contactUs.json" assert { type: "json" };
+import Data_Newsroom from "../../data/swivelGroup/dt_newsroom.json" assert { type: "json" };
+import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
 
 describe("Swivel Group Site", () => {
-  // Covered Test Case Number : SG-1, SG-7,SG-12, SG-13, SG-17
+  // Covered Test Case Number : SG-1, SG-6, SG-7,SG-12, SG-13, SG-17
   it("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
     allureReporter.addStory("Home Page");
@@ -393,5 +397,176 @@ describe("Swivel Group Site", () => {
     await LIB_Home.bc_ClickOnPhoneNumberInHomePage(Data_Home.ContactNumber);
     // This browser alert is not captured in the screenshot.
     await LIB_Common.bc_TakeScreenShot("Calling Phone Number");
+  });
+
+  // Covered Test Case Number : SG-8, SG-9, SG-10, SG-11
+  it("Verify the navigation of the our brands section", async () => {
+    allureReporter.addStory(
+      "Swivel Group Site Verify the navigation of the our brands section",
+    );
+    allureReporter.startStep(
+      "Swivel Group -> Home Page ->  Our Brands -> Verify the navigation",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    //Click on the our brand links
+    // Swivel Finance Site
+    await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
+      "Swivel_Finance_Brand_",
+      "Visit SwivelFinance",
+    );
+    await browser.switchWindow(
+      "Outsource Finance and Accounting Services - Swivel Finance",
+    );
+    await LIB_Common.bc_TakeScreenShot("Swivel Finance Site");
+    await LIB_Common.bc_VerifyH1Header(
+      "Australia's Premier Scalability Partner for Accounting Practices!",
+    );
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Swivel Talent Site
+    await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
+      "Swivel_Talent_Brand_",
+      "Visit SwivelTalent",
+    );
+    await browser.switchWindow(
+      "Swivel Talent | International Talent Acquisition Services",
+    );
+    await LIB_Common.bc_TakeScreenShot("Swivel Talent Site");
+    await LIB_Common.bc_VerifyPageHeader("Top-tier Talent for", 1);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Swivel Foundation Site
+    await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
+      "Swivel_Foundation_Brand_",
+      "Visit SwivelFoundation",
+    );
+    await browser.pause(2000);
+    await browser.switchWindow("Home - Swivel Foundation");
+    await LIB_Common.bc_TakeScreenShot("Swivel Foundation Site");
+    await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Swivel Tech Site
+    await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
+      "Swivel_Tech_Brand_",
+      "Visit SwivelTech",
+    );
+    await browser.pause(2000);
+    await browser.switchWindow(
+      "Software and Technology Consultancy Services - Swivel Tech",
+    );
+    await LIB_Common.bc_TakeScreenShot("Swivel Tech Site");
+    await LIB_Common.bc_VerifyH1Header(
+      "Purpose-Built Software Solutions Geared For Scale",
+    );
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+  });
+
+  // Covered Test Case Number : SG-14, SG-15
+  it("Verify the navigation For More News and Chat to us section", async () => {
+    allureReporter.addStory(
+      "Swivel Group Site Verify the navigation For More News and Chat to us section",
+    );
+    allureReporter.startStep(
+      "Swivel Group -> Home Page ->  Newsroom -> Verify the For More News and and Chat to us",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    await LIB_Home.bc_ClickOnForMoreNewsInHomePage();
+    await LIB_Common.bc_VerifyH1Header(Data_Newsroom.Newsroom_Header);
+    await LIB_Newsroom.bc_VerifyTopDescription(Data_Newsroom.Top_Description);
+    await LIB_Newsroom.bc_VerifySocialClubEvents();
+
+    await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
+
+    // Click on Chat to us button in home page and verify the contact us page
+    await LIB_Common.bc_ClickOnButton("Chat To Us", 1);
+    await LIB_Common.bc_VerifyH1Header("Contact Us");
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Contact_Us_Description, 1);
+    await LIB_ContactUs.bc_VerifyContactUsPage();
+    await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
+  });
+
+  // Covered Test Case Number : SG-25, SG-26, SG-27
+  it("Verify the Newsroom page and Careers section", async () => {
+    allureReporter.addStory(
+      "Swivel Group Site Verify the Newsroom page and Careers section",
+    );
+    allureReporter.startStep(
+      "Swivel Group -> Home Page ->  Newsroom -> Verify all articles and navigate to careers page  ",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    await LIB_Home.bc_ClickOnForMoreNewsInHomePage();
+    await LIB_Common.bc_VerifyH1Header(Data_Newsroom.Newsroom_Header);
+    await LIB_Newsroom.bc_VerifyTopDescription(Data_Newsroom.Top_Description);
+    await LIB_Newsroom.bc_VerifySocialClubEvents();
+
+    // Verify the Article Bowling Tournament
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_BowlingTournament,
+      Data_Newsroom.BowlingTournament_Description,
+    );
+
+    // Verify the Article Sinhala And Tamil New Year 2023
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_SinhalaAndTamilNewYear2023,
+      Data_Newsroom.SinhalaAndTamilNewYear2023_Description,
+    );
+
+    // Verify the Article 4th Anniversary
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_4thAnniversary,
+      Data_Newsroom.FourthAnniversary_Description,
+    );
+
+    // Verify the Article Run For Their Lives 2023
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_RunForTheirLives2023,
+      Data_Newsroom.RunForTheirLives2023_Description,
+    );
+
+    // Verify the Article Beach CleanUp
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_BeachCleanUp,
+      Data_Newsroom.BeachCleanUp_Description,
+    );
+
+    // Verify the Article New Year Celebrations
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_NewYearCelebrations,
+      Data_Newsroom.NewYearCelebrations_Description,
+    );
+
+    // Verify the Article Christmas Party 2022
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_ChristmasParty2022,
+      Data_Newsroom.ChristmasParty2022_Description,
+    );
+
+    // Verify the Article Badminton Tournament 2022
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_BadmintonTournament2022,
+      Data_Newsroom.BadmintonTournament2022_Description,
+    );
+
+    // Verify the Article Swivel Retreat In Bentota 2022
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_SwivelRetreatInBentota2022,
+      Data_Newsroom.SwivelRetreatInBentota2022_Description,
+    );
+
+    await LIB_Newsroom.bc_VerifyWantToWorkWithUs(
+      Data_Newsroom.Title_WantToWorkWithUs,
+      Data_Newsroom.WantToWorkWithUs_Description,
+    );
+
+    await LIB_Common.bc_VerifyTheButton("Explore Opportunities", 1);
+    await LIB_Common.bc_ClickOnButton("Explore Opportunities", 1);
+    await LIB_Common.bc_VerifyH1Header(Data_Careers.Careers_Header);
+    await LIB_Careers.bc_VerifyTopDescription(
+      Data_Careers.Careers_Header,
+      Data_Careers.Top_Description,
+    );
   });
 });

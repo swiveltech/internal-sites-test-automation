@@ -77,6 +77,10 @@ class HomePage {
   get lnk_CookiePolicy() {
     return $("//a[text()='Cookie Policy']");
   }
+
+  get lnk_ForMoreNews() {
+    return $("//a/p[text()='For More News']");
+  }
 }
 
 export default new HomePage();

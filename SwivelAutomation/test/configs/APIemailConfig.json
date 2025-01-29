@@ -1,5 +1,0 @@
-{
-  "AUTHTOKEN": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODA3NjAxNzUsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImF1dG9tYXRpb25AYnVnZm9vLmNvbSIsImlkIjoiNjQyZTVjNGRlMjQ4YWYzZTExMGNlNmQ3IiwibWVyY3VyZSI6eyJzdWJzY3JpYmUiOlsiL2FjY291bnRzLzY0MmU1YzRkZTI0OGFmM2UxMTBjZTZkNyJdfX0.emcgls-9EjGyNjpU1qznoKsBS6RiDpW8b2cIrN5qMaeXy7a8v1Gh5naTwWRTIaeboCtq_DpVIc2N4hD4fwJ4pg",
-  "GET_ALL_MAILS": "https://api.mail.tm/messages",
-  "GET_MESSAGE_RESOURCE": "https://api.mail.tm"
-}

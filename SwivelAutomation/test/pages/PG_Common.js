@@ -11,7 +11,7 @@ class CommonPage {
   }
 
   ele_lblH1Header(Label) {
-    return $(`//h1[text()='${Label}']`);
+    return $(`//h1[text()="${Label}"]`);
   }
 
   lnk_Navigation(Label) {
