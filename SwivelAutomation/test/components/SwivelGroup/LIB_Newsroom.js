@@ -93,7 +93,7 @@ class Newsroom {
         description,
       () => {
         console.log(
-          "VVerify the Want To Work With Us in Newsroom page with description as : " +
+          "Verify the Want To Work With Us in Newsroom page with description as : " +
             description,
         );
       },
