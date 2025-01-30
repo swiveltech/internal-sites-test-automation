@@ -175,28 +175,28 @@ describe("Swivel Group Site", () => {
     await LIB_Common.bc_VerifyPageHeader(Data_Home.HomePage_Top_Description, 1);
     await LIB_Common.bc_VerifyTheButton("Find Out More", 1);
 
-    await LIB_Home.bc_ClickOptionFromFooterPanel("Home", 1);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Home");
     // Verify the Top Description
     await LIB_Common.bc_VerifyPageHeader(Data_Home.HomePage_Top_Description, 1);
     await LIB_Common.bc_VerifyTheButton("Find Out More", 1);
 
     // Navigate to About Us tab
-    await LIB_Home.bc_ClickOptionFromFooterPanel("About Us", 2);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("About Us");
     await LIB_Common.bc_VerifyTheAppURL("about-us");
     await LIB_Common.bc_VerifyH1Header("A Trusted Global Partner");
 
     // Navigate to Newsroom tab
-    await LIB_Home.bc_ClickOptionFromFooterPanel("Newsroom", 3);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Newsroom");
     await LIB_Common.bc_VerifyTheAppURL("newsroom");
     await LIB_Common.bc_VerifyH1Header("Newsroom");
 
     // Navigate to Careers tab
-    await LIB_Home.bc_ClickOptionFromFooterPanel("Careers", 4);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Careers");
     await LIB_Common.bc_VerifyTheAppURL("careers");
     await LIB_Common.bc_VerifyH1Header("Careers");
 
     // Navigate to Sitemap tab
-    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap", 5);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
     await LIB_Common.bc_VerifyTheAppURL("sitemap");
     await LIB_Common.bc_VerifyH1Header("Sitemap");
   });

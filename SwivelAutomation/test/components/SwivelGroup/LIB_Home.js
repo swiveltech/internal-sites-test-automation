@@ -311,12 +311,12 @@ class Home {
   /**
    * a method to Click option from the footer panel
    */
-  async bc_ClickOptionFromFooterPanel(tabName, index) {
-    let element = await PG_Home.ele_FooterTab(tabName, index);
+  async bc_ClickOptionFromFooterPanel(tabName) {
+    let element = await PG_Home.ele_FooterTab(tabName);
 
     await element.scrollIntoView({ block: "center", inline: "center" });
     await browser.pause(1000);
-    await PG_Home.ele_FooterTab(tabName, index).click();
+    await PG_Home.ele_FooterTab(tabName).click();
     await browser.pause(1000);
     allureReporter.step(
       "Click on the Footer Tab name " + tabName + " is present. ",
