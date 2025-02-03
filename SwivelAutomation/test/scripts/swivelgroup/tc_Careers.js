@@ -18,5 +18,35 @@ describe("Swivel Group Site -> Careers Page ", () => {
     allureReporter.addStory("Swivel Group Site Careers Page");
     allureReporter.startStep("Swivel Group -> Verify the Careers Page");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Careers.Careers_Header);
+    await LIB_Careers.bc_VerifyTopDescription(
+      Data_Careers.Careers_Header,
+      Data_Careers.Top_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Check Openings", 1);
+
+    //Verify the sub title and description as Life at Swivel
+    await LIB_Common.bc_VerifyPageHeader(Data_Careers.SubTitle_LifeAtSwivel, 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Careers.LifeAtSwivel_Description,
+      1,
+    );
+
+    // Verify the Our Benefits
+    await LIB_Common.bc_VerifyPageHeader(Data_Careers.SubTitle_OurBenefits, 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Careers.OurBenefits_Description,
+      1,
+    );
+
+    // Tile 1 Pegging
+    await LIB_Careers.bc_VerifyPeggingTile(
+      Data_Careers.OurBenefits_SubTitle_PeggedSalaries,
+      Data_Careers.PeggedSalaries_Description,
+    );
   });
 });

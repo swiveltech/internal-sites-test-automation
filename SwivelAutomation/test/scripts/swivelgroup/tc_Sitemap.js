@@ -1,19 +1,14 @@
 import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Sitemap from "../../components/SwivelGroup/LIB_Sitemap.js";
-import LIB_Newsroom from "../../components/SwivelGroup/LIB_Newsroom.js";
-import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Sitemap from "../../data/swivelGroup/dt_sitemap.json" assert { type: "json" };
 import Data_AboutUs from "../../data/swivelGroup/dt_aboutUs.json" assert { type: "json" };
 import Data_SwivelFinance from "../../data/swivelGroup/dt_swivelFinance.json" assert { type: "json" };
 import Data_SwivelTalent from "../../data/swivelGroup/dt_swivelTalent.json" assert { type: "json" };
 import Data_Careers from "../../data/swivelGroup/dt_careers.json" assert { type: "json" };
-import Data_Cookies from "../../data/swivelGroup/dt_cookie.json" assert { type: "json" };
 import Data_PrivacyPolicy from "../../data/swivelGroup/dt_privacyPolicy.json" assert { type: "json" };
 import Data_ContactUs from "../../data/swivelGroup/dt_contactUs.json" assert { type: "json" };
-import Data_Newsroom from "../../data/swivelGroup/dt_newsroom.json" assert { type: "json" };
-import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
 
@@ -158,11 +153,122 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Foundation,
     );
-    await browser.pause(2000);
-    await LIB_Common.bc_TakeScreenShot("Swivel Talent Page From Sitemap");
+    console.log("Time for the pause is started");
+    await browser.pause(10000);
+    console.log("Time for the pause is ended");
     await browser.switchWindow("Home - Swivel Foundation");
-    await LIB_Common.bc_TakeScreenShot("Swivel Foundation Site");
+    await LIB_Common.bc_TakeScreenShot("Swivel Foundation Page From Sitemap");
     await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Careers -> Intro
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Careers,
+      Data_Sitemap.Careers_SubTitleAsOption_Intro,
+    );
+    await LIB_Common.bc_VerifyH1Header(Data_Careers.Careers_Header);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
+
+    // Verify the page navigation Careers -> Life At Swivel
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Careers,
+      Data_Sitemap.Careers_SubTitleAsOption_LifeAtSwivel,
+    );
+    await LIB_Common.bc_VerifyPageHeader(Data_Careers.SubTitle_LifeAtSwivel, 1);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
+
+    // Verify the page navigation Careers -> Our Benefits
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Careers,
+      Data_Sitemap.Careers_SubTitleAsOption_OurBenefits,
+    );
+    await LIB_Common.bc_VerifyPageHeader(Data_Careers.SubTitle_OurBenefits, 1);
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
+
+    // Verify the page navigation Careers -> Our Job Openings
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Careers,
+      Data_Sitemap.Careers_SubTitleAsOption_OurJobOpenings,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Careers.SubTitle_OurJobOpenings,
+      1,
+    );
+    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
+
+    // Verify the page navigation Others -> Newsroom
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Others,
+      Data_Sitemap.Others_SubTitleAsOption_Newsroom,
+    );
+    await browser.switchWindow(
+      "Swivel Group - Global Business Consultancy Firm in Australia",
+    );
+    await LIB_Common.bc_TakeScreenShot("Newsroom - Swivel Group From Sitemap");
+    await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Others -> Contact Us
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Others,
+      Data_Sitemap.Others_SubTitleAsOption_ContactUs,
+    );
+    await browser.switchWindow("Contact Us - Swivel Group");
+    await LIB_Common.bc_TakeScreenShot(
+      "Contact Us - Swivel Group From Sitemap",
+    );
+    await LIB_Common.bc_VerifyH1Header(Data_ContactUs.ContactUs_Header);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Others -> Privacy Policy
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Others,
+      Data_Sitemap.Others_SubTitleAsOption_PrivacyPolicy,
+    );
+    await browser.switchWindow("Swivel Group - Privacy Policy");
+    await LIB_Common.bc_TakeScreenShot(
+      "Privacy Policy - Swivel Group From Sitemap",
+    );
+    await LIB_Common.bc_VerifyH1Header(Data_PrivacyPolicy.PrivacyPolicy_Header);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Social Media -> Facebook
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_SocialMedia,
+      Data_Sitemap.SocialMedia_SubTitleAsOption_Facebook,
+    );
+    await browser.switchWindow("Swivel Group | Facebook");
+    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Social Media -> Twitter
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_SocialMedia,
+      Data_Sitemap.SocialMedia_SubTitleAsOption_Twitter,
+    );
+    await browser.pause(8000);
+    await browser.switchWindow("Log in to X / X");
+    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Social Media -> Linkedin
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_SocialMedia,
+      Data_Sitemap.SocialMedia_SubTitleAsOption_Linkedin,
+    );
+    await browser.switchWindow("Swivel Group | LinkedIn");
+    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Social Media -> Instagram
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_SocialMedia,
+      Data_Sitemap.SocialMedia_SubTitleAsOption_Instagram,
+    );
+    await browser.switchWindow(
+      "Swivel Group (@swivel.group) • Instagram photos and videos",
+    );
+    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 });

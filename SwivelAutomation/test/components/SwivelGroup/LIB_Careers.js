@@ -21,80 +21,38 @@ class Careers {
   }
 
   /**
-   * a method to Verify the Social Club Events
+   * a method to Verify the Pegging tile
    */
-  async bc_VerifySocialClubEvents() {
+  async bc_VerifyPeggingTile(Title, Description) {
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblSocialClubEvents,
+      PG_Careers.img_Pegging,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Pegging Icon is present.", () => {
+      console.log("Verify the Pegging Icon is present.");
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Pegging Title as " + Title, () => {
+      console.log("Verify the Pegging Title as " + Title);
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     allureReporter.step(
-      "Verify the Social Club Events in Newsroom page",
-      () => {
-        console.log("Verify the Social Club Events in Newsroom page");
-      },
-    );
-  }
-
-  /**
-   * a method to Verify the Articles
-   */
-  async bc_VerifyArticles(articleTitle, articleDescription) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblH3Header(articleTitle),
-      "Element not exist",
-    );
-    allureReporter.step(
-      "Verify the Article Title in Newsroom page as : " + articleTitle,
+      "Verify the Pegging Title as " +
+        Title +
+        " and description as " +
+        Description,
       () => {
         console.log(
-          "Verify the Article Title in Newsroom page as : " + articleTitle,
-        );
-      },
-    );
-
-    await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblArticleDescription(articleTitle, articleDescription),
-      "Element not exist",
-    );
-    allureReporter.step(
-      "Verify the Article Description in Newsroom page as : " +
-        articleDescription,
-      () => {
-        console.log(
-          "Verify the Article Description in Newsroom page as : " +
-            articleDescription,
-        );
-      },
-    );
-  }
-
-  /**
-   * a method to Verify the Want To Work With Us
-   */
-  async bc_VerifyWantToWorkWithUs(header, description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblH4Header(header),
-      "Element not exist",
-    );
-    allureReporter.step(
-      "Verify the Want To Work With Us in Newsroom page",
-      () => {
-        console.log("Verify the Want To Work With Us in Newsroom page");
-      },
-    );
-
-    await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblH4HeaderWithDescription(header, description),
-      "Element not exist",
-    );
-    allureReporter.step(
-      "Verify the Want To Work With Us in Newsroom page with description as : " +
-        description,
-      () => {
-        console.log(
-          "VVerify the Want To Work With Us in Newsroom page with description as : " +
-            description,
+          "Verify the Pegging Title as " +
+            Title +
+            " and description as " +
+            Description,
         );
       },
     );

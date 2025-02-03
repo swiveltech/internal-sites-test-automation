@@ -184,7 +184,7 @@ class Common {
 
     //make sure to switch to previous window before continuing
     await browser.switchToWindow(handles[0]);
-    await browser.pause(1000);
+    await browser.pause(2000);
     allureReporter.step("Close the current Tab and force to first tab", () => {
       console.log("Close the current Tab and force to first tab");
     });
