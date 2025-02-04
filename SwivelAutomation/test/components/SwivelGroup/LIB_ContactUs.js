@@ -176,5 +176,40 @@ class ContactUs {
       console.log("Click on Footer logo");
     });
   }
+
+  /**
+   * a method to Type email address
+   */
+  async bc_TypeEmailAddress(emailAddress) {
+    await PG_ContactUs.tf_Email.clearValue();
+    await PG_ContactUs.tf_Email.addValue(emailAddress);
+    allureReporter.step("Email Address type as " + emailAddress, () => {
+      console.log("Email Address type as " + emailAddress);
+    });
+  }
+
+  /**
+   * a method to Type Phone number
+   */
+  async bc_TypePhoneNumber(phoneNumber) {
+    await PG_ContactUs.tf_PhoneNumber.clearValue();
+    await PG_ContactUs.tf_PhoneNumber.addValue(phoneNumber);
+    allureReporter.step("Phone number type as " + phoneNumber, () => {
+      console.log("Phone number type as " + phoneNumber);
+    });
+  }
+
+  /**
+   * a method to Verify the Error Message
+   */
+  async bc_VerifyErrorMessage(errorMessage) {
+    await assertionHandler.assertElementDisplayed(
+      PG_ContactUs.ele_lblErrorMessage(errorMessage),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Error Message as " + errorMessage, () => {
+      console.log("Verify the Error Message as " + errorMessage);
+    });
+  }
 }
 export default new ContactUs();

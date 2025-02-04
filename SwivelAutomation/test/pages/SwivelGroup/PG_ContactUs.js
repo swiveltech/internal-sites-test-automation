@@ -12,28 +12,32 @@ class ContactUs {
 
   get tf_Name() {
     return $(
-      '//label[text()="Name "]/following-sibling::div/input[@id="firstname"]',
+      '//label[contains(normalize-space(), "Name")]/following-sibling::div/input[@id="firstname"]',
     );
   }
 
   get tf_Email() {
     return $(
-      '//label[text()="Email "]/following-sibling::div/input[@id="email"]',
+      '//label[contains(normalize-space(), "Email")]/following-sibling::div/input[@id="email"]',
     );
   }
 
   get ele_ddSubject() {
-    return $('//label[text()="Subject "]/following-sibling::div/select');
+    return $(
+      '//label[contains(normalize-space(), "Subject")]/following-sibling::div/select',
+    );
   }
 
   get tf_PhoneNumber() {
     return $(
-      '//label[text()="Phone "]/following-sibling::div/input[@id="phone"]',
+      '//label[contains(normalize-space(), "Phone")]/following-sibling::div/input[@id="phone"]',
     );
   }
 
   get tf_Message() {
-    return $('//label[text()="Message "]/following-sibling::div/textarea');
+    return $(
+      '//label[contains(normalize-space(), "Message")]/following-sibling::div/textarea',
+    );
   }
 
   get ele_lblEmailUs() {

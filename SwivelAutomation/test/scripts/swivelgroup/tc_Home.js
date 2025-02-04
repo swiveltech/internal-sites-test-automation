@@ -8,7 +8,7 @@ import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json
 import Data_ContactUs from "../../data/swivelGroup/dt_contactUs.json" assert { type: "json" };
 import Data_Newsroom from "../../data/swivelGroup/dt_newsroom.json" assert { type: "json" };
 
-describe("Swivel Group Site", () => {
+describe("Swivel Group Site -> Home Page ", () => {
   // Covered Test Case Number : SG-1, SG-6, SG-7,SG-12, SG-13, SG-17
   it("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel group Home Page");
@@ -307,6 +307,7 @@ describe("Swivel Group Site", () => {
       "Swivel Group -> Home Page ->  Our Brands -> Verify the navigation",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    await browser.pause(3000);
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
     //Click on the our brand links

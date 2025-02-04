@@ -26,7 +26,7 @@
     "prettier": "^3.4.2",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-safaridriver-service": "^2.1.1",
-    "webdriverio": "^8.6.0"
+    "webdriverio": "^8.41.0"
   },
   "scripts": {
     "allure-report": "allure generate ./reports/allure-results --clean && allure open",
