@@ -33,8 +33,8 @@ class Home {
     console.log("Full URL After Navigating : " + currentUrl);
     assertionHandler.assertEqual(
       currentUrl,
-      config.DEFAULT_URL,
-      `Expected "${config.DEFAULT_URL}" but got "${currentUrl}"`,
+      config.URLS.SWIVEL_GROUP,
+      `Expected "${config.URLS.SWIVEL_GROUP}" but got "${currentUrl}"`,
     );
     allureReporter.step(
       "Click on Application logo and Verify the App URL to the Home Screen",
@@ -459,14 +459,30 @@ class Home {
    *
    */
   async bc_ClickOnFacebookIcon() {
-    const element = await PG_Home.icn_Facebook;
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.icn_Facebook;
     await element.scrollIntoView({ block: "center", inline: "center" });
-    await browser.pause(1000);
-    await PG_Home.icn_Facebook.click();
-    await browser.pause(2000);
+    await element.click();
+
     allureReporter.step("Click on Facebook in home page.", () => {
       console.log("Click on Facebook in home page.");
     });
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(1000);
   }
 
   /**
@@ -495,11 +511,26 @@ class Home {
    *
    */
   async bc_ClickOnInstagramIcon() {
-    const element = await PG_Home.icn_Facebook;
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.icn_Instagram;
     await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.click();
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
     await browser.pause(1000);
-    await PG_Home.icn_Instagram.click();
-    await browser.pause(2000);
     allureReporter.step("Click on Instagram in home page.", () => {
       console.log("Click on Instagram in home page.");
     });
@@ -531,11 +562,30 @@ class Home {
    *
    */
   async bc_ClickOnTwitterIcon() {
-    await PG_Home.icn_Twitter.click();
-    await browser.pause(2000);
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.icn_Twitter;
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.click();
+
     allureReporter.step("Click on Twitter in home page.", () => {
       console.log("Click on Twitter in home page.");
     });
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(2000);
   }
 
   /**
@@ -564,8 +614,26 @@ class Home {
    *
    */
   async bc_ClickOnLinkedinIcon() {
-    await PG_Home.icn_Linkedin.click();
-    await browser.pause(2000);
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.icn_Linkedin;
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.click();
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(1000);
     allureReporter.step("Click on Linkedin in home page.", () => {
       console.log("Click on Linkedin in home page.");
     });
@@ -600,9 +668,26 @@ class Home {
     allureReporter.step("Click on Lets Talk button in Home page", () => {
       console.log("Click on Lets Talk button in Home page");
     });
-    await browser.pause(2000);
     await LIB_Common.bc_VerifyH1Header("Contact Us");
     await LIB_Common.bc_VerifyTheAppURL("contact-us");
+  }
+
+  /**
+   * a method to Verify the Phone number in home page
+   */
+  async bc_VerifyThePhoneNumberInHomePage(phoneNumber) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_ContactNumber(phoneNumber),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Phone number as : " + phoneNumber + " in Home page",
+      () => {
+        console.log(
+          "Verify the Phone number as : " + phoneNumber + " in Home page",
+        );
+      },
+    );
   }
 
   /**
@@ -610,7 +695,6 @@ class Home {
    */
   async bc_ClickOnPhoneNumberInHomePage(phoneNumber) {
     await PG_Home.ele_ContactNumber(phoneNumber).click();
-    await browser.pause(2000);
     allureReporter.step(
       "Click on Phone number as : " + phoneNumber + " in Home page",
       () => {
@@ -625,25 +709,34 @@ class Home {
    * a method to Click on Our Brands links in home page
    */
   async bc_ClickOnOurBrandsLinksInHomePage(brandTitle, brandLink) {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
     let element = await PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink);
     await element.scrollIntoView({ block: "center", inline: "center" });
-    await browser.pause(1000);
-    await PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink).click();
-    await browser.pause(3000);
+    await element.click();
+
     allureReporter.step(
-      "Click on Our Brand title is " +
-        brandTitle +
-        " and brand link is " +
-        brandLink,
-      () => {
+      `Clicked on Our Brand title: ${brandTitle}, Brand link: ${brandLink}`,
+      () =>
         console.log(
-          "Click on Our Brand title is " +
-            brandTitle +
-            " and brand link is " +
-            brandLink,
-        );
-      },
+          `Clicked on Our Brand title: ${brandTitle}, Brand link: ${brandLink}`,
+        ),
     );
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(2000);
   }
 
   /**
@@ -652,9 +745,9 @@ class Home {
   async bc_ClickOnForMoreNewsInHomePage() {
     let element = await PG_Home.lnk_ForMoreNews;
     await element.scrollIntoView({ block: "center", inline: "center" });
-    await browser.pause(1000);
+    await browser.pause(2000);
     await PG_Home.lnk_ForMoreNews.click();
-    await browser.pause(3000);
+    await browser.pause(2000);
     allureReporter.step("Click on For more news link in home page", () => {
       console.log("Click on For more news link in home page");
     });

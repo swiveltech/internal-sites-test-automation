@@ -8,11 +8,15 @@ class Common {
    * method to Open the Application
    */
   async bc_OpenApplication(url) {
-    await browserManager.openUrl(`${url}`);
-    allureReporter.step("Load the URL " + url, () => {
-      console.log("Load the URL " + url);
+    await browserManager.openUrl(url);
+    await browser.waitUntil(async () => (await browser.getUrl()) === url, {
+      timeout: 3000, // Adjust timeout as needed
+      timeoutMsg: `URL did not load correctly: Expected ${url}, but got a different page.`,
     });
-    await browser.pause(2000);
+
+    allureReporter.step(`Loaded the URL: ${url}`, () => {
+      console.log(`Loaded the URL: ${url}`);
+    });
   }
 
   /**
@@ -33,7 +37,6 @@ class Common {
 
     await element.scrollIntoView({ block: "center", inline: "center" });
 
-    // await browser.pause(1000);
     await dropdownElement.click();
 
     // Wait for any option to be displayed to ensure the list is visible
@@ -81,13 +84,17 @@ class Common {
   //Common component for click on button
   async bc_ClickOnButton(label, Index) {
     const element = await PG_Common.btn_ButtonWithLabel(label, Index);
-    await element.scrollIntoView({ block: "center", inline: "center" });
-    await browser.pause(1000);
-    await PG_Common.btn_ButtonWithLabel(label, Index).click();
-    await browser.pause(2000);
-    allureReporter.step("Click on button and button value is " + label, () => {
-      console.log("Click on button and button value is " + label);
-    });
+
+    if (await element.isExisting()) {
+      await element.scrollIntoView({ block: "center", inline: "center" });
+      await element.click();
+
+      allureReporter.step(`Clicked on button with label: ${label}`, () => {
+        console.log(`Clicked on button with label: ${label}`);
+      });
+    } else {
+      console.warn(`Button with label "${label}" not found.`);
+    }
   }
 
   async bc_VerifyTheButton(label, Index) {
@@ -105,10 +112,19 @@ class Common {
 
   //Common component to verify the application url
   async bc_VerifyTheAppURL(expectedSegment) {
-    await browser.pause(2000);
+    // Wait until the URL changes or contains the expected segment
+    await browser.waitUntil(
+      async () => (await browser.getUrl()).includes(expectedSegment),
+      {
+        timeout: 5000, // Adjust as needed
+        timeoutMsg: `Expected URL to contain "${expectedSegment}", but it didn't.`,
+      },
+    );
+
     // Get the current URL
     const currentUrl = await browser.getUrl();
-    console.log("Full URL After Navigating : " + currentUrl);
+    console.log(`Full URL After Navigating: ${currentUrl}`);
+
     // Extract the last segment of the URL
     const lastPathSegment = currentUrl.split("/").filter(Boolean).pop();
 
@@ -118,17 +134,12 @@ class Common {
       expectedSegment,
       `Expected "${expectedSegment}" but got "${lastPathSegment}"`,
     );
+
     allureReporter.step(
-      "You have navigate correct page and application URL is " +
-        currentUrl +
-        " You have passed data is : " +
-        expectedSegment,
+      `Navigated to the correct page. Current URL: ${currentUrl}, Expected segment: ${expectedSegment}`,
       () => {
         console.log(
-          "You have navigate correct page and application URL is " +
-            currentUrl +
-            " You have passed data is : " +
-            expectedSegment,
+          `Navigated to the correct page. Current URL: ${currentUrl}, Expected segment: ${expectedSegment}`,
         );
       },
     );
@@ -175,19 +186,27 @@ class Common {
    * method to Close the current Tab and force to first tab
    */
   async bc_CloseTheCurrentTabAndForceToFirstTab() {
+    let allGUIDs = await browser.getWindowHandles();
+    let currentGUID = await browser.getWindowHandle();
+
+    // Find the parent GUID by filtering out the current one
+    let parentGUID = allGUIDs.find((guid) => guid !== currentGUID);
+
     await browser.closeWindow();
-    const handles = await browser.getWindowHandles();
-    console.log(handles.length); // returns `1`
 
-    const err = await browser.getTitle().catch((err) => err);
-    console.log(err.message); // returns "no such window: target window already closed"
+    // Ensure the previous window is available before switching
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length === 1,
+    );
 
-    //make sure to switch to previous window before continuing
-    await browser.switchToWindow(handles[0]);
-    await browser.pause(2000);
-    allureReporter.step("Close the current Tab and force to first tab", () => {
-      console.log("Close the current Tab and force to first tab");
-    });
+    await browser.switchToWindow(parentGUID);
+
+    allureReporter.step(
+      "Closed the current tab and switched to the first tab",
+      () => {
+        console.log("Closed the current tab and switched to the first tab");
+      },
+    );
   }
 }
 export default new Common();

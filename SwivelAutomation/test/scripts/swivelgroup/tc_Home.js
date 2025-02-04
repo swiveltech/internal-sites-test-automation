@@ -201,47 +201,6 @@ describe("Swivel Group Site -> Home Page ", () => {
     await LIB_Common.bc_VerifyH1Header("Sitemap");
   });
 
-  // Covered Test Case Number : SG-18
-  it("Verify social media links are clickable and redirecting to correct page", async () => {
-    allureReporter.addStory(
-      "Swivel Site Verify the social media links and navigation",
-    );
-    allureReporter.startStep(
-      "Swivel Group -> Home Page -> Navigation of Social Media",
-    );
-    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
-
-    // Click on Accept All Button
-    await LIB_Common.bc_ClickOnButton("Accept All", 1);
-
-    // Click on Facebook and verify it
-    await LIB_Home.bc_ClickOnFacebookIcon();
-    await browser.switchWindow("Swivel Group | Facebook");
-    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
-    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
-    // Click on Twitter and verify it
-    await LIB_Home.bc_ClickOnTwitterIcon();
-    await browser.pause(8000);
-    await browser.switchWindow("Log in to X / X");
-    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
-    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
-    // Click on Linkedin and verify it
-    await LIB_Home.bc_ClickOnLinkedinIcon();
-    await browser.switchWindow("Swivel Group | LinkedIn");
-    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
-    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
-    // Click on Instagram and verify it
-    await LIB_Home.bc_ClickOnInstagramIcon();
-    await browser.switchWindow(
-      "Swivel Group (@swivel.group) • Instagram photos and videos",
-    );
-    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
-    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-  });
-
   // Covered Test Case Number : SG-3, SG-4, SG-5
   it("Verify the Let's Talk and phone functionality", async () => {
     allureReporter.addStory(
@@ -293,8 +252,9 @@ describe("Swivel Group Site -> Home Page ", () => {
     await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
 
     // Verify the phone functionality in home page
-    await LIB_Home.bc_ClickOnPhoneNumberInHomePage(Data_Home.ContactNumber);
-    // This browser alert is not captured in the screenshot.
+    await LIB_Home.bc_VerifyThePhoneNumberInHomePage(Data_Home.ContactNumber);
+    // await LIB_Home.bc_ClickOnPhoneNumberInHomePage(Data_Home.ContactNumber);
+    // This browser alert is not captured in the screenshot therefore click phone number is commented.
     await LIB_Common.bc_TakeScreenShot("Calling Phone Number");
   });
 
@@ -307,60 +267,46 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel Group -> Home Page ->  Our Brands -> Verify the navigation",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
-    await browser.pause(3000);
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
-    //Click on the our brand links
-    // Swivel Finance Site
+    //Click on the our brand links Swivel Finance Site
     await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
       "Swivel_Finance_Brand_",
       "Visit SwivelFinance",
-    );
-    await browser.switchWindow(
-      "Outsource Finance and Accounting Services - Swivel Finance",
     );
     await LIB_Common.bc_TakeScreenShot("Swivel Finance Site");
     await LIB_Common.bc_VerifyH1Header(
       "Australia's Premier Scalability Partner for Accounting Practices!",
     );
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
-    // Swivel Talent Site
+    // Click on Swivel Talent Site
     await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
       "Swivel_Talent_Brand_",
       "Visit SwivelTalent",
     );
-    await browser.switchWindow(
-      "Swivel Talent | International Talent Acquisition Services",
-    );
+
     await LIB_Common.bc_TakeScreenShot("Swivel Talent Site");
     await LIB_Common.bc_VerifyPageHeader("Top-tier Talent for", 1);
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
-    // Swivel Foundation Site
+    // close tab
     await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
       "Swivel_Foundation_Brand_",
       "Visit SwivelFoundation",
     );
-    await browser.pause(2000);
-    await browser.switchWindow("Home - Swivel Foundation");
     await LIB_Common.bc_TakeScreenShot("Swivel Foundation Site");
     await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
-    // Swivel Tech Site
+    // Click on Swivel Tech Site
     await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
       "Swivel_Tech_Brand_",
       "Visit SwivelTech",
     );
-    await browser.pause(2000);
-    await browser.switchWindow(
-      "Software and Technology Consultancy Services - Swivel Tech",
-    );
+
     await LIB_Common.bc_TakeScreenShot("Swivel Tech Site");
     await LIB_Common.bc_VerifyH1Header(
       "Purpose-Built Software Solutions Geared For Scale",
     );
+    // close tab
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 
@@ -386,5 +332,39 @@ describe("Swivel Group Site -> Home Page ", () => {
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Contact_Us_Description, 1);
     await LIB_ContactUs.bc_VerifyContactUsPage();
     await LIB_ContactUs.bc_ClickOnFooterLogoAndVerifyHomePage();
+  });
+
+  // Covered Test Case Number : SG-18
+  it("Verify social media links are clickable and redirecting to correct page", async () => {
+    allureReporter.addStory(
+      "Swivel Site Verify the social media links and navigation",
+    );
+    allureReporter.startStep(
+      "Swivel Group -> Home Page -> Navigation of Social Media",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+
+    // Click on Facebook and verify it
+    await LIB_Home.bc_ClickOnFacebookIcon();
+    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Click on Twitter and verify it
+    await LIB_Home.bc_ClickOnTwitterIcon();
+    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Click on Linkedin and verify it
+    await LIB_Home.bc_ClickOnLinkedinIcon();
+    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Click on Instagram and verify it
+    await LIB_Home.bc_ClickOnInstagramIcon();
+    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 });

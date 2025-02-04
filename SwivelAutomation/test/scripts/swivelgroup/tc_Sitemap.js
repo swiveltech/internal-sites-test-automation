@@ -22,7 +22,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
     await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
     await LIB_Common.bc_VerifyH1Header(Data_Sitemap.Sitemap_Header);
+    let parentGUID;
+    let childGUID;
 
+    // get parent GUID
+    parentGUID = await browser.getWindowHandle();
     // Verify the page navigation Home -> Intro
     await LIB_Sitemap.bc_ClickOnSubOption(
       Data_Sitemap.Title_Home,
@@ -96,10 +100,13 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Tech,
     );
-    await browser.pause(2000);
-    await browser.switchWindow(
-      "Software and Technology Consultancy Services - Swivel Tech",
-    );
+    // get all GUID's
+    let allGUIDs = await browser.getWindowHandles();
+
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot("Swivel Tech Site From Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
@@ -108,7 +115,6 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Finance,
     );
-    await browser.pause(2000);
     await LIB_Common.bc_TakeScreenShot("Swivel Finance Page From Sitemap");
     await LIB_Common.bc_VerifyH1Header(Data_SwivelFinance.SwivelFinance_Header);
     await LIB_Common.bc_VerifyPageHeader(Data_SwivelFinance.Top_Description, 1);
@@ -127,7 +133,6 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Talent,
     );
-    await browser.pause(2000);
     await LIB_Common.bc_TakeScreenShot("Swivel Talent Page From Sitemap");
     await LIB_Common.bc_VerifyPageHeader(
       Data_SwivelTalent.SwivelTalent_Header1,
@@ -153,10 +158,12 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Foundation,
     );
-    console.log("Time for the pause is started");
-    await browser.pause(10000);
-    console.log("Time for the pause is ended");
-    await browser.switchWindow("Home - Swivel Foundation");
+    // Get all window handles and find the child GUID
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot("Swivel Foundation Page From Sitemap");
     await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
@@ -201,9 +208,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_Others,
       Data_Sitemap.Others_SubTitleAsOption_Newsroom,
     );
-    await browser.switchWindow(
-      "Swivel Group - Global Business Consultancy Firm in Australia",
-    );
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot("Newsroom - Swivel Group From Sitemap");
     await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
@@ -213,7 +222,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_Others,
       Data_Sitemap.Others_SubTitleAsOption_ContactUs,
     );
-    await browser.switchWindow("Contact Us - Swivel Group");
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot(
       "Contact Us - Swivel Group From Sitemap",
     );
@@ -225,7 +238,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_Others,
       Data_Sitemap.Others_SubTitleAsOption_PrivacyPolicy,
     );
-    await browser.switchWindow("Swivel Group - Privacy Policy");
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot(
       "Privacy Policy - Swivel Group From Sitemap",
     );
@@ -237,7 +254,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_SocialMedia,
       Data_Sitemap.SocialMedia_SubTitleAsOption_Facebook,
     );
-    await browser.switchWindow("Swivel Group | Facebook");
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
@@ -246,8 +267,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_SocialMedia,
       Data_Sitemap.SocialMedia_SubTitleAsOption_Twitter,
     );
-    await browser.pause(8000);
-    await browser.switchWindow("Log in to X / X");
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
@@ -256,7 +280,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_SocialMedia,
       Data_Sitemap.SocialMedia_SubTitleAsOption_Linkedin,
     );
-    await browser.switchWindow("Swivel Group | LinkedIn");
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
@@ -265,9 +293,11 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_SocialMedia,
       Data_Sitemap.SocialMedia_SubTitleAsOption_Instagram,
     );
-    await browser.switchWindow(
-      "Swivel Group (@swivel.group) • Instagram photos and videos",
-    );
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
