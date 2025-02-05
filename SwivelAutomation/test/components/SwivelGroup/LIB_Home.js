@@ -465,11 +465,15 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Facebook;
     await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = element.getAttribute("href");
     await element.click();
 
-    allureReporter.step("Click on Facebook in home page.", () => {
-      console.log("Click on Facebook in home page.");
-    });
+    allureReporter.step(
+      "Click on Facebook in home page. Clicked URL : " + appUrl,
+      () => {
+        console.log("Click on Facebook in home page. Clicked URL : " + appUrl);
+      },
+    );
 
     // Wait until a new window appears
     await browser.waitUntil(
@@ -482,7 +486,6 @@ class Home {
 
     // Switch to child window
     await browser.switchToWindow(childGUID);
-    await browser.pause(1000);
   }
 
   /**
@@ -517,6 +520,7 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Instagram;
     await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = element.getAttribute("href");
     await element.click();
 
     // Wait until a new window appears
@@ -530,10 +534,12 @@ class Home {
 
     // Switch to child window
     await browser.switchToWindow(childGUID);
-    await browser.pause(1000);
-    allureReporter.step("Click on Instagram in home page.", () => {
-      console.log("Click on Instagram in home page.");
-    });
+    allureReporter.step(
+      "Click on Instagram in home page. Click URL : " + appUrl,
+      () => {
+        console.log("Click on Instagram in home page. Click URL : " + appUrl);
+      },
+    );
   }
 
   /**
@@ -568,11 +574,15 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Twitter;
     await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = element.getAttribute("href");
     await element.click();
 
-    allureReporter.step("Click on Twitter in home page.", () => {
-      console.log("Click on Twitter in home page.");
-    });
+    allureReporter.step(
+      "Click on Twitter in home page. Clicked URL : " + appUrl,
+      () => {
+        console.log("Click on Twitter in home page. Clicked URL : " + appUrl);
+      },
+    );
 
     // Wait until a new window appears
     await browser.waitUntil(
@@ -620,6 +630,7 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Linkedin;
     await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = element.getAttribute("href");
     await element.click();
 
     // Wait until a new window appears
@@ -634,9 +645,12 @@ class Home {
     // Switch to child window
     await browser.switchToWindow(childGUID);
     await browser.pause(1000);
-    allureReporter.step("Click on Linkedin in home page.", () => {
-      console.log("Click on Linkedin in home page.");
-    });
+    allureReporter.step(
+      "Click on Linkedin in home page. Clicked URL : " + appUrl,
+      () => {
+        console.log("Click on Linkedin in home page. Clicked URL : " + appUrl);
+      },
+    );
   }
 
   /**

@@ -7,5 +7,11 @@ class Sitemap {
       `//p[text()="${title}"]/following-sibling::div/a/p[text()="${option}"]`,
     );
   }
+
+  lnk_SubOptionInBottomToGetLink(title, option) {
+    return $(
+      `//p[text()="${title}"]/following-sibling::div/a/p[text()="${option}"]/..`,
+    );
+  }
 }
 export default new Sitemap();

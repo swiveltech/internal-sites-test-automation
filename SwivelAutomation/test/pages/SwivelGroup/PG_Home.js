@@ -55,19 +55,19 @@ class HomePage {
   }
 
   get icn_Facebook() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[1]");
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[1]/a");
   }
 
   get icn_Instagram() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[2]");
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[2]/a");
   }
 
   get icn_Twitter() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[3]");
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[3]/a");
   }
 
   get icn_Linkedin() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[4]");
+    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[4]/a");
   }
 
   get lnk_PrivacyPolicy() {
