@@ -8,13 +8,13 @@ import Data_Home from "../../data/swivelGroup/dt_home.json" assert { type: "json
 import Data_ContactUs from "../../data/swivelGroup/dt_contactUs.json" assert { type: "json" };
 import Data_Newsroom from "../../data/swivelGroup/dt_newsroom.json" assert { type: "json" };
 
-describe("Swivel Group Site -> Home Page ", () => {
+describe("Swivel Finance Site -> Home Page ", () => {
   // Covered Test Case Number : SG-1, SG-6, SG-7,SG-12, SG-13, SG-17
   it("Verify the Home Page", async () => {
-    allureReporter.addFeature("Verify the Swivel group Home Page");
+    allureReporter.addFeature("Verify the Swivel Finance Home Page");
     allureReporter.addStory("Home Page");
-    allureReporter.startStep("Swivel Group -> Home Page Verification");
-    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    allureReporter.startStep("Swivel Finance -> Home Page Verification");
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_FINANCE);
     // Verify the Headers and top panel
     await LIB_Home.bc_VerifyHomePageLogo();
     await LIB_Home.bc_VerifyHomeScreenTopPanel(
