@@ -2,72 +2,35 @@ class HomePage {
   /**
    * define selectors using getter methods
    */
-  get img_SwivelGroupLogo() {
-    return $('//div[@class="image-min-width"]/a/img');
+  get img_SwivelFinanceLogo() {
+    return $('//img[@alt="Swivel Logo"]/..');
   }
 
   ele_HeaderTab(tabName) {
-    return $(`//div[@id='header-nav']/descendant::a[text()='${tabName}']`);
+    return $(
+      `(//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()='${tabName}'])[1]`,
+    );
   }
 
   ele_ContactNumber(contactNumber) {
     return $(
-      `//div[@id='contact']/descendant::span[text()='${contactNumber}']`,
+      `//div[@class='flex']/a[1]/child::span[text()='${contactNumber}']`,
     );
   }
 
   get btn_LetsTalk() {
-    return $(`//div[@id='contact']/descendant::button[text()="Let's Talk"]`);
-  }
-
-  ele_TitleInExpertsIn(textValue, index) {
-    return $(
-      `//span[text()='Experts In']/../following-sibling::div/div[${index}]/span[text()='${textValue}']`,
-    );
-  }
-
-  ele_TitleInCenter(textValueForTitle, textValueForDescription, index) {
-    return $(
-      `//span[text()='0${index}']/following-sibling::span[text()='${textValueForTitle}']/following-sibling::span[text()="${textValueForDescription}"]`,
-    );
-  }
-
-  ele_OurBrands(title, description) {
-    return $(
-      `//img[contains(@alt,'${title}')]/../../p[text()="${description}"]`,
-    );
-  }
-
-  ele_OurBrandsWithLink(title, link) {
-    return $(
-      `//img[contains(@alt,'${title}')]/../..//following-sibling::a/p[text()='${link}']`,
-    );
-  }
-
-  lnk_OurBrandsWithLink(title) {
-    return $(`//img[contains(@alt,'${title}')]/../..//following-sibling::a`);
+    return $(`//div[@class="flex"]/a[2]/button[text()="Let’s Talk"]`);
   }
 
   ele_FooterTab(textValue) {
-    return $(
-      `//div[@class='footer-wrapper']/descendant::div[1]/div[2]/ul/li/a[text()='${textValue}']`,
-    );
+    return $(`//nav[@aria-label="Main"]/li/a[text()="${textValue}"]`);
   }
-
-  get icn_Facebook() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[1]/a");
-  }
-
   get icn_Instagram() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[2]/a");
-  }
-
-  get icn_Twitter() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[3]/a");
+    return $(`//img[@alt="insta-hover.png"]/..`);
   }
 
   get icn_Linkedin() {
-    return $("//nav[@class='navbar navbar-expand social-media']/ul/li[4]/a");
+    return $(`//img[@alt="linked-in-hover.png"]/..`);
   }
 
   get lnk_PrivacyPolicy() {
@@ -78,8 +41,10 @@ class HomePage {
     return $("//a[text()='Cookie Policy']");
   }
 
-  get lnk_ForMoreNews() {
-    return $("//a/p[text()='For More News']");
+  ele_ServicesWeDeliverTile(Title, SubTitle) {
+    return $(
+      `//h4[text()='${Title}']/following-sibling::div/div/div/p[text()='${SubTitle}']`,
+    );
   }
 }
 
