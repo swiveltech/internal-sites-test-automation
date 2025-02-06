@@ -2,7 +2,7 @@ import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
+import Data_Careers from "../../data/swivelGroup/dt_careers.json" assert { type: "json" };
 import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
 
 describe("Swivel Group Site -> Careers Page ", () => {
@@ -11,7 +11,6 @@ describe("Swivel Group Site -> Careers Page ", () => {
     allureReporter.addStory("Swivel Group Site Careers Page");
     allureReporter.startStep("Swivel Group -> Verify the Careers Page");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
-    await browser.pause(2000);
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
     // Navigate to home tab

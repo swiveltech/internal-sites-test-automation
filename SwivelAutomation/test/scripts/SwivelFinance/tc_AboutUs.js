@@ -3,8 +3,8 @@ import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_AboutUs from "../../data/SwivelGroup/dt_aboutUs.json" assert { type: "json" };
-import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
+import Data_AboutUs from "../../data/swivelGroup/dt_aboutUs.json" assert { type: "json" };
+import Data_Careers from "../../data/swivelGroup/dt_careers.json" assert { type: "json" };
 
 describe("Swivel Group Site -> About Us", () => {
   // Covered Test Case Number : SG-19, SG-20, SG-21, SG-22, SG-23, SG24
@@ -12,6 +12,8 @@ describe("Swivel Group Site -> About Us", () => {
     allureReporter.addStory("Swivel Group Site About Us");
     allureReporter.startStep("Swivel Group -> Verify the About Us Page");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
     // Navigate to About Us tab
     await LIB_Home.bc_NavigateToTabFromTopNavigation("About Us");
 
