@@ -1,9 +1,6 @@
 import config from "../../../config.json" assert { type: "json" };
 import allureReporter from "@wdio/allure-reporter";
-import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Careers from "../../data/swivelGroup/dt_careers.json" assert { type: "json" };
-import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
 
 describe("Swivel Finance Site -> Careers Page ", () => {
   // Covered Test Case Number : SG-28, SG-30, SG-31

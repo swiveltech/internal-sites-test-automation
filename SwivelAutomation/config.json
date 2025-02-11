@@ -15,7 +15,7 @@
   "DEFAULT_URL": "",
   "URLS": {
     "SWIVEL_GROUP": "https://swivelgroup.com.au/",
-    "SWIVEL_TECH": "",
+    "SWIVEL_TECH": "https://stage.swiveltech.io/",
     "SWIVEL_FINANCE": "https://stage.swivelfinance.com.au/"
   },
   "RETRY": "1",
