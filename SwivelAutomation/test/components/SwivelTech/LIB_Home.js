@@ -158,5 +158,146 @@ class Home {
       },
     );
   }
+
+  /**
+   * a method to Verify Why Choose us 1 Tile
+   */
+  async bc_VerifyWhyChooseUsTile1(Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_AccessTheBestTalentInTheIndustry,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Icon of Access The Best Talent In The Industry in Home page",
+      () => {
+        console.log(
+          "Verify the Icon of Access The Best Talent In The Industry in Home page",
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_AccessTheBestTalentInTheIndustryTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Title as Access The Best Talent In The Industry",
+      () => {
+        console.log(
+          "Verify the Title as Access The Best Talent In The Industry",
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_AccessTheBestTalentInTheIndustryDescription(Description),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Description as : " + Description, () => {
+      console.log("Verify the Description as : " + Description);
+    });
+  }
+
+  /**
+   * a method to Verify Why Choose us 2 Tile
+   */
+  async bc_VerifyWhyChooseUsTile2(Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_RobustEmployeePerformanceManagement,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Icon of Robust Employee Performance Management in Home page",
+      () => {
+        console.log(
+          "Verify the Icon of Robust Employee Performance Management in Home page",
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_RobustEmployeePerformanceManagementTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Title as Robust Employee Performance Management",
+      () => {
+        console.log(
+          "Verify the Title as Robust Employee Performance Management",
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_RobustEmployeePerformanceManagementDescription(Description),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Description as : " + Description, () => {
+      console.log("Verify the Description as : " + Description);
+    });
+  }
+
+  /**
+   * a method to Verify Why Choose us 3 Tile
+   */
+  async bc_VerifyWhyChooseUsTile3(Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_AgileApproachToSoftwareDevelopment,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Icon of Agile Approach To Software Development in Home page",
+      () => {
+        console.log(
+          "Verify the Icon of Agile Approach To Software Development in Home page",
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_AgileApproachToSoftwareDevelopmentTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Title as Agile Approach To Software Development",
+      () => {
+        console.log(
+          "Verify the Title as Agile Approach To Software Development",
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_AgileApproachToSoftwareDevelopmentDescription(Description),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Description as : " + Description, () => {
+      console.log("Verify the Description as : " + Description);
+    });
+  }
+
+  /**
+   * a method to Verify Why Choose us 4 Tile
+   */
+  async bc_VerifyWhyChooseUsTile4(Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_EliminateOverheadCosts,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Icon of Eliminate Overhead Costs in Home page",
+      () => {
+        console.log("Verify the Icon of Eliminate Overhead Costs in Home page");
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_EliminateOverheadCostsTitle,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Title as Eliminate Overhead Costs", () => {
+      console.log("Verify the Title as Eliminate Overhead Costs");
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_EliminateOverheadCostsDescription(Description),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Description as : " + Description, () => {
+      console.log("Verify the Description as : " + Description);
+    });
+  }
 }
 export default new Home();

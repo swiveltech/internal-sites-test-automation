@@ -91,5 +91,24 @@ describe("Swivel Tech Site -> Home Page ", () => {
 
     // Verify the Why Choose Us?
     await LIB_Common.bc_VerifyH2Header(Data_Home.SubTitle_WhyChooseUs);
+    await LIB_Home.bc_VerifyWhyChooseUsTile1(
+      Data_Home.WhyChooseUs_Description1,
+    );
+    await LIB_Home.bc_VerifyWhyChooseUsTile2(
+      Data_Home.WhyChooseUs_Description2,
+    );
+    await LIB_Home.bc_VerifyWhyChooseUsTile3(
+      Data_Home.WhyChooseUs_Description3,
+    );
+    await LIB_Home.bc_VerifyWhyChooseUsTile4(
+      Data_Home.WhyChooseUs_Description4,
+    );
+
+    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 7);
+
+    // Verify the Hear What Our Clients Have to Say
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_HearWhatOurClientsHaveToSay,
+    );
   });
 });

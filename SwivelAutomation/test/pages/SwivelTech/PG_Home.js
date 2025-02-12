@@ -41,6 +41,66 @@ class HomePage {
   get icn_AccessTheBestTalentInTheIndustry() {
     return $(`//img[@alt="Access the Best Talent in the Industry "]`);
   }
+
+  get ele_AccessTheBestTalentInTheIndustryTitle() {
+    return $(
+      `//img[@alt="Access the Best Talent in the Industry "]/../following-sibling::div/h5[text()="Access the Best Talent in the Industry "]`,
+    );
+  }
+
+  ele_AccessTheBestTalentInTheIndustryDescription(Description) {
+    return $(
+      `//img[@alt="Access the Best Talent in the Industry "]/../following-sibling::div/h5[text()="Access the Best Talent in the Industry "]/../following-sibling::p[text()="${Description}"]`,
+    );
+  }
+
+  get icn_RobustEmployeePerformanceManagement() {
+    return $(`//img[@alt="Robust Employee Performance Management"]`);
+  }
+
+  get ele_RobustEmployeePerformanceManagementTitle() {
+    return $(
+      `//img[@alt="Robust Employee Performance Management"]/../following-sibling::div/h5[text()="Robust Employee Performance Management"]`,
+    );
+  }
+
+  ele_RobustEmployeePerformanceManagementDescription(Description) {
+    return $(
+      `//img[@alt="Robust Employee Performance Management"]/../following-sibling::div/h5[text()="Robust Employee Performance Management"]/../following-sibling::p[text()="${Description}"]`,
+    );
+  }
+
+  get icn_AgileApproachToSoftwareDevelopment() {
+    return $(`//img[@alt="Agile Approach to Software Development "]`);
+  }
+
+  get ele_AgileApproachToSoftwareDevelopmentTitle() {
+    return $(
+      `//img[@alt="Agile Approach to Software Development "]/../following-sibling::div/h5[text()="Agile Approach to Software Development "]`,
+    );
+  }
+
+  ele_AgileApproachToSoftwareDevelopmentDescription(Description) {
+    return $(
+      `//img[@alt="Agile Approach to Software Development "]/../following-sibling::div/h5[text()="Agile Approach to Software Development "]/../following-sibling::p[text()="${Description}"]`,
+    );
+  }
+
+  get icn_EliminateOverheadCosts() {
+    return $(`//img[@alt="Eliminate Overhead Costs"]`);
+  }
+
+  get ele_EliminateOverheadCostsTitle() {
+    return $(
+      `//img[@alt="Eliminate Overhead Costs"]/../following-sibling::div/h5[text()="Eliminate Overhead Costs"]`,
+    );
+  }
+
+  ele_EliminateOverheadCostsDescription(Description) {
+    return $(
+      `//img[@alt="Eliminate Overhead Costs"]/../following-sibling::div/h5[text()="Eliminate Overhead Costs"]/../following-sibling::p[text()="${Description}"]`,
+    );
+  }
 }
 
 export default new HomePage();
