@@ -14,6 +14,18 @@ class CommonPage {
     return $(`//h1[text()="${Label}"]`);
   }
 
+  ele_lblH2Header(Label) {
+    return $(`//h2[text()="${Label}"]`);
+  }
+
+  ele_lblH3Header(Label) {
+    return $(`//h3[text()="${Label}"]`);
+  }
+
+  ele_lblH4Header(Label) {
+    return $(`//h4[text()="${Label}"]`);
+  }
+
   lnk_Navigation(Label) {
     return $(`//a[text()='${Label}']`);
   }

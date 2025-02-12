@@ -73,7 +73,6 @@ class Common {
       pageHeader,
       index,
     );
-    // await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
     await elementToScroll.scrollIntoView();
     assertionHandler.assertTrue(element, "element not visible");
     allureReporter.step("Verify the page header as " + pageHeader, () => {
@@ -146,12 +145,53 @@ class Common {
   }
   //Common component to verify H1 Header
   async bc_VerifyH1Header(pageHeader) {
+    let elementToScroll = await PG_Common.ele_lblH1Header(pageHeader);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH1Header(pageHeader),
       "element not visible",
     );
     allureReporter.step("Verify the H1 page header as " + pageHeader, () => {
       console.log("Verify the H1 page header as " + pageHeader);
+    });
+  }
+
+  //Common component to verify H2 Header
+  async bc_VerifyH2Header(pageHeader) {
+    let elementToScroll = await PG_Common.ele_lblH2Header(pageHeader);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblH2Header(pageHeader),
+      "element not visible",
+    );
+    allureReporter.step("Verify the H2 page header as " + pageHeader, () => {
+      console.log("Verify the H2 page header as " + pageHeader);
+    });
+  }
+
+  //Common component to verify H3 Header
+  async bc_VerifyH3Header(pageHeader) {
+    let elementToScroll = await PG_Common.ele_lblH3Header(pageHeader);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblH3Header(pageHeader),
+      "element not visible",
+    );
+    allureReporter.step("Verify the H3 page header as " + pageHeader, () => {
+      console.log("Verify the H3 page header as " + pageHeader);
+    });
+  }
+
+  //Common component to verify H4 Header
+  async bc_VerifyH4Header(pageHeader) {
+    let elementToScroll = await PG_Common.ele_lblH4Header(pageHeader);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblH4Header(pageHeader),
+      "element not visible",
+    );
+    allureReporter.step("Verify the H4 page header as " + pageHeader, () => {
+      console.log("Verify the H4 page header as " + pageHeader);
     });
   }
 
