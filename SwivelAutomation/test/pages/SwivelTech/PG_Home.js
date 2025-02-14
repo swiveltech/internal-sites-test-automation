@@ -101,6 +101,44 @@ class HomePage {
       `//img[@alt="Eliminate Overhead Costs"]/../following-sibling::div/h5[text()="Eliminate Overhead Costs"]/../following-sibling::p[text()="${Description}"]`,
     );
   }
+
+  icn_WhatOurClientSay(ClientName) {
+    return $(`//img[@alt="${ClientName}"]`);
+  }
+
+  ele_lblWhatOurClientSayWithName(ClientName) {
+    return $(
+      `//img[@alt="${ClientName}"]/../../div[2]/div/h6[text()="${ClientName}"]`,
+    );
+  }
+
+  ele_lblWhatOurClientSayWithNameDesignation(ClientName, Designation) {
+    return $(
+      `//img[@alt="${ClientName}"]/../../div[2]/div/h6[text()="${ClientName}"]/../following-sibling::p[text()='${Designation}']`,
+    );
+  }
+
+  ele_lblWhatOurClientSayWithNameDesignationAndDescription(
+    ClientName,
+    Designation,
+    Description,
+  ) {
+    return $(
+      `//img[@alt="${ClientName}"]/../../div[2]/div/h6[text()="${ClientName}"]/../following-sibling::p[text()='${Designation}']/following-sibling::p[text()="${Description}"]`,
+    );
+  }
+
+  ele_SuccessfulProjectTile(Title, Description) {
+    return $(
+      `//p[text()="${Title}"]/../following-sibling::div/p[text()="${Description}"]`,
+    );
+  }
+
+  lnk_SuccessfulProjectTileReadMore(Title) {
+    return $(
+      `//p[text()="${Title}"]/../following-sibling::div[2]/a/button[text()='Read More']/..`,
+    );
+  }
 }
 
 export default new HomePage();

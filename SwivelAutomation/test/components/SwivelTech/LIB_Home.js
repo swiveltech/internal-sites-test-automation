@@ -299,5 +299,123 @@ class Home {
       console.log("Verify the Description as : " + Description);
     });
   }
+
+  /**
+   * a method to Verify Hear What Our Clients Have to Say
+   *
+   */
+  async bc_VerifyHearWhatOurClientsHaveToSay(
+    ClientName,
+    ClientJob,
+    Description,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_WhatOurClientSay(ClientName),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Icon of Client Name as : " + ClientName,
+      () => {
+        console.log("Verify the Icon of Client Name as : " + ClientName);
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblWhatOurClientSayWithName(ClientName),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Icon and name of Client Name as : " + ClientName,
+      () => {
+        console.log(
+          "Verify the Icon and name of Client Name as : " + ClientName,
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblWhatOurClientSayWithNameDesignation(ClientName, ClientJob),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Client Name as : " +
+        ClientName +
+        " and the Designation as : " +
+        ClientJob,
+      () => {
+        console.log(
+          "Verify the Icon of Client Name as : " +
+            ClientName +
+            " and the Designation as : " +
+            ClientJob,
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblWhatOurClientSayWithNameDesignationAndDescription(
+        ClientName,
+        ClientJob,
+        Description,
+      ),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Client Name as : " +
+        ClientName +
+        " and the Designation as : " +
+        ClientJob +
+        " and Description as : " +
+        Description,
+      () => {
+        console.log(
+          "Verify the Icon of Client Name as : " +
+            ClientName +
+            " and the Designation as : " +
+            ClientJob +
+            " and Description as : " +
+            Description,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify Successful Client project tile
+   *
+   */
+  async bc_VerifySuccessfulClientProjectTile(Title, Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_SuccessfulProjectTile(Title, Description),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Successful Client Project Title as : " +
+        Title +
+        " and Description as : " +
+        Description,
+      () => {
+        console.log(
+          "Verify the Successful Client Project Title as : " +
+            Title +
+            " and Description as : " +
+            Description,
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_SuccessfulProjectTileReadMore(Title),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Successful Client Project Title as : " +
+        Title +
+        " and Read More link",
+      () => {
+        console.log(
+          "Verify the Successful Client Project Title as : " +
+            Title +
+            " and Read More link",
+        );
+      },
+    );
+  }
 }
 export default new Home();

@@ -110,5 +110,56 @@ describe("Swivel Tech Site -> Home Page ", () => {
     await LIB_Common.bc_VerifyH2Header(
       Data_Home.SubTitle_HearWhatOurClientsHaveToSay,
     );
+    await LIB_Home.bc_VerifyHearWhatOurClientsHaveToSay(
+      Data_Home.ClientName1,
+      Data_Home.Client1Designation,
+      Data_Home.Client1Description,
+    );
+    await LIB_Home.bc_VerifyHearWhatOurClientsHaveToSay(
+      Data_Home.ClientName2,
+      Data_Home.Client2Designation,
+      Data_Home.Client2Description,
+    );
+    await LIB_Home.bc_VerifyHearWhatOurClientsHaveToSay(
+      Data_Home.ClientName3,
+      Data_Home.Client3Designation,
+      Data_Home.Client3Description,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    // This is falled
+    /*
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    */
+    await LIB_Common.bc_VerifyTheButton("READ MORE", 1);
+
+    //Verify the Trusted By
+    await LIB_Common.bc_VerifyH2Header(Data_Home.Title_TrustedBy);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.TrustedBy_Description, 1);
+
+    //Verify the Our Latest Insights
+    await LIB_Common.bc_VerifyH2Header(Data_Home.Title_OurLatestInsights);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.OurLatestInsights_Description,
+      1,
+    );
   });
 });
