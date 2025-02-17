@@ -29,6 +29,10 @@ class CommonPage {
   lnk_Navigation(Label) {
     return $(`//a[text()='${Label}']`);
   }
+
+  ele_lblParagraph(TextValue) {
+    return $(`//p[text()='${TextValue}']`);
+  }
 }
 
 export default new CommonPage();

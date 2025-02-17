@@ -46,6 +46,39 @@ class HomePage {
       `//h4[text()='${Title}']/following-sibling::div/div/div/p[text()='${SubTitle}']`,
     );
   }
+
+  ele_lblSuccessfulClientProjectDescription(Title, Description) {
+    return $(
+      `//p[text()='${Title}']/following-sibling::p[text()='${Description}']`,
+    );
+  }
+
+  ele_lblPeopleNameWithDescription(Description, PeopleName) {
+    return $(
+      `//p[.='${Description}']/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']`,
+    );
+  }
+
+  lnk_ThoughtLeadershipVisitMore(Title) {
+    return $(
+      `//p[text()='${Title}']/following-sibling::a/span[text()='Visit More']/..`,
+    );
+  }
+  ele_lblPeopleNameWithDescriptionAndJob(Description, PeopleName, Job) {
+    return $(
+      `//p[.='${Description}']/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']/following-sibling::p[text()='${Job}']`,
+    );
+  }
+
+  lnk_SuccessfulClientProjectReadMore(Title, Description) {
+    return $(
+      `//p[text()='${Title}']/following-sibling::p[text()='${Description}']/following-sibling::a/div/p[text()='Read More']/../..`,
+    );
+  }
+
+  get img_SwivelLogoFooter() {
+    return $(`//img[@alt="footer-logo.svg"]`);
+  }
 }
 
 export default new HomePage();

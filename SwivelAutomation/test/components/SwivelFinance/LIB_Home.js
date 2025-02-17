@@ -1,6 +1,7 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
 import PG_Home from "../../pages/SwivelFinance/PG_Home.js";
+import PG_Common from "../../pages/PG_Common.js";
 
 class Home {
   /**
@@ -41,6 +42,178 @@ class Home {
         );
       },
     );
+  }
+
+  /**
+   * a method to Verify the Services We Deliver tiles
+   */
+  async bc_VerifySuccessfulClientProject(Title, Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblParagraph(Title),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblSuccessfulClientProjectDescription(Title, Description),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_SuccessfulClientProjectReadMore(Title, Description),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Sub Title as : " +
+        Title +
+        " ,And the Description as : " +
+        Description,
+      () => {
+        console.log(
+          "Verify the Sub Title as : " +
+            Title +
+            " ,And the Description as : " +
+            Description,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the We Have Worked With Them
+   */
+  async bc_VerifyWeHaveWorkedWithThem(Description, PeopleName, Job) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblParagraph(Description),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblPeopleNameWithDescription(Description, PeopleName),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblPeopleNameWithDescriptionAndJob(
+        Description,
+        PeopleName,
+        Job,
+      ),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Person name as : " +
+        PeopleName +
+        " ,And the Job as " +
+        Job +
+        " , And the Description as : " +
+        Description,
+      () => {
+        console.log(
+          "Verify the Person name as : " +
+            PeopleName +
+            " ,And the Job as " +
+            Job +
+            " , And the Description as : " +
+            Description,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the Thought Leadership
+   */
+  async bc_VerifyThoughtLeadership(Title) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblParagraph(Title),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_ThoughtLeadershipVisitMore(Title),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Sub Title as : " +
+        Title +
+        " , Under Thought Leadership and verify the Visit more link too. ",
+      () => {
+        console.log(
+          "Verify the Sub Title as : " +
+            Title +
+            " , Under Thought Leadership and verify the Visit more link too. ",
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the Thought Leadership
+   */
+  async bc_VerifyTheFooter() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.img_SwivelLogoFooter,
+      "Element not exist",
+    );
+    allureReporter.step("Verify the Application logo in footer.", () => {
+      console.log("Verify the Application logo in footer.");
+    });
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_Instagram,
+      "Element not exist",
+    );
+    let url = await PG_Home.icn_Instagram.getAttribute("href");
+    allureReporter.step(
+      "Verify the Application Instagram logo in footer. and App URL is : " +
+        url,
+      () => {
+        console.log(
+          "Verify the Application Instagram logo in footer. and App URL is : " +
+            url,
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.icn_Linkedin,
+      "Element not exist",
+    );
+    url = await PG_Home.icn_Linkedin.getAttribute("href");
+    allureReporter.step(
+      "Verify the Application Linkedin logo in footer. and App URL is : " + url,
+      () => {
+        console.log(
+          "Verify the Application Linkedin logo in footer. and App URL is : " +
+            url,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the Footer panel
+   */
+  async bc_VerifyHomeScreenFooterPanel(tabNames) {
+    let tabNamesToVerify;
+
+    if (tabNames.includes(";")) {
+      tabNamesToVerify = tabNames.split(";");
+    } else {
+      tabNamesToVerify = tabNames;
+    }
+
+    for (let i = 0; i < tabNamesToVerify.length; i++) {
+      await assertionHandler.assertElementDisplayed(
+        PG_Home.ele_FooterTab(tabNamesToVerify[i]),
+        "Element not exist",
+      );
+      allureReporter.step(
+        "Verify the Swivel Finance Tab name " +
+          tabNamesToVerify[i] +
+          " is present. ",
+        () => {
+          console.log(
+            "Verify the Swivel Finance Tab name " +
+              tabNamesToVerify[i] +
+              " is present. ",
+          );
+        },
+      );
+    }
   }
 }
 export default new Home();

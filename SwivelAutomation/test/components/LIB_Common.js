@@ -222,6 +222,19 @@ class Common {
     });
   }
 
+  //Common component to verify paragraph
+  async bc_VerifyTheParagraph(paragraph) {
+    let elementToScroll = await PG_Common.ele_lblParagraph(paragraph);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblParagraph(paragraph),
+      "element not visible",
+    );
+    allureReporter.step("Verify the Paragraph as " + paragraph, () => {
+      console.log("Verify the Paragraph as " + paragraph);
+    });
+  }
+
   /**
    * method to Close the current Tab and force to first tab
    */

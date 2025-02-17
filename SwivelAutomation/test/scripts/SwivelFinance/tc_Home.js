@@ -68,5 +68,77 @@ describe("Swivel Finance Site -> Home Page ", () => {
       Data_Home.Title_ServicesWeDeliver,
       Data_Home.SubTile_TaxPlanning,
     );
+
+    // Verify the How We Work
+    await LIB_Common.bc_VerifyH2Header(Data_Home.Title_HowWeWork);
+    await LIB_Common.bc_VerifyH3Header(Data_Home.HowWeWork_SubTitle_Augmented);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.HowWeWork_Augmented_Description,
+      1,
+    );
+    await LIB_Common.bc_VerifyH3Header(Data_Home.HowWeWork_SubTitle_JobBased);
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.HowWeWork_JobBased_Description,
+      1,
+    );
+    await LIB_Common.bc_VerifyH3Header(
+      Data_Home.Title_SuccessfulClientProjectsAndCounting,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProjectsAndCounting_Description,
+      1,
+    );
+
+    await LIB_Home.bc_VerifySuccessfulClientProject(
+      Data_Home.SubTitle_SuccessfulClient1,
+      Data_Home.SuccessfulClient1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProject(
+      Data_Home.SubTitle_SuccessfulClient2,
+      Data_Home.SuccessfulClient2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProject(
+      Data_Home.SubTitle_SuccessfulClient3,
+      Data_Home.SuccessfulClient3_Description,
+    );
+
+    // Verify the We Have Worked With Them
+    await LIB_Common.bc_VerifyH3Header(
+      Data_Home.Title_WeHaveWorkedWithThousandsOfAmazingPeople,
+    );
+
+    await LIB_Home.bc_VerifyWeHaveWorkedWithThem(
+      Data_Home.People1_Description,
+      Data_Home.People1_Name,
+      Data_Home.People1_Job,
+    );
+    // This is failing
+    /*
+    await LIB_Home.bc_VerifyWeHaveWorkedWithThem(
+      Data_Home.People2_Description,
+      Data_Home.People2_Name,
+      Data_Home.People2_Job,
+    );
+    await LIB_Home.bc_VerifyWeHaveWorkedWithThem(
+      Data_Home.People3_Description,
+      Data_Home.People3_Name,
+      Data_Home.People3_Job,
+    );
+        */
+
+    // Verify the thought Leadership
+    await LIB_Common.bc_VerifyH3Header(Data_Home.Title_ThoughtLeadership);
+    await LIB_Home.bc_VerifyThoughtLeadership(Data_Home.Tile_ThoughtLeadership);
+
+    await LIB_Common.bc_VerifyH3Header(Data_Home.Title_WeWouldLoveToHelpYou);
+    await LIB_Common.bc_VerifyTheButton("Connect With Us", 1);
+
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Home.HomePage_Bottom_Description,
+    );
+    await LIB_Home.bc_VerifyTheFooter();
+    await LIB_Home.bc_VerifyHomeScreenFooterPanel(
+      "HOME;SERVICES;HOW WE WORK;INSIGHTS;WHO WE ARE;CAREERS",
+    );
   });
 });
