@@ -5,7 +5,6 @@ import Data_Home from "../../data/SwivelFinance/dt_home.json" assert { type: "js
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 
 describe("Swivel Finance Site -> Home Page ", () => {
-  // Covered Test Case Number : SF-1, SF-2, SF-3
   it("Verify the Home Page", async () => {
     allureReporter.addFeature("Verify the Swivel Finance Home Page");
     allureReporter.addStory("Home Page");
@@ -140,5 +139,14 @@ describe("Swivel Finance Site -> Home Page ", () => {
     await LIB_Home.bc_VerifyHomeScreenFooterPanel(
       "HOME;SERVICES;HOW WE WORK;INSIGHTS;WHO WE ARE;CAREERS",
     );
+  });
+
+  it("Verify the Home Page Navigation", async () => {
+    allureReporter.addFeature("Verify the Swivel Finance Home Page Navigation");
+    allureReporter.addStory("Home Page");
+    allureReporter.startStep(
+      "Swivel Finance -> Home Page Navigation Verification",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_FINANCE);
   });
 });

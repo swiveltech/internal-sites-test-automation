@@ -24,7 +24,7 @@ describe("Swivel Tech Site -> Home Page ", () => {
     await LIB_Common.bc_VerifyH2Header(
       Data_Home.SubTitle_WeAreProficientInYourTechStack,
     );
-    // This is falling , need to check dilshan
+    // This is failing
     // await LIB_Common.bc_VerifyPageHeader(
     //   Data_Home.SubTitle_AchieveInnovationAndExcellenceThroughOurSoftwareServices,
     //   1,
@@ -83,7 +83,7 @@ describe("Swivel Tech Site -> Home Page ", () => {
       Data_Home.HowWeWork_AugmentedModel,
       Data_Home.AugmentedModel_Description,
     );
-    // This is falling , need to check dilshan
+    // This is failing
     // await LIB_Home.bc_VerifyHowWeWork(
     //   Data_Home.HowWeWork_ProjectBasedModel,
     //   Data_Home.ProjectBasedModel_Description,
@@ -158,8 +158,53 @@ describe("Swivel Tech Site -> Home Page ", () => {
     //Verify the Our Latest Insights
     await LIB_Common.bc_VerifyH2Header(Data_Home.Title_OurLatestInsights);
     await LIB_Common.bc_VerifyPageHeader(
-      Data_Home.OurLatestInsights_Description,
+      Data_Home.OurLatestInsights_TopDescription,
       1,
     );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Home.OurLatestInsights1_Title,
+      Data_Home.OurLatestInsights1_Category,
+      Data_Home.OurLatestInsights1_Date,
+      Data_Home.OurLatestInsights1_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Home.OurLatestInsights2_Title,
+      Data_Home.OurLatestInsights2_Category,
+      Data_Home.OurLatestInsights2_Date,
+      Data_Home.OurLatestInsights2_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Home.OurLatestInsights3_Title,
+      Data_Home.OurLatestInsights3_Category,
+      Data_Home.OurLatestInsights3_Date,
+      Data_Home.OurLatestInsights3_SubDescription,
+    );
+
+    await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES", 1);
+
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.Title_DrivingInnovationBeyondImagination,
+    );
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Home.SubTitle_DrivingInnovationBeyondImagination,
+    );
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Home.Description_DrivingInnovationBeyondImagination,
+    );
+    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 8);
+
+    await LIB_Common.bc_VerifyH3Header(Data_Home.Title_HowCanWeHelpYou);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Home.SubTitle_WeHaveHelped200ClientsWithOurTechOffshoringServices,
+    );
+    await LIB_Common.bc_VerifyTheButton("Book a Discovery Call", 1);
+    // Verify the Careers
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.Title_LookingToBuildUpYourCareer,
+    );
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Home.SubTitle_WeAlwaysLookingForMoreGreatPeopleToJoinOurTeam,
+    );
+    await LIB_Common.bc_VerifyTheButton("CAREERS", 1);
   });
 });

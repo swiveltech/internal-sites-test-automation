@@ -6,6 +6,10 @@ class HomePage {
     return $('(//img[@alt="Swivel Logo"]/..)[1]');
   }
 
+  get img_SwivelTechLogoInFooter() {
+    return $('(//img[@alt="Swivel Logo"]/..)[2]');
+  }
+
   ele_HeaderTab(tabName) {
     return $(`(//nav[@id='header']/div/ul/li/a/span[text()='${tabName}'])[1]`);
   }
@@ -137,6 +141,20 @@ class HomePage {
   lnk_SuccessfulProjectTileReadMore(Title) {
     return $(
       `//p[text()="${Title}"]/../following-sibling::div[2]/a/button[text()='Read More']/..`,
+    );
+  }
+
+  ele_lblOurLatestInsights(Title, Category, Date) {
+    return $(
+      `//h4[text()='${Title}']/following-sibling::div[text()='${Category}']/following-sibling::div/span[text()='${Date}']`,
+    );
+  }
+  ele_lblLatestDescription(Description) {
+    return $(`//p[text()[normalize-space() = "${Description}"]]`);
+  }
+  ele_lblLatestDescriptionReadMore(Description) {
+    return $(
+      `//p[text()[normalize-space() = "${Description}"]]/following-sibling::div/div/a/button[text()='READ MORE']/..`,
     );
   }
 }

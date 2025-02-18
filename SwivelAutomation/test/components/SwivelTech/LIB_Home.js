@@ -417,5 +417,63 @@ class Home {
       },
     );
   }
+
+  /**
+   * a method to Verify Our Latest Insights tile
+   *
+   */
+  async bc_VerifyOurLatestInsightsTile(Title, Category, Date, Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblOurLatestInsights(Title, Category, Date),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Our Latest Insights tile Title as : " +
+        Title +
+        " and Category as : " +
+        Category +
+        " , and Date as : " +
+        Date,
+      () => {
+        console.log(
+          "Verify the Our Latest Insights tile Title as : " +
+            Title +
+            " and Category as : " +
+            Category +
+            " , and Date as : " +
+            Date,
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblLatestDescription(Description),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblLatestDescriptionReadMore(Description),
+      "Element not exist",
+    );
+    let href =
+      await PG_Home.ele_lblLatestDescriptionReadMore(Description).getAttribute(
+        "href",
+      );
+    allureReporter.step(
+      "Verify the Our Latest Insights Description as : " + Description,
+      () => {
+        console.log(
+          "Verify the Our Latest Insights Description as : " + Description,
+        );
+      },
+    );
+    allureReporter.step(
+      "Verify the Our Latest Insights Have Read More link and URL : " + href,
+      () => {
+        console.log(
+          "Verify the Our Latest Insights Have Read More link and URL : " +
+            href,
+        );
+      },
+    );
+  }
 }
 export default new Home();
