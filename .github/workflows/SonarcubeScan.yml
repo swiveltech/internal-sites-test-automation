@@ -1,0 +1,24 @@
+name: Analyze with Sonarqube 
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sonarqube:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: sqa_20c39dd70fde66d7227a050691b148ba3a6abc22
+        SONAR_HOST_URL: https://sonarqube.swiveltech.lk
+        projectKey: "swivel-sites-automation"
+        projectName: "swivel-sites-automation"
