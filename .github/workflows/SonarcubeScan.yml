@@ -18,7 +18,7 @@ jobs:
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
-        SONAR_TOKEN: sqa_20c39dd70fde66d7227a050691b148ba3a6abc22
+        SONAR_TOKEN: sqa_ff27ffa31185b89e2c2100681e0b906e5e67a9c3
         SONAR_HOST_URL: https://sonarqube.swiveltech.lk
         projectKey: "swivel-sites-automation"
         projectName: "swivel-sites-automation"
