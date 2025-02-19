@@ -20,5 +20,5 @@ jobs:
       env:
         SONAR_TOKEN: sqa_ff27ffa31185b89e2c2100681e0b906e5e67a9c3
         SONAR_HOST_URL: https://sonarqube.swiveltech.lk
-        projectKey: "swivel-sites-automation"
-        projectName: "swivel-sites-automation"
+        projectKey: swivel-sites-automation
+        projectName: swivel-sites-automation
