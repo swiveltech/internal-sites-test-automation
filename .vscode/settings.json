@@ -1,0 +1,30 @@
+{
+  "prettier.trailingComma": "all",
+  "editor.codeActionsOnSave": {
+    "editor.formatOnSave": "never",
+    "[javascript]": {
+      "editor.formatOnSave": true
+    }
+  },
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "Cremorne",
+    "Dissanayake",
+    "Dmitry",
+    "Gwynne",
+    "Kirula",
+    "Loukine",
+    "Nadesan",
+    "Rajapaksha",
+    "Rooke",
+    "Rupasinghe",
+    "Shanil",
+    "Sujatha",
+    "swivelgroup",
+    "Usha"
+  ]
+}
