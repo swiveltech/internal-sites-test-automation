@@ -1,7 +1,7 @@
 import PG_ContactUs from "../../pages/SwivelGroup/PG_ContactUs.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
-import LIB_Common from "../../LIB_Common.js";
+import LIB_Common from "../../components/LIB_Common.js";
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 class ContactUs {
   /**

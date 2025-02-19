@@ -50,30 +50,22 @@ class Home {
    * a method to Verify the Top panel
    */
   async bc_VerifyHomeScreenTopPanel(tabNames) {
-    let tabNamesToVerify;
+    let tabNamesToVerify = tabNames.includes(";")
+      ? tabNames.split(";")
+      : [tabNames];
 
-    if (tabNames.includes(";")) {
-      tabNamesToVerify = tabNames.split(";");
-    } else {
-      tabNamesToVerify = tabNames;
-    }
-
-    for (let i = 0; i < tabNamesToVerify.length; i++) {
+    for (const tabName of tabNamesToVerify) {
       await assertionHandler.assertElementDisplayed(
-        PG_Home.ele_HeaderTab(tabNamesToVerify[i]),
+        PG_Home.ele_HeaderTab(tabName),
         "Element not exist",
       );
+
       allureReporter.step(
-        "Verify the Swivel Group Tab name " +
-          tabNamesToVerify[i] +
-          " is present. ",
-        () => {
+        `Verify the Swivel Group Tab name ${tabName} is present.`,
+        () =>
           console.log(
-            "Verify the Swivel Group Tab name " +
-              tabNamesToVerify[i] +
-              " is present. ",
-          );
-        },
+            `Verify the Swivel Group Tab name ${tabName} is present.`,
+          ),
       );
     }
   }

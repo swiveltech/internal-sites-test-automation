@@ -111,8 +111,8 @@ describe("Swivel Finance Site -> Home Page ", () => {
       Data_Home.People1_Name,
       Data_Home.People1_Job,
     );
-    // This is failing
-    /*
+    // This is Dilshan
+
     await LIB_Home.bc_VerifyWeHaveWorkedWithThem(
       Data_Home.People2_Description,
       Data_Home.People2_Name,
@@ -123,7 +123,6 @@ describe("Swivel Finance Site -> Home Page ", () => {
       Data_Home.People3_Name,
       Data_Home.People3_Job,
     );
-        */
 
     // Verify the thought Leadership
     await LIB_Common.bc_VerifyH3Header(Data_Home.Title_ThoughtLeadership);

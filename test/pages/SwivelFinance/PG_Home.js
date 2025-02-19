@@ -55,7 +55,7 @@ class HomePage {
 
   ele_lblPeopleNameWithDescription(Description, PeopleName) {
     return $(
-      `//p[.='${Description}']/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']`,
+      `//p[normalize-space(text()) = "${Description}"]/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']`,
     );
   }
 
@@ -64,9 +64,13 @@ class HomePage {
       `//p[text()='${Title}']/following-sibling::a/span[text()='Visit More']/..`,
     );
   }
+
+  ele_lblDescriptionWithoutPeopleName(Description) {
+    return $(`//p[normalize-space(text()) = "${Description}"]`);
+  }
   ele_lblPeopleNameWithDescriptionAndJob(Description, PeopleName, Job) {
     return $(
-      `//p[.='${Description}']/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']/following-sibling::p[text()='${Job}']`,
+      `//p[normalize-space(text()) = "${Description}"]/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']/following-sibling::p[normalize-space(text()) = "${Job}"]`,
     );
   }
 

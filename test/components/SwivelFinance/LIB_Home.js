@@ -81,7 +81,7 @@ class Home {
    */
   async bc_VerifyWeHaveWorkedWithThem(Description, PeopleName, Job) {
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblParagraph(Description),
+      PG_Home.ele_lblDescriptionWithoutPeopleName(Description),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
@@ -188,30 +188,22 @@ class Home {
    * a method to Verify the Footer panel
    */
   async bc_VerifyHomeScreenFooterPanel(tabNames) {
-    let tabNamesToVerify;
+    let tabNamesToVerify = tabNames.includes(";")
+      ? tabNames.split(";")
+      : [tabNames];
 
-    if (tabNames.includes(";")) {
-      tabNamesToVerify = tabNames.split(";");
-    } else {
-      tabNamesToVerify = tabNames;
-    }
-
-    for (let i = 0; i < tabNamesToVerify.length; i++) {
+    for (const tabName of tabNamesToVerify) {
       await assertionHandler.assertElementDisplayed(
-        PG_Home.ele_FooterTab(tabNamesToVerify[i]),
+        PG_Home.ele_FooterTab(tabName),
         "Element not exist",
       );
+
       allureReporter.step(
-        "Verify the Swivel Finance Tab name " +
-          tabNamesToVerify[i] +
-          " is present. ",
-        () => {
+        `Verify the Swivel Finance Tab name ${tabName} is present.`,
+        () =>
           console.log(
-            "Verify the Swivel Finance Tab name " +
-              tabNamesToVerify[i] +
-              " is present. ",
-          );
-        },
+            `Verify the Swivel Finance Tab name ${tabName} is present.`,
+          ),
       );
     }
   }

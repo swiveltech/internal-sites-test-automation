@@ -12,7 +12,6 @@ describe("Swivel Group Site -> Contact Us Page ", () => {
     allureReporter.addStory("Swivel Group Site Contact Us Page");
     allureReporter.startStep("Swivel Group -> Verify the Contact Us Page");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
-    await browser.pause(2000);
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
     await LIB_Home.bc_ClickOnLetsTalkButtonAndVerifyContactUsPage();
@@ -29,6 +28,8 @@ describe("Swivel Group Site -> Contact Us Page ", () => {
     allureReporter.step("There is no phone number validation", () => {
       console.log("There is no phone number validation");
     });
-    // await LIB_ContactUs.bc_VerifyErrorMessage(Data_ContactUs.ErrorMessage_FieldRequired);
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.ErrorMessage_FieldRequired,
+    );
   });
 });
