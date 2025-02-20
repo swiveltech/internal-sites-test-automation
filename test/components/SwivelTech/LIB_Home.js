@@ -543,7 +543,6 @@ class Home {
     });
     await browser.pause(2000);
     if (!OptionToSelect) {
-      OptionToSelect = "Nothing to Select";
       await PG_Home.ele_HeaderTab(tabName).click();
       allureReporter.step("Click on Tab : " + tabName, () => {
         console.log("Click on Tab : " + tabName);
