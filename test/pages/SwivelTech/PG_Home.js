@@ -166,6 +166,10 @@ class HomePage {
   ele_lblTopSubPageHeaderInSpan(PageHeader) {
     return $(`//span[text()[normalize-space() = "${PageHeader}"]]`);
   }
+
+  ele_lblH1WithNormalizeSpace(Description) {
+    return $(`//h1[text()[normalize-space() = "${Description}"]]`);
+  }
 }
 
 export default new HomePage();

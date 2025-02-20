@@ -1,6 +1,7 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import allureReporter from "@wdio/allure-reporter";
 import PG_Home from "../../pages/SwivelTech/PG_Home.js";
+import PG_Common from "../../pages/PG_Common.js";
 class Home {
   /**
    * a method to Verify the Swivel Tech logo
@@ -40,10 +41,6 @@ class Home {
    * a method to Verify the Footer Swivel Tech logo
    */
   async bc_VerifyFooterOptions(Header, Options) {
-    if (!Options) {
-      throw new Error("Options is undefined or null");
-    }
-
     let tabNamesToVerify =
       typeof Options === "string" && Options.includes(";")
         ? Options.split(";")
@@ -533,6 +530,78 @@ class Home {
         console.log("Verify the Swivel Tech Top Page Header as " + pageHeader);
       },
     );
+  }
+
+  /**
+   * a method to Click on Top Tab
+   */
+  async bc_ClickOnTopTab(tabName, Option) {
+    let OptionToSelect = Option;
+    await PG_Home.ele_HeaderTab(tabName).moveTo({
+      block: "center",
+      inline: "center",
+    });
+    await browser.pause(2000);
+    if (!OptionToSelect) {
+      OptionToSelect = "Nothing to Select";
+      await PG_Home.ele_HeaderTab(tabName).click();
+      allureReporter.step("Click on Tab : " + tabName, () => {
+        console.log("Click on Tab : " + tabName);
+      });
+    } else {
+      await PG_Common.lnk_Navigation(OptionToSelect).moveTo({
+        block: "center",
+        inline: "center",
+      });
+      await browser.pause(1000);
+      await PG_Common.lnk_Navigation(OptionToSelect).click();
+      allureReporter.step(
+        "Click on Tab : " +
+          tabName +
+          " and Sub Tab as : " +
+          Option +
+          " from the Home page",
+        () => {
+          console.log(
+            "Click on Tab : " +
+              tabName +
+              " and Sub Tab as : " +
+              Option +
+              " from the Home page",
+          );
+        },
+      );
+    }
+    await PG_Home.img_SwivelTechLogo.moveTo({
+      block: "center",
+      inline: "center",
+    });
+  }
+
+  /**
+   * a method to Verify the Sub PageHeader In P Tag
+   */
+  async bc_VerifySubPageHeaderInPTag(Title) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblLatestDescription(Title),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the header as : " + Title, () => {
+      console.log("Verify the header as : " + Title);
+    });
+  }
+
+  /**
+   * a method to Verify the Sub PageHeader In H1 Tag
+   */
+  async bc_VerifySubPageHeaderInH1(Title) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblH1WithNormalizeSpace(Title),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the H1 header as : " + Title, () => {
+      console.log("Verify the H1 header as : " + Title);
+    });
   }
 }
 export default new Home();

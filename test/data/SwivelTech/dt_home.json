@@ -75,5 +75,20 @@
   "Footer_MainMenu1": "Get To Know",
   "MainMenu1_OptionList": "Home;About Us;How We Work;Case Studies;Blogs",
   "Footer_MainMenu2": "Our Services",
-  "MainMenu2_OptionList": "Artificial Intelligence;DevOps as a Service;Enterprise Software Development;Managed Service Augmentation;QA as a Service;Search Engine Optimisation"
+  "MainMenu2_OptionList": "Artificial Intelligence;DevOps as a Service;Enterprise Software Development;Managed Service Augmentation;QA as a Service;Search Engine Optimisation",
+  "TabName_AboutUs": "About Us",
+  "TabName_HowWeWork": "How We Work",
+  "HowWeWork_ProjectBased": "Project Based",
+  "HowWeWork_StaffAugmentation": "Staff Augmentation",
+  "TabName_Services": "Services",
+  "Services_ArtificialIntelligence": "Artificial Intelligence",
+  "Services_DevOpsAsAService": "DevOps as a Service",
+  "Services_EnterpriseSoftwareDevelopment": "Enterprise Software Development",
+  "Services_ManagedServiceAugmentation": "Managed Service Augmentation",
+  "Services_QAAsAService": "QA as a Service",
+  "Services_SearchEngineOptimisation": "Search Engine Optimisation",
+  "TabName_Resources": "Resources",
+  "Resources_CaseStudies": "Case Studies",
+  "Resources_Blogs": "Blogs",
+  "TabName_Careers": "Careers"
 }
