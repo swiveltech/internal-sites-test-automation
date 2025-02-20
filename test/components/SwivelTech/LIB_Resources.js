@@ -15,5 +15,29 @@ class Resources {
       console.log("Verify the H6 Header as : " + Header);
     });
   }
+
+  /**
+   * a method to Verify the Categories Options
+   */
+  async bc_VerifyCategoriesOptions(Header, Options) {
+    let optionsToVerify =
+      typeof Options === "string" && Options.includes(";")
+        ? Options.split(";")
+        : [Options];
+
+    for (const optionToCheck of optionsToVerify) {
+      await assertionHandler.assertElementDisplayed(
+        PG_Resources.ele_CategoriesOptions(Header, optionToCheck),
+        "Element not exist",
+      );
+
+      allureReporter.step(
+        "Verify the Categories Options as : " + optionToCheck,
+        () => {
+          console.log("Verify the Categories Options as : " + optionToCheck);
+        },
+      );
+    }
+  }
 }
 export default new Resources();

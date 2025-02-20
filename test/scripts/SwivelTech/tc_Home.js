@@ -3,8 +3,8 @@ import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.json" assert { type: "json" };
-import Data_HowWeWork from "../../data/SwivelTech/dt_HowWeWork.json" assert { type: "json" };
-import Data_Resources from "../../data/SwivelTech/dt_Resources.json" assert { type: "json" };
+import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json" assert { type: "json" };
+import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 
 describe("Swivel Tech Site -> Home Page ", () => {
@@ -159,22 +159,22 @@ describe("Swivel Tech Site -> Home Page ", () => {
       1,
     );
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Home.OurLatestInsights1_Title,
-      Data_Home.OurLatestInsights1_Category,
-      Data_Home.OurLatestInsights1_Date,
-      Data_Home.OurLatestInsights1_SubDescription,
+      Data_Resources.OurLatestInsights1_Title,
+      Data_Resources.OurLatestInsights1_Category,
+      Data_Resources.OurLatestInsights1_Date,
+      Data_Resources.OurLatestInsights1_SubDescription,
     );
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Home.OurLatestInsights2_Title,
-      Data_Home.OurLatestInsights2_Category,
-      Data_Home.OurLatestInsights2_Date,
-      Data_Home.OurLatestInsights2_SubDescription,
+      Data_Resources.OurLatestInsights2_Title,
+      Data_Resources.OurLatestInsights2_Category,
+      Data_Resources.OurLatestInsights2_Date,
+      Data_Resources.OurLatestInsights2_SubDescription,
     );
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Home.OurLatestInsights3_Title,
-      Data_Home.OurLatestInsights3_Category,
-      Data_Home.OurLatestInsights3_Date,
-      Data_Home.OurLatestInsights3_SubDescription,
+      Data_Resources.OurLatestInsights3_Title,
+      Data_Resources.OurLatestInsights3_Category,
+      Data_Resources.OurLatestInsights3_Date,
+      Data_Resources.OurLatestInsights3_SubDescription,
     );
 
     await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES", 1);
