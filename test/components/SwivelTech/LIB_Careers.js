@@ -34,5 +34,39 @@ class Careers {
       },
     );
   }
+
+  /**
+   * a method to Search for job
+   */
+  async bc_SearchForJob(jobTitle) {
+    await PG_Careers.tf_SearchForJobs.clearValue();
+    await PG_Careers.tf_SearchForJobs.addValue(jobTitle);
+    allureReporter.step("Type job as " + jobTitle, () => {
+      console.log("Type job as " + jobTitle);
+    });
+  }
+
+  /**
+   * a method to Verify there is search record found
+   */
+  async bc_VerifyTheSearchRecordAvailable() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Careers.ele_lblSearchRecord,
+      "Element not exist",
+    );
+    allureReporter.step("Verify There is search record available", () => {
+      console.log("Verify There is search record available");
+    });
+  }
+  /**
+   * a method to Verify there is search record not found
+   */
+  async bc_VerifyTheSearchRecordIsNotAvailable() {
+    let element = await PG_Careers.ele_lblSearchRecord.isDisplayed();
+    await assertionHandler.assertFalse(element);
+    allureReporter.step("Verify There is no search record available", () => {
+      console.log("Verify There is no search record available");
+    });
+  }
 }
 export default new Careers();

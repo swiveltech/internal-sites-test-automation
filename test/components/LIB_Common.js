@@ -104,8 +104,8 @@ class Common {
       Index,
     ).isDisplayed();
     assertionHandler.assertTrue(element, "element not visible");
-    allureReporter.step("Verify button and button value is " + label, () => {
-      console.log("Verify button and button value is " + label);
+    allureReporter.step("Verify the button value is : " + label, () => {
+      console.log("Verify the button value is : " + label);
     });
   }
 

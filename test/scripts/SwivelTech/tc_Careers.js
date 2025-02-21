@@ -59,5 +59,10 @@ describe("Swivel Tech Site -> Careers Page", () => {
 
     //Verify the Our Job Openings
     await LIB_Common.bc_VerifyH2Header(Data_Careers.Header_OurJobOpenings);
+
+    await LIB_Careers.bc_SearchForJob("Invalid Data");
+    await LIB_Careers.bc_VerifyTheSearchRecordIsNotAvailable();
+    await LIB_Careers.bc_SearchForJob("Senior");
+    await LIB_Careers.bc_VerifyTheSearchRecordAvailable();
   });
 });
