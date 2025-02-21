@@ -24,8 +24,8 @@ class Common {
    */
   async bc_TakeScreenShot(name) {
     await browser.saveScreenshot("./Screenshots/" + name + ".png");
-    allureReporter.step("Screenshot name " + name, () => {
-      console.log("Screenshot name " + name);
+    allureReporter.step("Screenshot name : " + name, () => {
+      console.log("Screenshot name : " + name);
     });
   }
 

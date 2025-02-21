@@ -303,8 +303,14 @@ describe("Swivel Group Site -> Home Page ", () => {
     );
 
     await LIB_Common.bc_TakeScreenShot("Swivel Tech Site");
-    await LIB_Common.bc_VerifyH1Header(
-      "Purpose-Built Software Solutions Geared For Scale",
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(
+      "Building, Automating, and Evolving",
+      1,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      "Bridging Innovation and Expertise Through Our Outsourced Software Development Services",
+      1,
     );
     // close tab
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
