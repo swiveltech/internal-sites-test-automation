@@ -20,6 +20,16 @@ class Home {
   }
 
   /**
+   * a method to Click on the spp logo
+   */
+  async bc_ClickOnAppLogo() {
+    await PG_Home.img_SwivelTechLogo.click();
+    allureReporter.step("Click on the Swivel Tech logo", () => {
+      console.log("Click on the Swivel Tech logo");
+    });
+  }
+
+  /**
    * a method to Verify the Footer Swivel Tech logo
    */
   async bc_VerifyHomeFooterPageLogo() {
@@ -38,7 +48,7 @@ class Home {
   }
 
   /**
-   * a method to Verify the Footer Swivel Tech logo
+   * a method to Verify the Footer Option
    */
   async bc_VerifyFooterOptions(Header, Options) {
     let tabNamesToVerify =
@@ -601,6 +611,26 @@ class Home {
     allureReporter.step("Verify the H1 header as : " + Title, () => {
       console.log("Verify the H1 header as : " + Title);
     });
+  }
+  /**
+   * a method to Click on the Footer Option
+   */
+  async bc_ClickOnFooterOption(header, tabName) {
+    await PG_Home.lnk_FooterOption(header, tabName).click();
+    allureReporter.step(
+      "Click on the options as : " +
+        tabName +
+        " , and sub header as : " +
+        header,
+      () => {
+        console.log(
+          "Click on the options as : " +
+            tabName +
+            " , and sub header as : " +
+            header,
+        );
+      },
+    );
   }
 }
 export default new Home();

@@ -1,0 +1,23 @@
+{
+  "SubMenu_Home": "Home",
+  "SubMenu_AboutUs": "About Us",
+  "Header_AboutUs": "About Us",
+  "SubMenu_HowWeWork": "How We Work",
+  "Header_ProjectBasedSoftwareDevelopment": "Project-Based Software Development",
+  "SubMenu_CaseStudies": "Case Studies",
+  "Header_CaseStudies": "Case Studies",
+  "SubMenu_Blogs": "Blogs",
+  "Header_Blogs": "Blogs",
+  "SubMenu_ArtificialIntelligence": "Artificial Intelligence",
+  "Header_ArtificialIntelligenceConsultingServices": "Artificial Intelligence Consulting Services",
+  "SubMenu_DevOpsAsAService": "DevOps as a Service",
+  "Header_DevOpsConsultingServicesAndSolutions": "DevOps Consulting Services & Solutions",
+  "SubMenu_EnterpriseSoftwareDevelopment": "Enterprise Software Development",
+  "Header_EnterpriseApplicationSoftwareDevelopmentSolutions": "Enterprise Application Software",
+  "SubMenu_ManagedServiceAugmentation": "Managed Service Augmentation",
+  "Header_SeamlesslyExpandYourTeamWith": "Seamlessly Expand Your Team With",
+  "SubMenu_QAAsAService": "QA as a Service",
+  "Header_OutsourcedQualityAssuranceServices": "Outsourced Quality Assurance Services",
+  "SubMenu_SearchEngineOptimisation": "Search Engine Optimisation",
+  "Header_SEOConsultancyAndAuditingServices": "SEO Consultancy and Auditing Services"
+}
