@@ -6,7 +6,7 @@ import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelGroup/dt_home.json" assert { type: "json" };
 import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.json" assert { type: "json" };
-import Data_Newsroom from "../../data/swivelGroup/dt_newsroom.json" assert { type: "json" };
+import Data_Newsroom from "../../data/SwivelGroup/dt_newsroom.json" assert { type: "json" };
 
 describe("Swivel Group Site -> Home Page ", () => {
   // Covered Test Case Number : SG-1, SG-6, SG-7,SG-12, SG-13, SG-17

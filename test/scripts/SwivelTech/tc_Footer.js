@@ -4,7 +4,6 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_Footer from "../../data/SwivelTech/dt_footer.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
-// import LIB_Careers from "../../components/SwivelTech/LIB_Careers.js";
 
 describe("Swivel Tech Site -> Footer Section in Home Page", () => {
   it("Verify the Footer Section in Home Page", async () => {
