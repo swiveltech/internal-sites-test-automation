@@ -19,5 +19,11 @@
   "SubMenu_QAAsAService": "QA as a Service",
   "Header_OutsourcedQualityAssuranceServices": "Outsourced Quality Assurance Services",
   "SubMenu_SearchEngineOptimisation": "Search Engine Optimisation",
-  "Header_SEOConsultancyAndAuditingServices": "SEO Consultancy and Auditing Services"
+  "Header_SEOConsultancyAndAuditingServices": "SEO Consultancy and Auditing Services",
+  "Footer_Header_SignUpForOurNewsLetter": "Sign Up for Our Newsletter",
+  "RequiredMessage_UnderEmail": "This field is required.",
+  "ErrorMessage_UnderEmail": "Enter a valid email address.",
+  "Valid_Email": "test_swivelgroup@gmail.com",
+  "ThankYouMessage_UnderEmail": "Thank you for signing up!",
+  "Header_FollowUsOn": "Follow us on"
 }

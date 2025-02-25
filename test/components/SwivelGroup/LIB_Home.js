@@ -457,7 +457,7 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Facebook;
     await element.scrollIntoView({ block: "center", inline: "center" });
-    let appUrl = element.getAttribute("href");
+    let appUrl = await element.getAttribute("href");
     await element.click();
 
     allureReporter.step(
@@ -512,7 +512,7 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Instagram;
     await element.scrollIntoView({ block: "center", inline: "center" });
-    let appUrl = element.getAttribute("href");
+    let appUrl = await element.getAttribute("href");
     await element.click();
 
     // Wait until a new window appears
@@ -549,10 +549,6 @@ class Home {
         console.log("Verify the Instagram title in Instagram page popup.");
       },
     );
-    await PG_SocialMedia.ico_InstagramClosePoopUp.click();
-    allureReporter.step("Click on Instagram close icon on popup.", () => {
-      console.log("Click on Instagram close icon on popup.");
-    });
   }
 
   /**
@@ -566,7 +562,7 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Twitter;
     await element.scrollIntoView({ block: "center", inline: "center" });
-    let appUrl = element.getAttribute("href");
+    let appUrl = await element.getAttribute("href");
     await element.click();
 
     allureReporter.step(
@@ -622,7 +618,7 @@ class Home {
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Linkedin;
     await element.scrollIntoView({ block: "center", inline: "center" });
-    let appUrl = element.getAttribute("href");
+    let appUrl = await element.getAttribute("href");
     await element.click();
 
     // Wait until a new window appears

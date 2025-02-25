@@ -170,6 +170,26 @@ class HomePage {
   ele_lblH1WithNormalizeSpace(Description) {
     return $(`//h1[text()[normalize-space() = "${Description}"]]`);
   }
+
+  get tf_EmailForOurNewsletter() {
+    return $(`//input[@id="email"]`);
+  }
+
+  ele_lblErrorMessageUnderEmail(Message) {
+    return $(
+      `//input[@id="email"]/following-sibling::div/div[text()="${Message}"]`,
+    );
+  }
+
+  ele_lblThankYouSigningUp(Message) {
+    return $(
+      `//input[@id="email"]/../../../following-sibling::div/div/span[text()="${Message}"]`,
+    );
+  }
+
+  lnk_SocialMedia(Index) {
+    return $(`//div[@class="social-area flex flex-col"]/div[1]/a[${Index}]`);
+  }
 }
 
 export default new HomePage();

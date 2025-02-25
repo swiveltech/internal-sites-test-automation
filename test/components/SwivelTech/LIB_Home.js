@@ -2,6 +2,8 @@ import assertionHandler from "../../../infrastructure/common/assertionHandler.js
 import allureReporter from "@wdio/allure-reporter";
 import PG_Home from "../../pages/SwivelTech/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
+import LIB_Common from "../LIB_Common.js";
+import PG_SocialMedia from "../../pages/SwivelTech/PG_SocialMedia.js";
 class Home {
   /**
    * a method to Verify the Swivel Tech logo
@@ -631,6 +633,336 @@ class Home {
         );
       },
     );
+  }
+
+  /**
+   * a method to Verify the footer email Sign Up for Our Newsletter
+   */
+  async bc_VerifySignUpForOurNewsletter() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.tf_EmailForOurNewsletter,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Footer email for our news letter is present.",
+      () => {
+        console.log("Verify the Footer email for our news letter is present.");
+      },
+    );
+    LIB_Common.bc_VerifyTheButton("SUBSCRIBE", 1);
+  }
+
+  /**
+   * a method to Type email into Sign Up for Our Newsletter Field
+   */
+  async bc_TypeEmailIntoSignUpForOurNewsletter(email) {
+    await PG_Home.tf_EmailForOurNewsletter.clearValue();
+    await PG_Home.tf_EmailForOurNewsletter.addValue(email);
+    allureReporter.step("Type Email as " + email, () => {
+      console.log("Type Email as " + email);
+    });
+  }
+
+  /**
+   * a method to Verify the Error message under email Field
+   */
+  async bc_VerifyErrorMessageUnderEmail(message) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblErrorMessageUnderEmail(message),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the error message under the email as : " + message,
+      () => {
+        console.log("Verify the error message under the email as : " + message);
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the Thank you message under email Field
+   */
+  async bc_VerifyThankYouMessageUnderEmail(message) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblThankYouSigningUp(message),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Thank you message under the email as : " + message,
+      () => {
+        console.log(
+          "Verify the Thank you message under the email as : " + message,
+        );
+      },
+    );
+  }
+
+  /**
+   * a method to Verify the Social Media icons
+   */
+  async bc_VerifySocialMediaIconsAndURL() {
+    // Facebook Icon and URL
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_SocialMedia(1),
+      "Element not exist",
+    );
+    let appURL = await PG_Home.lnk_SocialMedia(1).getAttribute("href");
+    allureReporter.step(
+      "Verify the Facebook icon and app url as : " + appURL,
+      () => {
+        console.log("Verify the Facebook icon and app url as : " + appURL);
+      },
+    );
+    // Instagram Icon and URL
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_SocialMedia(2),
+      "Element not exist",
+    );
+    appURL = await PG_Home.lnk_SocialMedia(2).getAttribute("href");
+    allureReporter.step(
+      "Verify the Instagram icon and app url as : " + appURL,
+      () => {
+        console.log("Verify the Instagram icon and app url as : " + appURL);
+      },
+    );
+    // Twitter Icon and URL
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_SocialMedia(3),
+      "Element not exist",
+    );
+    appURL = await PG_Home.lnk_SocialMedia(3).getAttribute("href");
+    allureReporter.step(
+      "Verify the Twitter icon and app url as : " + appURL,
+      () => {
+        console.log("Verify the Twitter icon and app url as : " + appURL);
+      },
+    );
+    // LinkedIn Icon and URL
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_SocialMedia(4),
+      "Element not exist",
+    );
+    appURL = await PG_Home.lnk_SocialMedia(4).getAttribute("href");
+    allureReporter.step(
+      "Verify the LinkedIn icon and app url as : " + appURL,
+      () => {
+        console.log("Verify the LinkedIn icon and app url as : " + appURL);
+      },
+    );
+  }
+
+  /**
+   * a method to Click on Facebook Icon and verify it.
+   */
+  async bc_ClickOnFaceBookIconAndVerifyIt() {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = PG_Home.lnk_SocialMedia(1);
+    let appUrl = await element.getAttribute("href");
+    await element.click();
+
+    allureReporter.step(
+      "Click on Facebook in home page. Clicked URL : " + appUrl,
+      () => {
+        console.log("Click on Facebook in home page. Clicked URL : " + appUrl);
+      },
+    );
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+  }
+
+  /**
+   * a method to click on Linkedin icon
+   *
+   */
+  async bc_ClickOnLinkedinIcon() {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.lnk_SocialMedia(4);
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = await element.getAttribute("href");
+    await element.click();
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(1000);
+    allureReporter.step(
+      "Click on Linkedin in home page. Clicked URL : " + appUrl,
+      () => {
+        console.log("Click on Linkedin in home page. Clicked URL : " + appUrl);
+      },
+    );
+  }
+
+  /**
+   * a method to Verify on Linkedin popup and close it
+   *
+   */
+  async bc_VerifyTheLinkedinPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_LinkedinTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Linkedin title in Linkedin page popup.",
+      () => {
+        console.log("Verify the Linkedin title in Linkedin page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_LinkedinClosePoopUp.click();
+    allureReporter.step("Click on Linkedin close icon on popup.", () => {
+      console.log("Click on Linkedin close icon on popup.");
+    });
+  }
+
+  /**
+   * a method to click on Instagram icon
+   *
+   */
+  async bc_ClickOnInstagramIcon() {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.lnk_SocialMedia(2);
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = await element.getAttribute("href");
+    await element.click();
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    allureReporter.step(
+      "Click on Instagram in home page. Click URL : " + appUrl,
+      () => {
+        console.log("Click on Instagram in home page. Click URL : " + appUrl);
+      },
+    );
+  }
+
+  /**
+   * a method to verify on Instagram popup and close it
+   *
+   */
+  async bc_VerifyTheInstagramPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_InstagramTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Instagram title in Instagram page popup.",
+      () => {
+        console.log("Verify the Instagram title in Instagram page popup.");
+      },
+    );
+  }
+
+  /**
+   * a method to click on Twitter icon
+   *
+   */
+  async bc_ClickOnTwitterIcon() {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    // Locate and interact with the brand element
+    let element = await PG_Home.lnk_SocialMedia(3);
+    await element.scrollIntoView({ block: "center", inline: "center" });
+    let appUrl = await element.getAttribute("href");
+    await element.click();
+
+    allureReporter.step(
+      "Click on Twitter in home page. Clicked URL : " + appUrl,
+      () => {
+        console.log("Click on Twitter in home page. Clicked URL : " + appUrl);
+      },
+    );
+
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(2000);
+  }
+
+  /**
+   * a method to verify on Twitter popup and close it
+   *
+   */
+  async bc_VerifyTheTwitterPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_TwitterTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Twitter title in Twitter page popup.",
+      () => {
+        console.log("Verify the Twitter title in Twitter page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_TwitterClosePoopUp.click();
+    allureReporter.step("Click on Twitter close icon on popup.", () => {
+      console.log("Click on Twitter close icon on popup.");
+    });
+  }
+
+  /**
+   * a method to Verify on facebook popup and close it
+   *
+   */
+  async bc_VerifyTheFacebookPopAndCloseIt() {
+    await assertionHandler.assertElementDisplayed(
+      PG_SocialMedia.ele_FacebookTitle,
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Facebook title in facebook page popup.",
+      () => {
+        console.log("Verify the Facebook title in facebook page popup.");
+      },
+    );
+    await PG_SocialMedia.ico_FacebookClosePoopUp.click();
+    allureReporter.step("Click on Facebook close icon on popup.", () => {
+      console.log("Click on Facebook close icon on popup.");
+    });
   }
 }
 export default new Home();
