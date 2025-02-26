@@ -590,6 +590,19 @@ class Home {
   }
 
   /**
+   * a method to Verify the Sub PageHeader In P Tag all match
+   */
+  async bc_VerifySubPageHeaderToMatchAllInPTag(Title) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblDescriptionToMatchAllInPTag(Title),
+      "Element not exist",
+    );
+    allureReporter.step("Verify the header as : " + Title, () => {
+      console.log("Verify the header as : " + Title);
+    });
+  }
+
+  /**
    * a method to Verify the Sub PageHeader In P Tag
    */
   async bc_VerifySubPageHeaderInPTag(Title) {

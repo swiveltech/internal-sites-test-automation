@@ -5,7 +5,7 @@ import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json"
 import Data_Footer from "../../data/SwivelTech/dt_footer.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 
-describe("Swivel Tech Site -> Footer Section in Home Page", () => {
+describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () => {
   it("Verify the Footer Section in Home Page", async () => {
     allureReporter.addFeature(
       "Verify the Swivel Tech Footer Section in Home Page",
@@ -218,5 +218,46 @@ describe("Swivel Tech Site -> Footer Section in Home Page", () => {
     await LIB_Home.bc_ClickOnInstagramIcon();
     await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+  });
+
+  it("Verify the Privacy Policy & Cookie Policy Navigation", async () => {
+    allureReporter.addFeature(
+      "Verify the Swivel Tech Privacy Policy & Cookie Policy Navigation",
+    );
+    allureReporter.addStory(
+      "Verify the Privacy Policy & Cookie Policy Navigation",
+    );
+    allureReporter.startStep(
+      "Swivel Tech -> Verify the Privacy Policy & Cookie Policy Navigation",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    //Verify the Footer Copyright label
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Footer_Header, 1);
+    await LIB_Common.bc_VerifyLinks(Data_Home.Link_PrivacyPolicy);
+    await LIB_Common.bc_VerifyLinks(Data_Home.Link_CookiePolicy);
+
+    //Click on Privacy Policy
+    await LIB_Common.bc_ClickOnLinks(Data_Home.Link_PrivacyPolicy);
+    await LIB_Common.bc_VerifyTheAppURL("privacy-policy");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Footer.Header_SwivelTechPrivacyPolicy,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Footer.SwivelTechPrivacyPolicy_Description,
+    );
+    //Click on Cookie Policy
+    await LIB_Common.bc_ClickOnLinks(Data_Home.Link_CookiePolicy);
+    await LIB_Common.bc_VerifyTheAppURL("cookie-policy");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Footer.Header_SwivelTechCookiePolicy,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Footer.SwivelTechCookiePolicy_Description,
+    );
   });
 });

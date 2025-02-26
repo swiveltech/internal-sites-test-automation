@@ -15,11 +15,15 @@ class CommonPage {
   }
 
   btn_ButtonWithLabel(Label, Index) {
-    return $(`(//button[text()='${Label}'])[${Index}]`);
+    return $(`(//button[text()="${Label}"])[${Index}]`);
   }
 
   ele_lblH1Header(Label) {
     return $(`//h1[contains(text(),"${Label}")]`);
+  }
+
+  ele_lblH1HeaderWithDot(Label) {
+    return $(`//h1[contains(.,"${Label}")]`);
   }
 
   ele_lblH2Header(Label) {

@@ -152,6 +152,10 @@ class HomePage {
   ele_lblLatestDescription(Description) {
     return $(`//p[text()[normalize-space() = "${Description}"]]`);
   }
+
+  ele_lblDescriptionToMatchAllInPTag(Description) {
+    return $(`//p[contains(., "${Description}")]`);
+  }
   ele_lblLatestDescriptionReadMore(Description) {
     return $(
       `//p[text()[normalize-space() = "${Description}"]]/following-sibling::div/div/a/button[text()='READ MORE']/..`,

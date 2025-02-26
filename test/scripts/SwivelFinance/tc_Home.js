@@ -111,8 +111,6 @@ describe("Swivel Finance Site -> Home Page ", () => {
       Data_Home.People1_Name,
       Data_Home.People1_Job,
     );
-    // This is Dilshan
-
     await LIB_Home.bc_VerifyWeHaveWorkedWithThem(
       Data_Home.People2_Description,
       Data_Home.People2_Name,

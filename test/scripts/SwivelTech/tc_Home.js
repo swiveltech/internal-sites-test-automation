@@ -266,9 +266,9 @@ describe("Swivel Tech Site -> Home Page ", () => {
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_HowWeWork.StaffAugmentation_Top_Description2,
     );
-    // await LIB_Home.bc_VerifySubPageHeaderInPTag(
-    //   Data_HowWeWork.StaffAugmentation_Top_Description3,
-    // ); failing
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_HowWeWork.StaffAugmentation_Top_Description3,
+    );
     await LIB_Common.bc_VerifyTheAppURL("staff-augmentation");
 
     // Verify the "Resources" -> "Blogs" navigation
@@ -276,13 +276,121 @@ describe("Swivel Tech Site -> Home Page ", () => {
       Data_Home.TabName_Resources,
       Data_Home.Resources_Blogs,
     );
+    await LIB_Common.bc_VerifyTheAppURL("blogs");
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1Header(Data_Resources.Blogs_Top_Header);
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.Blogs_Top_Description,
     );
 
+    // Verify the "Resources" -> "Case Studies" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Resources,
+      Data_Home.Resources_CaseStudies,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+
     // Verify the "Careers" navigation
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_Careers);
+    await LIB_Common.bc_VerifyTheAppURL("careers");
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_Careers);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.Careers_Description,
+    );
+
+    // Verify the Let's Talk navigation
+    await LIB_Common.bc_ClickOnButton("Let’s Talk", 1);
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+
+    // Verify the "Services" -> "Artificial Intelligence" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_ArtificialIntelligence,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("artificial-intelligence");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_ArtificialIntelligenceConsultingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ArtificialIntelligenceConsultingServices_Description,
+    );
+
+    // Verify the "Services" -> "DevOps As A Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_DevOpsAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("devops-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_DevOpsConsultingServicesAndSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
+    );
+
+    // Verify the "Services" -> "Enterprise Software Development" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_EnterpriseSoftwareDevelopment,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("enterprise-software-development");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_EnterpriseApplicationSoftwareDevelopmentSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
+    );
+
+    // Verify the "Services" -> "Managed Service Augmentation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_ManagedServiceAugmentation,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("managed-service-augmentation");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SeamlesslyExpandYourTeamWithStaffAugmentation,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
+    );
+
+    // Verify the "Services" -> "QA As A Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_QAAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("qa-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_QAAsAService);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.QAAsAService_Description,
+    );
+
+    // Verify the "Services" -> "Search Engine Optimisation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_SearchEngineOptimisation,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SEOConsultancyAndAuditingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SEOConsultancyAndAuditingServices_Description,
+    );
   });
 });

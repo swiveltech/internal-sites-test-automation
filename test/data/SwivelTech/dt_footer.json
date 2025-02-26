@@ -25,5 +25,9 @@
   "ErrorMessage_UnderEmail": "Enter a valid email address.",
   "Valid_Email": "test_swivelgroup@gmail.com",
   "ThankYouMessage_UnderEmail": "Thank you for signing up!",
-  "Header_FollowUsOn": "Follow us on"
+  "Header_FollowUsOn": "Follow us on",
+  "Header_SwivelTechCookiePolicy": "Swivel Tech Cookie Policy",
+  "SwivelTechCookiePolicy_Description": "This Cookie Policy explains how Swivel Group (“we”, “us”, or “our”) uses cookies to track website visitors and users. By using our website, you acknowledge that you have read and understood this, Cookie Policy. If you do not agree with any part of this Cookie Policy, you should not use our website.",
+  "Header_SwivelTechPrivacyPolicy": "Swivel Tech Privacy Policy",
+  "SwivelTechPrivacyPolicy_Description": "This Privacy Policy explains how Swivel Group (“we”, “us”, or “our”) collects, uses, and shares the personal information of our website visitors and users. By using our website, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with any part of this Privacy Policy, you should not use our website."
 }
