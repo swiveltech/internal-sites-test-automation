@@ -64,12 +64,12 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights5_Date,
       Data_Resources.OurLatestInsights5_SubDescription,
     );
-    // await LIB_Home.bc_VerifyOurLatestInsightsTile(
-    //   Data_Resources.OurLatestInsights6_Title,
-    //   Data_Resources.OurLatestInsights6_Category,
-    //   Data_Resources.OurLatestInsights6_Date,
-    //   Data_Resources.OurLatestInsights6_SubDescription,
-    // );failing
+    await LIB_Home.bc_VerifyOurLatestInsightsTileInPTag(
+      Data_Resources.OurLatestInsights6_Title,
+      Data_Resources.OurLatestInsights6_Category,
+      Data_Resources.OurLatestInsights6_Date,
+      Data_Resources.OurLatestInsights6_SubDescription,
+    );
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights7_Title,
       Data_Resources.OurLatestInsights7_Category,
@@ -100,22 +100,37 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights11_Date,
       Data_Resources.OurLatestInsights11_SubDescription,
     );
-    // await LIB_Home.bc_VerifyOurLatestInsightsTile(
-    //   Data_Resources.OurLatestInsights12_Title,
-    //   Data_Resources.OurLatestInsights12_Category,
-    //   Data_Resources.OurLatestInsights12_Date,
-    //   Data_Resources.OurLatestInsights12_SubDescription,
-    // );failing
-    // await LIB_Home.bc_VerifyOurLatestInsightsTile(
-    //   Data_Resources.OurLatestInsights13_Title,
-    //   Data_Resources.OurLatestInsights13_Category,
-    //   Data_Resources.OurLatestInsights13_Date,
-    //   Data_Resources.OurLatestInsights13_SubDescription,
-    // );failing
+    await LIB_Home.bc_VerifyOurLatestInsightsTileInPTag(
+      Data_Resources.OurLatestInsights12_Title,
+      Data_Resources.OurLatestInsights12_Category,
+      Data_Resources.OurLatestInsights12_Date,
+      Data_Resources.OurLatestInsights12_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTileInPTag(
+      Data_Resources.OurLatestInsights13_Title,
+      Data_Resources.OurLatestInsights13_Category,
+      Data_Resources.OurLatestInsights13_Date,
+      Data_Resources.OurLatestInsights13_SubDescription,
+    );
     await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
     await LIB_Common.bc_VerifyTheParagraph(
       Data_Resources.HowCanWeHelpYou_Description,
     );
-    await LIB_Common.bc_VerifyTheButton("Book a Discovery Call", 1);
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
   });
 });

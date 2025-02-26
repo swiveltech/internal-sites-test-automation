@@ -146,7 +146,7 @@ class HomePage {
 
   ele_lblOurLatestInsights(Title, Category, DateInSystem) {
     return $(
-      `//h4[contains(text(),'${Title}')]/following-sibling::div[contains(text(),'${Category}')]/following-sibling::div/span[contains(text(),'${DateInSystem}')]`,
+      `//h4[contains(text(),'${Title}')]/following-sibling::div[contains(.,'${Category}')]/following-sibling::div/span[contains(text(),'${DateInSystem}')]`,
     );
   }
   ele_lblLatestDescription(Description) {
@@ -155,6 +155,12 @@ class HomePage {
 
   ele_lblDescriptionToMatchAllInPTag(Description) {
     return $(`//p[contains(., "${Description}")]`);
+  }
+
+  ele_lblLatestDescriptionReadMoreInP(Description) {
+    return $(
+      `//p[contains(., "${Description}")]/following-sibling::div/div/a/button[text()='READ MORE']/..`,
+    );
   }
   ele_lblLatestDescriptionReadMore(Description) {
     return $(

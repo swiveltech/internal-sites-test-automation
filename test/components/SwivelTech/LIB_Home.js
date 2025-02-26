@@ -549,10 +549,7 @@ class Home {
    */
   async bc_ClickOnTopTab(tabName, Option) {
     let OptionToSelect = Option;
-    await PG_Home.ele_HeaderTab(tabName).moveTo({
-      block: "center",
-      inline: "center",
-    });
+    await PG_Home.ele_HeaderTab(tabName).moveTo();
     await browser.pause(2000);
     if (!OptionToSelect) {
       await PG_Home.ele_HeaderTab(tabName).click();
@@ -564,7 +561,7 @@ class Home {
         block: "center",
         inline: "center",
       });
-      await browser.pause(1000);
+      await browser.pause(2000);
       await PG_Common.lnk_Navigation(OptionToSelect).click();
       allureReporter.step(
         "Click on Tab : " +
@@ -583,10 +580,12 @@ class Home {
         },
       );
     }
+    await browser.pause(2000);
     await PG_Home.img_SwivelTechLogo.moveTo({
       block: "center",
       inline: "center",
     });
+    await browser.pause(1000);
   }
 
   /**
@@ -976,6 +975,69 @@ class Home {
     allureReporter.step("Click on Facebook close icon on popup.", () => {
       console.log("Click on Facebook close icon on popup.");
     });
+  }
+
+  /**
+   * a method to Verify Our Latest Insights tile in P Tag
+   *
+   */
+  async bc_VerifyOurLatestInsightsTileInPTag(
+    Title,
+    Category,
+    DateInSystem,
+    Description,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblOurLatestInsights(Title, Category, DateInSystem),
+      "Element not exist",
+    );
+    allureReporter.step(
+      "Verify the Our Latest Insights tile Title as : " +
+        Title +
+        " and Category as : " +
+        Category +
+        " , and Date as : " +
+        DateInSystem,
+      () => {
+        console.log(
+          "Verify the Our Latest Insights tile Title as : " +
+            Title +
+            " and Category as : " +
+            Category +
+            " , and Date as : " +
+            DateInSystem,
+        );
+      },
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblDescriptionToMatchAllInPTag(Description),
+      "Element not exist",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblLatestDescriptionReadMoreInP(Description),
+      "Element not exist",
+    );
+    let href =
+      await PG_Home.ele_lblLatestDescriptionReadMoreInP(
+        Description,
+      ).getAttribute("href");
+    allureReporter.step(
+      "Verify the Our Latest Insights Description as : " + Description,
+      () => {
+        console.log(
+          "Verify the Our Latest Insights Description as : " + Description,
+        );
+      },
+    );
+    allureReporter.step(
+      "Verify the Our Latest Insights Have Read More link and URL : " + href,
+      () => {
+        console.log(
+          "Verify the Our Latest Insights Have Read More link and URL : " +
+            href,
+        );
+      },
+    );
   }
 }
 export default new Home();
