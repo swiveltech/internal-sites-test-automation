@@ -34,5 +34,92 @@ class Resources {
       );
     }
   }
+
+  /**
+   * a method to Verify Categories tile
+   *
+   */
+  async bc_VerifyCategoriesTile(Title, Description) {
+    await LIB_Common.bc_VerifyH4Header(Title);
+
+    await assertionHandler.assertElementDisplayed(
+      PG_Resources.ele_CategoriesTile(Title, Description),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Categories Title as : " +
+        Title +
+        " , Description as : " +
+        Description,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Resources.lnk_CategoriesTileReadMore(Title, Description),
+      "Element not exist",
+    );
+    let URL = await PG_Resources.lnk_CategoriesTileReadMore(
+      Title,
+      Description,
+    ).getAttribute("href");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Categories Title as : " +
+        Title +
+        " and Read more link is present. URL : " +
+        URL,
+    );
+  }
+
+  /**
+   * a method to Verify Categories tile for 3 text
+   *
+   */
+  async bc_VerifyCategoriesTileFor3Text(
+    Title,
+    Description1,
+    Description2,
+    Description3,
+  ) {
+    await LIB_Common.bc_VerifyH4Header(Title);
+
+    await assertionHandler.assertElementDisplayed(
+      PG_Resources.ele_CategoriesTile3Text(
+        Title,
+        Description1,
+        Description2,
+        Description3,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Categories Title as : " +
+        Title +
+        " , Description as : " +
+        Description1 +
+        " " +
+        Description2 +
+        " " +
+        Description3,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Resources.lnk_CategoriesTileReadMore3Text(
+        Title,
+        Description1,
+        Description2,
+        Description3,
+      ),
+      "Element not exist",
+    );
+    let URL = await PG_Resources.lnk_CategoriesTileReadMore3Text(
+      Title,
+      Description1,
+      Description2,
+      Description3,
+    ).getAttribute("href");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Categories Title as : " +
+        Title +
+        " and Read more link is present. URL : " +
+        URL,
+    );
+  }
 }
 export default new Resources();
