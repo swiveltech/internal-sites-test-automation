@@ -7,7 +7,7 @@ import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_Resources from "../../components/SwivelTech/LIB_Resources.js";
 
 describe("Swivel Tech Site -> Resources Page", () => {
-  it.skip("Verify the Resources Page -> Blogs Page", async () => {
+  it("Verify the Resources Page -> Blogs Page", async () => {
     allureReporter.addFeature(
       "Verify the Swivel Tech Resources Page -> Blogs Page",
     );

@@ -400,8 +400,9 @@ class Home {
    */
   async bc_ClickOnTopTab(tabName, Option) {
     let OptionToSelect = Option;
+    await browser.pause(3000);
     await PG_Home.ele_HeaderTab(tabName).moveTo();
-    await browser.pause(2000);
+    await browser.pause(3000);
     if (!OptionToSelect) {
       await PG_Home.ele_HeaderTab(tabName).click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
