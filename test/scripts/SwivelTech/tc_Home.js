@@ -223,6 +223,7 @@ describe("Swivel Tech Site -> Home Page ", () => {
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyHomePageLogo();
 
     // Verify the "About Us" navigation
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_AboutUs);
@@ -392,5 +393,8 @@ describe("Swivel Tech Site -> Home Page ", () => {
     await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
       Data_Resources.SEOConsultancyAndAuditingServices_Description,
     );
+
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
   });
 });
