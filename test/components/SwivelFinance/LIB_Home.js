@@ -1,7 +1,7 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
-import allureReporter from "@wdio/allure-reporter";
 import PG_Home from "../../pages/SwivelFinance/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
+import LIB_Common from "../LIB_Common.js";
 
 class Home {
   /**
@@ -12,11 +12,8 @@ class Home {
       PG_Home.img_SwivelFinanceLogo,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Finance logo on top of the Home page",
-      () => {
-        console.log("Verify the Swivel Finance logo on top of the Home page");
-      },
     );
   }
 
@@ -28,19 +25,11 @@ class Home {
       PG_Home.ele_ServicesWeDeliverTile(Title, SubTitle),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Finance Services as : " +
         SubTitle +
         " ,Under the title : " +
         Title,
-      () => {
-        console.log(
-          "Verify the Swivel Finance Services as : " +
-            SubTitle +
-            " ,Under the title : " +
-            Title,
-        );
-      },
     );
   }
 
@@ -60,19 +49,11 @@ class Home {
       PG_Home.lnk_SuccessfulClientProjectReadMore(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         Title +
         " ,And the Description as : " +
         Description,
-      () => {
-        console.log(
-          "Verify the Sub Title as : " +
-            Title +
-            " ,And the Description as : " +
-            Description,
-        );
-      },
     );
   }
 
@@ -96,23 +77,13 @@ class Home {
       ),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Person name as : " +
         PeopleName +
         " ,And the Job as " +
         Job +
         " , And the Description as : " +
         Description,
-      () => {
-        console.log(
-          "Verify the Person name as : " +
-            PeopleName +
-            " ,And the Job as " +
-            Job +
-            " , And the Description as : " +
-            Description,
-        );
-      },
     );
   }
 
@@ -128,17 +99,10 @@ class Home {
       PG_Home.lnk_ThoughtLeadershipVisitMore(Title),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         Title +
         " , Under Thought Leadership and verify the Visit more link too. ",
-      () => {
-        console.log(
-          "Verify the Sub Title as : " +
-            Title +
-            " , Under Thought Leadership and verify the Visit more link too. ",
-        );
-      },
     );
   }
 
@@ -150,37 +114,25 @@ class Home {
       PG_Home.img_SwivelLogoFooter,
       "Element not exist",
     );
-    allureReporter.step("Verify the Application logo in footer.", () => {
-      console.log("Verify the Application logo in footer.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Application logo in footer.",
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Home.icn_Instagram,
       "Element not exist",
     );
     let url = await PG_Home.icn_Instagram.getAttribute("href");
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Application Instagram logo in footer. and App URL is : " +
         url,
-      () => {
-        console.log(
-          "Verify the Application Instagram logo in footer. and App URL is : " +
-            url,
-        );
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Home.icn_Linkedin,
       "Element not exist",
     );
     url = await PG_Home.icn_Linkedin.getAttribute("href");
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Application Linkedin logo in footer. and App URL is : " + url,
-      () => {
-        console.log(
-          "Verify the Application Linkedin logo in footer. and App URL is : " +
-            url,
-        );
-      },
     );
   }
 
@@ -198,12 +150,8 @@ class Home {
         "Element not exist",
       );
 
-      allureReporter.step(
+      await LIB_Common.bc_LogAllureReportAndLogs(
         `Verify the Swivel Finance Tab name ${tabName} is present.`,
-        () =>
-          console.log(
-            `Verify the Swivel Finance Tab name ${tabName} is present.`,
-          ),
       );
     }
   }

@@ -13,10 +13,7 @@ class Common {
       timeout: 3000, // Adjust timeout as needed
       timeoutMsg: `URL did not load correctly: Expected ${url}, but got a different page.`,
     });
-
-    allureReporter.step(`Loaded the URL: ${url}`, () => {
-      console.log(`Loaded the URL: ${url}`);
-    });
+    await this.bc_LogAllureReportAndLogs("Loaded the URL: " + url);
   }
 
   /**
@@ -24,9 +21,7 @@ class Common {
    */
   async bc_TakeScreenShot(name) {
     await browser.saveScreenshot("./Screenshots/" + name + ".png");
-    allureReporter.step("Screenshot name : " + name, () => {
-      console.log("Screenshot name : " + name);
-    });
+    await this.bc_LogAllureReportAndLogs("Screenshot name : " + name);
   }
 
   /**
@@ -50,12 +45,10 @@ class Common {
       const value = await option.getText();
       if (value === optionValue) {
         await option.click();
-        allureReporter.step(
+        await this.bc_LogAllureReportAndLogs(
           "Select Value From Dropdown as " + optionValue,
-          () => {
-            console.log("Select Value From Dropdown as " + optionValue);
-          },
         );
+
         await browser.pause(1000);
         return;
       }
@@ -75,9 +68,9 @@ class Common {
     );
     await elementToScroll.scrollIntoView();
     assertionHandler.assertTrue(element, "element not visible");
-    allureReporter.step("Verify the page header as " + pageHeader, () => {
-      console.log("Verify the page header as " + pageHeader);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the page header as " + pageHeader,
+    );
   }
 
   //Common component for click on button
@@ -87,10 +80,9 @@ class Common {
     if (await element.isExisting()) {
       await element.scrollIntoView({ block: "center", inline: "center" });
       await element.click();
-
-      allureReporter.step(`Clicked on button with label: ${label}`, () => {
-        console.log(`Clicked on button with label: ${label}`);
-      });
+      await this.bc_LogAllureReportAndLogs(
+        `Clicked on button with label: ${label}`,
+      );
     } else {
       console.warn(`Button with label "${label}" not found.`);
     }
@@ -104,9 +96,9 @@ class Common {
       Index,
     ).isDisplayed();
     assertionHandler.assertTrue(element, "element not visible");
-    allureReporter.step("Verify the button value is : " + label, () => {
-      console.log("Verify the button value is : " + label);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the button value is : " + label,
+    );
   }
 
   //Common component to verify the application url
@@ -133,14 +125,8 @@ class Common {
       expectedSegment,
       `Expected "${expectedSegment}" but got "${lastPathSegment}"`,
     );
-
-    allureReporter.step(
+    await this.bc_LogAllureReportAndLogs(
       `Navigated to the correct page. Current URL: ${currentUrl}, Expected segment: ${expectedSegment}`,
-      () => {
-        console.log(
-          `Navigated to the correct page. Current URL: ${currentUrl}, Expected segment: ${expectedSegment}`,
-        );
-      },
     );
   }
   //Common component to verify H1 Header
@@ -151,9 +137,9 @@ class Common {
       PG_Common.ele_lblH1Header(pageHeader),
       "element not visible",
     );
-    allureReporter.step("Verify the H1 page header as " + pageHeader, () => {
-      console.log("Verify the H1 page header as " + pageHeader);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H1 page header as " + pageHeader,
+    );
   }
 
   //Common component to verify H1 Header For match all
@@ -164,9 +150,9 @@ class Common {
       PG_Common.ele_lblH1HeaderWithDot(pageHeader),
       "element not visible",
     );
-    allureReporter.step("Verify the H1 page header as " + pageHeader, () => {
-      console.log("Verify the H1 page header as " + pageHeader);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H1 page header as " + pageHeader,
+    );
   }
 
   //Common component to verify H2 Header
@@ -177,9 +163,9 @@ class Common {
       PG_Common.ele_lblH2Header(pageHeader),
       "element not visible",
     );
-    allureReporter.step("Verify the H2 page header as " + pageHeader, () => {
-      console.log("Verify the H2 page header as " + pageHeader);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H2 page header as " + pageHeader,
+    );
   }
 
   //Common component to verify H3 Header
@@ -190,9 +176,9 @@ class Common {
       PG_Common.ele_lblH3Header(pageHeader),
       "element not visible",
     );
-    allureReporter.step("Verify the H3 page header as " + pageHeader, () => {
-      console.log("Verify the H3 page header as " + pageHeader);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H3 page header as " + pageHeader,
+    );
   }
 
   //Common component to verify H4 Header
@@ -203,9 +189,9 @@ class Common {
       PG_Common.ele_lblH4Header(pageHeader),
       "element not visible",
     );
-    allureReporter.step("Verify the H4 page header as " + pageHeader, () => {
-      console.log("Verify the H4 page header as " + pageHeader);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H4 page header as " + pageHeader,
+    );
   }
 
   /**
@@ -216,9 +202,7 @@ class Common {
     await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
     await browser.pause(1000);
     await PG_Common.lnk_Navigation(name).click();
-    allureReporter.step("Click on the link name : " + name, () => {
-      console.log("Click on the link name : " + name);
-    });
+    await this.bc_LogAllureReportAndLogs("Click on the link name : " + name);
     await browser.pause(1000);
   }
 
@@ -230,9 +214,7 @@ class Common {
       PG_Common.lnk_Navigation(name),
       "element not visible",
     );
-    allureReporter.step("Verify the link : " + name, () => {
-      console.log("Verify the link : " + name);
-    });
+    await this.bc_LogAllureReportAndLogs("Verify the link : " + name);
   }
 
   //Common component to verify paragraph
@@ -243,9 +225,9 @@ class Common {
       PG_Common.ele_lblParagraph(paragraph),
       "element not visible",
     );
-    allureReporter.step("Verify the Paragraph as " + paragraph, () => {
-      console.log("Verify the Paragraph as " + paragraph);
-    });
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the Paragraph as " + paragraph,
+    );
   }
 
   /**
@@ -266,13 +248,18 @@ class Common {
     );
 
     await browser.switchToWindow(parentGUID);
-
-    allureReporter.step(
+    await this.bc_LogAllureReportAndLogs(
       "Closed the current tab and switched to the first tab",
-      () => {
-        console.log("Closed the current tab and switched to the first tab");
-      },
     );
+  }
+
+  /**
+   * method to Log Allure Report And Logs
+   */
+  async bc_LogAllureReportAndLogs(reportLog) {
+    allureReporter.step(reportLog, () => {
+      console.log(reportLog);
+    });
   }
 }
 export default new Common();

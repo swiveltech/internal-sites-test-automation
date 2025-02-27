@@ -38,5 +38,65 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     await LIB_Policy.bc_VerifyPolicyMessage(
       Data_Policy.PersonalInformationWeCollect_Description,
     );
+
+    //Verify the Section "How We Use Your Personal Information"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Policy.Header_HowWeUseYourPersonalInformation,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessageForThreeText(
+      Data_Policy.HowWeUseYourPersonalInformation_Description1,
+      Data_Policy.HowWeUseYourPersonalInformation_Description2,
+      Data_Policy.HowWeUseYourPersonalInformation_Description3,
+    );
+
+    // Verify the Section "Transfers of personal data"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Policy.Header_TransfersOfPersonalData,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessageForTwoText(
+      Data_Policy.TransfersOfPersonalData_Description1,
+      Data_Policy.TransfersOfPersonalData_Description2,
+    );
+
+    // Verify the Section "Cookies And Similar Technologies"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Policy.Header_CookiesAndSimilarTechnologies,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessage(
+      Data_Policy.CookiesAndSimilarTechnologies_Description,
+    );
+
+    // Verify the Section "Personal Data Retention"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Policy.Header_PersonalDataRetention,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessage(
+      Data_Policy.PersonalDataRetention_Description,
+    );
+
+    // Verify the Section "Third-Party Websites"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_ThirdPartyWebsites);
+    await LIB_Policy.bc_VerifyPolicyMessage(
+      Data_Policy.ThirdPartyWebsites_Description,
+    );
+
+    // Verify the Section "Your Rights"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_YourRights);
+    await LIB_Policy.bc_VerifyPolicyMessage(Data_Policy.YourRights_Description);
+    await LIB_Common.bc_VerifyLinks(Data_Policy.EmailAddress);
+
+    // Verify the Section "Changes to this Privacy Policy"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_YourRights);
+    await LIB_Policy.bc_VerifyPolicyMessage(Data_Policy.YourRights_Description);
+    await LIB_Common.bc_VerifyLinks(Data_Policy.EmailAddress);
+
+    // Verify the Section "Changes to this Privacy Policy"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Policy.Header_ChangesToThisPrivacyPolicy,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessageForTwoText(
+      Data_Policy.ChangesToThisPrivacyPolicy_Description1,
+      Data_Policy.ChangesToThisPrivacyPolicy_Description2,
+    );
   });
 });
