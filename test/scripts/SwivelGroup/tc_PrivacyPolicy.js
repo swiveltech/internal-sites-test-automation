@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
@@ -9,8 +8,7 @@ import Data_PrivacyPolicy from "../../data/SwivelGroup/dt_privacyPolicy.json" as
 describe("Swivel Group Site -> Contact Us Page ", () => {
   // Covered Test Case Number : SG-41
   it("Verify the Privacy Policy", async () => {
-    allureReporter.addStory("Swivel Site Privacy Policy");
-    allureReporter.startStep("Swivel Group -> Privacy Policy");
+    await LIB_Common.bc_StartAllureReportStep("Swivel Group -> Privacy Policy");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     await LIB_Home.bc_VerifyWeValueYourPrivacy(
       Data_Home.Privacy_Header,

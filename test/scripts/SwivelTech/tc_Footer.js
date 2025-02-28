@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_Footer from "../../data/SwivelTech/dt_footer.json" assert { type: "json" };
@@ -7,11 +6,9 @@ import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 
 describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () => {
   it("Verify the Footer Section in Home Page", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Footer Section in Home Page",
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify Footer Section",
     );
-    allureReporter.addStory("Verify Footer Section in Home Page");
-    allureReporter.startStep("Swivel Tech -> Verify Footer Section");
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
@@ -189,11 +186,10 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
   });
 
   it("Verify the Footer Social Media Section", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Footer Social Media Section",
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify Social Media Section",
     );
-    allureReporter.addStory("Verify Footer Social Media Section");
-    allureReporter.startStep("Swivel Tech -> Verify Social Media Section");
+
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
@@ -221,13 +217,7 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
   });
 
   it("Verify the Privacy Policy & Cookie Policy Navigation", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Privacy Policy & Cookie Policy Navigation",
-    );
-    allureReporter.addStory(
-      "Verify the Privacy Policy & Cookie Policy Navigation",
-    );
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Tech -> Verify the Privacy Policy & Cookie Policy Navigation",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);

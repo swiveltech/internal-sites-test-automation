@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Newsroom from "../../components/SwivelGroup/LIB_Newsroom.js";
 import LIB_ContactUs from "../../components/SwivelGroup/LIB_ContactUs.js";
@@ -11,9 +10,9 @@ import Data_Newsroom from "../../data/SwivelGroup/dt_newsroom.json" assert { typ
 describe("Swivel Group Site -> Home Page ", () => {
   // Covered Test Case Number : SG-1, SG-6, SG-7,SG-12, SG-13, SG-17
   it("Verify the Home Page", async () => {
-    allureReporter.addFeature("Verify the Swivel group Home Page");
-    allureReporter.addStory("Home Page");
-    allureReporter.startStep("Swivel Group -> Home Page Verification");
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Group -> Home Page Verification",
+    );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     // Verify the Headers and top panel
     await LIB_Home.bc_VerifyHomePageLogo();
@@ -142,8 +141,9 @@ describe("Swivel Group Site -> Home Page ", () => {
 
   // Covered Test Case Number : SG-2 , SG-16
   it("Verify user navigating to the correct section using links in the navigation bar", async () => {
-    allureReporter.addStory("Swivel Site Top Navigation");
-    allureReporter.startStep("Swivel Group -> Navigation Verification");
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Group -> Navigation Verification",
+    );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     // Navigate to home tab
     await LIB_Home.bc_NavigateToTabFromTopNavigation("Home");
@@ -203,10 +203,7 @@ describe("Swivel Group Site -> Home Page ", () => {
 
   // Covered Test Case Number : SG-3, SG-4, SG-5
   it("Verify the Let's Talk and phone functionality", async () => {
-    allureReporter.addStory(
-      "Swivel Group Site Verify the Let's Talk and phone functionality",
-    );
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Group -> Home Page -> Verify the Let's Talk and phone functionality",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
@@ -260,10 +257,7 @@ describe("Swivel Group Site -> Home Page ", () => {
 
   // Covered Test Case Number : SG-8, SG-9, SG-10, SG-11
   it("Verify the navigation of the our brands section", async () => {
-    allureReporter.addStory(
-      "Swivel Group Site Verify the navigation of the our brands section",
-    );
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Group -> Home Page ->  Our Brands -> Verify the navigation",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
@@ -318,10 +312,7 @@ describe("Swivel Group Site -> Home Page ", () => {
 
   // Covered Test Case Number : SG-14, SG-15
   it("Verify the navigation For More News and Chat to us section", async () => {
-    allureReporter.addStory(
-      "Swivel Group Site Verify the navigation For More News and Chat to us section",
-    );
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Group -> Home Page ->  Newsroom -> Verify the For More News and and Chat to us",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
@@ -342,10 +333,7 @@ describe("Swivel Group Site -> Home Page ", () => {
 
   // Covered Test Case Number : SG-18
   it("Verify social media links are clickable and redirecting to correct page", async () => {
-    allureReporter.addStory(
-      "Swivel Site Verify the social media links and navigation",
-    );
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Group -> Home Page -> Navigation of Social Media",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);

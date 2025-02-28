@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Sitemap from "../../components/SwivelGroup/LIB_Sitemap.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Sitemap from "../../data/SwivelGroup/dt_sitemap.json" assert { type: "json" };
@@ -15,8 +14,9 @@ import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
 describe("Swivel Group Site -> Sitemap Page ", () => {
   // Covered Test Case Number : SG-43, SG-44, SG-45, SG-46, SG-47, SG-48
   it("Verify the Sitemap Page", async () => {
-    allureReporter.addStory("Swivel Group Site Sitemap Page");
-    allureReporter.startStep("Swivel Group -> Verify the Sitemap Page");
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Group -> Verify the Sitemap Page",
+    );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);

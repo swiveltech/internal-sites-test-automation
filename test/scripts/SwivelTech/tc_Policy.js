@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_Policy from "../../data/SwivelTech/dt_policy.json" assert { type: "json" };
@@ -9,12 +8,8 @@ import LIB_Policy from "../../components/SwivelTech/LIB_Policy.js";
 
 describe("Swivel Tech Site -> Policy Pages", () => {
   it("Verify the Policy Pages -> Privacy Policy Pages", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Policy Pages -> Privacy Policy Pages",
-    );
-    allureReporter.addStory("Verify Policy Pages -> Privacy Policy Pages");
-    allureReporter.startStep(
-      "Swivel Tech -> Verify Policy Pages -> Privacy Policy Pages",
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify Privacy Policy Pages",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
@@ -97,6 +92,26 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     await LIB_Policy.bc_VerifyPolicyMessageForTwoText(
       Data_Policy.ChangesToThisPrivacyPolicy_Description1,
       Data_Policy.ChangesToThisPrivacyPolicy_Description2,
+    );
+  });
+
+  it("Verify the Cookie Policy Pages -> Cookie Policy Pages", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Verify Cookie Policy Pages -> Cookie Policy Pages",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    //Click on Privacy Policy
+    await LIB_Common.bc_ClickOnLinks(Data_Home.Link_PrivacyPolicy);
+    await LIB_Common.bc_VerifyTheAppURL("privacy-policy");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Footer.Header_SwivelTechPrivacyPolicy,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Footer.SwivelTechPrivacyPolicy_Description,
     );
   });
 });

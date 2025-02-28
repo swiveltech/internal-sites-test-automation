@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
@@ -8,11 +7,7 @@ import LIB_Resources from "../../components/SwivelTech/LIB_Resources.js";
 
 describe("Swivel Tech Site -> Resources Page", () => {
   it("Verify the Resources Page -> Blogs Page", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Resources Page -> Blogs Page",
-    );
-    allureReporter.addStory("Verify Resources Page -> Blogs Page");
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Tech -> Verify Resources Page -> Blogs Page",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
@@ -135,11 +130,7 @@ describe("Swivel Tech Site -> Resources Page", () => {
   });
 
   it("Verify the Resources Page -> Case Studies Page", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Resources Page -> Case Studies Page",
-    );
-    allureReporter.addStory("Verify Resources Page -> Case Studies Page");
-    allureReporter.startStep(
+    await LIB_Common.bc_StartAllureReportStep(
       "Swivel Tech -> Verify Resources Page -> Case Studies Page",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);

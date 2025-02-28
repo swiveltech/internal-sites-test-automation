@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.json" assert { type: "json" };
@@ -9,9 +8,9 @@ import LIB_AboutUs from "../../components/SwivelTech/LIB_AboutUs.js";
 
 describe("Swivel Tech Site -> About Us Pages", () => {
   it("Verify the About Us Pages", async () => {
-    allureReporter.addFeature("Verify the Swivel Tech -> About Us Pages");
-    allureReporter.addStory("Verify About Us Pages");
-    allureReporter.startStep("Swivel Tech -> Verify About Us Pages");
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify About Us Pages",
+    );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);

@@ -261,5 +261,12 @@ class Common {
       console.log(reportLog);
     });
   }
+
+  /**
+   * method to Start Allure Report Step
+   */
+  async bc_StartAllureReportStep(reportLog) {
+    allureReporter.startStep(reportLog);
+  }
 }
 export default new Common();

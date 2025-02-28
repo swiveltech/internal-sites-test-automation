@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Newsroom from "../../components/SwivelGroup/LIB_Newsroom.js";
 import LIB_Common from "../../components/LIB_Common.js";
@@ -10,12 +9,10 @@ import Data_Newsroom from "../../data/SwivelGroup/dt_newsroom.json" assert { typ
 describe("Swivel Group Site -> Newsroom", () => {
   // Covered Test Case Number : SG-25, SG-26, SG-27
   it("Verify the Newsroom page and Careers section", async () => {
-    allureReporter.addStory(
-      "Swivel Group Site Verify the Newsroom page and Careers section",
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Group -> Home Page ->  Newsroom -> Verify all articles and navigate to careers page",
     );
-    allureReporter.startStep(
-      "Swivel Group -> Home Page ->  Newsroom -> Verify all articles and navigate to careers page  ",
-    );
+
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     await LIB_Home.bc_ClickOnForMoreNewsInHomePage();
     await LIB_Common.bc_VerifyH1Header(Data_Newsroom.Newsroom_Header);

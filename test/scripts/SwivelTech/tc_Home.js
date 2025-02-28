@@ -1,5 +1,4 @@
 import config from "../../../config.json" assert { type: "json" };
-import allureReporter from "@wdio/allure-reporter";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.json" assert { type: "json" };
@@ -9,9 +8,9 @@ import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 
 describe("Swivel Tech Site -> Home Page ", () => {
   it("Verify the Home Page", async () => {
-    allureReporter.addFeature("Verify the Swivel Tech Home Page");
-    allureReporter.addStory("Home Page");
-    allureReporter.startStep("Swivel Tech -> Home Page Verification");
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Home Page Verification",
+    );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Home.bc_VerifyHomeScreenTopPanel(
       "Home;About Us;How We Work;Services;Resources;Careers",
@@ -215,11 +214,10 @@ describe("Swivel Tech Site -> Home Page ", () => {
   });
 
   it("Verify the Navigation From Home page", async () => {
-    allureReporter.addFeature(
-      "Verify the Swivel Tech Navigation from Home Page",
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Navigation From Home Page",
     );
-    allureReporter.addStory("Navigation From Home Page");
-    allureReporter.startStep("Swivel Tech -> Navigation From Home Page");
+
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
