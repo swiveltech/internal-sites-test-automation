@@ -35,6 +35,33 @@ class Policy {
   }
 
   /**
+   * a method to Verify the policy message with 3 text in center
+   */
+  async bc_VerifyPolicyMessageForThreeTextInCenter(
+    message1,
+    message2,
+    message3,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Policy.ele_lblDescriptionWith3TextInCenter(
+        message1,
+        message2,
+        message3,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description one as : " + message1,
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description two as : " + message2,
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description three as : " + message3,
+    );
+  }
+
+  /**
    * a method to Verify the policy message with 2 text
    */
   async bc_VerifyPolicyMessageForTwoText(message1, message2) {

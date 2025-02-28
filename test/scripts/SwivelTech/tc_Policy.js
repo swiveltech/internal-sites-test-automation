@@ -103,15 +103,59 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
-    //Click on Privacy Policy
-    await LIB_Common.bc_ClickOnLinks(Data_Home.Link_PrivacyPolicy);
-    await LIB_Common.bc_VerifyTheAppURL("privacy-policy");
+    //Click on Cookie Policy
+    await LIB_Common.bc_ClickOnLinks(Data_Home.Link_CookiePolicy);
+    await LIB_Common.bc_VerifyTheAppURL("cookie-policy");
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1HeaderText(
-      Data_Footer.Header_SwivelTechPrivacyPolicy,
+      Data_Footer.Header_SwivelTechCookiePolicy,
     );
     await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
-      Data_Footer.SwivelTechPrivacyPolicy_Description,
+      Data_Footer.SwivelTechCookiePolicy_Description,
+    );
+
+    //Verify the "What Are Cookies"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_WhatAreCookies);
+    await LIB_Policy.bc_VerifyPolicyMessage(
+      Data_Policy.WhatAreCookies_Description,
+    );
+
+    //Verify the "How We Use Cookies"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_HowWeUseCookies);
+    await LIB_Policy.bc_VerifyPolicyMessageForThreeText(
+      Data_Policy.HowWeUseCookies_Description1,
+      Data_Policy.HowWeUseCookies_Description2,
+      Data_Policy.HowWeUseCookies_Description3,
+    );
+
+    //Verify the "Disabling Cookies"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_DisablingCookies);
+    await LIB_Policy.bc_VerifyPolicyMessage(
+      Data_Policy.DisablingCookies_Description,
+    );
+
+    //Verify the "The Cookies We Set"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_TheCookiesWeSet);
+    await LIB_Policy.bc_VerifyPolicyMessageForThreeText(
+      Data_Policy.TheCookiesWeSet_Description1,
+      Data_Policy.TheCookiesWeSet_Point1,
+      Data_Policy.TheCookiesWeSet_Point2,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessageForThreeTextInCenter(
+      Data_Policy.TheCookiesWeSet_Description2,
+      Data_Policy.TheCookiesWeSet_Description3,
+      Data_Policy.TheCookiesWeSet_Description4,
+    );
+    await LIB_Policy.bc_VerifyPolicyMessageForThreeTextInCenter(
+      Data_Policy.TheCookiesWeSet_Description4,
+      Data_Policy.TheCookiesWeSet_Description5,
+      Data_Policy.TheCookiesWeSet_Description6,
+    );
+    //Verify the "More information"
+    await LIB_Common.bc_VerifyH2Header(Data_Policy.Header_MoreInformation);
+    await LIB_Policy.bc_VerifyPolicyMessageForTwoText(
+      Data_Policy.MoreInformation_Description,
+      Data_Policy.Cookie_EmailAddress,
     );
   });
 });
