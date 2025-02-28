@@ -1,6 +1,6 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
-import allureReporter from "@wdio/allure-reporter";
 import PG_Newsroom from "../../pages/SwivelGroup/PG_Newsroom.js";
+import LIB_Common from "../LIB_Common.js";
 class Newsroom {
   /**
    * a method to Verify the top Description
@@ -10,13 +10,8 @@ class Newsroom {
       PG_Newsroom.ele_lblTopDescription(Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Top Description in Newsroom page as : " + Description,
-      () => {
-        console.log(
-          "Verify the Top Description in Newsroom page as : " + Description,
-        );
-      },
     );
   }
 
@@ -28,11 +23,8 @@ class Newsroom {
       PG_Newsroom.ele_lblSocialClubEvents,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Social Club Events in Newsroom page",
-      () => {
-        console.log("Verify the Social Club Events in Newsroom page");
-      },
     );
   }
 
@@ -44,28 +36,17 @@ class Newsroom {
       PG_Newsroom.ele_lblH3Header(articleTitle),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Article Title in Newsroom page as : " + articleTitle,
-      () => {
-        console.log(
-          "Verify the Article Title in Newsroom page as : " + articleTitle,
-        );
-      },
     );
 
     await assertionHandler.assertElementDisplayed(
       PG_Newsroom.ele_lblArticleDescription(articleTitle, articleDescription),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Article Description in Newsroom page as : " +
         articleDescription,
-      () => {
-        console.log(
-          "Verify the Article Description in Newsroom page as : " +
-            articleDescription,
-        );
-      },
     );
   }
 
@@ -77,26 +58,17 @@ class Newsroom {
       PG_Newsroom.ele_lblH4Header(header),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Want To Work With Us in Newsroom page",
-      () => {
-        console.log("Verify the Want To Work With Us in Newsroom page");
-      },
     );
 
     await assertionHandler.assertElementDisplayed(
       PG_Newsroom.ele_lblH4HeaderWithDescription(header, description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Want To Work With Us in Newsroom page with description as : " +
         description,
-      () => {
-        console.log(
-          "Verify the Want To Work With Us in Newsroom page with description as : " +
-            description,
-        );
-      },
     );
   }
 }

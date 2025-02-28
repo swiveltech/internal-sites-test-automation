@@ -3,7 +3,6 @@ import PG_Common from "../../pages/PG_Common.js";
 import PG_SocialMedia from "../../pages/SwivelGroup/PG_SocialMedia.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
-import allureReporter from "@wdio/allure-reporter";
 import config from "../../../config.json" assert { type: "json" };
 class Home {
   /**
@@ -14,11 +13,8 @@ class Home {
       PG_Home.img_SwivelGroupLogo,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Group logo on top of the Home page",
-      () => {
-        console.log("Verify the Swivel Group logo on top of the Home page");
-      },
     );
   }
 
@@ -36,13 +32,8 @@ class Home {
       config.URLS.SWIVEL_GROUP,
       `Expected "${config.URLS.SWIVEL_GROUP}" but got "${currentUrl}"`,
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Application logo and Verify the App URL to the Home Screen",
-      () => {
-        console.log(
-          "Click on Application logo and Verify the App URL to the Home Screen",
-        );
-      },
     );
   }
 
@@ -59,13 +50,8 @@ class Home {
         PG_Home.ele_HeaderTab(tabName),
         "Element not exist",
       );
-
-      allureReporter.step(
+      await LIB_Common.bc_LogAllureReportAndLogs(
         `Verify the Swivel Group Tab name ${tabName} is present.`,
-        () =>
-          console.log(
-            `Verify the Swivel Group Tab name ${tabName} is present.`,
-          ),
       );
     }
   }
@@ -78,26 +64,17 @@ class Home {
       PG_Home.ele_ContactNumber(contactNumber),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Group Contact number on top of the site. Contact number : " +
         contactNumber,
-      () => {
-        console.log(
-          "Verify the Swivel Group Contact number on top of the site. Contact number : " +
-            contactNumber,
-        );
-      },
     );
 
     await assertionHandler.assertElementDisplayed(
       PG_Home.btn_LetsTalk,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Group Let's Talk button is present.",
-      () => {
-        console.log("Verify the Swivel Group Let's Talk button is present.");
-      },
     );
   }
 
@@ -107,13 +84,8 @@ class Home {
   async bc_NavigateToTabFromTopNavigation(tabName) {
     await PG_Home.ele_HeaderTab(tabName).click();
     await browser.pause(2000);
-    allureReporter.step(
-      "Navigate to the " + tabName + " tab from the top navigation ",
-      () => {
-        console.log(
-          "Navigate to the " + tabName + " tab from the top navigation ",
-        );
-      },
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Navigate to the " + tabName + " tab from the top navigation",
     );
   }
 
@@ -125,21 +97,12 @@ class Home {
       PG_Home.ele_TitleInExpertsIn(textValue, index),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Experts In title is " +
         textValue +
         " and title index is " +
         index +
         " it is present in Home page of the Swivel Group Site.",
-      () => {
-        console.log(
-          "Verify the Experts In title is " +
-            textValue +
-            " and title index is " +
-            index +
-            " it is present in Home page of the Swivel Group Site.",
-        );
-      },
     );
   }
 
@@ -159,7 +122,7 @@ class Home {
       ),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Experts In title is " +
         textValueForTitle +
         " and Description is : " +
@@ -167,17 +130,6 @@ class Home {
         " title index is " +
         index +
         " it is present in Home page of the Swivel Group Site.",
-      () => {
-        console.log(
-          "Verify the Experts In title is " +
-            textValueForTitle +
-            " and Description is : " +
-            textValueForDescription +
-            " title index is " +
-            index +
-            " it is present in Home page of the Swivel Group Site.",
-        );
-      },
     );
   }
 
@@ -189,21 +141,12 @@ class Home {
       PG_Home.ele_OurBrands(brandTitle, brandDescription),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify Our Brand title is " +
         brandTitle +
         " and brand description is " +
         brandDescription +
         " it is present in Home page of the Swivel Group Site.",
-      () => {
-        console.log(
-          "Verify Our Brand title is " +
-            brandTitle +
-            " and brand description is " +
-            brandDescription +
-            " it is present in Home page of the Swivel Group Site.",
-        );
-      },
     );
   }
 
@@ -215,21 +158,12 @@ class Home {
       PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify Our Brand title is " +
         brandTitle +
         " and brand link is " +
         brandLink +
         " it is present in Home page of the Swivel Group Site.",
-      () => {
-        console.log(
-          "Verify Our Brand title is " +
-            brandTitle +
-            " and brand link is " +
-            brandLink +
-            " it is present in Home page of the Swivel Group Site.",
-        );
-      },
     );
   }
 
@@ -250,15 +184,8 @@ class Home {
         PG_Home.ele_FooterTab(tabNamesToVerify[i], i + 1),
         "Element not exist",
       );
-      allureReporter.step(
+      await LIB_Common.bc_LogAllureReportAndLogs(
         "Verify the Footer Tab name " + tabNamesToVerify[i] + " is present. ",
-        () => {
-          console.log(
-            "Verify the Footer Tab name " +
-              tabNamesToVerify[i] +
-              " is present. ",
-          );
-        },
       );
     }
   }
@@ -271,33 +198,33 @@ class Home {
       PG_Home.icn_Facebook,
       "Element not exist",
     );
-    allureReporter.step("Verify the Facebook icon on Footer ", () => {
-      console.log("Verify the Facebook icon on Footer ");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Facebook icon on Footer",
+    );
 
     await assertionHandler.assertElementDisplayed(
       PG_Home.icn_Instagram,
       "Element not exist",
     );
-    allureReporter.step("Verify the Instagram icon on Footer ", () => {
-      console.log("Verify the Instagram icon on Footer ");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Instagram icon on Footer",
+    );
 
     await assertionHandler.assertElementDisplayed(
       PG_Home.icn_Twitter,
       "Element not exist",
     );
-    allureReporter.step("Verify the Twitter icon on Footer ", () => {
-      console.log("Verify the Twitter icon on Footer ");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Twitter icon on Footer",
+    );
 
     await assertionHandler.assertElementDisplayed(
       PG_Home.icn_Linkedin,
       "Element not exist",
     );
-    allureReporter.step("Verify the Linkedin icon on Footer ", () => {
-      console.log("Verify the Linkedin icon on Footer ");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Linkedin icon on Footer",
+    );
   }
 
   /**
@@ -310,13 +237,8 @@ class Home {
     await browser.pause(1000);
     await PG_Home.ele_FooterTab(tabName).click();
     await browser.pause(1000);
-    allureReporter.step(
-      "Click on the Footer Tab name " + tabName + " is present. ",
-      () => {
-        console.log(
-          "Click on the Footer Tab name " + tabName + " is present. ",
-        );
-      },
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on the Footer Tab name " + tabName + " is present.",
     );
   }
 
@@ -328,21 +250,16 @@ class Home {
       PG_Common.ele_lblPageHeader(header, 1),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup header as : " + header,
-      () => {
-        console.log("Verify the Privacy popup header as : " + header);
-      },
     );
+
     await assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblPageHeaderWithText(description, 1),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup description as : " + description,
-      () => {
-        console.log("Verify the Privacy popup description as : " + description);
-      },
     );
 
     // Button Decline All
@@ -350,22 +267,17 @@ class Home {
       PG_Common.btn_ButtonWithLabel("Decline All", 1),
       "Element not exist",
     );
-    allureReporter.step(
-      "Verify the Privacy popup Decline All button is present. ",
-      () => {
-        console.log("Verify the Privacy popup Decline All button is present. ");
-      },
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Privacy popup Decline All button is present.",
     );
+
     // Button Accept All
     await assertionHandler.assertElementDisplayed(
       PG_Common.btn_ButtonWithLabel("Accept All", 1),
       "Element not exist",
     );
-    allureReporter.step(
-      "Verify the Privacy popup Accept All button is present. ",
-      () => {
-        console.log("Verify the Privacy popup Accept All button is present. ");
-      },
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Privacy popup Accept All button is present.",
     );
   }
 
@@ -378,30 +290,18 @@ class Home {
       1,
     ).isDisplayed();
     await assertionHandler.assertFalse(pageHeaderFlag);
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup header as : " + header + " is not present.",
-      () => {
-        console.log(
-          "Verify the Privacy popup header as : " + header + " is not present.",
-        );
-      },
     );
     let pageDescriptionFlag = await PG_Common.ele_lblPageHeaderWithText(
       description,
       1,
     ).isDisplayed();
     await assertionHandler.assertFalse(pageDescriptionFlag);
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup description as : " +
         description +
         " is not present.",
-      () => {
-        console.log(
-          "Verify the Privacy popup description as : " +
-            description +
-            " is not present.",
-        );
-      },
     );
 
     // Button Decline All
@@ -410,27 +310,18 @@ class Home {
       1,
     ).isDisplayed();
     await assertionHandler.assertFalse(declineAllFlag);
-    allureReporter.step(
-      "Verify the Privacy popup Decline All button is not present. ",
-      () => {
-        console.log(
-          "Verify the Privacy popup Decline All button is not present. ",
-        );
-      },
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Privacy popup Decline All button is not present.",
     );
+
     // Button Accept All
     let acceptAllFlag = await PG_Common.btn_ButtonWithLabel(
       "Accept All",
       1,
     ).isDisplayed();
     await assertionHandler.assertFalse(acceptAllFlag);
-    allureReporter.step(
-      "Verify the Privacy popup Accept All button is not present. ",
-      () => {
-        console.log(
-          "Verify the Privacy popup Accept All button is not present. ",
-        );
-      },
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Privacy popup Accept All button is not present.",
     );
   }
 
@@ -441,9 +332,9 @@ class Home {
   async bc_ClearCacheAndCookiesAndReload() {
     await browser.deleteAllCookies();
     await browser.refresh();
-    allureReporter.step("Clear Cache and cookies and reload the url", () => {
-      console.log("Clear Cache and cookies and reload the url");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Clear Cache and cookies and reload the url",
+    );
   }
 
   /**
@@ -460,11 +351,8 @@ class Home {
     let appUrl = await element.getAttribute("href");
     await element.click();
 
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Facebook in home page. Clicked URL : " + appUrl,
-      () => {
-        console.log("Click on Facebook in home page. Clicked URL : " + appUrl);
-      },
     );
 
     // Wait until a new window appears
@@ -489,16 +377,13 @@ class Home {
       PG_SocialMedia.ele_FacebookTitle,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Facebook title in facebook page popup.",
-      () => {
-        console.log("Verify the Facebook title in facebook page popup.");
-      },
     );
     await PG_SocialMedia.ico_FacebookClosePoopUp.click();
-    allureReporter.step("Click on Facebook close icon on popup.", () => {
-      console.log("Click on Facebook close icon on popup.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Facebook close icon on popup.",
+    );
   }
 
   /**
@@ -526,11 +411,8 @@ class Home {
 
     // Switch to child window
     await browser.switchToWindow(childGUID);
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Instagram in home page. Click URL : " + appUrl,
-      () => {
-        console.log("Click on Instagram in home page. Click URL : " + appUrl);
-      },
     );
   }
 
@@ -543,11 +425,8 @@ class Home {
       PG_SocialMedia.ele_InstagramTitle,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Instagram title in Instagram page popup.",
-      () => {
-        console.log("Verify the Instagram title in Instagram page popup.");
-      },
     );
   }
 
@@ -565,11 +444,8 @@ class Home {
     let appUrl = await element.getAttribute("href");
     await element.click();
 
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Twitter in home page. Clicked URL : " + appUrl,
-      () => {
-        console.log("Click on Twitter in home page. Clicked URL : " + appUrl);
-      },
     );
 
     // Wait until a new window appears
@@ -595,16 +471,13 @@ class Home {
       PG_SocialMedia.ele_TwitterTitle,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Twitter title in Twitter page popup.",
-      () => {
-        console.log("Verify the Twitter title in Twitter page popup.");
-      },
     );
     await PG_SocialMedia.ico_TwitterClosePoopUp.click();
-    allureReporter.step("Click on Twitter close icon on popup.", () => {
-      console.log("Click on Twitter close icon on popup.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Twitter close icon on popup.",
+    );
   }
 
   /**
@@ -633,11 +506,8 @@ class Home {
     // Switch to child window
     await browser.switchToWindow(childGUID);
     await browser.pause(1000);
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Linkedin in home page. Clicked URL : " + appUrl,
-      () => {
-        console.log("Click on Linkedin in home page. Clicked URL : " + appUrl);
-      },
     );
   }
 
@@ -650,16 +520,13 @@ class Home {
       PG_SocialMedia.ele_LinkedinTitle,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Linkedin title in Linkedin page popup.",
-      () => {
-        console.log("Verify the Linkedin title in Linkedin page popup.");
-      },
     );
     await PG_SocialMedia.ico_LinkedinClosePoopUp.click();
-    allureReporter.step("Click on Linkedin close icon on popup.", () => {
-      console.log("Click on Linkedin close icon on popup.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Linkedin close icon on popup.",
+    );
   }
 
   /**
@@ -667,9 +534,9 @@ class Home {
    */
   async bc_ClickOnLetsTalkButtonAndVerifyContactUsPage() {
     await PG_Home.btn_LetsTalk.click();
-    allureReporter.step("Click on Lets Talk button in Home page", () => {
-      console.log("Click on Lets Talk button in Home page");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Lets Talk button in Home page",
+    );
     await LIB_Common.bc_VerifyH1Header("Contact Us");
     await LIB_Common.bc_VerifyTheAppURL("contact-us");
   }
@@ -682,13 +549,8 @@ class Home {
       PG_Home.ele_ContactNumber(phoneNumber),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Phone number as : " + phoneNumber + " in Home page",
-      () => {
-        console.log(
-          "Verify the Phone number as : " + phoneNumber + " in Home page",
-        );
-      },
     );
   }
 
@@ -697,13 +559,8 @@ class Home {
    */
   async bc_ClickOnPhoneNumberInHomePage(phoneNumber) {
     await PG_Home.ele_ContactNumber(phoneNumber).click();
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Phone number as : " + phoneNumber + " in Home page",
-      () => {
-        console.log(
-          "Click on Phone number as : " + phoneNumber + " in Home page",
-        );
-      },
     );
   }
 
@@ -719,12 +576,8 @@ class Home {
     await element.scrollIntoView({ block: "center", inline: "center" });
     await element.click();
 
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       `Clicked on Our Brand title: ${brandTitle}, Brand link: ${brandLink}`,
-      () =>
-        console.log(
-          `Clicked on Our Brand title: ${brandTitle}, Brand link: ${brandLink}`,
-        ),
     );
 
     // Wait until a new window appears
@@ -745,14 +598,15 @@ class Home {
    * a method to Click on For more news in home page
    */
   async bc_ClickOnForMoreNewsInHomePage() {
+    await browser.pause(2000);
     let element = await PG_Home.lnk_ForMoreNews;
     await element.scrollIntoView({ block: "center", inline: "center" });
     await browser.pause(2000);
     await PG_Home.lnk_ForMoreNews.click();
     await browser.pause(2000);
-    allureReporter.step("Click on For more news link in home page", () => {
-      console.log("Click on For more news link in home page");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on For more news link in home page",
+    );
   }
 }
 export default new Home();

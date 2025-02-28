@@ -4,6 +4,7 @@ import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
 import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
+import PG_Careers from "../../pages/SwivelGroup/PG_Careers.js";
 
 describe("Swivel Group Site -> Careers Page ", () => {
   // Covered Test Case Number : SG-28, SG-30, SG-31
@@ -81,9 +82,19 @@ describe("Swivel Group Site -> Careers Page ", () => {
 
     await LIB_Careers.bc_VerifyShowMoreLink();
 
+    //Get the first record before search
+    let searchKey = await PG_Careers.ele_lblFirstRecordInTable.getText();
+    let url = await PG_Careers.lnk_FirstRecordInTable.getAttribute("href");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "First record in job title as : " + searchKey + " and URL as : " + url,
+    );
+
     await LIB_Careers.bc_SearchForJob("Invalid Data");
     await LIB_Careers.bc_VerifyTheSearchRecordIsNotAvailable();
-    await LIB_Careers.bc_SearchForJob("Senior");
+    await LIB_Common.bc_TakeScreenShot("Invalid Data In Swivel Group");
+    await LIB_Careers.bc_SearchForJob(searchKey);
+    await LIB_Common.bc_TakeScreenShot("Keyword Search Swivel Group");
     await LIB_Careers.bc_VerifyTheSearchRecordAvailable();
+    await LIB_Careers.bc_ClickOnTheFirstRecord();
   });
 });

@@ -1,5 +1,5 @@
-import allureReporter from "@wdio/allure-reporter";
 import PG_Sitemap from "../../pages/SwivelGroup/PG_Sitemap.js";
+import LIB_Common from "../LIB_Common.js";
 class Sitemap {
   /**
    * a method to Click on Sub option
@@ -13,23 +13,13 @@ class Sitemap {
     ).getAttribute("href");
     await PG_Sitemap.lnk_SubOptionInBottom(Title, Option).click();
     await browser.pause(2000);
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Option as : " +
         Option +
         " and Under Title as : " +
         Title +
         " and navigation URL : " +
         appURL,
-      () => {
-        console.log(
-          "Click on Option as : " +
-            Option +
-            " and Under Title as : " +
-            Title +
-            " and navigation URL : " +
-            appURL,
-        );
-      },
     );
   }
 }

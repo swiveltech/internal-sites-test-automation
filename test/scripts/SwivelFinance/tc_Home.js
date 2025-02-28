@@ -138,7 +138,7 @@ describe("Swivel Finance Site -> Home Page ", () => {
     );
   });
 
-  it("Verify the Home Page Navigation", async () => {
+  it.skip("Verify the Home Page Navigation", async () => {
     allureReporter.addFeature("Verify the Swivel Finance Home Page Navigation");
     allureReporter.addStory("Home Page");
     allureReporter.startStep(

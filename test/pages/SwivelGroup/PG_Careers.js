@@ -50,6 +50,17 @@ class Careers {
     return $(`//div[@id='job-openings']/div[2]/div/input`);
   }
 
+  get ele_lblFirstRecordInTable() {
+    return $(`//div[@id='job-openings']/div[3]/div[1]/div[2]/div/a/span`);
+  }
+
+  get lnk_FirstRecordInTable() {
+    return $(`//div[@id='job-openings']/div[3]/div[1]/div[2]/div/a`);
+  }
+
+  get lnk_FirstRecordToClick() {
+    return $(`//div[@id='job-openings']/div[4]/div/a`);
+  }
   get ele_lblSearchRecord() {
     return $(`//div[@id='job-openings']/div[4]`);
   }

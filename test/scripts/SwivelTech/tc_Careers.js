@@ -5,6 +5,7 @@ import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json"
 import Data_Careers from "../../data/SwivelTech/dt_careers.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_Careers from "../../components/SwivelTech/LIB_Careers.js";
+import PG_Careers from "../../pages/SwivelTech/PG_Careers.js";
 
 describe("Swivel Tech Site -> Careers Page", () => {
   it("Verify the Careers Page", async () => {
@@ -60,9 +61,19 @@ describe("Swivel Tech Site -> Careers Page", () => {
     //Verify the Our Job Openings
     await LIB_Common.bc_VerifyH2Header(Data_Careers.Header_OurJobOpenings);
 
+    //Get the first record before search
+    let searchKey = await PG_Careers.ele_lblFirstRecordInTable.getText();
+    let url = await PG_Careers.lnk_FirstRecordInTable.getAttribute("href");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "First record in job title as : " + searchKey + " and URL as : " + url,
+    );
+
     await LIB_Careers.bc_SearchForJob("Invalid Data");
     await LIB_Careers.bc_VerifyTheSearchRecordIsNotAvailable();
-    await LIB_Careers.bc_SearchForJob("Senior");
+    await LIB_Common.bc_TakeScreenShot("Invalid Data In Swivel Tech");
+    await LIB_Careers.bc_SearchForJob(searchKey);
+    await LIB_Common.bc_TakeScreenShot("Keyword Search Swivel Group");
     await LIB_Careers.bc_VerifyTheSearchRecordAvailable();
+    await LIB_Careers.bc_ClickOnTheFirstRecord();
   });
 });

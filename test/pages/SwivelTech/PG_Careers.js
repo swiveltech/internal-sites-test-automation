@@ -12,9 +12,15 @@ class CareersPage {
     return $(`//input[@name="searchTerm"]`);
   }
 
-  get ele_lblSearchRecord() {
+  get ele_lblFirstRecordInTable() {
     return $(
-      `//input[@name="searchTerm"]/../following-sibling::div/div[@data-job-department="Development"]`,
+      `(//input[@name="searchTerm"]/../following-sibling::div/div[@class="rooster-job"]/a/h3)[1]`,
+    );
+  }
+
+  get lnk_FirstRecordInTable() {
+    return $(
+      `(//input[@name="searchTerm"]/../following-sibling::div/div[@class="rooster-job"]/a)[1]`,
     );
   }
 }

@@ -62,6 +62,105 @@ describe("Swivel Tech Site -> About Us Pages", () => {
       Data_AboutUs.OurPeopleIsOurBusiness_Description,
     );
 
+    await LIB_AboutUs.bc_VerifyOurPeopleIsOurBusiness(
+      "trust-icon.svg",
+      Data_AboutUs.SubTitle_Trust,
+      Data_AboutUs.Trust_Description,
+    );
+
+    await LIB_AboutUs.bc_VerifyOurPeopleIsOurBusiness(
+      "innovation.svg",
+      Data_AboutUs.SubTitle_Innovation,
+      Data_AboutUs.Innovation_Description,
+    );
+
+    await LIB_AboutUs.bc_VerifyOurPeopleIsOurBusiness(
+      "Premium.svg",
+      Data_AboutUs.SubTitle_Premium,
+      Data_AboutUs.Premium_Description,
+    );
+
+    await LIB_AboutUs.bc_VerifyOurPeopleIsOurBusiness(
+      "Respect.svg",
+      Data_AboutUs.SubTitle_Respect,
+      Data_AboutUs.Respect_Description,
+    );
+
+    await LIB_AboutUs.bc_VerifyOurPeopleIsOurBusiness(
+      "Team.svg",
+      Data_AboutUs.SubTitle_Team,
+      Data_AboutUs.Team_Description,
+    );
+
+    //Verify the Meet the Leaders
+    await LIB_Common.bc_VerifyH2Header(Data_AboutUs.Header_MeetTheLeaders);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_AboutUs.MeetTheLeaders_Description,
+    );
+
+    //Verify the contains of Leader "Shanil Dissanayake"
+    await LIB_AboutUs.bc_VerifyMeetTheLeadersTile(
+      "Leader_Shanil-Dissanayake.png",
+      Data_AboutUs.Leader_Name1,
+      Data_AboutUs.Name1_Designation,
+      Data_AboutUs.Name1_Description,
+    );
+
+    //Verify the contains of Leader "Dmitry Loukine"
+    await LIB_AboutUs.bc_VerifyMeetTheLeadersTile(
+      "Dmitry Loukine (2).png",
+      Data_AboutUs.Leader_Name2,
+      Data_AboutUs.Name2_Designation,
+      Data_AboutUs.Name2_Description,
+    );
+
+    //Verify the contains of Leader "Romani Rupasinghe"
+    await LIB_AboutUs.bc_VerifyMeetTheLeadersTile(
+      "Romani_Rupasinghe.png",
+      Data_AboutUs.Leader_Name3,
+      Data_AboutUs.Name3_Designation,
+      Data_AboutUs.Name3_Description,
+    );
+
+    //Verify the contains of Leader "Usha Rajapakse"
+    await LIB_AboutUs.bc_VerifyMeetTheLeadersTile(
+      "Usha_Rajapakse.png",
+      Data_AboutUs.Leader_Name4,
+      Data_AboutUs.Name4_Designation,
+      Data_AboutUs.Name4_Description,
+    );
+
+    //Verify the contains of Leader "Leader Sujatha Nadesan"
+    await LIB_AboutUs.bc_VerifyMeetTheLeadersTile(
+      "Leader_Sujatha_Nadesan.png",
+      Data_AboutUs.Leader_Name5,
+      Data_AboutUs.Name5_Designation,
+      Data_AboutUs.Name5_Description,
+    );
+
+    //Verify the contains of Leader "Andrew Rooke"
+    await LIB_AboutUs.bc_VerifyMeetTheLeadersTile(
+      "Leader_Andrew-Rooke.png",
+      Data_AboutUs.Leader_Name6,
+      Data_AboutUs.Name6_Designation,
+      Data_AboutUs.Name6_Description,
+    );
+
+    //Verify the Our Team Culture
+    await LIB_Common.bc_VerifyH2Header(Data_AboutUs.Header_OurTeamCulture);
+    await LIB_AboutUs.bc_VerifyOurTeamCultureTile(
+      Data_AboutUs.SubHeader_Tile1,
+      Data_AboutUs.Tile1_Description,
+    );
+    await LIB_AboutUs.bc_VerifyOurTeamCultureTile(
+      Data_AboutUs.SubHeader_Tile2,
+      Data_AboutUs.Tile2_Description,
+    );
+    await LIB_AboutUs.bc_VerifyOurTeamCultureTile(
+      Data_AboutUs.SubHeader_Tile3,
+      Data_AboutUs.Tile3_Description,
+    );
+
     //Click on Book A Discovery Call
     await LIB_Common.bc_ClickOnButton(
       Data_Resources.Header_BookADiscoveryCall,

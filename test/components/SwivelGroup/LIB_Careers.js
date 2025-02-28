@@ -1,6 +1,6 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
-import allureReporter from "@wdio/allure-reporter";
 import PG_Careers from "../../pages/SwivelGroup/PG_Careers.js";
+import LIB_Common from "../LIB_Common.js";
 class Careers {
   /**
    * a method to Verify the top Description
@@ -10,13 +10,8 @@ class Careers {
       PG_Careers.ele_lblTopHeaderWithDescription(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Top Description in Careers page as : " + Description,
-      () => {
-        console.log(
-          "Verify the Top Description in Careers page as : " + Description,
-        );
-      },
     );
   }
 
@@ -28,33 +23,25 @@ class Careers {
       PG_Careers.img_Pegging,
       "Element not exist",
     );
-    allureReporter.step("Verify the Pegging Icon is present.", () => {
-      console.log("Verify the Pegging Icon is present.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Pegging Icon is present.",
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
-    allureReporter.step("Verify the Pegging Title as " + Title, () => {
-      console.log("Verify the Pegging Title as " + Title);
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Pegging Title as " + Title,
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Pegging Title as " +
         Title +
         " and description as " +
         Description,
-      () => {
-        console.log(
-          "Verify the Pegging Title as " +
-            Title +
-            " and description as " +
-            Description,
-        );
-      },
     );
   }
 
@@ -66,39 +53,25 @@ class Careers {
       PG_Careers.img_FlexHours,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Flexible Work hours Icon is present.",
-      () => {
-        console.log("Verify the Flexible Work hours Icon is present.");
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Flexible Work hours Title as " + Title,
-      () => {
-        console.log("Verify the Flexible Work hours Title as " + Title);
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Flexible Work hours Title as " +
         Title +
         " and description as " +
         Description,
-      () => {
-        console.log(
-          "Verify the Flexible Work hours Title as " +
-            Title +
-            " and description as " +
-            Description,
-        );
-      },
     );
   }
 
@@ -110,33 +83,25 @@ class Careers {
       PG_Careers.img_HealthInsurance,
       "Element not exist",
     );
-    allureReporter.step("Verify the Health Insurance Icon is present.", () => {
-      console.log("Verify the Health Insurance Icon is present.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Health Insurance Icon is present.",
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
-    allureReporter.step("Verify the Health Insurance Title as " + Title, () => {
-      console.log("Verify the Health Insurance Title as " + Title);
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Health Insurance Title as " + Title,
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Pegging Health Insurance as " +
         Title +
         " and description as " +
         Description,
-      () => {
-        console.log(
-          "Verify the Pegging Health Insurance as " +
-            Title +
-            " and description as " +
-            Description,
-        );
-      },
     );
   }
 
@@ -148,33 +113,25 @@ class Careers {
       PG_Careers.img_LeaveBenefits,
       "Element not exist",
     );
-    allureReporter.step("Verify the Leave Benefits Icon is present.", () => {
-      console.log("Verify the Leave Benefits Icon is present.");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Leave Benefits Icon is present.",
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
-    allureReporter.step("Verify the Leave Benefits Title as " + Title, () => {
-      console.log("Verify the Leave Benefits Title as " + Title);
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Leave Benefits Title as " + Title,
+    );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Leave Benefits Title as " +
         Title +
         " and description as " +
         Description,
-      () => {
-        console.log(
-          "Verify the Leave Benefits Title as " +
-            Title +
-            " and description as " +
-            Description,
-        );
-      },
     );
   }
 
@@ -186,39 +143,25 @@ class Careers {
       PG_Careers.img_LearningAndDevelopment,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Learning And Development Icon is present.",
-      () => {
-        console.log("Verify the Learning And Development Icon is present.");
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Learning And Development Title as " + Title,
-      () => {
-        console.log("Verify the Learning And Development Title as " + Title);
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Learning And Development Title as " +
         Title +
         " and description as " +
         Description,
-      () => {
-        console.log(
-          "Verify the Learning And Development Title as " +
-            Title +
-            " and description as " +
-            Description,
-        );
-      },
     );
   }
 
@@ -230,39 +173,25 @@ class Careers {
       PG_Careers.img_EmpoweringIndividuals,
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Empowering Individuals Icon is present.",
-      () => {
-        console.log("Verify the Empowering Individuals Icon is present.");
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Empowering Individuals Title as " + Title,
-      () => {
-        console.log("Verify the Empowering Individuals Title as " + Title);
-      },
     );
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
-    allureReporter.step(
+    await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Empowering Individuals Title as " +
         Title +
         " and description as " +
         Description,
-      () => {
-        console.log(
-          "Verify the Empowering Individuals Title as " +
-            Title +
-            " and description as " +
-            Description,
-        );
-      },
     );
   }
 
@@ -278,11 +207,13 @@ class Careers {
         PG_Careers.lnk_ShowMore,
         "Element not exist",
       );
-      allureReporter.step("Verify the Show more link in Careers page", () => {
-        console.log("Verify the Show more link in Careers page");
-      });
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Verify the Show more link in Careers page",
+      );
     } else {
-      console.log("Show more link Element is NOT present in the DOM.");
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Show more link Element is NOT present in the DOM.",
+      );
     }
   }
 
@@ -292,9 +223,7 @@ class Careers {
   async bc_SearchForJob(jobTitle) {
     await PG_Careers.tf_SearchForJob.clearValue();
     await PG_Careers.tf_SearchForJob.addValue(jobTitle);
-    allureReporter.step("Type job as " + jobTitle, () => {
-      console.log("Type job as " + jobTitle);
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs("Type job as : " + jobTitle);
   }
 
   /**
@@ -305,9 +234,9 @@ class Careers {
       PG_Careers.ele_lblSearchRecord,
       "Element not exist",
     );
-    allureReporter.step("Verify There is search record available", () => {
-      console.log("Verify There is search record available");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify There is search record available",
+    );
   }
 
   /**
@@ -316,9 +245,31 @@ class Careers {
   async bc_VerifyTheSearchRecordIsNotAvailable() {
     let element = await PG_Careers.ele_lblSearchRecord.isDisplayed();
     await assertionHandler.assertFalse(element);
-    allureReporter.step("Verify There is no search record available", () => {
-      console.log("Verify There is no search record available");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify There is no search record available",
+    );
+  }
+
+  /**
+   * a method to Click on the first record
+   */
+  async bc_ClickOnTheFirstRecord() {
+    let searchKey = await PG_Careers.lnk_FirstRecordToClick.getText();
+    let url = await PG_Careers.lnk_FirstRecordToClick.getAttribute("href");
+    await PG_Careers.lnk_FirstRecordToClick.click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on the First Record, Title as : " +
+        searchKey +
+        " , and URL as : " +
+        url,
+    );
+    await browser.pause(5000);
+    await LIB_Common.bc_TakeScreenShot("Rooster Page Swivel Group");
+    await browser.back();
+    await browser.pause(5000);
+    await LIB_Common.bc_TakeScreenShot(
+      "Again Navigate to Swivel Group Careers page",
+    );
   }
 }
 export default new Careers();

@@ -20,16 +20,20 @@ describe("Swivel Group Site -> Contact Us Page ", () => {
     await LIB_ContactUs.bc_VerifyEmailUs(Data_ContactUs.EmailAddress);
     await LIB_Common.bc_ClickOnButton("Send", 1);
     await LIB_ContactUs.bc_TypeEmailAddress("invalid_email_address");
+    await LIB_Common.bc_TakeScreenShot("invalid_email_address");
     await LIB_ContactUs.bc_VerifyErrorMessage(
       Data_ContactUs.ErrorMessage_EmailAddress,
     );
     await LIB_ContactUs.bc_TypePhoneNumber("Invalid_Phone_Number");
     // There is no phone number validation
-    allureReporter.step("There is no phone number validation", () => {
-      console.log("There is no phone number validation");
-    });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "There is no phone number validation",
+    );
     await LIB_ContactUs.bc_VerifyErrorMessage(
       Data_ContactUs.ErrorMessage_FieldRequired,
+    );
+    await LIB_Common.bc_TakeScreenShot(
+      "Error Message In Contact Us In Swivel group",
     );
   });
 });

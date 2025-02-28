@@ -22,5 +22,106 @@ class AboutUs {
         message,
     );
   }
+
+  /**
+   * a method to Verify the Our People is Our Business
+   */
+  async bc_VerifyOurPeopleIsOurBusiness(picture, title, description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.icn_OurBusiness(picture),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Title as : " + title + " icon is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_lblOurBusinessSubTitle(picture, title),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Title as : " +
+        title +
+        " icon is present. And Title is present below that.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_lblOurBusinessSubTitleAndDescription(
+        picture,
+        title,
+        description,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Title as : " +
+        title +
+        " icon is present. And Title is present below that. and Description as : " +
+        description,
+    );
+  }
+
+  /**
+   * a method to Verify the Meet the Leaders
+   */
+  async bc_VerifyMeetTheLeadersTile(picture, name, job, description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.icn_OurBusiness(picture),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Leaders name as : " + name + " , picture is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_LeaderName(picture, name),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Leaders name as : " +
+        name +
+        " , picture is present. And Leaders name is present below that.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_LeaderNameWithJob(picture, name, job),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Leaders name as : " + name + " , Designation as : " + job,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_LeaderLinkedIn(picture),
+      "Element not exist",
+    );
+    let url = await PG_AboutUs.ele_LeaderLinkedIn(picture).getAttribute("href");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Leaders name as : " + name + " , Linkedin profile link as : " + url,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_LeaderDescription(picture, description),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Leaders name as : " +
+        name +
+        " , picture is present. And Leaders name is present below that. and Description as : " +
+        description,
+    );
+  }
+
+  /**
+   * a method to Verify the Our Team Culture
+   */
+  async bc_VerifyOurTeamCultureTile(subTitle, description) {
+    await LIB_Common.bc_VerifyH2Header(subTitle);
+    await assertionHandler.assertElementDisplayed(
+      PG_AboutUs.ele_OurTeamCultureDescription(subTitle, description),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Sub Title as : " +
+        subTitle +
+        " , description as : " +
+        description +
+        " is present.",
+    );
+  }
 }
 export default new AboutUs();
