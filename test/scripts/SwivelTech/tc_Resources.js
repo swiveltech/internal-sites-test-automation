@@ -151,6 +151,7 @@ describe("Swivel Tech Site -> Resources Page", () => {
       "All;DevOps;Software Development;App Development;Enterprise Development",
     );
 
+    //Verify the Categories tiles
     await LIB_Resources.bc_VerifyCategoriesTile(
       Data_Resources.CaseStudies_Header_CustomisableFeaturesAndMagentomigration,
       Data_Resources.CustomisableFeaturesAndMagentomigration_Description,
@@ -159,7 +160,6 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.CaseStudies_Header_Tile2,
       Data_Resources.Tile2_Description,
     );
-    //
     await LIB_Resources.bc_VerifyCategoriesTile(
       Data_Resources.CaseStudies_Header_Tile3,
       Data_Resources.Tile3_Description,

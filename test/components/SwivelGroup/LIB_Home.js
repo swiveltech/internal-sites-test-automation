@@ -255,7 +255,7 @@ class Home {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblPageHeaderWithText(description, 1),
+      PG_Common.ele_lblPageHeader(description, 1),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -293,7 +293,7 @@ class Home {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup header as : " + header + " is not present.",
     );
-    let pageDescriptionFlag = await PG_Common.ele_lblPageHeaderWithText(
+    let pageDescriptionFlag = await PG_Common.ele_lblPageHeader(
       description,
       1,
     ).isDisplayed();
