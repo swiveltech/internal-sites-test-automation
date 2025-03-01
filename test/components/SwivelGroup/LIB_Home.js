@@ -232,11 +232,11 @@ class Home {
    */
   async bc_ClickOptionFromFooterPanel(tabName) {
     let element = await PG_Home.ele_FooterTab(tabName);
-
+    await browser.pause(2000);
     await element.scrollIntoView({ block: "center", inline: "center" });
-    await browser.pause(1000);
+    await browser.pause(2000);
     await PG_Home.ele_FooterTab(tabName).click();
-    await browser.pause(1000);
+    await browser.pause(2000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on the Footer Tab name " + tabName + " is present.",
     );

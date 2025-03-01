@@ -83,6 +83,7 @@ class Common {
       await this.bc_LogAllureReportAndLogs(
         `Clicked on button with label: ${label}`,
       );
+      await browser.pause(2000);
     } else {
       console.warn(`Button with label "${label}" not found.`);
     }
@@ -199,8 +200,9 @@ class Common {
    */
   async bc_ClickOnLinks(name) {
     let elementToScroll = await PG_Common.lnk_Navigation(name);
+    await browser.pause(3000);
     await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
-    await browser.pause(1000);
+    await browser.pause(2000);
     await PG_Common.lnk_Navigation(name).click();
     await this.bc_LogAllureReportAndLogs("Click on the link name : " + name);
     await browser.pause(1000);
