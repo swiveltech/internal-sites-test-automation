@@ -8,6 +8,12 @@ class CommonPage {
     );
   }
 
+  ele_lblPageHeaderSingle(PageHeader, Index) {
+    return $(
+      `(//*[contains(normalize-space(text()), '${PageHeader}')])[${Index}]`,
+    );
+  }
+
   btn_ButtonWithLabel(Label, Index) {
     return $(`(//button[text()="${Label}"])[${Index}]`);
   }

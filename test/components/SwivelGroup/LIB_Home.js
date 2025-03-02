@@ -255,7 +255,7 @@ class Home {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblPageHeader(description, 1),
+      PG_Common.ele_lblPageHeaderSingle(description, 1),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

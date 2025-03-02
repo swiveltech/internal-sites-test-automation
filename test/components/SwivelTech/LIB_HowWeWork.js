@@ -63,5 +63,28 @@ class HowWeWork {
       "Click on Arrow Up icon and now it is collapsed.",
     );
   }
+
+  /**
+   * a method to Verify the Benefits Of Choosing This Option
+   */
+  async bc_VerifyBenefitsOfChoosingThisOption(Header, Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_HowWeWork.ele_lblH5Header(Header),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Benefits Of Choosing This Option Header as : " + Header,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_HowWeWork.ele_lblBenefitsDescription(Header, Description),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Benefits Of Choosing This Option Header as : " +
+        Header +
+        " , and Description as : " +
+        Description,
+    );
+  }
 }
 export default new HowWeWork();

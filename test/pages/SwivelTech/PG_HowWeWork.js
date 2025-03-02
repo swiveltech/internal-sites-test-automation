@@ -27,6 +27,16 @@ class HowWeWorkPage {
       `//div[contains(text(),"${Question}")]/../following-sibling::div[contains(.,"${Answers}")]`,
     );
   }
+
+  ele_lblH5Header(Header) {
+    return $(`//h5[contains(text(),"${Header}")]`);
+  }
+
+  ele_lblBenefitsDescription(Header, Description) {
+    return $(
+      `//h5[contains(text(),"${Header}")]/following-sibling::p[contains(text(),"${Description}")]`,
+    );
+  }
 }
 
 export default new HowWeWorkPage();
