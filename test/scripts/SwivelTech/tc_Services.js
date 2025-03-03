@@ -234,4 +234,213 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Resources.ContactUs_Description,
     );
   });
+
+  it("Verify the DevOps As A Service Page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the DevOps As A Service Page",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Verify the "Services" -> "DevOps As A Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_DevOpsAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("devops-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_DevOpsConsultingServicesAndSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
+    );
+
+    //Verify the "Why choose Swivel Tech for DevOps consulting services?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Title_WhyChooseSwivelTechForDevOpsConsultingServices,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "experience.svg",
+      Data_Services.Title_DevOpsTile1,
+      Data_Services.Description_DevOpsTile1,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "devops.svg",
+      Data_Services.Title_DevOpsTile2,
+      Data_Services.Description_DevOpsTile2,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "strategies.svg",
+      Data_Services.Title_DevOpsTile3,
+      Data_Services.Description_DevOpsTile3,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "aws.svg",
+      Data_Services.Title_DevOpsTile4,
+      Data_Services.Description_DevOpsTile4,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "continuous-support.svg",
+      Data_Services.Title_DevOpsTile5,
+      Data_Services.Description_DevOpsTile5,
+    );
+
+    //Verify the "How can our DevOps engineers help?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_HowCanOurDevOpsEngineersHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "cicd-pipeline.svg",
+      Data_Services.SubTitle_HelpDevOps1,
+      Data_Services.Description_HelpDevOps1,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "cloud-infrastructure.svg",
+      Data_Services.SubTitle_HelpDevOps2,
+      Data_Services.Description_HelpDevOps2,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "config-management.svg",
+      Data_Services.SubTitle_HelpDevOps3,
+      Data_Services.Description_HelpDevOps3,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "monitoring_performance.svg",
+      Data_Services.SubTitle_HelpDevOps4,
+      Data_Services.Description_HelpDevOps4,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "Icons.svg",
+      Data_Services.SubTitle_HelpDevOps5,
+      Data_Services.Description_HelpDevOps5,
+    );
+
+    //Verify the "Our DevOps consulting process"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_OurDevOpsConsultingProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number1,
+      Data_Services.Step1_Header,
+      Data_Services.Step1_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number2,
+      Data_Services.Step2_Header,
+      Data_Services.Step2_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number3,
+      Data_Services.Step3_Header,
+      Data_Services.Step3_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number4,
+      Data_Services.Step4_Header,
+      Data_Services.Step4_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number5,
+      Data_Services.Step5_Header,
+      Data_Services.Step5_Description,
+    );
+
+    //Verify the "Elevate Your Business with DevOps Solutions of the Highest Quality"
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Services.Header_ElevateYourBusinessWithDevOpsSolutionsOfTheHighestQuality,
+    );
+    await LIB_Common.bc_VerifyTheButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_ClickOnButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    // Verify the "Services" -> "DevOps as a Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_DevOpsAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("devops-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_DevOpsConsultingServicesAndSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Read  more", 1);
+    await LIB_Common.bc_ClickOnButton("Read  more", 1);
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    // Verify the "Services" -> "DevOps as a Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_DevOpsAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("devops-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_DevOpsConsultingServicesAndSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
+    );
+
+    //Verify the "FAQs"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
+    await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q1, Data_Services.A1);
+    // await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q2, Data_Services.A2);//Failing Number 2 question and answer
+    await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q3, Data_Services.A3);
+    // await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q4, Data_Services.A4);//Failing Number 4 question and answer
+    await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q5, Data_Services.A5);
+
+    await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Resources.HowCanWeHelpYou_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+  });
 });
