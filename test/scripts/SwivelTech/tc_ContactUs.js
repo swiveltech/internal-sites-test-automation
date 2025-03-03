@@ -47,11 +47,56 @@ describe("Swivel Tech Site -> Contact Us Page", () => {
     );
 
     await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_Email);
-    await LIB_ContactUs.bc_VerifyEmail(Data_ContactUs.EmailAddress);
+    await LIB_ContactUs.bc_VerifyEmail(
+      Data_ContactUs.Header_Email,
+      Data_ContactUs.EmailAddress,
+    );
     await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_CallUs);
-    await LIB_ContactUs.bc_VerifyContactNumber(Data_ContactUs.ContactNumber);
+    await LIB_ContactUs.bc_VerifyContactNumber(
+      Data_ContactUs.Header_CallUs,
+      Data_ContactUs.ContactNumber,
+    );
 
     //Verify the Send Us a message
     await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_SendUsAMessage);
+
+    await LIB_Common.bc_ClickOnButton("Send", 1);
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_FirstName,
+      Data_ContactUs.ErrorMessage_ThisFieldIsRequired,
+    );
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_LastName,
+      Data_ContactUs.ErrorMessage_ThisFieldIsRequired,
+    );
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_Email,
+      Data_ContactUs.ErrorMessage_ThisFieldIsRequired,
+    );
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_PhoneNumber,
+      Data_ContactUs.ErrorMessage_ThisFieldIsRequired,
+    );
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_CustomerInquiry,
+      Data_ContactUs.ErrorMessage_DropDown,
+    );
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_Message,
+      Data_ContactUs.ErrorMessage_ThisFieldIsRequired,
+    );
+    await LIB_ContactUs.bc_SendUsaMessage(
+      "Automation_FirstName",
+      "Automation_LastName",
+      "Automation_Email",
+      "(+94) 77 1234 121",
+      1,
+      "This is Test message",
+    );
+    await LIB_Common.bc_ClickOnButton("Send", 1);
+    await LIB_ContactUs.bc_VerifyErrorMessage(
+      Data_ContactUs.Label_Email,
+      Data_ContactUs.ErrorMessage_EnterAValidEmailAddress,
+    );
   });
 });
