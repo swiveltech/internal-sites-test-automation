@@ -1,6 +1,5 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_Careers from "../../pages/SwivelTech/PG_Careers.js";
-import PG_Common from "../../pages/PG_Common.js";
 import LIB_Common from "../LIB_Common.js";
 
 class Careers {
@@ -8,13 +7,7 @@ class Careers {
    * a method to Verify the Our Benefits Tile
    */
   async bc_VerifyOurBenefitsTile(SubTitle, Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH3Header(SubTitle),
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the H3 Sub Header as : " + SubTitle,
-    );
+    await LIB_Common.bc_VerifyH3Header(SubTitle);
     await assertionHandler.assertElementDisplayed(
       PG_Careers.ele_OurBenefitsDescription(SubTitle, Description),
       "Element not exist",
