@@ -1,6 +1,4 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
-import PG_Careers from "../../pages/SwivelTech/PG_Careers.js";
-import PG_Common from "../../pages/PG_Common.js";
 import LIB_Common from "../LIB_Common.js";
 import PG_Services from "../../pages/SwivelTech/PG_Services.js";
 
