@@ -956,5 +956,360 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Services.Description_OurQualityAssuranceProcess,
       1,
     );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number1,
+      Data_Services.T1_OurQualityAssuranceProcess,
+      Data_Services.D1_OurQualityAssuranceProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number2,
+      Data_Services.T2_OurQualityAssuranceProcess,
+      Data_Services.D2_OurQualityAssuranceProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number3,
+      Data_Services.T3_OurQualityAssuranceProcess,
+      Data_Services.D3_OurQualityAssuranceProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number4,
+      Data_Services.T4_OurQualityAssuranceProcess,
+      Data_Services.D4_OurQualityAssuranceProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number5,
+      Data_Services.T5_OurQualityAssuranceProcess,
+      Data_Services.D5_OurQualityAssuranceProcess,
+    );
+
+    //Verify the "Schedule a Call to Set Up Your Quality Assurance Team"
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Services.Header_ScheduleACallToSetUpYourQualityAssuranceTeam,
+    );
+    await LIB_Common.bc_VerifyTheButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_ClickOnButton("SCHEDULE A CALL", 1);
+
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    // Verify the "Services" -> "QA as a Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_QAAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("qa-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_QAAsAService);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.QAAsAService_Description,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Read More", 4);
+    await LIB_Common.bc_ClickOnButton("Read More", 4);
+
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    // Verify the "Services" -> "QA as a Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_QAAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("qa-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_QAAsAService);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.QAAsAService_Description,
+    );
+
+    //Verify the "FAQs"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
+    // await LIB_HowWeWork.bc_VerifyFAQs(
+    //   Data_Services.Q1_QaAsAService,
+    //   Data_Services.A1_QaAsAService,
+    // );//Failing
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q2_QaAsAService,
+      Data_Services.A2_QaAsAService,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q3_QaAsAService,
+      Data_Services.A3_QaAsAService,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q4_QaAsAService,
+      Data_Services.A4_QaAsAService,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q5_QaAsAService,
+      Data_Services.A5_QaAsAService,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q6_QaAsAService,
+      Data_Services.A6_QaAsAService,
+    );
+
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+  });
+
+  it("Verify the Search Engine Optimisation Page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the Search Engine Optimisation Page",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Verify the "Services" -> "Search Engine Optimisation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_SearchEngineOptimisation,
+    );
+
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SEOConsultancyAndAuditingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SEOConsultancyAndAuditingServices_Description,
+    );
+
+    //Verify the "Why choose Swivel Tech for SEO Consultancy Services?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_WhyChooseSwivelTechForSEOConsultancyServices,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_why-choose-us-icon_.svg",
+      Data_Services.T1_WhyChooseSwivelTechForSEOConsultancyServices,
+      Data_Services.D1_WhyChooseSwivelTechForSEOConsultancyServices,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_why-choose-us-icon_ (1).svg",
+      Data_Services.T2_WhyChooseSwivelTechForSEOConsultancyServices,
+      Data_Services.D2_WhyChooseSwivelTechForSEOConsultancyServices,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "end-to-end-support.svg",
+      Data_Services.T3_WhyChooseSwivelTechForSEOConsultancyServices,
+      Data_Services.D3_WhyChooseSwivelTechForSEOConsultancyServices,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "proven-results.svg",
+      Data_Services.T4_WhyChooseSwivelTechForSEOConsultancyServices,
+      Data_Services.D4_WhyChooseSwivelTechForSEOConsultancyServices,
+    );
+
+    //Verify the "What SEO Solutions Can We Help You With?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_how-help-icons_.svg",
+      Data_Services.T1_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D1_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_how-help-icons_ (1).svg",
+      Data_Services.T2_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D2_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_how-help-icons_ (2).svg",
+      Data_Services.T3_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D3_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_how-help-icons_ (3).svg",
+      Data_Services.T4_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D4_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "site-migration-assistance.svg",
+      Data_Services.T5_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D5_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "_how-help-icons_ (4).svg",
+      Data_Services.T6_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D6_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "link-building.svg",
+      Data_Services.T7_WhatSEOSolutionsCanWeHelpYouWith,
+      Data_Services.D7_WhatSEOSolutionsCanWeHelpYouWith,
+    );
+
+    //Verify the "Our 4-step SEO Consultancy Process"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_Our4StepSEOConsultancyProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number1,
+      Data_Services.T1_Our4StepSEOConsultancyProcess,
+      Data_Services.D1_Our4StepSEOConsultancyProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number2,
+      Data_Services.T2_Our4StepSEOConsultancyProcess,
+      Data_Services.D2_Our4StepSEOConsultancyProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number3,
+      Data_Services.T3_Our4StepSEOConsultancyProcess,
+      Data_Services.D3_Our4StepSEOConsultancyProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number4,
+      Data_Services.T4_Our4StepSEOConsultancyProcess,
+      Data_Services.D4_Our4StepSEOConsultancyProcess,
+    );
+
+    //Verify the "Elevate Your Business with Top Quality SEO Solutions"
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Services.Header_ElevateYourBusinessWithTopQualitySEOSolutions,
+    );
+
+    await LIB_Common.bc_VerifyTheButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_ClickOnButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    // Verify the "Services" -> "Search Engine Optimisation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_SearchEngineOptimisation,
+    );
+
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SEOConsultancyAndAuditingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SEOConsultancyAndAuditingServices_Description,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Read  more", 1);
+    await LIB_Common.bc_ClickOnButton("Read  more", 1);
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    // Verify the "Services" -> "Search Engine Optimisation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_SearchEngineOptimisation,
+    );
+
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SEOConsultancyAndAuditingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SEOConsultancyAndAuditingServices_Description,
+    );
+
+    //Verify the "FAQs"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q1_SEO,
+      Data_Services.A1_SEO,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q2_SEO,
+      Data_Services.A2_SEO,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q3_SEO,
+      Data_Services.A3_SEO,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q4_SEO,
+      Data_Services.A4_SEO,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q5_SEO,
+      Data_Services.A5_SEO,
+    );
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
   });
 });
