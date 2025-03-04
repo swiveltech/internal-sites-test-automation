@@ -169,6 +169,20 @@ class Common {
     );
   }
 
+  //Common component to verify Header or any text
+  async bc_VerifyAnyText(textValue, index) {
+    let elementToScroll = await PG_Common.ele_lblPageHeaderWithDot(
+      textValue,
+      index,
+    );
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblPageHeaderWithDot(textValue, index),
+      "element not visible",
+    );
+    await this.bc_LogAllureReportAndLogs("Verify the Text as " + textValue);
+  }
+
   //Common component to verify H3 Header
   async bc_VerifyH3Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH3Header(pageHeader);

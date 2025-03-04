@@ -443,4 +443,240 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Resources.ContactUs_Description,
     );
   });
+
+  it("Verify the Enterprise Software Development Page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the Enterprise Software Development Page",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Verify the "Services" -> "Enterprise Software Development" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_EnterpriseSoftwareDevelopment,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("enterprise-software-development");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_EnterpriseApplicationSoftwareDevelopmentSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
+    );
+
+    //Verify the "Why choose Swivel Tech to Develop Your Enterprise Business Application?"
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Services.Header_WhyChooseSwivelTechToDevelopYourEnterpriseBusinessApplication,
+      1,
+    );
+
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "customer-centric-approach.svg",
+      Data_Services.T1_BusinessApplication,
+      Data_Services.D1_BusinessApplication,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "scalable-solutions.svg",
+      Data_Services.T2_BusinessApplication,
+      Data_Services.D2_BusinessApplication,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "best-inclass-technologies.svg",
+      Data_Services.T3_BusinessApplication,
+      Data_Services.D3_BusinessApplication,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "data-driven.svg",
+      Data_Services.T4_BusinessApplication,
+      Data_Services.D4_BusinessApplication,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "User-Experience.svg",
+      Data_Services.T5_BusinessApplication,
+      Data_Services.D5_BusinessApplication,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "support-team.svg",
+      Data_Services.T6_BusinessApplication,
+      Data_Services.D6_BusinessApplication,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "cost-effieciency.svg",
+      Data_Services.T7_BusinessApplication,
+      Data_Services.D7_BusinessApplication,
+    );
+
+    //Verify the "What Enterprise Software Solutions Can We Help You With?"
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Services.Header_WhatEnterpriseSoftwareSolutionsCanWeHelpYouWith,
+      1,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "crm.svg",
+      Data_Services.T1_EnterpriseSoftwareSolutions,
+      Data_Services.D1_EnterpriseSoftwareSolutions,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "erp.svg",
+      Data_Services.T2_EnterpriseSoftwareSolutions,
+      Data_Services.D2_EnterpriseSoftwareSolutions,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "design-and-dev.svg",
+      Data_Services.T3_EnterpriseSoftwareSolutions,
+      Data_Services.D3_EnterpriseSoftwareSolutions,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "data_analysis.svg",
+      Data_Services.T4_EnterpriseSoftwareSolutions,
+      Data_Services.D4_EnterpriseSoftwareSolutions,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "supply-chain-management.svg",
+      Data_Services.T5_EnterpriseSoftwareSolutions,
+      Data_Services.D5_EnterpriseSoftwareSolutions,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "project-management.svg",
+      Data_Services.T6_EnterpriseSoftwareSolutions,
+      Data_Services.D6_EnterpriseSoftwareSolutions,
+    );
+
+    //Verify the "Our 5-step Enterprise-Level Software Development Consultation Process"
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Services.Header_Our5StepEnterpriseLevelSoftwareDevelopmentConsultationProcess,
+      1,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number1,
+      Data_Services.S1_Header,
+      Data_Services.S1_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number2,
+      Data_Services.S2_Header,
+      Data_Services.S2_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number3,
+      Data_Services.S3_Header,
+      Data_Services.S3_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number4,
+      Data_Services.S4_Header,
+      Data_Services.S4_Description,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number5,
+      Data_Services.S5_Header,
+      Data_Services.S5_Description,
+    );
+
+    //Verify the "Let Us Elevate Your Business with Enterprise Software Solutions of the Highest Quality"
+    await LIB_Common.bc_VerifyTheParagraph(Data_Services.S1_Footer);
+    await LIB_Common.bc_VerifyTheButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_ClickOnButton("SCHEDULE A CALL", 1);
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    // Verify the "Services" -> "Enterprise Software Development" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_EnterpriseSoftwareDevelopment,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("enterprise-software-development");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_EnterpriseApplicationSoftwareDevelopmentSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Read More", 4);
+    await LIB_Common.bc_ClickOnButton("Read More", 4);
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    // Verify the "Services" -> "Enterprise Software Development" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_EnterpriseSoftwareDevelopment,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("enterprise-software-development");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_EnterpriseApplicationSoftwareDevelopmentSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
+    );
+
+    //Verify the "FAQs"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q1_InEnterprise,
+      Data_Services.A1_InEnterprise,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q2_InEnterprise,
+      Data_Services.A2_InEnterprise,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q3_InEnterprise,
+      Data_Services.A3_InEnterprise,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q4_InEnterprise,
+      Data_Services.A4_InEnterprise,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q5_InEnterprise,
+      Data_Services.A5_InEnterprise,
+    );
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+  });
 });

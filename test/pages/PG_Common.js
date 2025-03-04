@@ -49,6 +49,10 @@ class CommonPage {
   ele_lblParagraph(TextValue) {
     return $(`//p[contains(text(),"${TextValue}")][1]`);
   }
+
+  ele_lblPageHeaderWithDot(PageHeader, Index) {
+    return $(`(//*[contains(normalize-space(.), "${PageHeader}")])[${Index}]`);
+  }
 }
 
 export default new CommonPage();

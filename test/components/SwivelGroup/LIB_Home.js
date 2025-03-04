@@ -293,7 +293,7 @@ class Home {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup header as : " + header + " is not present.",
     );
-    let pageDescriptionFlag = await PG_Common.ele_lblPageHeader(
+    let pageDescriptionFlag = await PG_Common.ele_lblPageHeaderSingle(
       description,
       1,
     ).isDisplayed();
