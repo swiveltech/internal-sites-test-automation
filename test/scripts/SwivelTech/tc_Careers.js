@@ -62,6 +62,9 @@ describe("Swivel Tech Site -> Careers Page", () => {
 
     //Get the first record before search
     let searchKey = await PG_Careers.ele_lblFirstRecordInTable.getText();
+    if (searchKey.includes("(")) {
+      searchKey = searchKey.split("(")[0];
+    }
     let url = await PG_Careers.lnk_FirstRecordInTable.getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "First record in job title as : " + searchKey + " and URL as : " + url,
