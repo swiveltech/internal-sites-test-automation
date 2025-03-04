@@ -608,5 +608,19 @@ class Home {
       "Click on For more news link in home page",
     );
   }
+
+  /**
+   * a method to Verify For more news in home page
+   */
+  async bc_VerifyForMoreNewsInHomePage() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_ForMoreNews,
+      "Element not exist",
+    );
+    let appURL = await PG_Home.lnk_ForMoreNews.getAttribute("href");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify For more news link in home page. URL : " + appURL,
+    );
+  }
 }
 export default new Home();

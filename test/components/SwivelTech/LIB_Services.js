@@ -33,5 +33,25 @@ class Services {
         Description,
     );
   }
+
+  /**
+   * a method to Verify the "Benefits of Choosing This Option"
+   */
+  async bc_VerifyBenefitsOfChoosingThisOption(SubTitle, Description) {
+    await LIB_Common.bc_VerifyH5Header(SubTitle);
+    await assertionHandler.assertElementDisplayed(
+      PG_Services.ele_BenefitsOfChoosingThisOptionDescription(
+        SubTitle,
+        Description,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Sub Title as : " +
+        SubTitle +
+        " , and Description as : " +
+        Description,
+    );
+  }
 }
 export default new Services();

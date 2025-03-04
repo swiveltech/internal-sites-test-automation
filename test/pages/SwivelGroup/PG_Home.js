@@ -79,7 +79,7 @@ class HomePage {
   }
 
   get lnk_ForMoreNews() {
-    return $("//a/p[text()='For More News']");
+    return $(`//p[contains(text(),"For More News")]/..`);
   }
 }
 

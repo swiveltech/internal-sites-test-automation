@@ -679,4 +679,282 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Resources.ContactUs_Description,
     );
   });
+
+  it("Verify the Enterprise Software Development Page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the Enterprise Software Development Page",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Verify the "Services" -> "Managed Service Augmentation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_ManagedServiceAugmentation,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("managed-service-augmentation");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SeamlesslyExpandYourTeamWithStaffAugmentation,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
+    );
+
+    //Verify the "Benefits of Choosing This Option"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_BenefitsOfChoosingThisOption,
+    );
+    await LIB_Services.bc_VerifyBenefitsOfChoosingThisOption(
+      Data_Services.T1_BenefitsOfChoosingThisOption,
+      Data_Services.D1_BenefitsOfChoosingThisOption,
+    );
+    await LIB_Services.bc_VerifyBenefitsOfChoosingThisOption(
+      Data_Services.T2_BenefitsOfChoosingThisOption,
+      Data_Services.D2_BenefitsOfChoosingThisOption,
+    );
+    await LIB_Services.bc_VerifyBenefitsOfChoosingThisOption(
+      Data_Services.T3_BenefitsOfChoosingThisOption,
+      Data_Services.D3_BenefitsOfChoosingThisOption,
+    );
+    await LIB_Services.bc_VerifyBenefitsOfChoosingThisOption(
+      Data_Services.T4_BenefitsOfChoosingThisOption,
+      Data_Services.D4_BenefitsOfChoosingThisOption,
+    );
+    await LIB_Services.bc_VerifyBenefitsOfChoosingThisOption(
+      Data_Services.T5_BenefitsOfChoosingThisOption,
+      Data_Services.D5_BenefitsOfChoosingThisOption,
+    );
+
+    //Verify the "Our Process"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_OurProcess);
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number1,
+      Data_Services.T1_OurProcess,
+      Data_Services.D1_OurProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number2,
+      Data_Services.T2_OurProcess,
+      Data_Services.D2_OurProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number3,
+      Data_Services.T3_OurProcess,
+      Data_Services.D3_OurProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number4,
+      Data_Services.T4_OurProcess,
+      Data_Services.D4_OurProcess,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number5,
+      Data_Services.T5_OurProcess,
+      Data_Services.D5_OurProcess,
+    );
+
+    //Verify the "FAQs"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q1_ManagedServiceAugmentation,
+      Data_Services.A1_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q2_ManagedServiceAugmentation,
+      Data_Services.A2_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q3_ManagedServiceAugmentation,
+      Data_Services.A3_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q4_ManagedServiceAugmentation,
+      Data_Services.A4_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q5_ManagedServiceAugmentation,
+      Data_Services.A5_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q6_ManagedServiceAugmentation,
+      Data_Services.A6_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q7_ManagedServiceAugmentation,
+      Data_Services.A7_ManagedServiceAugmentation,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q8_ManagedServiceAugmentation,
+      Data_Services.A8_ManagedServiceAugmentation,
+    );
+
+    //Verify the "Our Latest Insights"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_OurLatestInsights);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Services.Description_OurLatestInsights,
+    );
+
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights1_Title,
+      Data_Resources.OurLatestInsights1_Category,
+      Data_Resources.OurLatestInsights1_Date,
+      Data_Resources.OurLatestInsights1_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights2_Title,
+      Data_Resources.OurLatestInsights2_Category,
+      Data_Resources.OurLatestInsights2_Date,
+      Data_Resources.OurLatestInsights2_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights3_Title,
+      Data_Resources.OurLatestInsights3_Category,
+      Data_Resources.OurLatestInsights3_Date,
+      Data_Resources.OurLatestInsights3_SubDescription,
+    );
+
+    await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES ", 1);
+    await LIB_Common.bc_ClickOnButton("ALL BLOG ARTICLES ", 1);
+
+    await LIB_Common.bc_VerifyTheAppURL("blogs");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Blogs_Top_Header);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.Blogs_Top_Description,
+    );
+
+    // Verify the "Services" -> "Managed Service Augmentation" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_ManagedServiceAugmentation,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("managed-service-augmentation");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SeamlesslyExpandYourTeamWithStaffAugmentation,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
+    );
+
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+  });
+
+  it("Verify the QA as a Service Page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the QA as a Service Page",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Verify the "Services" -> "QA as a Service" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_QAAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("qa-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_QAAsAService);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.QAAsAService_Description,
+    );
+
+    //Verify the "Why Choose Swivel Tech?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_WhyChooseSwivelTech,
+    );
+
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "pencil-gear.svg",
+      Data_Services.T1_WhyChooseSwivelTech,
+      Data_Services.D1_WhyChooseSwivelTech,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "efficiency.svg",
+      Data_Services.T2_WhyChooseSwivelTech,
+      Data_Services.D2_WhyChooseSwivelTech,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "automation.svg",
+      Data_Services.T3_WhyChooseSwivelTech,
+      Data_Services.D3_WhyChooseSwivelTech,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "premium (1).svg",
+      Data_Services.T4_WhyChooseSwivelTech,
+      Data_Services.D4_WhyChooseSwivelTech,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "team-building.svg",
+      Data_Services.T5_WhyChooseSwivelTech,
+      Data_Services.D5_WhyChooseSwivelTech,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "growth.svg",
+      Data_Services.T6_WhyChooseSwivelTech,
+      Data_Services.D6_WhyChooseSwivelTech,
+    );
+
+    //Verify the "How Can Our QA Team Help?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_HowCanOurQATeamHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "test-coverage.svg",
+      Data_Services.T1_HowCanOurQATeamHelp,
+      Data_Services.D1_HowCanOurQATeamHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "webpage-speed-testing.svg",
+      Data_Services.T2_HowCanOurQATeamHelp,
+      Data_Services.D2_HowCanOurQATeamHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "Security Testing - QA 1.svg",
+      Data_Services.T3_HowCanOurQATeamHelp,
+      Data_Services.D3_HowCanOurQATeamHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "user.svg",
+      Data_Services.T4_HowCanOurQATeamHelp,
+      Data_Services.D4_HowCanOurQATeamHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "devices.svg",
+      Data_Services.T5_HowCanOurQATeamHelp,
+      Data_Services.D5_HowCanOurQATeamHelp,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "software-testing.svg",
+      Data_Services.T6_HowCanOurQATeamHelp,
+      Data_Services.D6_HowCanOurQATeamHelp,
+    );
+
+    //Verify the "Our Quality Assurance Process"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Services.Header_OurQualityAssuranceProcess,
+    );
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Services.Description_OurQualityAssuranceProcess,
+      1,
+    );
+  });
 });

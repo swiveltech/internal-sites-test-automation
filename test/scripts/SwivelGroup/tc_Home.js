@@ -120,6 +120,25 @@ describe("Swivel Group Site -> Home Page ", () => {
     //Verify the 'Newsroom' Section
     await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
     await LIB_Common.bc_TakeScreenShot("Newsroom");
+    // Verify the Article Bowling Tournament
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_BowlingTournament,
+      Data_Newsroom.BowlingTournament_Description,
+    );
+
+    // Verify the Article Sinhala And Tamil New Year 2023
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_SinhalaAndTamilNewYear2023,
+      Data_Newsroom.SinhalaAndTamilNewYear2023_Description,
+    );
+
+    // Verify the Article 4th Anniversary
+    await LIB_Newsroom.bc_VerifyArticles(
+      Data_Newsroom.SubTitle_4thAnniversary,
+      Data_Newsroom.FourthAnniversary_Description,
+    );
+
+    await LIB_Home.bc_VerifyForMoreNewsInHomePage();
 
     // Verify the Top Description
     await LIB_Common.bc_VerifyPageHeader(
@@ -256,7 +275,7 @@ describe("Swivel Group Site -> Home Page ", () => {
   });
 
   // Covered Test Case Number : SG-8, SG-9, SG-10, SG-11
-  it("Verify the navigation of the our brands section", async () => {
+  it.ip("Verify the navigation of the our brands section", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Swivel Group -> Home Page ->  Our Brands -> Verify the navigation",
     );

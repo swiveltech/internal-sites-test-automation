@@ -284,5 +284,18 @@ class Common {
   async bc_StartAllureReportStep(reportLog) {
     allureReporter.startStep(reportLog);
   }
+
+  //Common component to verify H5 Header
+  async bc_VerifyH5Header(pageHeader) {
+    let elementToScroll = await PG_Common.ele_lblH5Header(pageHeader);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblH5Header(pageHeader),
+      "element not visible",
+    );
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H5 page header as " + pageHeader,
+    );
+  }
 }
 export default new Common();
