@@ -126,7 +126,19 @@ class Home {
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Swivel Tech Company deliver as : " + Label + " is present. ",
+      "Verify the Swivel Tech Company deliver as : " + Label + " is present.",
+    );
+  }
+
+  /**
+   * a method to Click the Software Solutions We Deliver tile
+   */
+  async bc_ClickSoftwareSolutionsWeDeliverTile(Label) {
+    let elementToScroll = await PG_Home.lnk_SoftwareSolutionsWeDeliver(Label);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await PG_Home.lnk_SoftwareSolutionsWeDeliver(Label).click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Swivel Tech Company deliver as : " + Label,
     );
   }
 

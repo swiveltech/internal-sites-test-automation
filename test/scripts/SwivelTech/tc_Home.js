@@ -5,8 +5,9 @@ import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.json" assert { type: 
 import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json" assert { type: "json" };
 import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
+import Data_OurServices from "../../data/SwivelTech/dt_ourServices.json" assert { type: "json" };
 
-describe("Swivel Tech Site -> Home Page ", () => {
+describe("Swivel Tech Site -> Home Page", () => {
   it("Verify the Home Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Swivel Tech -> Home Page Verification",
@@ -20,6 +21,9 @@ describe("Swivel Tech Site -> Home Page ", () => {
     await LIB_Home.bc_VerifyTopSubPageHeader(Data_Home.Top_Header2);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Description, 1);
     await LIB_Home.bc_VerifyContactTopPanel(Data_Home.ContactNumber);
+
+    //Verify the "START YOUR PROJECT TODAY"
+    await LIB_Common.bc_VerifyTheButton("START YOUR PROJECT TODAY", 1);
 
     // Top First Sub set verify
     await LIB_Common.bc_VerifyH2Header(
@@ -213,9 +217,9 @@ describe("Swivel Tech Site -> Home Page ", () => {
     );
   });
 
-  it("Verify the Navigation From Home page", async () => {
+  it("Verify the Top Panel Navigation From Home page", async () => {
     await LIB_Common.bc_StartAllureReportStep(
-      "Swivel Tech -> Navigation From Home Page",
+      "Swivel Tech -> Top Panel Navigation From Home Page",
     );
 
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
@@ -392,6 +396,129 @@ describe("Swivel Tech Site -> Home Page ", () => {
       Data_Resources.SEOConsultancyAndAuditingServices_Description,
     );
 
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+  });
+
+  it("Verify the Inner button and link Navigation From Home page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Inner button and link Navigation From Home Page",
+    );
+
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyHomePageLogo();
+
+    //Click on "START YOUR PROJECT TODAY"
+    await LIB_Common.bc_ClickOnButton("START YOUR PROJECT TODAY", 1);
+
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    //Click on "LEARN MORE ABOUT US"
+    await LIB_Common.bc_ClickOnButton("LEARN MORE ABOUT US", 1);
+
+    await LIB_Common.bc_VerifyH1Header(Data_AboutUs.Top_Header);
+    await LIB_Common.bc_VerifyTheParagraph(Data_AboutUs.Top_Description1);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(Data_AboutUs.Top_Description2);
+    await LIB_Common.bc_VerifyTheAppURL("about-us");
+
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_EnterpriseSoftwareDevelopment,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("enterprise-software-development");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_EnterpriseApplicationSoftwareDevelopmentSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_QAAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("qa-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_QAAsAService);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.QAAsAService_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_DevOpsAsAService,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("devops-as-a-service");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_DevOpsConsultingServicesAndSolutions,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_SearchEngineOptimisation,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(
+      Data_Resources.Header_SEOConsultancyAndAuditingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.SEOConsultancyAndAuditingServices_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_ManagedServiceAugmentation,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_HowWeWork.StaffAugmentation_Top_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_HowWeWork.StaffAugmentation_Top_Description2,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_HowWeWork.StaffAugmentation_Top_Description3,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("staff-augmentation");
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_ArtificialIntelligence,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("artificial-intelligence");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(
+      Data_Resources.Header_ArtificialIntelligenceConsultingServices,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ArtificialIntelligenceConsultingServices_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    await LIB_Common.bc_ClickOnButton("LEARN MORE", 7);
+    await LIB_Common.bc_VerifyTheAppURL("our-services");
+    //Verify the Page Header and Description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
+    await LIB_Common.bc_VerifyTheParagraph(Data_OurServices.Top_Description);
+
+    //Need to add script
     await LIB_Home.bc_ClickOnAppLogo();
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
   });
