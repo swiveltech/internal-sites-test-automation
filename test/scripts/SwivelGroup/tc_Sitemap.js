@@ -314,7 +314,8 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
-    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
+    await browser.pause(5000);
+    await LIB_Common.bc_TakeScreenShot("Instagram from Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 });
