@@ -92,5 +92,83 @@ class OurServices {
         Description,
     );
   }
+
+  /**
+   * a method to Verify the "Exceeding Client Expectations, Every Time."
+   */
+  async bc_VerifyExceedingClientExpectationsEveryTime(
+    Image,
+    Name,
+    Job,
+    Description,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Services.icn_Image(Image),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Image Icon as : " + Image,
+    );
+    await LIB_Common.bc_VerifyH6Header(Name);
+    await assertionHandler.assertElementDisplayed(
+      PG_OurServices.ele_lblPersonNameWithJob(Name, Job),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Client name as : " +
+        Name +
+        " and Job as : " +
+        Job +
+        " , it is present.",
+    );
+
+    await assertionHandler.assertElementDisplayed(
+      PG_OurServices.ele_lblPersonNameWithJobAndDescription(
+        Name,
+        Job,
+        Description,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Client name as : " +
+        Name +
+        " and Job as : " +
+        Job +
+        " , and Description as : " +
+        Description +
+        " , it is present.",
+    );
+  }
+
+  /**
+   * a method to Verify Successful Client project tile
+   */
+  async bc_VerifySuccessfulClientProjectTile(Title, Description) {
+    await assertionHandler.assertElementDisplayed(
+      PG_OurServices.ele_SuccessfulProjectTile(Title, Description),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Successful Client Project Title as : " +
+        Title +
+        " and Description as : " +
+        Description,
+    );
+    let linkedInURL =
+      await PG_OurServices.lnk_SuccessfulProjectTileReadMore(
+        Title,
+      ).getAttribute("href");
+    await assertionHandler.assertElementDisplayed(
+      PG_OurServices.lnk_SuccessfulProjectTileReadMore(Title),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Successful Client Project Title as : " +
+        Title +
+        " and Read More link. and URL as : " +
+        linkedInURL,
+    );
+  }
 }
 export default new OurServices();

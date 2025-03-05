@@ -518,8 +518,68 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
     await LIB_Common.bc_VerifyTheParagraph(Data_OurServices.Top_Description);
 
-    //Need to add script
     await LIB_Home.bc_ClickOnAppLogo();
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    await LIB_Common.bc_VerifyTheButton("READ MORE", 1);
+    await LIB_Common.bc_ClickOnButton("READ MORE", 1);
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES", 1);
+    await LIB_Common.bc_ClickOnButton("ALL BLOG ARTICLES", 1);
+    await LIB_Common.bc_VerifyTheAppURL("blogs");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Blogs_Top_Header);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.Blogs_Top_Description,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 8);
+    await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(3000);
+    const currentUrl = await browser.getUrl();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on SwivelHack Learn more link in home page. Clicked URL : " +
+        currentUrl,
+    );
+    await LIB_Common.bc_TakeScreenShot("SwivelHack");
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
   });
 });

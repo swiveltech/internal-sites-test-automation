@@ -221,7 +221,6 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Resources.Header_BookADiscoveryCall,
       1,
     );
-
     //Click on Book A Discovery Call
     await LIB_Common.bc_ClickOnButton(
       Data_Resources.Header_BookADiscoveryCall,

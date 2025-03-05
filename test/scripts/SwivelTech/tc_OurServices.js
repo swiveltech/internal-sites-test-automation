@@ -241,5 +241,77 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_Common.bc_VerifyH2Header(
       Data_OurServices.Header_ExceedingClientExpectationsEveryTime,
     );
+    await LIB_OurServices.bc_VerifyExceedingClientExpectationsEveryTime(
+      "Geoff Smeaton",
+      Data_OurServices.PersonName1,
+      Data_OurServices.PersonName1_Job,
+      Data_OurServices.PersonName1_Description,
+    );
+    await LIB_OurServices.bc_VerifyExceedingClientExpectationsEveryTime(
+      "Phil Whitehouse",
+      Data_OurServices.PersonName2,
+      Data_OurServices.PersonName2_Job,
+      Data_OurServices.PersonName2_Description,
+    );
+    await LIB_OurServices.bc_VerifyExceedingClientExpectationsEveryTime(
+      "Joel Rembach",
+      Data_OurServices.PersonName3,
+      Data_OurServices.PersonName3_Job,
+      Data_OurServices.PersonName3_Description,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    await LIB_OurServices.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_OurServices.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_OurServices.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("READ MORE", 1);
+    await LIB_Common.bc_ClickOnButton("READ MORE", 1);
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    // Click on the "Services" navigation
+    await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_Services);
+    await LIB_Common.bc_VerifyTheAppURL("our-services");
+    //Verify the Page Header and Description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
+    await LIB_Common.bc_VerifyTheParagraph(Data_OurServices.Top_Description);
+    await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Resources.HowCanWeHelpYou_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
   });
 });

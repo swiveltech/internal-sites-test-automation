@@ -277,7 +277,6 @@ class Home {
 
   /**
    * a method to Verify Hear What Our Clients Have to Say
-   *
    */
   async bc_VerifyHearWhatOurClientsHaveToSay(
     ClientName,
@@ -328,7 +327,6 @@ class Home {
 
   /**
    * a method to Verify Successful Client project tile
-   *
    */
   async bc_VerifySuccessfulClientProjectTile(Title, Description) {
     await assertionHandler.assertElementDisplayed(
@@ -341,6 +339,10 @@ class Home {
         " and Description as : " +
         Description,
     );
+    let linkedInURL =
+      await PG_Home.lnk_SuccessfulProjectTileReadMore(Title).getAttribute(
+        "href",
+      );
     await assertionHandler.assertElementDisplayed(
       PG_Home.lnk_SuccessfulProjectTileReadMore(Title),
       "Element not exist",
@@ -348,13 +350,13 @@ class Home {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Successful Client Project Title as : " +
         Title +
-        " and Read More link",
+        " and Read More link. and URL as : " +
+        linkedInURL,
     );
   }
 
   /**
    * a method to Verify Our Latest Insights tile
-   *
    */
   async bc_VerifyOurLatestInsightsTile(
     Title,
