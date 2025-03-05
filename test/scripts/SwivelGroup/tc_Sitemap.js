@@ -7,6 +7,7 @@ import Data_SwivelFinance from "../../data/SwivelGroup/dt_swivelFinance.json" as
 import Data_SwivelTalent from "../../data/SwivelGroup/dt_swivelTalent.json" assert { type: "json" };
 import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
 import Data_PrivacyPolicy from "../../data/SwivelGroup/dt_privacyPolicy.json" assert { type: "json" };
+import Data_Cookies from "../../data/SwivelGroup/dt_cookie.json" assert { type: "json" };
 import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
@@ -246,6 +247,22 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       "Privacy Policy - Swivel Group From Sitemap",
     );
     await LIB_Common.bc_VerifyH1Header(Data_PrivacyPolicy.PrivacyPolicy_Header);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
+    // Verify the page navigation Others -> Cookie Policy
+    await LIB_Sitemap.bc_ClickOnSubOption(
+      Data_Sitemap.Title_Others,
+      Data_Sitemap.Others_SubTitleAsOption_CookiePolicy,
+    );
+    allGUIDs = await browser.getWindowHandles();
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
+    await LIB_Common.bc_TakeScreenShot(
+      "Cookie Policy - Swivel Group From Sitemap",
+    );
+    await LIB_Common.bc_VerifyH1Header(Data_Cookies.Cookie_Header);
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Verify the page navigation Social Media -> Facebook

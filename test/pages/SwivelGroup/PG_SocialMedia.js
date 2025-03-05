@@ -11,7 +11,9 @@ class SocialMedia {
   }
 
   get ele_InstagramTitle() {
-    return $('//span[normalize-space()="See more from swivel.group"]');
+    return $(
+      '//span[normalize-space()="See more from swivel.group" or normalize-space()="See photos, videos and more from swivel.group"]',
+    );
   }
 
   get ele_TwitterTitle() {

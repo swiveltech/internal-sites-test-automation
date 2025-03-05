@@ -363,20 +363,24 @@ describe("Swivel Group Site -> Home Page ", () => {
     // Click on Facebook and verify it
     await LIB_Home.bc_ClickOnFacebookIcon();
     await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
+    await LIB_Common.bc_TakeScreenShot("Facebook");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Twitter and verify it
     await LIB_Home.bc_ClickOnTwitterIcon();
     await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
+    await LIB_Common.bc_TakeScreenShot("Twitter");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Linkedin and verify it
     await LIB_Home.bc_ClickOnLinkedinIcon();
     await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
+    await LIB_Common.bc_TakeScreenShot("Linkedin");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Instagram and verify it
     await LIB_Home.bc_ClickOnInstagramIcon();
+    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
     await LIB_Common.bc_TakeScreenShot("Instagram");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });

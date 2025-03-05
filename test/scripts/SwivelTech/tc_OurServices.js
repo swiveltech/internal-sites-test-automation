@@ -46,5 +46,27 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       Data_OurServices.Header_TrustedPartnerInCorporateSoftwareDevelopment,
       1,
     );
+    // Verify the Services with Count
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_YearsInBusiness,
+      Data_Home.YearsInBusiness_Count,
+    );
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_Resources,
+      Data_Home.Resources_Count,
+    );
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_ClientsTrustedUs,
+      Data_Home.ClientsTrustedUs_Count,
+    );
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_ClientsTrustedUs,
+      Data_Home.ClientsTrustedUs_Count,
+    );
+
+    //Verify the "Our Software Development Services"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_OurServices.Header_OurSoftwareDevelopmentServices,
+    );
   });
 });

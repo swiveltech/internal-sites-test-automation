@@ -78,6 +78,9 @@ describe("Swivel Group Site -> Cookie Page ", () => {
       Data_Cookies.MoreInformation_Description,
       1,
     );
+    //Verify the Email link
+    await LIB_Common.bc_VerifyLinks(Data_Cookies.Link_EmailAddress);
+
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
     // Click on Decline All Button
     await LIB_Common.bc_ClickOnButton("Decline All", 1);

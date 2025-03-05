@@ -12,6 +12,9 @@ describe("Swivel Group Site -> About Us", () => {
       "Swivel Group -> Verify the About Us Page",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+
     // Navigate to About Us tab
     await LIB_Home.bc_NavigateToTabFromTopNavigation("About Us");
 
