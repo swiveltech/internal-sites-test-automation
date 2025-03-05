@@ -83,6 +83,10 @@ class HomePage {
   get img_SwivelLogoFooter() {
     return $(`//img[@alt="footer-logo.svg"]`);
   }
+
+  get lnk_CookiePolicyInPopUp() {
+    return $(`//div[@class="popuplink"]/p/a[text()="Cookie Policy"]`);
+  }
 }
 
 export default new HomePage();

@@ -16,6 +16,14 @@ describe("Swivel Finance Site -> Home Page ", () => {
     await LIB_Common.bc_VerifyTheParagraph(Data_Home.HomePage_Top_Description);
     await LIB_Common.bc_VerifyTheButton("Connect With Us", 1);
 
+    //Verify the We value your privacy popup
+    await LIB_Home.bc_VerifyWeValueYourPrivacyPopUp(
+      Data_Home.PopUp_Header_WeValueYourPrivacy,
+      Data_Home.PopUp_Description_WeValueYourPrivacy,
+    );
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await browser.pause(3000);
+
     // Verify the Experts In
     await LIB_Common.bc_VerifyH4Header(Data_Home.Title_ExpertsIn);
     await LIB_Common.bc_TakeScreenShot("Experts In Swivel Finance");
@@ -123,6 +131,10 @@ describe("Swivel Finance Site -> Home Page ", () => {
 
     // Verify the thought Leadership
     await LIB_Common.bc_VerifyH3Header(Data_Home.Title_ThoughtLeadership);
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Home.ThoughtLeadership_Description,
+      1,
+    );
     await LIB_Home.bc_VerifyThoughtLeadership(Data_Home.Tile_ThoughtLeadership);
 
     await LIB_Common.bc_VerifyH3Header(Data_Home.Title_WeWouldLoveToHelpYou);
@@ -135,6 +147,8 @@ describe("Swivel Finance Site -> Home Page ", () => {
     await LIB_Home.bc_VerifyHomeScreenFooterPanel(
       "HOME;SERVICES;HOW WE WORK;INSIGHTS;WHO WE ARE;CAREERS",
     );
+    await LIB_Common.bc_VerifyLinks("Privacy Policy");
+    await LIB_Common.bc_VerifyLinks("Cookie Policy");
   });
 
   it.skip("Verify the Home Page Navigation", async () => {

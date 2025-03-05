@@ -34,13 +34,33 @@ class Home {
   }
 
   /**
+   * a method to Verify the We value your privacy popup
+   */
+  async bc_VerifyWeValueYourPrivacyPopUp(Title, Description) {
+    await LIB_Common.bc_VerifyH6Header(Title);
+    await assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblPageHeaderSingle(Description, 1),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Privacy popup description as : " + Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Decline", 1);
+    await LIB_Common.bc_VerifyTheButton("Accept", 1);
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.lnk_CookiePolicyInPopUp,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Cookie Policy link is present in popup below.",
+    );
+  }
+
+  /**
    * a method to Verify the Services We Deliver tiles
    */
   async bc_VerifySuccessfulClientProject(Title, Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblParagraph(Title),
-      "Element not exist",
-    );
+    await LIB_Common.bc_VerifyTheParagraph(Title);
     await assertionHandler.assertElementDisplayed(
       PG_Home.ele_lblSuccessfulClientProjectDescription(Title, Description),
       "Element not exist",
@@ -49,11 +69,17 @@ class Home {
       PG_Home.lnk_SuccessfulClientProjectReadMore(Title, Description),
       "Element not exist",
     );
+    let linkedInURL = await PG_Home.lnk_SuccessfulClientProjectReadMore(
+      Title,
+      Description,
+    ).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         Title +
         " ,And the Description as : " +
-        Description,
+        Description +
+        " , and read More link also available. URL : " +
+        linkedInURL,
     );
   }
 
@@ -99,10 +125,13 @@ class Home {
       PG_Home.lnk_ThoughtLeadershipVisitMore(Title),
       "Element not exist",
     );
+    let linkedInURL =
+      await PG_Home.lnk_ThoughtLeadershipVisitMore(Title).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         Title +
-        " , Under Thought Leadership and verify the Visit more link too. ",
+        " , Under Thought Leadership and verify the Visit more link too. And URL : " +
+        linkedInURL,
     );
   }
 

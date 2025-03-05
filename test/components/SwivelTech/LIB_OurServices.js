@@ -1,6 +1,7 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import LIB_Common from "../LIB_Common.js";
 import PG_OurServices from "../../pages/SwivelTech/PG_OurServices.js";
+import PG_Services from "../../pages/SwivelTech/PG_Services.js";
 
 class OurServices {
   /**
@@ -51,6 +52,44 @@ class OurServices {
     ).click();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Learn More link under the Sub Title as : " + SubTitle,
+    );
+  }
+
+  /**
+   * a method to Verify the "Entrust Your Corporate Software Development Needs to Us"
+   */
+  async bc_VerifyEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+    Image,
+    SubTitle,
+    Description,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Services.icn_Image(Image),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Image Icon as : " + Image,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_OurServices.ele_lblH5Title(SubTitle),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the H5 Header as : " + SubTitle,
+    );
+
+    await assertionHandler.assertElementDisplayed(
+      PG_OurServices.ele_lblDescriptionOfEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+        SubTitle,
+        Description,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Sub Title as : " +
+        SubTitle +
+        " , and Description as : " +
+        Description,
     );
   }
 }

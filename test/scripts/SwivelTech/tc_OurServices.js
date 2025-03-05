@@ -213,5 +213,33 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_Common.bc_VerifyH2Header(
       Data_OurServices.Header_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
     );
+    await LIB_OurServices.bc_VerifyEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+      "Access the Best Talent in<br> the Industry",
+      Data_OurServices.T1_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+      Data_OurServices.D1_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+    );
+    await LIB_OurServices.bc_VerifyEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+      "Robust Employee Performance Management",
+      Data_OurServices.T2_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+      Data_OurServices.D2_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+    );
+    await LIB_OurServices.bc_VerifyEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+      "Agile Approach to<br> Software Development ",
+      Data_OurServices.T3_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+      Data_OurServices.D3_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+    );
+    await LIB_OurServices.bc_VerifyEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+      "Eliminate Overhead Costs",
+      Data_OurServices.T4_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+      Data_OurServices.D4_EntrustYourCorporateSoftwareDevelopmentNeedsToUs,
+    );
+
+    //Verify the "We Are Proficient in Your Tech Stack"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_OurServices.Header_WeAreProficientInYourTechStack,
+    );
+    await LIB_Common.bc_VerifyH2Header(
+      Data_OurServices.Header_ExceedingClientExpectationsEveryTime,
+    );
   });
 });

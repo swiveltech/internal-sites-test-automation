@@ -42,6 +42,10 @@ class CommonPage {
     return $(`//h5[contains(text(),"${Label}")]`);
   }
 
+  ele_lblH6Header(Label) {
+    return $(`//h6[contains(text(),"${Label}")]`);
+  }
+
   lnk_Navigation(Label) {
     return $(`//a[text()='${Label}']`);
   }

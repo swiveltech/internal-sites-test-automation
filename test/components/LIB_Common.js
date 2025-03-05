@@ -297,5 +297,18 @@ class Common {
       "Verify the H5 page header as " + pageHeader,
     );
   }
+
+  //Common component to verify H6 Header
+  async bc_VerifyH6Header(pageHeader) {
+    let elementToScroll = await PG_Common.ele_lblH6Header(pageHeader);
+    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    assertionHandler.assertElementDisplayed(
+      PG_Common.ele_lblH6Header(pageHeader),
+      "element not visible",
+    );
+    await this.bc_LogAllureReportAndLogs(
+      "Verify the H6 page header as " + pageHeader,
+    );
+  }
 }
 export default new Common();
