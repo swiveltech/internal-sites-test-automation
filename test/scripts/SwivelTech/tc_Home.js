@@ -227,14 +227,14 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_VerifyHomePageLogo();
 
-    // Verify the "About Us" navigation
+    // Click on the "About Us" navigation
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_AboutUs);
     await LIB_Common.bc_VerifyH1Header(Data_AboutUs.Top_Header);
     await LIB_Common.bc_VerifyTheParagraph(Data_AboutUs.Top_Description1);
     await LIB_Home.bc_VerifySubPageHeaderInPTag(Data_AboutUs.Top_Description2);
     await LIB_Common.bc_VerifyTheAppURL("about-us");
 
-    // Verify the "How We Work" -> "Project Based" navigation
+    // Click on the "How We Work" -> "Project Based" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_HowWeWork,
       Data_Home.HowWeWork_ProjectBased,
@@ -251,7 +251,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("project-based-software-development");
 
-    // Verify the "How We Work" -> "Staff Augmentation" navigation
+    // Click on the "How We Work" -> "Staff Augmentation" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_HowWeWork,
       Data_Home.HowWeWork_StaffAugmentation,
@@ -274,7 +274,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("staff-augmentation");
 
-    // Verify the "Resources" -> "Blogs" navigation
+    // Click on the "Resources" -> "Blogs" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Resources,
       Data_Home.Resources_Blogs,
@@ -286,7 +286,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.Blogs_Top_Description,
     );
 
-    // Verify the "Resources" -> "Case Studies" navigation
+    // Click on the "Resources" -> "Case Studies" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Resources,
       Data_Home.Resources_CaseStudies,
@@ -298,7 +298,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.CaseStudies_Description,
     );
 
-    // Verify the "Careers" navigation
+    // Click on the "Careers" navigation
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_Careers);
     await LIB_Common.bc_VerifyTheAppURL("careers");
     await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_Careers);
@@ -306,7 +306,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.Careers_Description,
     );
 
-    // Verify the Let's Talk navigation
+    // Click on the Let's Talk navigation
     await LIB_Common.bc_ClickOnButton("Let’s Talk", 1);
     await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
@@ -314,7 +314,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("contact-us");
 
-    // Verify the "Services" -> "Artificial Intelligence" navigation
+    // Click on the "Services" -> "Artificial Intelligence" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,
       Data_Home.Services_ArtificialIntelligence,
@@ -328,7 +328,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.ArtificialIntelligenceConsultingServices_Description,
     );
 
-    // Verify the "Services" -> "DevOps As A Service" navigation
+    // Click on the "Services" -> "DevOps As A Service" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,
       Data_Home.Services_DevOpsAsAService,
@@ -342,7 +342,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
     );
 
-    // Verify the "Services" -> "Enterprise Software Development" navigation
+    // Click on the "Services" -> "Enterprise Software Development" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,
       Data_Home.Services_EnterpriseSoftwareDevelopment,
@@ -356,7 +356,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
     );
 
-    // Verify the "Services" -> "Managed Service Augmentation" navigation
+    // Click on the "Services" -> "Managed Service Augmentation" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,
       Data_Home.Services_ManagedServiceAugmentation,
@@ -370,7 +370,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
     );
 
-    // Verify the "Services" -> "QA As A Service" navigation
+    // Click on the "Services" -> "QA As A Service" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,
       Data_Home.Services_QAAsAService,
@@ -382,7 +382,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.QAAsAService_Description,
     );
 
-    // Verify the "Services" -> "Search Engine Optimisation" navigation
+    // Click on the "Services" -> "Search Engine Optimisation" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,
       Data_Home.Services_SearchEngineOptimisation,
