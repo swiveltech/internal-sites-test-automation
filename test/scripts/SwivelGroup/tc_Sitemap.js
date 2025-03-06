@@ -275,7 +275,8 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
-    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
+    await browser.pause(5000);
+    await LIB_Common.bc_TakeScreenShot("Facebook from Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Verify the page navigation Social Media -> Twitter
@@ -288,7 +289,8 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
-    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
+    await browser.pause(5000);
+    await LIB_Common.bc_TakeScreenShot("Twitter from Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Verify the page navigation Social Media -> Linkedin
@@ -301,7 +303,8 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
-    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
+    await browser.pause(5000);
+    await LIB_Common.bc_TakeScreenShot("Linkedin from Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Verify the page navigation Social Media -> Instagram

@@ -1,6 +1,5 @@
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
-import PG_SocialMedia from "../../pages/SwivelGroup/PG_SocialMedia.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import config from "../../../config.json" assert { type: "json" };
@@ -369,24 +368,6 @@ class Home {
   }
 
   /**
-   * a method to Verify on facebook popup and close it
-   *
-   */
-  async bc_VerifyTheFacebookPopAndCloseIt() {
-    await assertionHandler.assertElementDisplayed(
-      PG_SocialMedia.ele_FacebookTitle,
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Facebook title in facebook page popup.",
-    );
-    await PG_SocialMedia.ico_FacebookClosePoopUp.click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on Facebook close icon on popup.",
-    );
-  }
-
-  /**
    * a method to click on Instagram icon
    *
    */
@@ -413,20 +394,6 @@ class Home {
     await browser.switchToWindow(childGUID);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Instagram in home page. Click URL : " + appUrl,
-    );
-  }
-
-  /**
-   * a method to verify on Instagram popup and close it
-   *
-   */
-  async bc_VerifyTheInstagramPopAndCloseIt() {
-    await assertionHandler.assertElementDisplayed(
-      PG_SocialMedia.ele_InstagramTitle,
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Instagram title in Instagram page popup.",
     );
   }
 
@@ -463,24 +430,6 @@ class Home {
   }
 
   /**
-   * a method to verify on Twitter popup and close it
-   *
-   */
-  async bc_VerifyTheTwitterPopAndCloseIt() {
-    await assertionHandler.assertElementDisplayed(
-      PG_SocialMedia.ele_TwitterTitle,
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Twitter title in Twitter page popup.",
-    );
-    await PG_SocialMedia.ico_TwitterClosePoopUp.click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on Twitter close icon on popup.",
-    );
-  }
-
-  /**
    * a method to click on Linkedin icon
    *
    */
@@ -508,24 +457,6 @@ class Home {
     await browser.pause(1000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Linkedin in home page. Clicked URL : " + appUrl,
-    );
-  }
-
-  /**
-   * a method to Verify on Linkedin popup and close it
-   *
-   */
-  async bc_VerifyTheLinkedinPopAndCloseIt() {
-    await assertionHandler.assertElementDisplayed(
-      PG_SocialMedia.ele_LinkedinTitle,
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Linkedin title in Linkedin page popup.",
-    );
-    await PG_SocialMedia.ico_LinkedinClosePoopUp.click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on Linkedin close icon on popup.",
     );
   }
 

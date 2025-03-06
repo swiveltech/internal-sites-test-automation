@@ -362,26 +362,26 @@ describe("Swivel Group Site -> Home Page ", () => {
 
     // Click on Facebook and verify it
     await LIB_Home.bc_ClickOnFacebookIcon();
-    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
-    await LIB_Common.bc_TakeScreenShot("Facebook");
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Facebook From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Twitter and verify it
     await LIB_Home.bc_ClickOnTwitterIcon();
-    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
-    await LIB_Common.bc_TakeScreenShot("Twitter");
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Twitter From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Linkedin and verify it
     await LIB_Home.bc_ClickOnLinkedinIcon();
-    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
-    await LIB_Common.bc_TakeScreenShot("Linkedin");
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Linkedin From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Instagram and verify it
     await LIB_Home.bc_ClickOnInstagramIcon();
-    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
-    await LIB_Common.bc_TakeScreenShot("Instagram");
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Instagram From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 });

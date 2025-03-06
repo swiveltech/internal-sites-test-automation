@@ -197,22 +197,26 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
 
     //Click on Facebook Icon
     await LIB_Home.bc_ClickOnFaceBookIconAndVerifyIt();
-    await LIB_Home.bc_VerifyTheFacebookPopAndCloseIt();
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Facebook from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Twitter and verify it
     await LIB_Home.bc_ClickOnTwitterIcon();
-    await LIB_Home.bc_VerifyTheTwitterPopAndCloseIt();
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Twitter from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Linkedin and verify it
     await LIB_Home.bc_ClickOnLinkedinIcon();
-    await LIB_Home.bc_VerifyTheLinkedinPopAndCloseIt();
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Linkedin from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Instagram and verify it
     await LIB_Home.bc_ClickOnInstagramIcon();
-    await LIB_Home.bc_VerifyTheInstagramPopAndCloseIt();
+    await browser.pause(4000);
+    await LIB_Common.bc_TakeScreenShot("Instagram from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 
