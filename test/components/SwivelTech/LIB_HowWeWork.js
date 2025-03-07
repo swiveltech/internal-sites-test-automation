@@ -65,6 +65,59 @@ class HowWeWork {
   }
 
   /**
+   * a method to Verify the FAQs questions and icons
+   */
+  async bc_VerifyFAQsQuestionsAndIcon(Question) {
+    await assertionHandler.assertElementDisplayed(
+      PG_HowWeWork.ele_lblFAQsQuestionsTitle(Question),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the FAQs question as : " + Question,
+    );
+
+    await assertionHandler.assertElementDisplayed(
+      PG_HowWeWork.ele_lblFAQsQuestionsTitleWithArrow(Question),
+      "Element not exist",
+    );
+    await PG_HowWeWork.ele_lblFAQsQuestionsTitleWithArrow(Question).click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Arrow Down icon is present against FAQs question as : " +
+        Question +
+        " , It is clicked and now it is expanded.",
+    );
+  }
+
+  /**
+   * a method to Verify the FAQs answers
+   */
+  async bc_VerifyFAQsAnswers(Question, Answer) {
+    await assertionHandler.assertElementDisplayed(
+      PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
+      "Element not exist",
+    );
+    await expect(
+      PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
+    ).toHaveTextContaining(Answer, { timeout: 5000 });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the FAQs question as : " +
+        Question +
+        " , and Answer as : " +
+        Answer,
+    );
+  }
+
+  /**
+   * a method to Collapse The FAQs Answers row
+   */
+  async bc_CollapseTheFAQsAnswers(Question) {
+    await PG_HowWeWork.ele_lblFAQsQuestionsTitleWithArrow(Question).click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Arrow Up icon and now it is collapsed.",
+    );
+  }
+
+  /**
    * a method to Verify the Benefits Of Choosing This Option
    */
   async bc_VerifyBenefitsOfChoosingThisOption(Header, Description) {

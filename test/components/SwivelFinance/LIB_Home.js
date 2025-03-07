@@ -18,6 +18,16 @@ class Home {
   }
 
   /**
+   * a method to Click on Swivel Finance logo on top of the screen
+   */
+  async bc_ClickOnTopAppLogo() {
+    await PG_Home.img_SwivelFinanceLogo.click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Swivel Finance logo on top of the screen",
+    );
+  }
+
+  /**
    * a method to Verify the Services We Deliver tiles
    */
   async bc_VerifyServicesWeDeliver(Title, SubTitle) {
@@ -180,9 +190,73 @@ class Home {
       );
 
       await LIB_Common.bc_LogAllureReportAndLogs(
-        `Verify the Swivel Finance Tab name ${tabName} is present.`,
+        `Verify the Swivel Finance Tab name ${tabName} is present in Footer panel.`,
       );
     }
+  }
+
+  /**
+   * a method to Verify the Top panel
+   */
+  async bc_VerifyHomeScreenTopPanel(tabNames) {
+    let tabNamesToVerify = tabNames.includes(";")
+      ? tabNames.split(";")
+      : [tabNames];
+
+    for (const tabName of tabNamesToVerify) {
+      await assertionHandler.assertElementDisplayed(
+        PG_Home.ele_HeaderTab(tabName),
+        "Element not exist",
+      );
+
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        `Verify the Swivel Finance Tab name ${tabName} is present in Top panel.`,
+      );
+    }
+  }
+
+  /**
+   * a method to Verify Phone Number And Talk Button On Top
+   */
+  async bc_VerifyPhoneNumberAndTalkButtonOnTop(contactNumber) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_ContactNumber(contactNumber),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Contact number as : " + contactNumber,
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.btn_LetsTalk,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Let's Talk button is present in top panel.",
+    );
+  }
+
+  /**
+   * a method to Click on Let's Talk button on top of the screen
+   */
+  async bc_ClickOnLetsTalkButton() {
+    // await PG_Home.btn_LetsTalk.click();
+    const button = await PG_Home.btn_LetsTalk;
+    await button.waitForDisplayed({ timeout: 5000 });
+    await button.waitForClickable({ timeout: 5000 });
+    await button.click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Let's Talk button on top of the screen",
+    );
+  }
+
+  /**
+   * a method to Click on Tab from the top panel
+   */
+  async bc_ClickOnTabFromTopPanel(tabName) {
+    await PG_Home.ele_HeaderTab(tabName).click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Tab as : " + tabName + " on top of the screen",
+    );
   }
 }
 export default new Home();

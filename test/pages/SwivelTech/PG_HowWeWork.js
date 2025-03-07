@@ -28,6 +28,12 @@ class HowWeWorkPage {
     );
   }
 
+  ele_lblFAQsQuestionsTitleGetTheAnswers(Question) {
+    return $(
+      `//div[contains(text(),"${Question}")]/../following-sibling::div[1]`,
+    );
+  }
+
   ele_lblH5Header(Header) {
     return $(`//h5[contains(text(),"${Header}")]`);
   }

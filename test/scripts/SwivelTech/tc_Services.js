@@ -416,9 +416,67 @@ describe("Swivel Tech Site -> Services Page", () => {
     //Verify the "FAQs"
     await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
     await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q1, Data_Services.A1);
-    // await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q2, Data_Services.A2);//Failing Number 2 question and answer
+
+    await LIB_HowWeWork.bc_VerifyFAQsQuestionsAndIcon(Data_Services.Q2);
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part1,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part2,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part3,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part4,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part5,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part6,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part7,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q2,
+      Data_Services.A2_Part8,
+    );
+    await LIB_HowWeWork.bc_CollapseTheFAQsAnswers(Data_Services.Q2);
+
     await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q3, Data_Services.A3);
-    // await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q4, Data_Services.A4);//Failing Number 4 question and answer
+
+    await LIB_HowWeWork.bc_VerifyFAQsQuestionsAndIcon(Data_Services.Q4);
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q4,
+      Data_Services.A4_Part1,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q4,
+      Data_Services.A4_Part2,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q4,
+      Data_Services.A4_Part3,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q4,
+      Data_Services.A4_Part4,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q4,
+      Data_Services.A4_Part5,
+    );
+    await LIB_HowWeWork.bc_CollapseTheFAQsAnswers(Data_Services.Q4);
+
     await LIB_HowWeWork.bc_VerifyFAQs(Data_Services.Q5, Data_Services.A5);
 
     await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
@@ -1048,10 +1106,41 @@ describe("Swivel Tech Site -> Services Page", () => {
 
     //Verify the "FAQs"
     await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
-    // await LIB_HowWeWork.bc_VerifyFAQs(
-    //   Data_Services.Q1_QaAsAService,
-    //   Data_Services.A1_QaAsAService,
-    // );//Failing
+
+    await LIB_HowWeWork.bc_VerifyFAQsQuestionsAndIcon(
+      Data_Services.Q1_QaAsAService,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService1,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService2,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService3,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService4,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService5,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService6,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+      Data_Services.A1_QaAsAService7,
+    );
+    await LIB_HowWeWork.bc_CollapseTheFAQsAnswers(
+      Data_Services.Q1_QaAsAService,
+    );
     await LIB_HowWeWork.bc_VerifyFAQs(
       Data_Services.Q2_QaAsAService,
       Data_Services.A2_QaAsAService,

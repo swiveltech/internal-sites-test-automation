@@ -6,7 +6,11 @@ class Sitemap {
    */
   async bc_ClickOnSubOption(Title, Option) {
     let element = await PG_Sitemap.lnk_SubOptionInBottom(Title, Option);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appURL = await PG_Sitemap.lnk_SubOptionInBottomToGetLink(
       Title,
       Option,

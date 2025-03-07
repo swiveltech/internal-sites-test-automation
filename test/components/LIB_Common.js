@@ -30,7 +30,11 @@ class Common {
   async bc_SelectValuesFromDropdown(dropdownElement, optionValue) {
     let element = await dropdownElement;
 
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
 
     await dropdownElement.click();
 
@@ -78,7 +82,11 @@ class Common {
     const element = await PG_Common.btn_ButtonWithLabel(label, Index);
 
     if (await element.isExisting()) {
-      await element.scrollIntoView({ block: "center", inline: "center" });
+      await element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
       await element.click();
       await this.bc_LogAllureReportAndLogs(
         `Clicked on button with label: ${label}`,
@@ -91,7 +99,11 @@ class Common {
 
   async bc_VerifyTheButton(label, Index) {
     let elementToScroll = await PG_Common.btn_ButtonWithLabel(label, Index);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let element = await PG_Common.btn_ButtonWithLabel(
       label,
       Index,
@@ -133,7 +145,11 @@ class Common {
   //Common component to verify H1 Header
   async bc_VerifyH1Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH1Header(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH1Header(pageHeader),
       "element not visible",
@@ -146,7 +162,11 @@ class Common {
   //Common component to verify H1 Header For match all
   async bc_VerifyH1HeaderText(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH1HeaderWithDot(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH1HeaderWithDot(pageHeader),
       "element not visible",
@@ -159,7 +179,11 @@ class Common {
   //Common component to verify H2 Header
   async bc_VerifyH2Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH2Header(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH2Header(pageHeader),
       "element not visible",
@@ -175,7 +199,11 @@ class Common {
       textValue,
       index,
     );
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblPageHeaderWithDot(textValue, index),
       "element not visible",
@@ -186,7 +214,11 @@ class Common {
   //Common component to verify H3 Header
   async bc_VerifyH3Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH3Header(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH3Header(pageHeader),
       "element not visible",
@@ -199,7 +231,11 @@ class Common {
   //Common component to verify H4 Header
   async bc_VerifyH4Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH4Header(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH4Header(pageHeader),
       "element not visible",
@@ -215,7 +251,11 @@ class Common {
   async bc_ClickOnLinks(name) {
     let elementToScroll = await PG_Common.lnk_Navigation(name);
     await browser.pause(3000);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await browser.pause(2000);
     await PG_Common.lnk_Navigation(name).click();
     await this.bc_LogAllureReportAndLogs("Click on the link name : " + name);
@@ -236,7 +276,11 @@ class Common {
   //Common component to verify paragraph
   async bc_VerifyTheParagraph(paragraph) {
     let elementToScroll = await PG_Common.ele_lblParagraph(paragraph);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblParagraph(paragraph),
       "element not visible",
@@ -288,7 +332,11 @@ class Common {
   //Common component to verify H5 Header
   async bc_VerifyH5Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH5Header(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH5Header(pageHeader),
       "element not visible",
@@ -301,7 +349,11 @@ class Common {
   //Common component to verify H6 Header
   async bc_VerifyH6Header(pageHeader) {
     let elementToScroll = await PG_Common.ele_lblH6Header(pageHeader);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     assertionHandler.assertElementDisplayed(
       PG_Common.ele_lblH6Header(pageHeader),
       "element not visible",

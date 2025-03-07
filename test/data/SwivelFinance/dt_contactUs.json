@@ -1,0 +1,21 @@
+{
+  "Header_ContactUs": "Contact Us",
+  "ContactUs_Description": "Looking to up-level your current methods of delivery? Talk to us today",
+  "Header_SendUsAMessage": "Send us a message",
+  "Header_EmailUs": "Email Us",
+  "Email": "hello@swivelgroup.com.au",
+  "Header_VisitUs": "Visit Us",
+  "Country_Australia": "Australia",
+  "CompanyName_SwivelGroup": "Swivel Group Pte Ltd",
+  "Australia_AddressLine1": "10-20 Gwynne Street,",
+  "Australia_AddressLine2": "Cremorne, VIC 3121, Australia.",
+  "Country_SriLanka": "Sri Lanka",
+  "CompanyName_SwivelTech": "SwivelTech",
+  "SriLanka_AddressLine1": "229/1 Kirula Rd, Colombo 05,",
+  "SriLanka_AddressLine2": "Sri Lanka.",
+  "TechOffice_SriLanka_AddressLine1": "31 Queen’s Rd, Colombo 03,",
+  "TechOffice_SriLanka_AddressLine2": "Sri Lanka.",
+  "Australia_Office_ContactNumber": "+61 1300 880 813",
+  "SriLanka_Office_ContactNumber": "+94112 365797",
+  "SriLanka_TechOffice_ContactNumber": "+94112 365797"
+}

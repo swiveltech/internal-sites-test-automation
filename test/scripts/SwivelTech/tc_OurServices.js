@@ -1,5 +1,7 @@
 import config from "../../../config.json" assert { type: "json" };
 import LIB_Common from "../../components/LIB_Common.js";
+// import PG_Common from "../../pages/SwivelTech/PG_Home.js";
+import PG_Common from "../../pages/PG_Common.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_OurServices from "../../components/SwivelTech/LIB_OurServices.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
@@ -48,6 +50,19 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       Data_OurServices.Header_TrustedPartnerInCorporateSoftwareDevelopment,
       1,
     );
+
+    await browser.pause(2000);
+    // This to fix the scroll in issue
+    let element = await PG_Common.ele_lblH2Header(
+      Data_OurServices.Header_OurSoftwareDevelopmentServices,
+    );
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+    await browser.pause(2000);
+
     // Verify the Services with Count
     await LIB_Home.bc_VerifyServicesWithCount(
       Data_Home.Services_YearsInBusiness,

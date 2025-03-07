@@ -137,7 +137,11 @@ class ContactUs {
    */
   async bc_ClickOnFooterLogoAndVerifyHomePage() {
     let element = await PG_ContactUs.icn_FooterLogo;
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await PG_ContactUs.icn_FooterLogo.click();
     await browser.pause(1000);
     await LIB_Common.bc_VerifyTheButton("Find Out More", 1);

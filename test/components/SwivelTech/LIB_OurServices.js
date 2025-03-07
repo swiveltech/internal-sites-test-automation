@@ -46,7 +46,11 @@ class OurServices {
       await PG_OurServices.lnk_OurSoftwareDevelopmentServicesLearnMore(
         SubTitle,
       );
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await PG_OurServices.lnk_OurSoftwareDevelopmentServicesLearnMore(
       SubTitle,
     ).click();

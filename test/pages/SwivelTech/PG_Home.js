@@ -200,6 +200,10 @@ class HomePage {
   lnk_SocialMedia(Index) {
     return $(`//div[@class="social-area flex flex-col"]/div[1]/a[${Index}]`);
   }
+
+  get ele_lblYear() {
+    return $(`(//div[contains(text(),"Years in Business")])[1]`);
+  }
 }
 
 export default new HomePage();

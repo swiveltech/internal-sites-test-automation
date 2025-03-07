@@ -102,7 +102,11 @@ class Home {
    */
   async bc_VerifyServicesWithCount(Label, Count) {
     let element = await PG_Home.ele_lblServicesWithCount(Label, Count);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await assertionHandler.assertElementDisplayed(
       PG_Home.ele_lblServicesWithCount(Label, Count),
       "Element not exist",
@@ -134,7 +138,11 @@ class Home {
    */
   async bc_ClickSoftwareSolutionsWeDeliverTile(Label) {
     let elementToScroll = await PG_Home.lnk_SoftwareSolutionsWeDeliver(Label);
-    await elementToScroll.scrollIntoView({ block: "center", inline: "center" });
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await PG_Home.lnk_SoftwareSolutionsWeDeliver(Label).click();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Swivel Tech Company deliver as : " + Label,
@@ -623,7 +631,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(4);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 
@@ -654,7 +666,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(2);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 
@@ -684,7 +700,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(3);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 

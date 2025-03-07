@@ -232,7 +232,11 @@ class Home {
   async bc_ClickOptionFromFooterPanel(tabName) {
     let element = await PG_Home.ele_FooterTab(tabName);
     await browser.pause(2000);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await browser.pause(2000);
     await PG_Home.ele_FooterTab(tabName).click();
     await browser.pause(2000);
@@ -346,7 +350,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Facebook;
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 
@@ -377,7 +385,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Instagram;
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 
@@ -407,7 +419,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Twitter;
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 
@@ -439,7 +455,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.icn_Linkedin;
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     let appUrl = await element.getAttribute("href");
     await element.click();
 
@@ -504,7 +524,11 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink);
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await element.click();
 
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -531,7 +555,11 @@ class Home {
   async bc_ClickOnForMoreNewsInHomePage() {
     await browser.pause(2000);
     let element = await PG_Home.lnk_ForMoreNews;
-    await element.scrollIntoView({ block: "center", inline: "center" });
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     await browser.pause(2000);
     await PG_Home.lnk_ForMoreNews.click();
     await browser.pause(2000);
