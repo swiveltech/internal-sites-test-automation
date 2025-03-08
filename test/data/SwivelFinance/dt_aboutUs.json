@@ -1,4 +1,12 @@
 {
   "Header_AboutUs": "About Us",
-  "AboutUs_Description": "Swivel Finance, based in Melbourne, Australia, with support centers in Sri Lanka is a Great Place to Work Certified business. We connect international workforces and drive business value worldwide, supported by a people-first culture and rigorous 6-stage recruitment process. Leveraging Sri Lanka's Chartered Accountants, we offer cost-effective finance solutions from bookkeeping to Business Activity Statements (BAS) and Income Tax Returns."
+  "AboutUs_Description": "Swivel Finance, based in Melbourne, Australia, with support centers in Sri Lanka is a Great Place to Work Certified business. We connect international workforces and drive business value worldwide, supported by a people-first culture and rigorous 6-stage recruitment process. Leveraging Sri Lanka's Chartered Accountants, we offer cost-effective finance solutions from bookkeeping to Business Activity Statements (BAS) and Income Tax Returns.",
+  "Label_Year": "- Years in Business -",
+  "Year_Count": "5",
+  "Label_ClientsTrustedUs": "- Clients Trusted Us -",
+  "ClientsTrustedUs_Count": "50",
+  "Label_Resources": "- Resources -",
+  "Resources_Count": "150",
+  "Header_OurLeadershipTeam": "OUR LEADERSHIP TEAM",
+  "OurLeadershipTeam_Description": "Empowering the community and committed to creating innovative solutions that will transform the future of finance; the Swivel leadership embodies our culture and values of premium, innovation, trust, respect, and teamwork."
 }
