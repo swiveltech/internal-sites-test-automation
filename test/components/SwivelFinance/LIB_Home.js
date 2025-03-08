@@ -1,5 +1,6 @@
 import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_Home from "../../pages/SwivelFinance/PG_Home.js";
+import PG_Blueprint from "../../pages/SwivelFinance/PG_Blueprint.js";
 import PG_Common from "../../pages/PG_Common.js";
 import LIB_Common from "../LIB_Common.js";
 
@@ -21,7 +22,9 @@ class Home {
    * a method to Click on Swivel Finance logo on top of the screen
    */
   async bc_ClickOnTopAppLogo() {
+    await browser.pause(5000);
     await PG_Home.img_SwivelFinanceLogo.click();
+    await browser.pause(5000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Swivel Finance logo on top of the screen",
     );
@@ -67,7 +70,33 @@ class Home {
   }
 
   /**
-   * a method to Verify the Services We Deliver tiles
+   * a method to Click on Successful Client Project Read More Link
+   */
+  async bc_ClickOnSuccessfulClientProjectReadMoreLink(Title, Description) {
+    let elementToScroll = await PG_Home.lnk_SuccessfulClientProjectReadMore(
+      Title,
+      Description,
+    );
+    let linkedInURL = await elementToScroll.getAttribute("href");
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+    await elementToScroll.click();
+    await browser.pause(5000);
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click the Sub Title as : " +
+        Title +
+        " ,And the Description as : " +
+        Description +
+        " , and read More link. URL : " +
+        linkedInURL,
+    );
+  }
+
+  /**
+   * a method to Verify the Successful Client Project tiles
    */
   async bc_VerifySuccessfulClientProject(Title, Description) {
     await LIB_Common.bc_VerifyTheParagraph(Title);
@@ -124,6 +153,27 @@ class Home {
   }
 
   /**
+   * a method to Click on Thought Leadership Visit More
+   */
+  async bc_ClickOnThoughtLeadershipVisitMore(Title) {
+    let elementToScroll = await PG_Home.lnk_ThoughtLeadershipVisitMore(Title);
+    let linkedInURL = await elementToScroll.getAttribute("href");
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+    await elementToScroll.click();
+    await browser.pause(5000);
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Sub Title as : " +
+        Title +
+        " , Under Thought Leadership and click the Visit more link too. And URL : " +
+        linkedInURL,
+    );
+  }
+
+  /**
    * a method to Verify the Thought Leadership
    */
   async bc_VerifyThoughtLeadership(Title) {
@@ -142,6 +192,110 @@ class Home {
         Title +
         " , Under Thought Leadership and verify the Visit more link too. And URL : " +
         linkedInURL,
+    );
+  }
+
+  /**
+   * a method to Click on Instagram
+   */
+  async bc_ClickOnInstagramIcon() {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    await PG_Home.icn_Instagram.click();
+    await browser.pause(5000);
+    LIB_Common.bc_LogAllureReportAndLogs("Click on Instagram Icon");
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(5000);
+  }
+
+  /**
+   * a method to Click on Linkedin
+   */
+  async bc_ClickOnLinkedinIcon() {
+    // Get parent window GUID
+    let parentGUID = await browser.getWindowHandle();
+
+    await PG_Home.icn_Linkedin.click();
+    await browser.pause(5000);
+    LIB_Common.bc_LogAllureReportAndLogs("Click on Linkedin Icon");
+    // Wait until a new window appears
+    await browser.waitUntil(
+      async () => (await browser.getWindowHandles()).length > 1,
+    );
+
+    // Get all window GUIDs and find the child window
+    let allGUIDs = await browser.getWindowHandles();
+    let childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // Switch to child window
+    await browser.switchToWindow(childGUID);
+    await browser.pause(5000);
+  }
+
+  /**
+   * a method to Verify the Thought Leadership
+   */
+  async bc_VerifyTheAuthor() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Home.ele_lblAboutAuthor,
+      "Element not exist",
+    );
+    let element = await PG_Home.ele_lblAboutAuthor;
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Author, Object : " + element.selector,
+    );
+  }
+
+  /**
+   * a method to Verify the Thought Leadership Social Media
+   */
+  async bc_VerifyTheAuthorSocialMedia() {
+    //Verify the Facebook
+    let element = await PG_Home.ele_SocialMedia(1);
+    await assertionHandler.assertElementDisplayed(element, "Element not exist");
+    let appURL = await PG_Home.ele_SocialMedia(1).getAttribute("href");
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Author company page Facebook link and URL : " + appURL,
+    );
+
+    //Verify the Twitter
+    element = await PG_Home.ele_SocialMedia(2);
+    await assertionHandler.assertElementDisplayed(element, "Element not exist");
+    appURL = await PG_Home.ele_SocialMedia(2).getAttribute("href");
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Author company page Twitter link and URL : " + appURL,
+    );
+
+    //Verify the Instagram
+    element = await PG_Home.ele_SocialMedia(3);
+    await assertionHandler.assertElementDisplayed(element, "Element not exist");
+    appURL = await PG_Home.ele_SocialMedia(3).getAttribute("href");
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Author company page Instagram link and URL : " + appURL,
+    );
+
+    //Verify the LinkedIn
+    element = await PG_Home.ele_SocialMedia(4);
+    await assertionHandler.assertElementDisplayed(element, "Element not exist");
+    appURL = await PG_Home.ele_SocialMedia(4).getAttribute("href");
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Author company page LinkedIn link and URL : " + appURL,
     );
   }
 
@@ -253,10 +407,73 @@ class Home {
    * a method to Click on Tab from the top panel
    */
   async bc_ClickOnTabFromTopPanel(tabName) {
+    await browser.pause(5000);
     await PG_Home.ele_HeaderTab(tabName).click();
+    await browser.pause(5000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Tab as : " + tabName + " on top of the screen",
     );
+  }
+
+  /**
+   * a method to Click on Tab from the Footer panel
+   */
+  async bc_ClickOnTabFromFooterPanel(tabName) {
+    await browser.pause(5000);
+    await PG_Home.ele_FooterTab(tabName).click();
+    await browser.pause(5000);
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Click on Tab as : " + tabName + " on footer of the screen",
+    );
+  }
+
+  /**
+   * a method to Verify Download e-book form
+   */
+  async bc_VerifyDownloadBookForm() {
+    await assertionHandler.assertElementDisplayed(
+      PG_Blueprint.tf_FirstName,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the First name text box is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Blueprint.tf_LastName,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Last name text box is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Blueprint.tf_Email,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Email text box is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Blueprint.tf_Phone,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Phone text box is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Blueprint.ele_ddCompanySize,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Company Size dropdown is present.",
+    );
+    await assertionHandler.assertElementDisplayed(
+      PG_Blueprint.ele_ddAccountingSpecialisation,
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Accounting Specialization dropdown is present.",
+    );
+    await LIB_Common.bc_VerifyTheButton("Download eBook", 1);
   }
 }
 export default new Home();

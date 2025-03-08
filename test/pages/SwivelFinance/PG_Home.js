@@ -90,6 +90,16 @@ class HomePage {
   get lnk_CookiePolicyInPopUp() {
     return $(`//div[@class="popuplink"]/p/a[text()="Cookie Policy"]`);
   }
+
+  get ele_lblAboutAuthor() {
+    return $(
+      `//div[@class="bach-component"]/div[3]/p/span[text()="Shanil Dissanayak"]/following-sibling::span[text()="e CPA"]/../following-sibling::p/span[contains(normalize-space(.), "Co-Founder & CEO") and contains(normalize-space(.), "of Swivel Group")]`,
+    );
+  }
+
+  ele_SocialMedia(Index) {
+    return $(`(//div[@class="bach-component bach-social"])[1]/a[${Index}]`);
+  }
 }
 
 export default new HomePage();

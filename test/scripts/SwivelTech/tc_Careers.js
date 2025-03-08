@@ -74,7 +74,7 @@ describe("Swivel Tech Site -> Careers Page", () => {
     await LIB_Careers.bc_VerifyTheSearchRecordIsNotAvailable();
     await LIB_Common.bc_TakeScreenShot("Invalid Data In Swivel Tech");
     await LIB_Careers.bc_SearchForJob(searchKey);
-    await LIB_Common.bc_TakeScreenShot("Keyword Search Swivel Group");
+    await LIB_Common.bc_TakeScreenShot("Keyword Search Swivel Tech");
     await LIB_Careers.bc_VerifyTheSearchRecordAvailable();
     await LIB_Careers.bc_ClickOnTheFirstRecord();
   });
