@@ -100,6 +100,10 @@ class HomePage {
   ele_SocialMedia(Index) {
     return $(`(//div[@class="bach-component bach-social"])[1]/a[${Index}]`);
   }
+
+  img_Leadership(Image) {
+    return $(`//img[@alt="${Image}"]`);
+  }
 }
 
 export default new HomePage();
