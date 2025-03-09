@@ -17,6 +17,9 @@ const specConfig = [
 
       // This is Swivel Finance Test cases
       "../test/scripts/SwivelFinance/tc_Home.js",
+      "../test/scripts/SwivelFinance/tc_WhoWeAre.js",
+      "../test/scripts/SwivelFinance/tc_Careers.js",
+      "../test/scripts/SwivelFinance/tc_Cookie.js",
 
       // This is Swivel Tech Test cases
       "../test/scripts/SwivelTech/tc_Home.js",
