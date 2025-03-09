@@ -37,5 +37,48 @@ class Policy {
       "Verify the description two as : " + message2,
     );
   }
+
+  /**
+   * a method to Verify the policy message with 2 text
+   */
+  async bc_VerifyPolicyMessageForTwoTextForPTag(message1, message2) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Policy.ele_lblDescriptionWith2TextForPTag(message1, message2),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description one as : " + message1,
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description two as : " + message2,
+    );
+  }
+
+  /**
+   * a method to Verify the policy message with 3 text
+   */
+  async bc_VerifyPolicyMessageForThreeTextForPTag(
+    message1,
+    message2,
+    message3,
+  ) {
+    await assertionHandler.assertElementDisplayed(
+      PG_Policy.ele_lblDescriptionWith3TextForPTag(
+        message1,
+        message2,
+        message3,
+      ),
+      "Element not exist",
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description one as : " + message1,
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description two as : " + message2,
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the description three as : " + message3,
+    );
+  }
 }
 export default new Policy();
