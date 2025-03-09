@@ -16,7 +16,6 @@ describe("Swivel Finance Site -> Privacy Policy Page", () => {
 
     //Click on Privacy Policy
     await LIB_Common.bc_ClickOnLinks("Privacy Policy");
-    // await browser.pause("8000");
     await LIB_Common.bc_VerifyH1Header(Data_PrivacyPolicy.Header_PrivacyPolicy);
     await LIB_Common.bc_VerifyTheParagraph(
       Data_PrivacyPolicy.PrivacyPolicy_Description,

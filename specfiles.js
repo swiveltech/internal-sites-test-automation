@@ -20,6 +20,8 @@ const specConfig = [
       "../test/scripts/SwivelFinance/tc_WhoWeAre.js",
       "../test/scripts/SwivelFinance/tc_Careers.js",
       "../test/scripts/SwivelFinance/tc_Cookie.js",
+      "../test/scripts/SwivelFinance/tc_PrivacyPolicy.js",
+      "../test/scripts/SwivelFinance/tc_ContactUs.js",
 
       // This is Swivel Tech Test cases
       "../test/scripts/SwivelTech/tc_Home.js",

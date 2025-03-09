@@ -1,6 +1,5 @@
 import config from "../../../config.json" assert { type: "json" };
 import LIB_Common from "../../components/LIB_Common.js";
-// import PG_Common from "../../pages/SwivelTech/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_OurServices from "../../components/SwivelTech/LIB_OurServices.js";

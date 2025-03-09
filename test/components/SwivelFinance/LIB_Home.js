@@ -393,7 +393,6 @@ class Home {
    * a method to Click on Let's Talk button on top of the screen
    */
   async bc_ClickOnLetsTalkButton() {
-    // await PG_Home.btn_LetsTalk.click();
     const button = await PG_Home.btn_LetsTalk;
     await button.waitForDisplayed({ timeout: 5000 });
     await button.waitForClickable({ timeout: 5000 });
