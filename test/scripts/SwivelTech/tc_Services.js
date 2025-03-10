@@ -1607,23 +1607,23 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Services.A1_MVP,
     );
     await LIB_HowWeWork.bc_ExpandedFAQs(Data_Services.Q2_MVP);
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q2_MVP,
       Data_Services.A2_MVP1,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q2_MVP,
       Data_Services.A2_MVP2,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q2_MVP,
       Data_Services.A2_MVP3,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q2_MVP,
       Data_Services.A2_MVP4,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q2_MVP,
       Data_Services.A2_MVP5,
     );
@@ -1632,19 +1632,19 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Services.A3_MVP,
     );
     await LIB_HowWeWork.bc_ExpandedFAQs(Data_Services.Q4_MVP);
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q4_MVP,
       Data_Services.A4_MVP1,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q4_MVP,
       Data_Services.A4_MVP2,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q4_MVP,
       Data_Services.A4_MVP3,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q4_MVP,
       Data_Services.A4_MVP4,
     );
@@ -1653,23 +1653,23 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Services.A5_MVP,
     );
     await LIB_HowWeWork.bc_ExpandedFAQs(Data_Services.Q6_MVP);
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q6_MVP,
       Data_Services.A6_MVP1,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q6_MVP,
       Data_Services.A6_MVP2,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q6_MVP,
       Data_Services.A6_MVP3,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q6_MVP,
       Data_Services.A6_MVP4,
     );
-    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+    await LIB_HowWeWork.bc_VerifyFAQsAnswers(
       Data_Services.Q6_MVP,
       Data_Services.A6_MVP5,
     );

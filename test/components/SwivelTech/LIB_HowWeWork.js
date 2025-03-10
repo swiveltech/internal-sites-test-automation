@@ -130,25 +130,6 @@ class HowWeWork {
   }
 
   /**
-   * a method to Verify the FAQs answers
-   */
-  async bc_VerifyFAQsAnswersInSameLevel(Question, Answer) {
-    await assertionHandler.assertElementDisplayed(
-      PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
-      "Element not exist",
-    );
-    await expect(
-      PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
-    ).toHaveTextContaining(Answer, { timeout: 5000 });
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the FAQs question as : " +
-        Question +
-        " , and Answer as : " +
-        Answer,
-    );
-  }
-
-  /**
    * a method to Collapse The FAQs Answers row
    */
   async bc_CollapseTheFAQsAnswers(Question) {
