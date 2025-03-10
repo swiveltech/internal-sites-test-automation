@@ -8,9 +8,9 @@ class PolicyPage {
     );
   }
 
-  ele_lblDescriptionWith3TextForPTag(Label1, Label2, Label3) {
+  ele_lblPtagToGetText(Header) {
     return $(
-      `//p[contains(text(), "${Label1}") and contains(., "${Label2}") and contains(., "${Label3}")]`,
+      `(//div[contains(text(),"${Header}")]/following-sibling::div/p)[1]`,
     );
   }
 

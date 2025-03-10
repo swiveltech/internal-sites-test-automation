@@ -737,9 +737,9 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
   });
 
-  it("Verify the Enterprise Software Development Page", async () => {
+  it("Verify the Managed Service Augmentation Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(
-      "Swivel Tech -> Verify the Enterprise Software Development Page",
+      "Swivel Tech -> Verify the Managed Service Augmentation Page",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);

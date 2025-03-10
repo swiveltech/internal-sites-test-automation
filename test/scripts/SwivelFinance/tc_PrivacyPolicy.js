@@ -36,12 +36,12 @@ describe("Swivel Finance Site -> Privacy Policy Page", () => {
       Data_PrivacyPolicy.Header_HowWeUseYourPersonalInformation,
       1,
     );
-
-    // await LIB_Policy.bc_VerifyPolicyMessageForThreeTextForPTag(
-    //   Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description1,
-    //   Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description2,
-    //   Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description3,
-    // ); Failing
+    await LIB_Policy.bc_VerifyPolicyMessageForThreeTextForPTag(
+      Data_PrivacyPolicy.Header_HowWeUseYourPersonalInformation,
+      Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description1,
+      Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description2,
+      Data_PrivacyPolicy.HowWeUseYourPersonalInformation_Description3,
+    );
 
     //Verify the "Transfers of Personal Data"
     await LIB_Common.bc_VerifyPageHeader(

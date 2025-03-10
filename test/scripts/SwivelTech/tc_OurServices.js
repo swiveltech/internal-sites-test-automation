@@ -50,7 +50,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       1,
     );
 
-    await browser.pause(2000);
+    await browser.pause(5000);
     // This to fix the scroll in issue
     let element = await PG_Common.ele_lblH2Header(
       Data_OurServices.Header_OurSoftwareDevelopmentServices,
@@ -60,7 +60,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       block: "start",
       inline: "nearest",
     });
-    await browser.pause(2000);
+    await browser.pause(5000);
 
     // Verify the Services with Count
     await LIB_Home.bc_VerifyServicesWithCount(

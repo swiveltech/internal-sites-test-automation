@@ -25,7 +25,6 @@ const specConfig = [
 
       // This is Swivel Tech Test cases
       "../test/scripts/SwivelTech/tc_Home.js",
-      "../test/scripts/SwivelTech/tc_OurServices.js",
       "../test/scripts/SwivelTech/tc_Resources.js",
       "../test/scripts/SwivelTech/tc_Careers.js",
       "../test/scripts/SwivelTech/tc_Footer.js",
@@ -34,6 +33,7 @@ const specConfig = [
       "../test/scripts/SwivelTech/tc_HowWeWork.js",
       "../test/scripts/SwivelTech/tc_ContactUs.js",
       "../test/scripts/SwivelTech/tc_Services.js",
+      "../test/scripts/SwivelTech/tc_OurServices.js",
     ],
     testingPlan: "smoke",
     maxInstances: 1,
