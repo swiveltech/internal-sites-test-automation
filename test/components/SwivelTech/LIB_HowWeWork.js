@@ -30,6 +30,14 @@ class HowWeWork {
    * a method to Verify the FAQs
    */
   async bc_VerifyFAQs(Question, Answer) {
+    let elementToScroll =
+      await PG_HowWeWork.ele_lblFAQsQuestionsTitle(Question);
+    await elementToScroll.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+    await browser.pause(3000);
     await assertionHandler.assertElementDisplayed(
       PG_HowWeWork.ele_lblFAQsQuestionsTitle(Question),
       "Element not exist",
@@ -92,6 +100,39 @@ class HowWeWork {
    * a method to Verify the FAQs answers
    */
   async bc_VerifyFAQsAnswers(Question, Answer) {
+    await assertionHandler.assertElementDisplayed(
+      PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
+      "Element not exist",
+    );
+    await expect(
+      PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
+    ).toHaveTextContaining(Answer, { timeout: 5000 });
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the FAQs question as : " +
+        Question +
+        " , and Answer as : " +
+        Answer,
+    );
+  }
+
+  /**
+   * a method to Verify the FAQs answers
+   */
+  async bc_ExpandedFAQs(Question) {
+    await PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswersInSameLevel(
+      Question,
+    ).click();
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Arrow Down icon is present against FAQs question as : " +
+        Question +
+        " , It is clicked and now it is expanded.",
+    );
+  }
+
+  /**
+   * a method to Verify the FAQs answers
+   */
+  async bc_VerifyFAQsAnswersInSameLevel(Question, Answer) {
     await assertionHandler.assertElementDisplayed(
       PG_HowWeWork.ele_lblFAQsQuestionsTitleGetTheAnswers(Question),
       "Element not exist",

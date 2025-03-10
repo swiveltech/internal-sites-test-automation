@@ -1400,4 +1400,298 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Resources.ContactUs_Description,
     );
   });
+
+  it("Verify the MVP Factory Page", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the MVP Factory Page",
+    );
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Click on the "Services" -> "MVP Factory" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_MVPFactory,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("mvp-factory");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_MVPFactory);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description2,
+    );
+
+    //Verify the "Why Choose SwivelTech's MVP Factory?"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Resources.Header_WhyChooseSwivelTechMVPFactory,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "time-to-market.svg",
+      Data_Services.SubTitle_MVP1,
+      Data_Services.Description_MVP1,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "structured-process.svg",
+      Data_Services.SubTitle_MVP2,
+      Data_Services.Description_MVP2,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "expert-guidance.svg",
+      Data_Services.SubTitle_MVP3,
+      Data_Services.Description_MVP3,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "AI-powered-development.svg",
+      Data_Services.SubTitle_MVP4,
+      Data_Services.Description_MVP4,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "scalable-solutions.svg",
+      Data_Services.SubTitle_MVP5,
+      Data_Services.Description_MVP5,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "comprehensive-support.svg",
+      Data_Services.SubTitle_MVP6,
+      Data_Services.Description_MVP6,
+    );
+
+    //Verify the "How Can Our Team Help?"
+    await LIB_Common.bc_VerifyH2Header(Data_Resources.Header_HowCanOurTeamHelp);
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "mobile-app-development.svg",
+      Data_Services.MVP1_Title,
+      Data_Services.MVP1_Description,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "web-application-development.svg",
+      Data_Services.MVP2_Title,
+      Data_Services.MVP2_Description,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "custom-web-portal.svg",
+      Data_Services.MVP3_Title,
+      Data_Services.MVP3_Description,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "AI-integrated-solutions.svg",
+      Data_Services.MVP4_Title,
+      Data_Services.MVP4_Description,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "Scalable-products.svg",
+      Data_Services.MVP5_Title,
+      Data_Services.MVP5_Description,
+    );
+    await LIB_Services.bc_VerifyWhyChooseSwivelTechForAIConsultingServices(
+      "process-automation.svg",
+      Data_Services.MVP6_Title,
+      Data_Services.MVP6_Description,
+    );
+
+    //Verify the "Our MVP Factory Development Process"
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Resources.Header_OurMVPFactoryDevelopmentProcess,
+    );
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Resources.OurMVPFactoryDevelopmentProcess_Description,
+      1,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number1,
+      Data_Services.T1_MVP,
+      Data_Services.D1_MVP,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number2,
+      Data_Services.T2_MVP,
+      Data_Services.D2_MVP,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number3,
+      Data_Services.T3_MVP,
+      Data_Services.D3_MVP,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number4,
+      Data_Services.T4_MVP,
+      Data_Services.D4_MVP,
+    );
+    await LIB_HowWeWork.bc_VerifyStepTile(
+      Data_Services.Step_Number5,
+      Data_Services.T5_MVP,
+      Data_Services.D5_MVP,
+    );
+
+    //Verify the "Schedule a Call to Set Up Your MVP Factory"
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Resources.Header_ScheduleACallToSetUpYourMVPFactory,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheButton("SCHEDULE A CALL ", 1);
+    //Click on "SCHEDULE A CALL"
+    await LIB_Common.bc_ClickOnButton("SCHEDULE A CALL ", 1);
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+
+    // Click on the "Services" -> "MVP Factory" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_MVPFactory,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("mvp-factory");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_MVPFactory);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description2,
+    );
+
+    //Verify the Successful tile
+    await LIB_Common.bc_VerifyH2Header(
+      Data_Home.SubTitle_SuccessfulClientProject,
+    );
+    await LIB_Common.bc_VerifyPageHeader(
+      Data_Home.SuccessfulClientProject_Description,
+      1,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject1,
+      Data_Home.SuccessfulProject1_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject2,
+      Data_Home.SuccessfulProject2_Description,
+    );
+    await LIB_Home.bc_VerifySuccessfulClientProjectTile(
+      Data_Home.Title_SuccessfulProject3,
+      Data_Home.SuccessfulProject3_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton("Read  more", 1);
+    await LIB_Common.bc_ClickOnButton("Read  more", 1);
+
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_CaseStudies);
+    await LIB_Home.bc_VerifySubPageHeaderInPTag(
+      Data_Resources.CaseStudies_Description,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("case-studies");
+    // Click on the "Services" -> "MVP Factory" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_MVPFactory,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("mvp-factory");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_MVPFactory);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description2,
+    );
+
+    //Verify the "FAQs"
+    await LIB_Common.bc_VerifyH2Header(Data_Services.Header_FAQs);
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q1_MVP,
+      Data_Services.A1_MVP,
+    );
+    await LIB_HowWeWork.bc_ExpandedFAQs(Data_Services.Q2_MVP);
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q2_MVP,
+      Data_Services.A2_MVP1,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q2_MVP,
+      Data_Services.A2_MVP2,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q2_MVP,
+      Data_Services.A2_MVP3,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q2_MVP,
+      Data_Services.A2_MVP4,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q2_MVP,
+      Data_Services.A2_MVP5,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q3_MVP,
+      Data_Services.A3_MVP,
+    );
+    await LIB_HowWeWork.bc_ExpandedFAQs(Data_Services.Q4_MVP);
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q4_MVP,
+      Data_Services.A4_MVP1,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q4_MVP,
+      Data_Services.A4_MVP2,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q4_MVP,
+      Data_Services.A4_MVP3,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q4_MVP,
+      Data_Services.A4_MVP4,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQs(
+      Data_Services.Q5_MVP,
+      Data_Services.A5_MVP,
+    );
+    await LIB_HowWeWork.bc_ExpandedFAQs(Data_Services.Q6_MVP);
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q6_MVP,
+      Data_Services.A6_MVP1,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q6_MVP,
+      Data_Services.A6_MVP2,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q6_MVP,
+      Data_Services.A6_MVP3,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q6_MVP,
+      Data_Services.A6_MVP4,
+    );
+    await LIB_HowWeWork.bc_VerifyFAQsAnswersInSameLevel(
+      Data_Services.Q6_MVP,
+      Data_Services.A6_MVP5,
+    );
+
+    await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Resources.HowCanWeHelpYou_Description,
+    );
+    await LIB_Common.bc_VerifyTheButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    //Click on Book A Discovery Call
+    await LIB_Common.bc_ClickOnButton(
+      Data_Resources.Header_BookADiscoveryCall,
+      1,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("contact-us");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.ContactUs_Description,
+    );
+  });
 });
