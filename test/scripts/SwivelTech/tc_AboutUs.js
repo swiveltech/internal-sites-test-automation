@@ -160,6 +160,12 @@ describe("Swivel Tech Site -> About Us Pages", () => {
       Data_AboutUs.Tile3_Description,
     );
 
+    await LIB_Common.bc_VerifyH3Header(Data_Home.Title_HowCanWeHelpYou);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Home.SubTitle_WeHaveHelped200ClientsWithOurTechOffshoringServices,
+    );
+    await LIB_Common.bc_VerifyTheButton("Book a Discovery Call", 1);
+
     //Click on Book A Discovery Call
     await LIB_Common.bc_ClickOnButton(
       Data_Resources.Header_BookADiscoveryCall,

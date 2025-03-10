@@ -17,5 +17,8 @@
   "TechOffice_SriLanka_AddressLine2": "Sri Lanka.",
   "Australia_Office_ContactNumber": "+61 1300 880 813",
   "SriLanka_Office_ContactNumber": "+94112 365797",
-  "SriLanka_TechOffice_ContactNumber": "+94112 365797"
+  "SriLanka_TechOffice_ContactNumber": "+94112 365797",
+  "ErrorMessage_ThisFieldIsRequired": "This field is required.",
+  "ErrorMessage_PleaseSelectAnOption": "Please select an option.",
+  "ErrorMessage_EnterAValidEmailAddress": "Enter a valid email address."
 }

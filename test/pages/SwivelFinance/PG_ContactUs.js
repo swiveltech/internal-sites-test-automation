@@ -28,6 +28,30 @@ class ContactUsPage {
   get tf_Message() {
     return $(`//textarea[@placeholder="Enter your message"]`);
   }
+
+  ele_lblErrorMessage(Label, ErrorMessage) {
+    return $(
+      `//label[contains(text(),"${Label}")]/following-sibling::div/div/div[@class="_error-inner" and contains(text(),"${ErrorMessage}")]`,
+    );
+  }
+
+  ele_lblHeaderWithValue(Title, Value) {
+    return $(
+      `//h3[contains(text(),"${Title}")]/../following-sibling::p/a[contains(text(),"${Value}")]`,
+    );
+  }
+
+  ele_lblAddressWithCompanyNameAndPhoneNumber(
+    Country,
+    CompanyName,
+    Addressline1,
+    Addressline2,
+    PhoneNumber,
+  ) {
+    return $(
+      `//h3[contains(text(),"${Country}")]/following-sibling::div[1]/ul/ul/li[contains(text(),"${CompanyName}")]/following-sibling::li[contains(text(),"${Addressline1}")]/following-sibling::li[contains(text(),"${Addressline2}")]/../../following-sibling::p/a[contains(text(),"${PhoneNumber}")]`,
+    );
+  }
 }
 
 export default new ContactUsPage();
