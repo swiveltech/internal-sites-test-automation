@@ -275,7 +275,7 @@ describe("Swivel Group Site -> Home Page ", () => {
   });
 
   // Covered Test Case Number : SG-8, SG-9, SG-10, SG-11
-  it.ip("Verify the navigation of the our brands section", async () => {
+  it("Verify the navigation of the our brands section", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Swivel Group -> Home Page ->  Our Brands -> Verify the navigation",
     );
