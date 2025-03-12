@@ -14,6 +14,9 @@ describe("Swivel Group Site -> Newsroom", () => {
     );
 
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await browser.pause(6000);
     await LIB_Home.bc_ClickOnForMoreNewsInHomePage();
     await LIB_Common.bc_VerifyH1Header(Data_Newsroom.Newsroom_Header);
     await LIB_Newsroom.bc_VerifyTopDescription(Data_Newsroom.Top_Description);

@@ -14,6 +14,9 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel Group -> Home Page Verification",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await browser.pause(6000);
     // Verify the Headers and top panel
     await LIB_Home.bc_VerifyHomePageLogo();
     await LIB_Home.bc_VerifyHomeScreenTopPanel(
@@ -164,6 +167,9 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel Group -> Navigation Verification",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await browser.pause(6000);
     // Navigate to home tab
     await LIB_Home.bc_NavigateToTabFromTopNavigation("Home");
 
@@ -226,6 +232,9 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel Group -> Home Page -> Verify the Let's Talk and phone functionality",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await browser.pause(6000);
     await LIB_Home.bc_ClickOnLetsTalkButtonAndVerifyContactUsPage();
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Contact_Us_Description, 1);
     await LIB_ContactUs.bc_VerifyContactUsPage();
@@ -269,9 +278,11 @@ describe("Swivel Group Site -> Home Page ", () => {
 
     // Verify the phone functionality in home page
     await LIB_Home.bc_VerifyThePhoneNumberInHomePage(Data_Home.ContactNumber);
-    // await LIB_Home.bc_ClickOnPhoneNumberInHomePage(Data_Home.ContactNumber);
-    // This browser alert is not captured in the screenshot therefore click phone number is commented.
+    await browser.pause(5000);
     await LIB_Common.bc_TakeScreenShot("Calling Phone Number");
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "This browser alert is not captured in the screenshot therefore click phone number is commented.",
+    );
   });
 
   // Covered Test Case Number : SG-8, SG-9, SG-10, SG-11
@@ -282,6 +293,7 @@ describe("Swivel Group Site -> Home Page ", () => {
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await browser.pause(8000);
     //Click on the our brand links Swivel Finance Site
     await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
       "Swivel_Finance_Brand_",
@@ -336,6 +348,9 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel Group -> Home Page ->  Newsroom -> Verify the For More News and and Chat to us",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_GROUP);
+    // Click on Accept All Button
+    await LIB_Common.bc_ClickOnButton("Accept All", 1);
+    await browser.pause(6000);
     await LIB_Home.bc_ClickOnForMoreNewsInHomePage();
     await LIB_Common.bc_VerifyH1Header(Data_Newsroom.Newsroom_Header);
     await LIB_Newsroom.bc_VerifyTopDescription(Data_Newsroom.Top_Description);
@@ -360,28 +375,28 @@ describe("Swivel Group Site -> Home Page ", () => {
 
     // Click on Accept All Button
     await LIB_Common.bc_ClickOnButton("Accept All", 1);
-
+    await browser.pause(8000);
     // Click on Facebook and verify it
     await LIB_Home.bc_ClickOnFacebookIcon();
-    await browser.pause(4000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Facebook From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Twitter and verify it
     await LIB_Home.bc_ClickOnTwitterIcon();
-    await browser.pause(4000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Twitter From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Linkedin and verify it
     await LIB_Home.bc_ClickOnLinkedinIcon();
-    await browser.pause(4000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Linkedin From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Instagram and verify it
     await LIB_Home.bc_ClickOnInstagramIcon();
-    await browser.pause(4000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Instagram From SwivelGroup");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
