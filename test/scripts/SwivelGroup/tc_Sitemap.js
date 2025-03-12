@@ -101,6 +101,7 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Tech,
     );
+    await browser.pause(6000);
     // get all GUID's
     let allGUIDs = await browser.getWindowHandles();
 
@@ -158,6 +159,7 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Foundation,
     );
+    await browser.pause(8000);
     // Get all window handles and find the child GUID
     allGUIDs = await browser.getWindowHandles();
     childGUID = allGUIDs.find((guid) => guid !== parentGUID);
@@ -289,7 +291,7 @@ describe("Swivel Group Site -> Sitemap Page ", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
-    await browser.pause(5000);
+    await browser.pause(10000);
     await LIB_Common.bc_TakeScreenShot("Twitter from Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 

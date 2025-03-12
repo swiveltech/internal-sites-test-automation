@@ -306,6 +306,7 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel_Foundation_Brand_",
       "Visit SwivelFoundation",
     );
+    await browser.pause(10000);
     await LIB_Common.bc_TakeScreenShot("Swivel Foundation Site");
     await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();

@@ -50,36 +50,6 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       1,
     );
 
-    await browser.pause(5000);
-    // This to fix the scroll in issue
-    let element = await PG_Common.ele_lblH2Header(
-      Data_OurServices.Header_OurSoftwareDevelopmentServices,
-    );
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-    await browser.pause(5000);
-
-    // Verify the Services with Count
-    await LIB_Home.bc_VerifyServicesWithCount(
-      Data_Home.Services_YearsInBusiness,
-      Data_Home.YearsInBusiness_Count,
-    );
-    await LIB_Home.bc_VerifyServicesWithCount(
-      Data_Home.Services_Resources,
-      Data_Home.Resources_Count,
-    );
-    await LIB_Home.bc_VerifyServicesWithCount(
-      Data_Home.Services_ClientsTrustedUs,
-      Data_Home.ClientsTrustedUs_Count,
-    );
-    await LIB_Home.bc_VerifyServicesWithCount(
-      Data_Home.Services_ClientsTrustedUs,
-      Data_Home.ClientsTrustedUs_Count,
-    );
-
     //Verify the "Our Software Development Services"
     await LIB_Common.bc_VerifyH2Header(
       Data_OurServices.Header_OurSoftwareDevelopmentServices,
@@ -326,6 +296,47 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
     await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
       Data_Resources.ContactUs_Description,
+    );
+    // Click on the "Services" navigation
+    await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_Services);
+    await LIB_Common.bc_VerifyTheAppURL("our-services");
+    //Verify the Page Header and Description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
+    await LIB_Common.bc_VerifyTheParagraph(Data_OurServices.Top_Description);
+    await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_Resources.HowCanWeHelpYou_Description,
+    );
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Below code might be failed due to small screen size. Please refer the JIRA ticket for that : https://swiveltech.atlassian.net/browse/SW-1625?focusedCommentId=35236",
+    );
+    // This to fix the scroll in issue
+    let element = await PG_Common.ele_lblH2Header(
+      Data_OurServices.Header_OurSoftwareDevelopmentServices,
+    );
+    await element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+    await browser.pause(5000);
+
+    // Verify the Services with Count
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_YearsInBusiness,
+      Data_Home.YearsInBusiness_Count,
+    );
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_Resources,
+      Data_Home.Resources_Count,
+    );
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_ClientsTrustedUs,
+      Data_Home.ClientsTrustedUs_Count,
+    );
+    await LIB_Home.bc_VerifyServicesWithCount(
+      Data_Home.Services_ClientsTrustedUs,
+      Data_Home.ClientsTrustedUs_Count,
     );
   });
 });

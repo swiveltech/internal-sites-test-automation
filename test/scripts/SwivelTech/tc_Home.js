@@ -370,6 +370,21 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
     );
 
+    // Click on the "Services" -> "MVP Factory" navigation
+    await LIB_Home.bc_ClickOnTopTab(
+      Data_Home.TabName_Services,
+      Data_Home.Services_MVPFactory,
+    );
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_MVPFactory);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description2,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("mvp-factory");
+
     // Click on the "Services" -> "QA As A Service" navigation
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Services,

@@ -24,41 +24,6 @@ class Common {
     await this.bc_LogAllureReportAndLogs("Screenshot name : " + name);
   }
 
-  /**
-   * method to select values from dropdown with ul/li
-   */
-  async bc_SelectValuesFromDropdown(dropdownElement, optionValue) {
-    let element = await dropdownElement;
-
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-
-    await dropdownElement.click();
-
-    // Wait for any option to be displayed to ensure the list is visible
-    await $("ul li").waitForDisplayed({
-      timeout: 5000, // Adjust timeout as needed
-      timeoutMsg: "Dropdown options were not displayed within 5 seconds",
-    });
-
-    const options = await $$("ul li");
-    for (const option of options) {
-      const value = await option.getText();
-      if (value === optionValue) {
-        await option.click();
-        await this.bc_LogAllureReportAndLogs(
-          "Select Value From Dropdown as " + optionValue,
-        );
-
-        await browser.pause(1000);
-        return;
-      }
-    }
-  }
-
   //Common component for click on button in popups
   async bc_VerifyPageHeader(pageHeader, index) {
     await PG_Common.ele_lblPageHeader(pageHeader, index).waitForDisplayed(5000);

@@ -3,6 +3,7 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
 import Data_Footer from "../../data/SwivelTech/dt_footer.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
+import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
 
 describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () => {
   it("Verify the Footer Section in Home Page", async () => {
@@ -131,6 +132,25 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Common.bc_VerifyTheAppURL(appURL);
 
+    //Click on MVP Factory
+    await LIB_Home.bc_ClickOnFooterOption(
+      Data_Home.Footer_MainMenu2,
+      Data_Footer.SubMenu_MVPFactory,
+    );
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_MVPFactory);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description2,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("mvp-factory");
+
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Common.bc_VerifyTheAppURL(appURL);
+
     //Click on QA as a Service
     await LIB_Home.bc_ClickOnFooterOption(
       Data_Home.Footer_MainMenu2,
@@ -197,25 +217,26 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
 
     //Click on Facebook Icon
     await LIB_Home.bc_ClickOnFaceBookIconAndVerifyIt();
-    await browser.pause(4000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Facebook from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Twitter and verify it
     await LIB_Home.bc_ClickOnTwitterIcon();
-    await browser.pause(4000);
+    await browser.pause(10000);
     await LIB_Common.bc_TakeScreenShot("Twitter from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Linkedin and verify it
     await LIB_Home.bc_ClickOnLinkedinIcon();
-    await browser.pause(4000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Linkedin from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Click on Instagram and verify it
     await LIB_Home.bc_ClickOnInstagramIcon();
-    await browser.pause(4000);
+    await browser.refresh();
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Instagram from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
