@@ -38,7 +38,7 @@ export function getCapabilities() {
         {
           browserName: "chrome",
           "goog:chromeOptions": {
-            args: ["start-maximized", "--allow-file-access-from-files", "user-data-dir=/tmp/data"],
+            args: ["start-maximized", "--allow-file-access-from-files"],
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
