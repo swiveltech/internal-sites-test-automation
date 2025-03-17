@@ -38,7 +38,12 @@ export function getCapabilities() {
         {
           browserName: "chrome",
           "goog:chromeOptions": {
-            args: ["--window-size=1920,1080", "--allow-file-access-from-files", "disable-gpu", "--no-sandbox"],
+            args: ['--disable-gpu',
+                '--window-size=1920,1080',
+                '--disable-dev-shm-usage', // Prevent shared memory issues
+                '--no-sandbox', // Required for running in CI
+                '--remote-debugging-port=9222', // Prevents port conflicts
+                `--user-data-dir=/tmp/chrome-user-data-${new Date().getTime()}` ],
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
