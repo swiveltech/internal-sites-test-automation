@@ -17,13 +17,9 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install
-
-      - name: Kill Chrome processes
         run: |
-          pkill -f chrome || true
-          pkill -f chromedriver || true
-        continue-on-error: true
+          npm install
+          ls
 
       - name: Run WebdriverIO Tests with Console Logs
         run: |
