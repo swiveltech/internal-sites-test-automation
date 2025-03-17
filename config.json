@@ -1,6 +1,6 @@
 {
   "projectType": "web",
-  "headless": "false",
+  "headless": "true",
   "browserName": "chrome",
   "OS_Name": "Windows",
   "OS_Version": "10",
