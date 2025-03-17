@@ -31,6 +31,6 @@ jobs:
 
       - name: Find and Save Report Path
         run: |
-          cd report/
+          cd reports/
           allure generate --clean --single-file allure-results
           cat index.html
