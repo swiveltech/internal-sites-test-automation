@@ -6,6 +6,7 @@
   "OS_Version": "10",
   "platformName": "ios",
   "deviceName": "iPad Mini 2021",
+  "maxBrowserInstance": "1",
   "platformVersion": "15",
   "apk_path": "app.apk",
   "ipa_Path": "app.ipa",
