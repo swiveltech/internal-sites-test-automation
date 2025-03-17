@@ -23,7 +23,7 @@ jobs:
 
       - name: Run WebdriverIO Tests with Console Logs
         run: |
-          npm run web --user-data-dir=$PLAYWRIGHT_USER_DATA_DIR
+          npm run web
 
       - name: Find and Save Report Path
         run: |
