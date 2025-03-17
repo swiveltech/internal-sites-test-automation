@@ -19,6 +19,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Kill Chrome processes
+        run: |
+          pkill -f chrome || true
+          pkill -f chromedriver || true
+        continue-on-error: true
+
       - name: Run WebdriverIO Tests with Console Logs
         run: |
           npm run web
