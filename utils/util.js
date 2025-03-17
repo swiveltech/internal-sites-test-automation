@@ -43,7 +43,27 @@ export function getCapabilities() {
                 '--disable-dev-shm-usage', // Prevent shared memory issues
                 '--no-sandbox', // Required for running in CI
                 '--remote-debugging-port=9222', // Prevents port conflicts
-                `--user-data-dir=/tmp/chrome-user-data-${new Date().getTime()}` ],
+                '--disable-extensions', // Disables extensions to avoid conflicts
+                '--disable-background-timer-throttling',
+                '--disable-backgrounding-occluded-windows',
+                '--disable-background-networking',
+                '--disable-breakpad',
+                '--disable-client-side-phishing-detection',
+                '--disable-component-update',
+                '--disable-default-apps',
+                '--disable-features=site-per-process',
+                '--disable-hang-monitor',
+                '--disable-ipc-flooding-protection',
+                '--disable-popup-blocking',
+                '--disable-prompt-on-repost',
+                '--disable-renderer-backgrounding',
+                '--disable-sync',
+                '--metrics-recording-only',
+                '--no-first-run',
+                '--no-default-browser-check',
+                '--ignore-certificate-errors',
+                '--force-device-scale-factor=1',
+                `--user-data-dir=/tmp/chrome-user-data-${Math.random()}`],
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
