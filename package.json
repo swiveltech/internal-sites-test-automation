@@ -31,7 +31,7 @@
   },
   "scripts": {
     "allure-report": "allure generate ./reports/allure-results --clean && allure open",
-    "local-web": "wdio run ./configs/wdio.conf.js,
+    "local-web": "wdio run ./configs/wdio.conf.js",
     "web": "wdio run ./configs/wdio.conf.js && npm run allure-report || npm run allure-report",
     "web-BS": " wdio run ./configs/web-browserstack.conf.js && npm run allure-report || npm run allure-report",
     "mobile-web-BS": " wdio run ./configs/mobile-web-browserstack.conf.js && npm run allure-report || npm run allure-report"
