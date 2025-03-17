@@ -38,7 +38,7 @@ export function getCapabilities() {
         {
           browserName: "chrome",
           "goog:chromeOptions": {
-            args: ["start-maximized", "--allow-file-access-from-files", "disable-gpu", "--no-sandbox"],
+            args: ["start-maximized", "--allow-file-access-from-files", "disable-gpu", "--no-sandbox", "--user-data-dir=false"],
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
