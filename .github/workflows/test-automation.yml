@@ -21,19 +21,13 @@ jobs:
           npm install
           ls
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+      # - name: Install Chrome
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y google-chrome-stable
 
-      - name: Kill Any Running Chrome Processes
-        run: |
-          pkill -9 chrome || true
-          pkill -9 chromedriver || true
-          rm -rf /tmp/chrome-user-data-* || true
-
-      - name: Verify Chrome Installation
-        run: google-chrome --version
+      # - name: Verify Chrome Installation
+      #   run: google-chrome --version
 
       - name: Run WebdriverIO Tests with Console Logs
         run: npm run local-web

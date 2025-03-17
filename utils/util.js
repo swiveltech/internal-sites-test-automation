@@ -38,32 +38,12 @@ export function getCapabilities() {
         {
           browserName: "chrome",
           "goog:chromeOptions": {
-            args: ['--disable-gpu',
-                '--window-size=1920,1080',
-                '--disable-dev-shm-usage', // Prevent shared memory issues
-                '--no-sandbox', // Required for running in CI
-                '--remote-debugging-port=9222', // Prevents port conflicts
-                '--disable-extensions', // Disables extensions to avoid conflicts
-                '--disable-background-timer-throttling',
-                '--disable-backgrounding-occluded-windows',
-                '--disable-background-networking',
-                '--disable-breakpad',
-                '--disable-client-side-phishing-detection',
-                '--disable-component-update',
-                '--disable-default-apps',
-                '--disable-features=site-per-process',
-                '--disable-hang-monitor',
-                '--disable-ipc-flooding-protection',
-                '--disable-popup-blocking',
-                '--disable-prompt-on-repost',
-                '--disable-renderer-backgrounding',
-                '--disable-sync',
-                '--metrics-recording-only',
-                '--no-first-run',
-                '--no-default-browser-check',
-                '--ignore-certificate-errors',
-                '--force-device-scale-factor=1',
-                `--user-data-dir=/tmp/chrome-user-data-${Math.random()}`],
+            args: [
+              "--disable-gpu",
+              "--window-size=1920,1080",
+              "--disable-dev-shm-usage", // Prevent shared memory issues
+              "--no-sandbox", // Required for running in CI
+            ],
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
@@ -127,7 +107,7 @@ export function getCapabilities() {
       ];
     } else {
       console.log(
-        "Browser is undefined, using chrome browser to run the tests"
+        "Browser is undefined, using chrome browser to run the tests",
       );
       runTimeServices = ["chromedriver"];
       runTimeCapabilities = [
@@ -161,21 +141,41 @@ export function getCapabilities() {
   return runtimeData;
 }
 
-
 /* allureEnv function returns the environment details to allure report to display in allure report environment section
-   */
-export function allureEnv(){
-let reportedEnvironmentVars;
+ */
+export function allureEnv() {
+  let reportedEnvironmentVars;
 
-if(configs.projectType==="web"||configs.projectType==="web-browser stack"){
-  reportedEnvironmentVars ={"Project Type":configs.projectType,"Browser":configs.browserName}
-}
-else if(configs.projectType==="mobile-web"||configs.projectType==="mobile-web-browser stack"){
-  reportedEnvironmentVars = { "Project Type": configs.projectType, "Platform": configs.platformName, "Device Name":configs.deviceName,"Platform Version": configs.platformVersion,"Browser": configs.browserName }
-}
-else if (configs.projectType==="mobile-native"||configs.projectType==="mobile-native-browser stack"){
-  reportedEnvironmentVars = { "Project Type": configs.projectType, "Platform": configs.platformName, "Device Name":configs.deviceName,"Platform Version": configs.platformVersion}
-}
+  if (
+    configs.projectType === "web" ||
+    configs.projectType === "web-browser stack"
+  ) {
+    reportedEnvironmentVars = {
+      "Project Type": configs.projectType,
+      Browser: configs.browserName,
+    };
+  } else if (
+    configs.projectType === "mobile-web" ||
+    configs.projectType === "mobile-web-browser stack"
+  ) {
+    reportedEnvironmentVars = {
+      "Project Type": configs.projectType,
+      Platform: configs.platformName,
+      "Device Name": configs.deviceName,
+      "Platform Version": configs.platformVersion,
+      Browser: configs.browserName,
+    };
+  } else if (
+    configs.projectType === "mobile-native" ||
+    configs.projectType === "mobile-native-browser stack"
+  ) {
+    reportedEnvironmentVars = {
+      "Project Type": configs.projectType,
+      Platform: configs.platformName,
+      "Device Name": configs.deviceName,
+      "Platform Version": configs.platformVersion,
+    };
+  }
 
-return reportedEnvironmentVars
+  return reportedEnvironmentVars;
 }
