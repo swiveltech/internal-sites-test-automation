@@ -18,7 +18,7 @@ config.capabilities = [
       acceptInsecureCerts: "true",
     },
     "goog:chromeOptions": {
-      args: ["--start-maximized", "--no-sandbox", "--disable-dev-shm-usage"],
+      args: ["--start-maximized"],
     },
   },
 ];
