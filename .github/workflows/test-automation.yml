@@ -20,6 +20,9 @@ jobs:
         run: |
           npm install
           ls
+          
+      - name: Install Allure
+        run: npm install -g allure-commandline
 
       # - name: Install Chrome
       #   run: |
