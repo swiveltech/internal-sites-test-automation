@@ -37,7 +37,7 @@ jobs:
       - name: Find and Save Report Path
         run: |
           cd reports/
-          allure generate --clean --single-file allure-results --no-open
+          allure generate --clean --single-file allure-results && exit 0
           
       - name: Generate Timestamp
         shell: pwsh
