@@ -18,7 +18,7 @@ config.capabilities = [
       acceptInsecureCerts: "true",
     },
     "goog:chromeOptions": {
-      args: ["--start-maximized"],
+      args: ["--disable-gpu", "--disable-dev-shm-usage", "--no-sandbox", "--user-data-dir=/tmp/chrome-user-data-${Date.now()}"],
     },
   },
 ];
