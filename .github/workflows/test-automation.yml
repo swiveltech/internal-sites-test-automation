@@ -19,7 +19,6 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          ls
           
       - name: Install Allure
         run: npm install -g allure-commandline
@@ -38,5 +37,22 @@ jobs:
       - name: Find and Save Report Path
         run: |
           cd reports/
-          allure generate --clean --single-file allure-results
-          cat index.html
+          allure generate --clean --single-file allure-results --no-open
+          
+      - name: Generate Timestamp
+        shell: pwsh
+        run: |
+          $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+          echo "TIMESTAMP=$timestamp" >> $env:GITHUB_ENV
+
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEV_GITHUB_ACTION_ROLE }}
+          aws-region: ap-southeast-2
+
+      - name: Upload Report to S3
+        shell: pwsh
+        run: |
+          Rename-Item -Path reports/index.html -NewName "index-$env:TIMESTAMP.html"
+          aws s3 cp reports/index-$env:TIMESTAMP.html s3://your-s3-bucket/test-reports/
