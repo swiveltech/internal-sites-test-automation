@@ -43,6 +43,7 @@ export function getCapabilities() {
               "--window-size=1920,1080",
               "--disable-dev-shm-usage", // Prevent shared memory issues
               "--no-sandbox", // Required for running in CI
+              "--user-data-dir=/tmp/chrome-user-data-${Date.now()}"
             ],
           },
           ...commonBrowserConfig, // Spread the common browser config object
