@@ -42,6 +42,7 @@ jobs:
         run: |
           cd reports/
           allure generate --clean --single-file allure-results
+          ls
           
       - name: Generate Timestamp
         shell: pwsh
