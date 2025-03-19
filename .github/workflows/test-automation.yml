@@ -40,9 +40,8 @@ jobs:
 
       - name: Find and Save Report Path
         run: |
-          cd reports/
-          allure generate --clean --single-file allure-results
-          ls allure-results/
+          allure generate ./reports/allure-results --clean --single-file -o ./reports
+          ls reports/
           
       - name: Generate Timestamp
         shell: pwsh
@@ -59,5 +58,5 @@ jobs:
       - name: Upload Report to S3
         shell: pwsh
         run: |
-          Rename-Item -Path reports/allure-results/index.html -NewName "index-$env:TIMESTAMP.html"
-          aws s3 cp reports/allure-results/index-$env:TIMESTAMP.html s3://internal-test-automation/test-results/
+          Rename-Item -Path reports/index.html -NewName "index-$env:TIMESTAMP.html"
+          aws s3 cp reports/index-$env:TIMESTAMP.html s3://internal-test-automation/test-results/
