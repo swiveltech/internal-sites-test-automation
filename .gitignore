@@ -1,8 +1,7 @@
 node_modules/
 package-lock.json
 allure-report/
-reports/
 logs/
-reports/allure-results/
+allure-results/
 .env
 Screenshots/

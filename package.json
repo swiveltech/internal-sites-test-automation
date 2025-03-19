@@ -30,9 +30,13 @@
     "webdriverio": "^8.41.0"
   },
   "scripts": {
-    "allure-report": "allure generate ./allure-results --clean",
+    "allure-report": "allure generate ./allure-results --clean && npm run generate-report || npm run generate-report",
     "local-web": "wdio run ./configs/wdio.conf.js",
+    "generate-report": "allure generate --clean --single-file allure-results",
     "web": "wdio run ./configs/wdio.conf.js && npm run allure-report || npm run allure-report",
+    "swivelgroup": "wdio run ./configs/wdio-swivelgroup.conf.js && npm run allure-report || npm run allure-report",
+    "swiveltech": "wdio run ./configs/wdio-swiveltech.conf.js && npm run allure-report || npm run allure-report",
+    "swivelfinance": "wdio run ./configs/wdio-swivelfinance.conf.js && npm run allure-report || npm run allure-report",
     "web-BS": " wdio run ./configs/web-browserstack.conf.js && npm run allure-report || npm run allure-report",
     "mobile-web-BS": " wdio run ./configs/mobile-web-browserstack.conf.js && npm run allure-report || npm run allure-report"
   },
