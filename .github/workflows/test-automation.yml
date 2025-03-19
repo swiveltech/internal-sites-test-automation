@@ -40,7 +40,6 @@ jobs:
 
       - name: Find and Save Report Path
         run: |
-          ls
           allure generate --clean --single-file allure-results
        # run: |
        #   allure generate ./reports/allure-results --clean -o ./reports
