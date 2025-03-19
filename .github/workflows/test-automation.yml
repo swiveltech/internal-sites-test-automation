@@ -40,7 +40,7 @@ jobs:
 
       - name: Find and Save Report Path
         run: |
-          allure generate ./reports/allure-results --clean --single-file -o ./reports
+          allure generate ./reports/allure-results --clean -o ./reports
           ls reports/
           
       - name: Generate Timestamp
