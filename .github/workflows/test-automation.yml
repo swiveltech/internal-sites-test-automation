@@ -61,5 +61,5 @@ jobs:
       - name: Upload Report to S3
         shell: pwsh
         run: |
-          Rename-Item -Path allure-results/index.html -NewName "index-$env:TIMESTAMP.html"
-          aws s3 cp allure-results/index-$env:TIMESTAMP.html s3://internal-test-automation/test-results/
+          Rename-Item -Path allure-report/index.html -NewName "index-$env:TIMESTAMP.html"
+          aws s3 cp allure-report/index-$env:TIMESTAMP.html s3://internal-test-automation/test-results/
