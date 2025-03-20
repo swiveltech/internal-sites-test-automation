@@ -1,4 +1,4 @@
-name: Automation Tests
+name: Automation Tests - Swivel Group
 
 on:
   workflow_dispatch:
@@ -41,7 +41,7 @@ jobs:
       # - name: Verify Chrome Installation
       #   run: google-chrome --version
 
-      - name: Run WebdriverIO Tests with Console Logs
+      - name: Run WebdriverIO Tests
         run: npm run swivelgroup
 
       #- name: Find and Save Report Path
