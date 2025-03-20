@@ -250,7 +250,7 @@ class Home {
    */
   async bc_VerifyWeValueYourPrivacy(header, description) {
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblPageHeader(header, 1),
+      PG_Common.lbl_PageHeader(header, 1),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -258,7 +258,7 @@ class Home {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblPageHeaderSingle(description, 1),
+      PG_Common.lbl_PageHeaderSingle(description, 1),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -288,7 +288,7 @@ class Home {
    * a method to Verify We Value your Privacy not present
    */
   async bc_VerifyWeValueYourPrivacyNotPresent(header, description) {
-    let pageHeaderFlag = await PG_Common.ele_lblPageHeader(
+    let pageHeaderFlag = await PG_Common.lbl_PageHeader(
       header,
       1,
     ).isDisplayed();
@@ -296,7 +296,7 @@ class Home {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy popup header as : " + header + " is not present.",
     );
-    let pageDescriptionFlag = await PG_Common.ele_lblPageHeaderSingle(
+    let pageDescriptionFlag = await PG_Common.lbl_PageHeaderSingle(
       description,
       1,
     ).isDisplayed();

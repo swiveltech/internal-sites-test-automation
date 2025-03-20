@@ -101,14 +101,14 @@ class Home {
    * a method to Verify the Services With Count
    */
   async bc_VerifyServicesWithCount(Label, Count) {
-    let element = await PG_Home.ele_lblServicesWithCount(Label, Count);
+    let element = await PG_Home.lbl_ServicesWithCount(Label, Count);
     await element.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblServicesWithCount(Label, Count),
+      PG_Home.lbl_ServicesWithCount(Label, Count),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -154,10 +154,10 @@ class Home {
    */
   async bc_VerifyHowWeWork(Title, Description) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblHowWeWorks(Title),
+      PG_Home.lbl_HowWeWorks(Title),
       "Element not exist",
     );
-    let applicationText = await PG_Home.ele_lblHowWeWorks(Title).getText();
+    let applicationText = await PG_Home.lbl_HowWeWorks(Title).getText();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "System Description as : " + applicationText,
     );
@@ -298,14 +298,14 @@ class Home {
       "Verify the Icon of Client Name as : " + ClientName,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblWhatOurClientSayWithName(ClientName),
+      PG_Home.lbl_WhatOurClientSayWithName(ClientName),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon and name of Client Name as : " + ClientName,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblWhatOurClientSayWithNameDesignation(ClientName, ClientJob),
+      PG_Home.lbl_WhatOurClientSayWithNameDesignation(ClientName, ClientJob),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -315,7 +315,7 @@ class Home {
         ClientJob,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblWhatOurClientSayWithNameDesignationAndDescription(
+      PG_Home.lbl_WhatOurClientSayWithNameDesignationAndDescription(
         ClientName,
         ClientJob,
         Description,
@@ -372,7 +372,7 @@ class Home {
     Description,
   ) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblOurLatestInsights(Title, Category, DateInSystem),
+      PG_Home.lbl_OurLatestInsights(Title, Category, DateInSystem),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -384,15 +384,15 @@ class Home {
         DateInSystem,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblLatestDescription(Description),
+      PG_Home.lbl_LatestDescription(Description),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblLatestDescriptionReadMore(Description),
+      PG_Home.lbl_LatestDescriptionReadMore(Description),
       "Element not exist",
     );
     let href =
-      await PG_Home.ele_lblLatestDescriptionReadMore(Description).getAttribute(
+      await PG_Home.lbl_LatestDescriptionReadMore(Description).getAttribute(
         "href",
       );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -408,7 +408,7 @@ class Home {
    */
   async bc_VerifyTopSubPageHeader(pageHeader) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblTopSubPageHeaderInSpan(pageHeader),
+      PG_Home.lbl_TopSubPageHeaderInSpan(pageHeader),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -455,7 +455,7 @@ class Home {
    */
   async bc_VerifySubPageHeaderToMatchAllInPTag(Title) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblDescriptionToMatchAllInPTag(Title),
+      PG_Home.lbl_DescriptionToMatchAllInPTag(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -468,7 +468,7 @@ class Home {
    */
   async bc_VerifySubPageHeaderInPTag(Title) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblLatestDescription(Title),
+      PG_Home.lbl_LatestDescription(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -481,7 +481,7 @@ class Home {
    */
   async bc_VerifySubPageHeaderInH1(Title) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblH1WithNormalizeSpace(Title),
+      PG_Home.lbl_H1WithNormalizeSpace(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -529,7 +529,7 @@ class Home {
    */
   async bc_VerifyErrorMessageUnderEmail(message) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblErrorMessageUnderEmail(message),
+      PG_Home.lbl_ErrorMessageUnderEmail(message),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -542,7 +542,7 @@ class Home {
    */
   async bc_VerifyThankYouMessageUnderEmail(message) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblThankYouSigningUp(message),
+      PG_Home.lbl_ThankYouSigningUp(message),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -737,7 +737,7 @@ class Home {
     Description,
   ) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblOurLatestInsights(Title, Category, DateInSystem),
+      PG_Home.lbl_OurLatestInsights(Title, Category, DateInSystem),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -749,17 +749,17 @@ class Home {
         DateInSystem,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblDescriptionToMatchAllInPTag(Description),
+      PG_Home.lbl_DescriptionToMatchAllInPTag(Description),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblLatestDescriptionReadMoreInP(Description),
+      PG_Home.lbl_LatestDescriptionReadMoreInP(Description),
       "Element not exist",
     );
     let href =
-      await PG_Home.ele_lblLatestDescriptionReadMoreInP(
-        Description,
-      ).getAttribute("href");
+      await PG_Home.lbl_LatestDescriptionReadMoreInP(Description).getAttribute(
+        "href",
+      );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Our Latest Insights Description as : " + Description,
     );

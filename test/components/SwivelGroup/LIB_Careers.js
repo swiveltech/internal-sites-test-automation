@@ -7,7 +7,7 @@ class Careers {
    */
   async bc_VerifyTopDescription(Title, Description) {
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblTopHeaderWithDescription(Title, Description),
+      PG_Careers.lbl_TopHeaderWithDescription(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -27,14 +27,14 @@ class Careers {
       "Verify the Pegging Icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      PG_Careers.lbl_OurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Pegging Title as " + Title,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
+      PG_Careers.lbl_OurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -57,14 +57,14 @@ class Careers {
       "Verify the Flexible Work hours Icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      PG_Careers.lbl_OurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Flexible Work hours Title as " + Title,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
+      PG_Careers.lbl_OurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -87,14 +87,14 @@ class Careers {
       "Verify the Health Insurance Icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      PG_Careers.lbl_OurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Health Insurance Title as " + Title,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
+      PG_Careers.lbl_OurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -117,14 +117,14 @@ class Careers {
       "Verify the Leave Benefits Icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      PG_Careers.lbl_OurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Leave Benefits Title as " + Title,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
+      PG_Careers.lbl_OurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -147,14 +147,14 @@ class Careers {
       "Verify the Learning And Development Icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      PG_Careers.lbl_OurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Learning And Development Title as " + Title,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
+      PG_Careers.lbl_OurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -177,14 +177,14 @@ class Careers {
       "Verify the Empowering Individuals Icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsSubtitleTiles(Title),
+      PG_Careers.lbl_OurBenefitsSubtitleTiles(Title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Empowering Individuals Title as " + Title,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsDescriptionTiles(Title, Description),
+      PG_Careers.lbl_OurBenefitsDescriptionTiles(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -231,7 +231,7 @@ class Careers {
    */
   async bc_VerifyTheSearchRecordAvailable() {
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblSearchRecord,
+      PG_Careers.lbl_SearchRecord,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -243,7 +243,7 @@ class Careers {
    * a method to Verify there is search record not found
    */
   async bc_VerifyTheSearchRecordIsNotAvailable() {
-    let element = await PG_Careers.ele_lblSearchRecord.isDisplayed();
+    let element = await PG_Careers.lbl_SearchRecord.isDisplayed();
     await assertionHandler.assertFalse(element);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify There is no search record available",

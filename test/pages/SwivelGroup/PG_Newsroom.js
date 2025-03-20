@@ -2,39 +2,39 @@ class Newsroom {
   /**
    * define selectors using getter methods
    */
-  get ele_lblSocialClubEvents() {
+  get lbl_SocialClubEvents() {
     return $(
       '//p[text()="Social Club Events" and @class="newsroom-banner-header-title"]',
     );
   }
 
-  ele_lblTopDescription(description) {
+  lbl_TopDescription(description) {
     return $(
       `//p[text()="${description}" and @class="newsroom-header-description"]`,
     );
   }
 
-  ele_lblH3Header(subHeader) {
+  lbl_H3Header(subHeader) {
     return $(`//h3[text()="${subHeader}"]`);
   }
 
-  ele_lblArticleDescription(subHeader, description) {
+  lbl_ArticleDescription(subHeader, description) {
     return $(
       `//h3[text()="${subHeader}"]/following-sibling::span[text()="${description}"]`,
     );
   }
 
-  ele_lblH4Header(subHeader) {
+  lbl_H4Header(subHeader) {
     return $(`//h4[text()="${subHeader}"]`);
   }
 
-  ele_lblH4HeaderWithDescription(subHeader, description) {
+  lbl_H4HeaderWithDescription(subHeader, description) {
     return $(
       `//h4[text()="${subHeader}"]/following-sibling::p[text()="${description}"]`,
     );
   }
 
-  ele_lblSubDescription(description) {
+  lbl_SubDescription(description) {
     return $(`//span[text()="${description}"]`);
   }
 }

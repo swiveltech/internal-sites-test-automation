@@ -2,7 +2,7 @@ class Careers {
   /**
    * define selectors using getter methods
    */
-  ele_lblTopHeaderWithDescription(title, description) {
+  lbl_TopHeaderWithDescription(title, description) {
     return $(
       `//h1[text()="${title}"]/following-sibling::span[text()="${description}"]`,
     );
@@ -36,11 +36,11 @@ class Careers {
     return $(`//span[text()='Show More ']`);
   }
 
-  ele_lblOurBenefitsSubtitleTiles(title) {
+  lbl_OurBenefitsSubtitleTiles(title) {
     return $(`//img/following-sibling::span[text()='${title}']`);
   }
 
-  ele_lblOurBenefitsDescriptionTiles(title, description) {
+  lbl_OurBenefitsDescriptionTiles(title, description) {
     return $(
       `//img/following-sibling::span[text()='${title}']/following-sibling::span[text()='${description}']`,
     );
@@ -50,7 +50,7 @@ class Careers {
     return $(`//div[@id='job-openings']/div[2]/div/input`);
   }
 
-  get ele_lblFirstRecordInTable() {
+  get lbl_FirstRecordInTable() {
     return $(`//div[@id='job-openings']/div[3]/div[1]/div[2]/div/a/span`);
   }
 
@@ -61,7 +61,7 @@ class Careers {
   get lnk_FirstRecordToClick() {
     return $(`//div[@id='job-openings']/div[4]/div/a`);
   }
-  get ele_lblSearchRecord() {
+  get lbl_SearchRecord() {
     return $(`//div[@id='job-openings']/div[4]`);
   }
 }

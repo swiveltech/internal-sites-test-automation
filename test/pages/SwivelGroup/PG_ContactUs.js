@@ -6,7 +6,7 @@ class ContactUs {
     return $('//a[text()="Send Us a Message"]');
   }
 
-  get ele_lblSendUsAMessage() {
+  get lbl_SendUsAMessage() {
     return $('//p[text()="Send us a message"]');
   }
 
@@ -22,7 +22,7 @@ class ContactUs {
     );
   }
 
-  get ele_ddSubject() {
+  get dd_Subject() {
     return $(
       '//label[contains(normalize-space(), "Subject")]/following-sibling::div/select',
     );
@@ -40,21 +40,21 @@ class ContactUs {
     );
   }
 
-  get ele_lblEmailUs() {
+  get lbl_EmailUs() {
     return $('//h3[text()="Email Us"]');
   }
 
-  ele_lblEmailUsWithAddress(email) {
+  lbl_EmailUsWithAddress(email) {
     return $(
       `//h3[text()="Email Us"]/following-sibling::div/a[text()="${email}"]`,
     );
   }
 
-  ele_lblFooter(word) {
+  lbl_Footer(word) {
     return $(`//span[text()="${word}"]`);
   }
 
-  ele_lblErrorMessage(errorMessage) {
+  lbl_ErrorMessage(errorMessage) {
     return $(`//div[text()="${errorMessage}" and @class="_error-inner"]`);
   }
 

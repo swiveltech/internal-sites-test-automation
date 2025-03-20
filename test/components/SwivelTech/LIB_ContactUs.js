@@ -39,7 +39,7 @@ class ContactUs {
    */
   async bc_VerifyContactNumber(text, phoneNumber) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblContactNumber(text, phoneNumber),
+      PG_ContactUs.lbl_ContactNumber(text, phoneNumber),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -52,7 +52,7 @@ class ContactUs {
    */
   async bc_VerifyEmail(text, emailAddress) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblEmailAddress(text, emailAddress),
+      PG_ContactUs.lbl_EmailAddress(text, emailAddress),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -65,7 +65,7 @@ class ContactUs {
    */
   async bc_VerifyErrorMessage(label, errorMessage) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblErrorMessage(label, errorMessage),
+      PG_ContactUs.lbl_ErrorMessage(label, errorMessage),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -105,7 +105,7 @@ class ContactUs {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Phone Number type as " + phoneNumber,
     );
-    await PG_ContactUs.ele_ddCustomerInquiry.selectByIndex(index);
+    await PG_ContactUs.dd_CustomerInquiry.selectByIndex(index);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Customer Inquiry selected " + index + " value.",
     );

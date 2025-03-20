@@ -2,33 +2,33 @@ class AboutUs {
   /**
    * define selectors using getter methods
    */
-  ele_lblH4Header(subHeader) {
+  lbl_H4Header(subHeader) {
     return $(`//h4[text()="${subHeader}"]`);
   }
 
-  ele_lblH4HeaderWithDescription(subHeader, description) {
+  lbl_H4HeaderWithDescription(subHeader, description) {
     return $(
       `//h4[text()="${subHeader}"]/../following-sibling::div[1]/div[1]/p[text()="${description}"]`,
     );
   }
 
-  ele_lblH4HeaderWithDescriptionInBottom(subHeader, description) {
+  lbl_H4HeaderWithDescriptionInBottom(subHeader, description) {
     return $(
       `//h4[text()="${subHeader}"]/following-sibling::p[text()="${description}"]`,
     );
   }
 
-  ele_lblH4HeaderWithDescriptionForOurClient(subHeader, description) {
+  lbl_H4HeaderWithDescriptionForOurClient(subHeader, description) {
     return $(
       `//h4[text()="${subHeader}"]/../following-sibling::div[1]/p[text()="${description}"]`,
     );
   }
 
-  ele_lblLeadershipPersonName(name) {
+  lbl_LeadershipPersonName(name) {
     return $(`//div[@class='leadership-designation']/p[text()='${name}']`);
   }
 
-  ele_lblLeadershipPersonNameWithDesignation(name, Designation) {
+  lbl_LeadershipPersonNameWithDesignation(name, Designation) {
     return $(
       `//div[@class='leadership-designation']/p[text()='${name}']/following-sibling::p[text()="${Designation}"]`,
     );

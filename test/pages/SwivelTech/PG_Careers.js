@@ -12,7 +12,7 @@ class CareersPage {
     return $(`//input[@name="searchTerm"]`);
   }
 
-  get ele_lblFirstRecordInTable() {
+  get lbl_FirstRecordInTable() {
     return $(
       `(//input[@name="searchTerm"]/../following-sibling::div/div[@class="rooster-job"]/a/h3)[1]`,
     );

@@ -8,7 +8,7 @@ class Policy {
    */
   async bc_VerifyPolicyMessageForThreeText(message1, message2, message3) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDescriptionWith3Text(message1, message2, message3),
+      PG_Policy.lbl_DescriptionWith3Text(message1, message2, message3),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -27,7 +27,7 @@ class Policy {
    */
   async bc_VerifyPolicyMessageForTwoText(message1, message2) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDescriptionWith2Text(message1, message2),
+      PG_Policy.lbl_DescriptionWith2Text(message1, message2),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -43,7 +43,7 @@ class Policy {
    */
   async bc_VerifyPolicyMessageForTwoTextForPTag(message1, message2) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDescriptionWith2TextForPTag(message1, message2),
+      PG_Policy.lbl_DescriptionWith2TextForPTag(message1, message2),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -63,8 +63,7 @@ class Policy {
     message2,
     message3,
   ) {
-    let applicationText =
-      await PG_Policy.ele_lblPtagToGetText(header).getText();
+    let applicationText = await PG_Policy.lbl_PtagToGetText(header).getText();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "System Description as : " + applicationText,
     );

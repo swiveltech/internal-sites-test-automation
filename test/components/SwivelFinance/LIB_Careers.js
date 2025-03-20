@@ -9,7 +9,7 @@ class Careers {
   async bc_VerifyOurBenefits(Title, Description) {
     await LIB_Common.bc_VerifyAnyText(Title, 1);
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblOurBenefitsWithDescription(Title, Description),
+      PG_Careers.lbl_OurBenefitsWithDescription(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -34,7 +34,7 @@ class Careers {
    * a method to Verify there is search record not found
    */
   async bc_VerifyTheSearchRecordIsNotAvailable() {
-    let element = await PG_Careers.ele_lblGetFirstRecord.isDisplayed();
+    let element = await PG_Careers.lbl_GetFirstRecord.isDisplayed();
     await assertionHandler.assertFalse(element);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify There is no search record available",
@@ -46,7 +46,7 @@ class Careers {
    */
   async bc_VerifyTheSearchRecordAvailable() {
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblGetFirstRecord,
+      PG_Careers.lbl_GetFirstRecord,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -58,9 +58,9 @@ class Careers {
    * a method to Click on the first record
    */
   async bc_ClickOnTheFirstRecord() {
-    let searchKey = await PG_Careers.ele_lblGetFirstRecord.getText();
-    let url = await PG_Careers.ele_lblGetFirstRecord.getAttribute("href");
-    await PG_Careers.ele_lblGetFirstRecord.click();
+    let searchKey = await PG_Careers.lbl_GetFirstRecord.getText();
+    let url = await PG_Careers.lbl_GetFirstRecord.getAttribute("href");
+    await PG_Careers.lbl_GetFirstRecord.click();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on the First Record, Title as : " +
         searchKey +

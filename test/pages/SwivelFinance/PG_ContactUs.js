@@ -21,7 +21,7 @@ class ContactUsPage {
     return $(`//input[@placeholder="Enter your company name"]`);
   }
 
-  get ele_ddCountry() {
+  get dd_Country() {
     return $(`//select[@data-name="country"]`);
   }
 
@@ -29,19 +29,19 @@ class ContactUsPage {
     return $(`//textarea[@placeholder="Enter your message"]`);
   }
 
-  ele_lblErrorMessage(Label, ErrorMessage) {
+  lbl_ErrorMessage(Label, ErrorMessage) {
     return $(
       `//label[contains(text(),"${Label}")]/following-sibling::div/div/div[@class="_error-inner" and contains(text(),"${ErrorMessage}")]`,
     );
   }
 
-  ele_lblHeaderWithValue(Title, Value) {
+  lbl_HeaderWithValue(Title, Value) {
     return $(
       `//h3[contains(text(),"${Title}")]/../following-sibling::p/a[contains(text(),"${Value}")]`,
     );
   }
 
-  ele_lblAddressWithCompanyNameAndPhoneNumber(
+  lbl_AddressWithCompanyNameAndPhoneNumber(
     Country,
     CompanyName,
     Addressline1,

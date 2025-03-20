@@ -24,7 +24,7 @@ class HomePage {
     return $(`//div[contains(@class,"flex")]/a[2]/button[text()="Let’s Talk"]`);
   }
 
-  ele_lblServicesWithCount(text, count) {
+  lbl_ServicesWithCount(text, count) {
     return $(
       `//div[contains(text(),'${text}')]/parent::div/div[1]/span[contains(text(),'${count}')]`,
     );
@@ -36,7 +36,7 @@ class HomePage {
     );
   }
 
-  ele_lblHowWeWorks(title) {
+  lbl_HowWeWorks(title) {
     return $(
       `//img[@alt="how-we-works"]/following-sibling::h5[contains(text(),"${title}")]/following-sibling::div`,
     );
@@ -110,19 +110,19 @@ class HomePage {
     return $(`//img[contains(@alt,"${ClientName}")]`);
   }
 
-  ele_lblWhatOurClientSayWithName(ClientName) {
+  lbl_WhatOurClientSayWithName(ClientName) {
     return $(
       `//img[contains(@alt,"${ClientName}")]/../../div[2]/div/h6[contains(text(),"${ClientName}")]`,
     );
   }
 
-  ele_lblWhatOurClientSayWithNameDesignation(ClientName, Designation) {
+  lbl_WhatOurClientSayWithNameDesignation(ClientName, Designation) {
     return $(
       `//img[contains(@alt,"${ClientName}")]/../../div[2]/div/h6[contains(text(),"${ClientName}")]/../following-sibling::p[contains(text(),'${Designation}')]`,
     );
   }
 
-  ele_lblWhatOurClientSayWithNameDesignationAndDescription(
+  lbl_WhatOurClientSayWithNameDesignationAndDescription(
     ClientName,
     Designation,
     Description,
@@ -144,25 +144,25 @@ class HomePage {
     );
   }
 
-  ele_lblOurLatestInsights(Title, Category, DateInSystem) {
+  lbl_OurLatestInsights(Title, Category, DateInSystem) {
     return $(
       `//h4[contains(text(),'${Title}')]/following-sibling::div[contains(.,'${Category}')]/following-sibling::div/span[contains(text(),'${DateInSystem}')]`,
     );
   }
-  ele_lblLatestDescription(Description) {
+  lbl_LatestDescription(Description) {
     return $(`//p[text()[normalize-space() = "${Description}"]]`);
   }
 
-  ele_lblDescriptionToMatchAllInPTag(Description) {
+  lbl_DescriptionToMatchAllInPTag(Description) {
     return $(`//p[contains(., "${Description}")]`);
   }
 
-  ele_lblLatestDescriptionReadMoreInP(Description) {
+  lbl_LatestDescriptionReadMoreInP(Description) {
     return $(
       `//p[contains(., "${Description}")]/following-sibling::div/div/a/button[text()='READ MORE']/..`,
     );
   }
-  ele_lblLatestDescriptionReadMore(Description) {
+  lbl_LatestDescriptionReadMore(Description) {
     return $(
       `//p[text()[normalize-space() = "${Description}"]]/following-sibling::div/div/a/button[text()='READ MORE']/..`,
     );
@@ -173,11 +173,11 @@ class HomePage {
     );
   }
 
-  ele_lblTopSubPageHeaderInSpan(PageHeader) {
+  lbl_TopSubPageHeaderInSpan(PageHeader) {
     return $(`//span[text()[normalize-space() = "${PageHeader}"]]`);
   }
 
-  ele_lblH1WithNormalizeSpace(Description) {
+  lbl_H1WithNormalizeSpace(Description) {
     return $(`//h1[text()[normalize-space() = "${Description}"]]`);
   }
 
@@ -185,13 +185,13 @@ class HomePage {
     return $(`//input[@id="email"]`);
   }
 
-  ele_lblErrorMessageUnderEmail(Message) {
+  lbl_ErrorMessageUnderEmail(Message) {
     return $(
       `//input[@id="email"]/following-sibling::div/div[text()="${Message}"]`,
     );
   }
 
-  ele_lblThankYouSigningUp(Message) {
+  lbl_ThankYouSigningUp(Message) {
     return $(
       `//input[@id="email"]/../../../following-sibling::div/div/span[text()="${Message}"]`,
     );
@@ -201,7 +201,7 @@ class HomePage {
     return $(`//div[@class="social-area flex flex-col"]/div[1]/a[${Index}]`);
   }
 
-  get ele_lblYear() {
+  get lbl_Year() {
     return $(`(//div[contains(text(),"Years in Business")])[1]`);
   }
 }

@@ -50,13 +50,13 @@ class HomePage {
     );
   }
 
-  ele_lblSuccessfulClientProjectDescription(Title, Description) {
+  lbl_SuccessfulClientProjectDescription(Title, Description) {
     return $(
       `//p[text()='${Title}']/following-sibling::p[text()='${Description}']`,
     );
   }
 
-  ele_lblPeopleNameWithDescription(Description, PeopleName) {
+  lbl_PeopleNameWithDescription(Description, PeopleName) {
     return $(
       `//p[normalize-space(text()) = "${Description}"]/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']`,
     );
@@ -68,10 +68,10 @@ class HomePage {
     );
   }
 
-  ele_lblDescriptionWithoutPeopleName(Description) {
+  lbl_DescriptionWithoutPeopleName(Description) {
     return $(`//p[normalize-space(text()) = "${Description}"]`);
   }
-  ele_lblPeopleNameWithDescriptionAndJob(Description, PeopleName, Job) {
+  lbl_PeopleNameWithDescriptionAndJob(Description, PeopleName, Job) {
     return $(
       `//p[normalize-space(text()) = "${Description}"]/../following-sibling::div/div/div[2]/p[text()='${PeopleName}']/following-sibling::p[normalize-space(text()) = "${Job}"]`,
     );
@@ -91,7 +91,7 @@ class HomePage {
     return $(`//div[@class="popuplink"]/p/a[text()="Cookie Policy"]`);
   }
 
-  get ele_lblAboutAuthor() {
+  get lbl_AboutAuthor() {
     return $(
       `//div[@class="bach-component"]/div[3]/p/span[text()="Shanil Dissanayak"]/following-sibling::span[text()="e CPA"]/../following-sibling::p/span[contains(normalize-space(.), "Co-Founder & CEO") and contains(normalize-space(.), "of Swivel Group")]`,
     );

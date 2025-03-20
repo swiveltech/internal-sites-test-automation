@@ -62,11 +62,11 @@ describe("Swivel Finance Site -> Careers Page", () => {
     await LIB_Common.bc_VerifyH1Header(Data_Careers.Header_OurJobOpenings);
 
     //Get the first record before search
-    let searchKey = await PG_Careers.ele_lblGetFirstRecord.getText();
+    let searchKey = await PG_Careers.lbl_GetFirstRecord.getText();
     if (searchKey.includes("(")) {
       searchKey = searchKey.split("(")[0];
     }
-    let url = await PG_Careers.ele_lblGetFirstRecord.getAttribute("href");
+    let url = await PG_Careers.lbl_GetFirstRecord.getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "First record in job title as : " + searchKey + " and URL as : " + url,
     );

@@ -75,7 +75,7 @@ class OurServices {
       "Verify the Image Icon as : " + Image,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_OurServices.ele_lblH5Title(SubTitle),
+      PG_OurServices.lbl_H5Title(SubTitle),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -83,7 +83,7 @@ class OurServices {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_OurServices.ele_lblDescriptionOfEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+      PG_OurServices.lbl_DescriptionOfEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
         SubTitle,
         Description,
       ),
@@ -115,7 +115,7 @@ class OurServices {
     );
     await LIB_Common.bc_VerifyH6Header(Name);
     await assertionHandler.assertElementDisplayed(
-      PG_OurServices.ele_lblPersonNameWithJob(Name, Job),
+      PG_OurServices.lbl_PersonNameWithJob(Name, Job),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -127,7 +127,7 @@ class OurServices {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_OurServices.ele_lblPersonNameWithJobAndDescription(
+      PG_OurServices.lbl_PersonNameWithJobAndDescription(
         Name,
         Job,
         Description,

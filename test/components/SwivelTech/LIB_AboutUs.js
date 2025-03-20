@@ -8,7 +8,7 @@ class AboutUs {
    */
   async bc_VerifyHowWeGrewOverTheYears(year, message) {
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH5Header(year),
+      PG_Common.lbl_H5Header(year),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
@@ -35,7 +35,7 @@ class AboutUs {
       "Title as : " + title + " icon is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblOurBusinessSubTitle(picture, title),
+      PG_AboutUs.lbl_OurBusinessSubTitle(picture, title),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -44,7 +44,7 @@ class AboutUs {
         " icon is present. And Title is present below that.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblOurBusinessSubTitleAndDescription(
+      PG_AboutUs.lbl_OurBusinessSubTitleAndDescription(
         picture,
         title,
         description,

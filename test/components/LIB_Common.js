@@ -26,15 +26,12 @@ class Common {
 
   //Common component for click on button in popups
   async bc_VerifyPageHeader(pageHeader, index) {
-    await PG_Common.ele_lblPageHeader(pageHeader, index).waitForDisplayed(5000);
-    const element = await PG_Common.ele_lblPageHeader(
+    await PG_Common.lbl_PageHeader(pageHeader, index).waitForDisplayed(5000);
+    const element = await PG_Common.lbl_PageHeader(
       pageHeader,
       index,
     ).isDisplayed();
-    const elementToScroll = await PG_Common.ele_lblPageHeader(
-      pageHeader,
-      index,
-    );
+    const elementToScroll = await PG_Common.lbl_PageHeader(pageHeader, index);
     await elementToScroll.scrollIntoView();
     assertionHandler.assertTrue(element, "element not visible");
     await this.bc_LogAllureReportAndLogs(
@@ -109,14 +106,14 @@ class Common {
   }
   //Common component to verify H1 Header
   async bc_VerifyH1Header(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH1Header(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H1Header(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH1Header(pageHeader),
+      PG_Common.lbl_H1Header(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -126,14 +123,14 @@ class Common {
 
   //Common component to verify H1 Header For match all
   async bc_VerifyH1HeaderText(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH1HeaderWithDot(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H1HeaderWithDot(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH1HeaderWithDot(pageHeader),
+      PG_Common.lbl_H1HeaderWithDot(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -143,14 +140,14 @@ class Common {
 
   //Common component to verify H2 Header
   async bc_VerifyH2Header(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH2Header(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H2Header(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH2Header(pageHeader),
+      PG_Common.lbl_H2Header(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -160,7 +157,7 @@ class Common {
 
   //Common component to verify Header or any text
   async bc_VerifyAnyText(textValue, index) {
-    let elementToScroll = await PG_Common.ele_lblPageHeaderWithDot(
+    let elementToScroll = await PG_Common.lbl_PageHeaderWithDot(
       textValue,
       index,
     );
@@ -170,7 +167,7 @@ class Common {
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblPageHeaderWithDot(textValue, index),
+      PG_Common.lbl_PageHeaderWithDot(textValue, index),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs("Verify the Text as " + textValue);
@@ -178,14 +175,14 @@ class Common {
 
   //Common component to verify H3 Header
   async bc_VerifyH3Header(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH3Header(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H3Header(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH3Header(pageHeader),
+      PG_Common.lbl_H3Header(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -195,14 +192,14 @@ class Common {
 
   //Common component to verify H4 Header
   async bc_VerifyH4Header(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH4Header(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H4Header(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH4Header(pageHeader),
+      PG_Common.lbl_H4Header(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -240,14 +237,14 @@ class Common {
 
   //Common component to verify paragraph
   async bc_VerifyTheParagraph(paragraph) {
-    let elementToScroll = await PG_Common.ele_lblParagraph(paragraph);
+    let elementToScroll = await PG_Common.lbl_Paragraph(paragraph);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblParagraph(paragraph),
+      PG_Common.lbl_Paragraph(paragraph),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -296,14 +293,14 @@ class Common {
 
   //Common component to verify H5 Header
   async bc_VerifyH5Header(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH5Header(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H5Header(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH5Header(pageHeader),
+      PG_Common.lbl_H5Header(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(
@@ -313,14 +310,14 @@ class Common {
 
   //Common component to verify H6 Header
   async bc_VerifyH6Header(pageHeader) {
-    let elementToScroll = await PG_Common.ele_lblH6Header(pageHeader);
+    let elementToScroll = await PG_Common.lbl_H6Header(pageHeader);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
     assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblH6Header(pageHeader),
+      PG_Common.lbl_H6Header(pageHeader),
       "element not visible",
     );
     await this.bc_LogAllureReportAndLogs(

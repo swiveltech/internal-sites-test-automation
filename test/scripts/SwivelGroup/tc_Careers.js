@@ -83,7 +83,7 @@ describe("Swivel Group Site -> Careers Page", () => {
     await LIB_Careers.bc_VerifyShowMoreLink();
 
     //Get the first record before search
-    let searchKey = await PG_Careers.ele_lblFirstRecordInTable.getText();
+    let searchKey = await PG_Careers.lbl_FirstRecordInTable.getText();
     if (searchKey.includes("(")) {
       searchKey = searchKey.split("(")[0];
     }

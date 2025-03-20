@@ -9,7 +9,7 @@ class AboutUs {
    */
   async bc_VerifyLabelWithCount(Label, Count) {
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblCountWithLabel(Count, Label),
+      PG_AboutUs.lbl_CountWithLabel(Count, Label),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -34,7 +34,7 @@ class AboutUs {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblLeaderName(Name),
+      PG_AboutUs.lbl_LeaderName(Name),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -42,7 +42,7 @@ class AboutUs {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblLeaderNameWithJob(Name, Job),
+      PG_AboutUs.lbl_LeaderNameWithJob(Name, Job),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -66,7 +66,7 @@ class AboutUs {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblLeaderNameWithDescription(Name, Description),
+      PG_AboutUs.lbl_LeaderNameWithDescription(Name, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -91,7 +91,7 @@ class AboutUs {
     );
     await LIB_Common.bc_VerifyH3Header(Title);
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblOurTeamCultureDescription(Title, Description),
+      PG_AboutUs.lbl_OurTeamCultureDescription(Title, Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

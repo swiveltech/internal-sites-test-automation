@@ -311,7 +311,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       "Below code might be failed due to small screen size. Please refer the JIRA ticket for that : https://swiveltech.atlassian.net/browse/SW-1625?focusedCommentId=35236",
     );
     // This to fix the scroll in issue
-    let element = await PG_Common.ele_lblH2Header(
+    let element = await PG_Common.lbl_H2Header(
       Data_OurServices.Header_OurSoftwareDevelopmentServices,
     );
     await element.scrollIntoView({

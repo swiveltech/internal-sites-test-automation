@@ -18,11 +18,11 @@ class BlueprintPage {
     return $('//input[@id="phone"]');
   }
 
-  get ele_ddCompanySize() {
+  get dd_CompanySize() {
     return $(`//select[@data-name="company_size"]`);
   }
 
-  get ele_ddAccountingSpecialisation() {
+  get dd_AccountingSpecialisation() {
     return $(`//select[@data-name="accounting_specialisation"]`);
   }
 }

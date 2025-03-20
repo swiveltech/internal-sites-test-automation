@@ -52,7 +52,7 @@ class Home {
   async bc_VerifyWeValueYourPrivacyPopUp(Title, Description) {
     await LIB_Common.bc_VerifyH6Header(Title);
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblPageHeaderSingle(Description, 1),
+      PG_Common.lbl_PageHeaderSingle(Description, 1),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -101,7 +101,7 @@ class Home {
   async bc_VerifySuccessfulClientProject(Title, Description) {
     await LIB_Common.bc_VerifyTheParagraph(Title);
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblSuccessfulClientProjectDescription(Title, Description),
+      PG_Home.lbl_SuccessfulClientProjectDescription(Title, Description),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
@@ -127,19 +127,15 @@ class Home {
    */
   async bc_VerifyWeHaveWorkedWithThem(Description, PeopleName, Job) {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblDescriptionWithoutPeopleName(Description),
+      PG_Home.lbl_DescriptionWithoutPeopleName(Description),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblPeopleNameWithDescription(Description, PeopleName),
+      PG_Home.lbl_PeopleNameWithDescription(Description, PeopleName),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblPeopleNameWithDescriptionAndJob(
-        Description,
-        PeopleName,
-        Job,
-      ),
+      PG_Home.lbl_PeopleNameWithDescriptionAndJob(Description, PeopleName, Job),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -178,7 +174,7 @@ class Home {
    */
   async bc_VerifyThoughtLeadership(Title) {
     await assertionHandler.assertElementDisplayed(
-      PG_Common.ele_lblParagraph(Title),
+      PG_Common.lbl_Paragraph(Title),
       "Element not exist",
     );
     await assertionHandler.assertElementDisplayed(
@@ -248,10 +244,10 @@ class Home {
    */
   async bc_VerifyTheAuthor() {
     await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_lblAboutAuthor,
+      PG_Home.lbl_AboutAuthor,
       "Element not exist",
     );
-    let element = await PG_Home.ele_lblAboutAuthor;
+    let element = await PG_Home.lbl_AboutAuthor;
 
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Author, Object : " + element.selector,
@@ -459,14 +455,14 @@ class Home {
       "Verify the Phone text box is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Blueprint.ele_ddCompanySize,
+      PG_Blueprint.dd_CompanySize,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Company Size dropdown is present.",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_Blueprint.ele_ddAccountingSpecialisation,
+      PG_Blueprint.dd_AccountingSpecialisation,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

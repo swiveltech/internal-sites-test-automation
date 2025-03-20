@@ -15,7 +15,7 @@ class ContactUs {
       "Verify the Send Us a Message in contact us page",
     );
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblSendUsAMessage,
+      PG_ContactUs.lbl_SendUsAMessage,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -32,7 +32,7 @@ class ContactUs {
     );
     await LIB_Common.bc_LogAllureReportAndLogs("Verify the Name text box");
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_ddSubject,
+      PG_ContactUs.dd_Subject,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs("Verify the Subject drop down");
@@ -90,7 +90,7 @@ class ContactUs {
    */
   async bc_VerifyEmailUs(emailAddress) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblEmailUsWithAddress(emailAddress),
+      PG_ContactUs.lbl_EmailUsWithAddress(emailAddress),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -103,7 +103,7 @@ class ContactUs {
    */
   async bc_VerifyFooterCopyRightWithLogo(footerWord) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblFooter(footerWord),
+      PG_ContactUs.lbl_Footer(footerWord),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -175,7 +175,7 @@ class ContactUs {
    */
   async bc_VerifyErrorMessage(errorMessage) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblErrorMessage(errorMessage),
+      PG_ContactUs.lbl_ErrorMessage(errorMessage),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

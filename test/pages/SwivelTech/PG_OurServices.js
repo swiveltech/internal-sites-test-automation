@@ -15,11 +15,11 @@ class OurServicesPage {
     );
   }
 
-  ele_lblH5Title(Header) {
+  lbl_H5Title(Header) {
     return $(`//h5[contains(normalize-space(),"${Header}")]`);
   }
 
-  ele_lblDescriptionOfEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
+  lbl_DescriptionOfEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
     Header,
     Description,
   ) {
@@ -28,13 +28,13 @@ class OurServicesPage {
     );
   }
 
-  ele_lblPersonNameWithJob(Name, Job) {
+  lbl_PersonNameWithJob(Name, Job) {
     return $(
       `//h6[contains(text(),"${Name}")]/../following-sibling::p[contains(text(),"${Job}")]`,
     );
   }
 
-  ele_lblPersonNameWithJobAndDescription(Name, Job, Description) {
+  lbl_PersonNameWithJobAndDescription(Name, Job, Description) {
     return $(
       `//h6[contains(text(),"${Name}")]/../following-sibling::p[contains(text(),"${Job}")]/following-sibling::p[contains(normalize-space(.), "${Description}")]`,
     );

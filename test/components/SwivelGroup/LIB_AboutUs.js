@@ -7,7 +7,7 @@ class AboutUs {
    */
   async bc_VerifyH4SubHeaderAndDescriptionInBottom(header, description) {
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblH4Header(header),
+      PG_AboutUs.lbl_H4Header(header),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -15,7 +15,7 @@ class AboutUs {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblH4HeaderWithDescriptionInBottom(header, description),
+      PG_AboutUs.lbl_H4HeaderWithDescriptionInBottom(header, description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -31,7 +31,7 @@ class AboutUs {
    */
   async bc_VerifyH4SubHeaderAndDescription(header, description) {
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblH4Header(header),
+      PG_AboutUs.lbl_H4Header(header),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -39,7 +39,7 @@ class AboutUs {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblH4HeaderWithDescription(header, description),
+      PG_AboutUs.lbl_H4HeaderWithDescription(header, description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -55,17 +55,14 @@ class AboutUs {
    */
   async bc_VerifyH4SubHeaderAndDescriptionForOurClient(header, description) {
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblH4Header(header),
+      PG_AboutUs.lbl_H4Header(header),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the H4 Sub Header as : " + header,
     );
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblH4HeaderWithDescriptionForOurClient(
-        header,
-        description,
-      ),
+      PG_AboutUs.lbl_H4HeaderWithDescriptionForOurClient(header, description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -82,7 +79,7 @@ class AboutUs {
   async bc_VerifyLeadership(name, designation) {
     //Verify the name part
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblLeadershipPersonName(name),
+      PG_AboutUs.lbl_LeadershipPersonName(name),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -91,7 +88,7 @@ class AboutUs {
 
     //Verify the name with designation
     await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.ele_lblLeadershipPersonNameWithDesignation(name, designation),
+      PG_AboutUs.lbl_LeadershipPersonNameWithDesignation(name, designation),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

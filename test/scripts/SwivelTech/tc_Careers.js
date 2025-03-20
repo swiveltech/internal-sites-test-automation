@@ -61,7 +61,7 @@ describe("Swivel Tech Site -> Careers Page", () => {
     await LIB_Common.bc_VerifyH2Header(Data_Careers.Header_OurJobOpenings);
 
     //Get the first record before search
-    let searchKey = await PG_Careers.ele_lblFirstRecordInTable.getText();
+    let searchKey = await PG_Careers.lbl_FirstRecordInTable.getText();
     if (searchKey.includes("(")) {
       searchKey = searchKey.split("(")[0];
     }

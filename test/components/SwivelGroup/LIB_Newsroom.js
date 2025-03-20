@@ -7,7 +7,7 @@ class Newsroom {
    */
   async bc_VerifyTopDescription(Description) {
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblTopDescription(Description),
+      PG_Newsroom.lbl_TopDescription(Description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -20,7 +20,7 @@ class Newsroom {
    */
   async bc_VerifySocialClubEvents() {
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblSocialClubEvents,
+      PG_Newsroom.lbl_SocialClubEvents,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -33,7 +33,7 @@ class Newsroom {
    */
   async bc_VerifyArticles(articleTitle, articleDescription) {
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblH3Header(articleTitle),
+      PG_Newsroom.lbl_H3Header(articleTitle),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -41,7 +41,7 @@ class Newsroom {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblArticleDescription(articleTitle, articleDescription),
+      PG_Newsroom.lbl_ArticleDescription(articleTitle, articleDescription),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -55,7 +55,7 @@ class Newsroom {
    */
   async bc_VerifyWantToWorkWithUs(header, description) {
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblH4Header(header),
+      PG_Newsroom.lbl_H4Header(header),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -63,7 +63,7 @@ class Newsroom {
     );
 
     await assertionHandler.assertElementDisplayed(
-      PG_Newsroom.ele_lblH4HeaderWithDescription(header, description),
+      PG_Newsroom.lbl_H4HeaderWithDescription(header, description),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

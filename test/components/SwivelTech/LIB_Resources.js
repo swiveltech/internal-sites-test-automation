@@ -7,7 +7,7 @@ class Resources {
    */
   async bc_VerifyH6Header(Header) {
     await assertionHandler.assertElementDisplayed(
-      PG_Resources.ele_lblH6Header(Header),
+      PG_Resources.lbl_H6Header(Header),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

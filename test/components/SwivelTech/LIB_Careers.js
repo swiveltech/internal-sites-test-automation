@@ -34,7 +34,7 @@ class Careers {
    */
   async bc_VerifyTheSearchRecordAvailable() {
     await assertionHandler.assertElementDisplayed(
-      PG_Careers.ele_lblFirstRecordInTable,
+      PG_Careers.lbl_FirstRecordInTable,
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -45,7 +45,7 @@ class Careers {
    * a method to Verify there is search record not found
    */
   async bc_VerifyTheSearchRecordIsNotAvailable() {
-    let element = await PG_Careers.ele_lblFirstRecordInTable.isDisplayed();
+    let element = await PG_Careers.lbl_FirstRecordInTable.isDisplayed();
     await assertionHandler.assertFalse(element);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify There is no search record available",

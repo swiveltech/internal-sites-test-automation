@@ -2,7 +2,7 @@ class ResourcesPage {
   /**
    * define selectors using getter methods
    */
-  ele_lblH6Header(Label) {
+  lbl_H6Header(Label) {
     return $(`//h6[contains(text(),"${Label}")]`);
   }
 

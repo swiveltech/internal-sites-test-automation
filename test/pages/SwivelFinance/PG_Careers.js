@@ -2,7 +2,7 @@ class CareersPage {
   /**
    * define selectors using getter methods
    */
-  ele_lblOurBenefitsWithDescription(Title, Description) {
+  lbl_OurBenefitsWithDescription(Title, Description) {
     return $(
       `//div[contains(text(),"${Title}")]/following-sibling::div[contains(normalize-space(), "${Description}")]`,
     );
@@ -14,7 +14,7 @@ class CareersPage {
     );
   }
 
-  get ele_lblGetFirstRecord() {
+  get lbl_GetFirstRecord() {
     return $(`(//div[@class="flex flex-col gap-8"]/div/h2/a)[1]`);
   }
 }

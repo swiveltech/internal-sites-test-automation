@@ -12,13 +12,13 @@ class AboutUs {
     return $(`//img[@alt="${Picture}"]`);
   }
 
-  ele_lblOurBusinessSubTitle(Picture, Title) {
+  lbl_OurBusinessSubTitle(Picture, Title) {
     return $(
       `//img[@alt="${Picture}"]/../following-sibling::div/h2[contains(.,"${Title}")]`,
     );
   }
 
-  ele_lblOurBusinessSubTitleAndDescription(Picture, Title, Description) {
+  lbl_OurBusinessSubTitleAndDescription(Picture, Title, Description) {
     return $(
       `//img[@alt="${Picture}"]/../following-sibling::div/h2[contains(.,"${Title}")]/following-sibling::p[contains(.,"${Description}")]`,
     );

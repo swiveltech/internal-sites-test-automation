@@ -7,7 +7,7 @@ class Policy {
    */
   async bc_VerifyPolicyMessage(message) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDivDescription(message),
+      PG_Policy.lbl_DivDescription(message),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -20,7 +20,7 @@ class Policy {
    */
   async bc_VerifyPolicyMessageForThreeText(message1, message2, message3) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDescriptionWith3Text(message1, message2, message3),
+      PG_Policy.lbl_DescriptionWith3Text(message1, message2, message3),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -43,11 +43,7 @@ class Policy {
     message3,
   ) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDescriptionWith3TextInCenter(
-        message1,
-        message2,
-        message3,
-      ),
+      PG_Policy.lbl_DescriptionWith3TextInCenter(message1, message2, message3),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -66,7 +62,7 @@ class Policy {
    */
   async bc_VerifyPolicyMessageForTwoText(message1, message2) {
     await assertionHandler.assertElementDisplayed(
-      PG_Policy.ele_lblDescriptionWith2Text(message1, message2),
+      PG_Policy.lbl_DescriptionWith2Text(message1, message2),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(

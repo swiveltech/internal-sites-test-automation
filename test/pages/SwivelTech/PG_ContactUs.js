@@ -18,13 +18,13 @@ class ContactUs {
     );
   }
 
-  ele_lblEmailAddress(Text, EmailAddress) {
+  lbl_EmailAddress(Text, EmailAddress) {
     return $(
       `(//h3[text()="${Text}"]/../following-sibling::div/h3[text()="${EmailAddress}"])[1]`,
     );
   }
 
-  ele_lblContactNumber(Text, ContactNumber) {
+  lbl_ContactNumber(Text, ContactNumber) {
     return $(
       `(//h3[text()="${Text}"]/../following-sibling::div/a[text()="${ContactNumber}"])[1]`,
     );
@@ -46,7 +46,7 @@ class ContactUs {
     return $(`//input[@id="phone"]`);
   }
 
-  get ele_ddCustomerInquiry() {
+  get dd_CustomerInquiry() {
     return $(`//select[@data-name="customer_inquiry"]`);
   }
 
@@ -54,7 +54,7 @@ class ContactUs {
     return $(`//textarea[@data-name="message"]`);
   }
 
-  ele_lblErrorMessage(Label, ErrorMessage) {
+  lbl_ErrorMessage(Label, ErrorMessage) {
     return $(
       `//label[contains(text(),"${Label}")]/following-sibling::div/div/div[text()="${ErrorMessage}"]`,
     );

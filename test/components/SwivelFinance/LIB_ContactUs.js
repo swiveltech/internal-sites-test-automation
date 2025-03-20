@@ -39,7 +39,7 @@ class ContactUs {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Type Company Name as : " + CompanyName,
     );
-    await PG_ContactUs.ele_ddCountry.selectByVisibleText(Country);
+    await PG_ContactUs.dd_Country.selectByVisibleText(Country);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Select the Country as : " + Country,
     );
@@ -53,7 +53,7 @@ class ContactUs {
    */
   async bc_VerifyErrorMessageUnderLabel(Label, ErrorMessage) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblErrorMessage(Label, ErrorMessage),
+      PG_ContactUs.lbl_ErrorMessage(Label, ErrorMessage),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -69,7 +69,7 @@ class ContactUs {
    */
   async bc_VerifyTitleWitValue(Title, Value) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblHeaderWithValue(Title, Value),
+      PG_ContactUs.lbl_HeaderWithValue(Title, Value),
       "Element not exist",
     );
     await LIB_Common.bc_LogAllureReportAndLogs(
@@ -91,7 +91,7 @@ class ContactUs {
     PhoneNumber,
   ) {
     await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.ele_lblAddressWithCompanyNameAndPhoneNumber(
+      PG_ContactUs.lbl_AddressWithCompanyNameAndPhoneNumber(
         Country,
         CompanyName,
         AddressLine1,

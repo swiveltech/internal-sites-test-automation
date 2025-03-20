@@ -2,13 +2,13 @@ class CommonPage {
   /**
    * define selectors using getter methods
    */
-  ele_lblPageHeader(PageHeader, Index) {
+  lbl_PageHeader(PageHeader, Index) {
     return $(
       `(//*[contains(normalize-space(text()), "${PageHeader}")])[${Index}]`,
     );
   }
 
-  ele_lblPageHeaderSingle(PageHeader, Index) {
+  lbl_PageHeaderSingle(PageHeader, Index) {
     return $(
       `(//*[contains(normalize-space(text()), '${PageHeader}')])[${Index}]`,
     );
@@ -18,31 +18,31 @@ class CommonPage {
     return $(`(//button[text()="${Label}"])[${Index}]`);
   }
 
-  ele_lblH1Header(Label) {
+  lbl_H1Header(Label) {
     return $(`//h1[contains(text(),"${Label}")]`);
   }
 
-  ele_lblH1HeaderWithDot(Label) {
+  lbl_H1HeaderWithDot(Label) {
     return $(`//h1[contains(.,"${Label}")]`);
   }
 
-  ele_lblH2Header(Label) {
+  lbl_H2Header(Label) {
     return $(`//h2[contains(text(),"${Label}")]`);
   }
 
-  ele_lblH3Header(Label) {
+  lbl_H3Header(Label) {
     return $(`//h3[contains(text(),"${Label}")]`);
   }
 
-  ele_lblH4Header(Label) {
+  lbl_H4Header(Label) {
     return $(`//h4[contains(text(),"${Label}")]`);
   }
 
-  ele_lblH5Header(Label) {
+  lbl_H5Header(Label) {
     return $(`//h5[contains(text(),"${Label}")]`);
   }
 
-  ele_lblH6Header(Label) {
+  lbl_H6Header(Label) {
     return $(`//h6[contains(text(),"${Label}")]`);
   }
 
@@ -50,11 +50,11 @@ class CommonPage {
     return $(`//a[text()='${Label}']`);
   }
 
-  ele_lblParagraph(TextValue) {
+  lbl_Paragraph(TextValue) {
     return $(`//p[contains(text(),"${TextValue}")][1]`);
   }
 
-  ele_lblPageHeaderWithDot(PageHeader, Index) {
+  lbl_PageHeaderWithDot(PageHeader, Index) {
     return $(`(//*[contains(normalize-space(.), "${PageHeader}")])[${Index}]`);
   }
 }
