@@ -6,6 +6,7 @@ on:
     workflows: 
       - "Group Frontend - Automatically Build and Deploy to Amazon Lightsail"
       - "Group Frontend - Manual Build and Deploy to Amazon Lightsail"
+      - "Group Frontend - Manually Build and Deploy to Amazon Lightsail"
     types:
       - completed
 
