@@ -1,15 +1,7 @@
-name: Automation Tests
+name: Automation Tests - All Sites
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: 
-      - "Finance Frontend - Manual Build and Deploy to Amazon Lightsail"
-      - "Finance Frontend - Automatically Build and Deploy to Amazon Lightsail"
-      - "Tech Frontend - Automatically Build and Deploy to Stage Amazon Lightsail"
-      - "Tech Frontend - Manually Build and Deploy to Stage Amazon Lightsail"
-    types:
-      - completed
 
 permissions:
   id-token: write
