@@ -71,10 +71,7 @@ export const config = {
 
   onPrepare: async function (config, capabilities) {
     await kill(4723, "tcp");
-    const allureResultsPath = path.join(
-      process.cwd(),
-      "./reports/allure-results",
-    );
+    const allureResultsPath = path.join(process.cwd(), "./allure-results");
     try {
       if (fs.existsSync(allureResultsPath)) {
         fs.rmdirSync(allureResultsPath, { recursive: true });

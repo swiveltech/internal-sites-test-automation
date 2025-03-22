@@ -9,7 +9,7 @@ class HomePage {
   ele_HeaderTab(tabName) {
     return $(
       `((//div[@class='flex items-center justify-center']/ul[1]/descendant::a[text()='${tabName}']) | 
-(//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()='${tabName}']))[1]`,
+      // (//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()='${tabName}']))[1]`,
     );
   }
 

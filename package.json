@@ -38,9 +38,11 @@
     "swiveltech": "wdio run ./configs/wdio-swiveltech.conf.js && npm run allure-report || npm run allure-report",
     "swivelfinance": "wdio run ./configs/wdio-swivelfinance.conf.js && npm run allure-report || npm run allure-report",
     "web-BS": " wdio run ./configs/web-browserstack.conf.js && npm run allure-report || npm run allure-report",
-    "mobile-web-BS": " wdio run ./configs/mobile-web-browserstack.conf.js && npm run allure-report || npm run allure-report"
+    "mobile-web-BS": " wdio run ./configs/mobile-web-browserstack.conf.js && npm run allure-report || npm run allure-report",
+    "real-ios-device": " wdio run ./configs/wdioMobile.conf.js && npm run allure-report || npm run allure-report"
   },
   "dependencies": {
+    "appium-xcuitest-driver": "^8.4.3",
     "axios": "^1.7.4",
     "canvas": "^2.11.2",
     "pdfjs-dist": "^2.9.359",
