@@ -5,7 +5,7 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelGroup/dt_home.json" assert { type: "json" };
 import Data_PrivacyPolicy from "../../data/SwivelGroup/dt_privacyPolicy.json" assert { type: "json" };
 
-describe("Swivel Group Site -> Privacy Policy Page ", () => {
+describe("Swivel Group Site -> Privacy Policy Page", () => {
   // Covered Test Case Number : SG-41
   it("Verify the Privacy Policy", async () => {
     await LIB_Common.bc_StartAllureReportStep("Swivel Group -> Privacy Policy");

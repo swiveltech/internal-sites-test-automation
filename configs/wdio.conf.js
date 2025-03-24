@@ -2,7 +2,6 @@ import fs from "fs";
 import process from "process";
 import { getCapabilities, allureEnv } from "../utils/util.js";
 const utils = getCapabilities();
-import webActions from "../infrastructure/web/webActions.js";
 import kill from "kill-port";
 import specConfig from "../specfiles.js";
 import dotenv from "dotenv";
@@ -19,8 +18,6 @@ dotenv.config();
 
 // Alternatively, read from "../credentials.env" file.
 dotenv.config({ path: path.resolve(__dirname, "..", "env", `${env}.env`) });
-
-webActions.createLog();
 
 // Retrieve the test plan from the environment variable or use a default value of "smoke"
 const testPlan = (process.env.TEST_PLAN || "smoke").trim();
@@ -71,10 +68,7 @@ export const config = {
 
   onPrepare: async function (config, capabilities) {
     await kill(4723, "tcp");
-    const allureResultsPath = path.join(
-      process.cwd(),
-      "./reports/allure-results",
-    );
+    const allureResultsPath = path.join(process.cwd(), "./allure-results");
     try {
       if (fs.existsSync(allureResultsPath)) {
         fs.rmdirSync(allureResultsPath, { recursive: true });

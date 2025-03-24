@@ -12,7 +12,7 @@ import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.json" assert { t
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
 
-describe("Swivel Group Site -> Sitemap Page ", () => {
+describe("Swivel Group Site -> Sitemap Page", () => {
   // Covered Test Case Number : SG-43, SG-44, SG-45, SG-46, SG-47, SG-48
   it("Verify the Sitemap Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(

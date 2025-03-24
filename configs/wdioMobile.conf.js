@@ -1,7 +1,4 @@
 import process from "process";
-import { getCapabilities } from "../utils/util.js";
-const utils = getCapabilities();
-import webActions from "../infrastructure/web/webActions.js";
 import specConfig from "../swivel_tech_specfiles.js";
 import dotenv from "dotenv";
 import path from "path";
@@ -17,7 +14,6 @@ dotenv.config();
 // Alternatively, read from "../credentials.env" file.
 dotenv.config({ path: path.resolve(__dirname, "..", "env", `${env}.env`) });
 
-webActions.createLog();
 
 // Retrieve the test plan from the environment variable or use a default value of "smoke"
 const testPlan = (process.env.TEST_PLAN || "smoke").trim();
@@ -37,7 +33,7 @@ export const config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
-  port: 4723,
+  port: 4725,
   //
   // ==================
   // Specify Test Files
@@ -89,7 +85,7 @@ export const config = {
       "appium:platformVersion": "18.3",
       "appium:automationName": "XCUITest",
       "appium:noReset": true,
-      // "appium:udid": "00008110-001A09E41E07801E",
+      "appium:udid": "00008110-001A09E41E07801E",
     },
   ],
   //Swivel’s iPad

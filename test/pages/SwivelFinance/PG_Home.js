@@ -8,8 +8,7 @@ class HomePage {
 
   ele_HeaderTab(tabName) {
     return $(
-      `((//div[@class='flex items-center justify-center']/ul[1]/descendant::a[text()='${tabName}']) | 
-      // (//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()='${tabName}']))[1]`,
+      `((//div[@class='flex items-center justify-center']/ul[1]/descendant::a[text()='${tabName}']) | (//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()='${tabName}']))[1]`,
     );
   }
 
@@ -20,9 +19,7 @@ class HomePage {
   }
 
   get btn_LetsTalk() {
-    return $(
-      `//div[@class="flex"]/a[2]/button[text()="Let’s Talk"]/../../a[2]`,
-    );
+    return $(`//div[@class="flex"]/div/button[text()="Let’s Talk"]`);
   }
 
   ele_FooterTab(textValue) {

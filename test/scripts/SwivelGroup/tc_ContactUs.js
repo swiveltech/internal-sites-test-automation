@@ -5,7 +5,7 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelGroup/dt_home.json" assert { type: "json" };
 import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.json" assert { type: "json" };
 
-describe("Swivel Group Site -> Contact Us Page ", () => {
+describe("Swivel Group Site -> Contact Us Page", () => {
   // Covered Test Case Number : SG-32, SG-33, SG-34
   it("Verify the Contact Us Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(

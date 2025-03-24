@@ -2,7 +2,6 @@ import fs from "fs";
 import process from "process";
 import { getCapabilities, allureEnv } from "../utils/util.js";
 const utils = getCapabilities();
-import webActions from "../infrastructure/web/webActions.js";
 import kill from "kill-port";
 import specConfig from "../swivel_group_specfiles.js";
 import dotenv from "dotenv";
@@ -19,8 +18,6 @@ dotenv.config();
 
 // Alternatively, read from "../credentials.env" file.
 dotenv.config({ path: path.resolve(__dirname, "..", "env", `${env}.env`) });
-
-webActions.createLog();
 
 // Retrieve the test plan from the environment variable or use a default value of "smoke"
 const testPlan = (process.env.TEST_PLAN || "smoke").trim();

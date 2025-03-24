@@ -4,7 +4,7 @@ class AboutUsPage {
    */
   lbl_CountWithLabel(Count, Label) {
     return $(
-      `//h1[text()="${Count}"]/span[text()="+"]/../following-sibling::h2[contains(text(),"${Label}")]`,
+      `//span[text()="${Count}"]/span[text()="+"]/../following-sibling::h4[contains(text(),"${Label}")]`,
     );
   }
 

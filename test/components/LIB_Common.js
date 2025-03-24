@@ -1,14 +1,13 @@
 import assertionHandler from "../../infrastructure/common/assertionHandler.js";
 import PG_Common from "../pages/PG_Common.js";
 import allureReporter from "@wdio/allure-reporter";
-import browserManager from "../../infrastructure/web/browserManager.js";
 
 class Common {
   /**
    * method to Open the Application
    */
   async bc_OpenApplication(url) {
-    await browserManager.openUrl(url);
+    await browser.url(url);
     await browser.waitUntil(async () => (await browser.getUrl()) === url, {
       timeout: 3000, // Adjust timeout as needed
       timeoutMsg: `URL did not load correctly: Expected ${url}, but got a different page.`,
@@ -51,7 +50,7 @@ class Common {
       });
       await element.click();
       await this.bc_LogAllureReportAndLogs(
-        `Clicked on button with label: ${label}`,
+        "Clicked on button with label: " + label + " , and Index : " + Index,
       );
       await browser.pause(2000);
     } else {
@@ -72,7 +71,7 @@ class Common {
     ).isDisplayed();
     assertionHandler.assertTrue(element, "element not visible");
     await this.bc_LogAllureReportAndLogs(
-      "Verify the button value is : " + label,
+      "Verify the button with label: " + label + " , and Index : " + Index,
     );
   }
 

@@ -17,7 +17,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
-    await LIB_Common.bc_ClickOnButton("LEARN MORE", 7);
+    await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
     await LIB_Common.bc_VerifyTheAppURL("our-services");
 
     let appURL = await browser.getUrl();
@@ -38,7 +38,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_Home.bc_ClickOnAppLogo();
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
-    await LIB_Common.bc_ClickOnButton("LEARN MORE", 7);
+    await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
     await LIB_Common.bc_VerifyTheAppURL("our-services");
     //Verify the Page Header and Description
     await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);

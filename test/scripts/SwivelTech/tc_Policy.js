@@ -7,7 +7,7 @@ import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_Policy from "../../components/SwivelTech/LIB_Policy.js";
 
 describe("Swivel Tech Site -> Policy Pages", () => {
-  it("Verify the Policy Pages -> Privacy Policy Pages", async () => {
+  it("Verify the Policy Pages -> Privacy Pages", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Swivel Tech -> Verify Privacy Policy Pages",
     );
@@ -95,7 +95,7 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     );
   });
 
-  it("Verify the Cookie Policy Pages -> Cookie Policy Pages", async () => {
+  it("Verify the Cookie Policy Pages -> Cookie Pages", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Verify Cookie Policy Pages -> Cookie Policy Pages",
     );
