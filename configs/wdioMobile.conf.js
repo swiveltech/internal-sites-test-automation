@@ -84,7 +84,6 @@ export const config = {
       "appium:deviceName": "Swivel’s iPad",
       "appium:platformVersion": "18.3",
       "appium:automationName": "XCUITest",
-      "appium:noReset": true,
       "appium:udid": "00008110-001A09E41E07801E",
     },
   ],

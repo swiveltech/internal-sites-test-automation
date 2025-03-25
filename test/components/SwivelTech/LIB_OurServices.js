@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import LIB_Common from "../LIB_Common.js";
 import PG_OurServices from "../../pages/SwivelTech/PG_OurServices.js";
 import PG_Services from "../../pages/SwivelTech/PG_Services.js";
@@ -9,13 +8,13 @@ class OurServices {
    */
   async bc_VerifyOurSoftwareDevelopmentServicesTile(SubTitle, Description) {
     await LIB_Common.bc_VerifyH5Header(SubTitle);
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_OurServices.ele_OurSoftwareDevelopmentServicesDescription(
         SubTitle,
         Description,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         SubTitle +
@@ -26,10 +25,9 @@ class OurServices {
       await PG_OurServices.lnk_OurSoftwareDevelopmentServicesLearnMore(
         SubTitle,
       ).getAttribute("href");
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_OurServices.lnk_OurSoftwareDevelopmentServicesLearnMore(SubTitle),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         SubTitle +
@@ -67,28 +65,20 @@ class OurServices {
     SubTitle,
     Description,
   ) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Services.icn_Image(Image),
-      "Element not exist",
-    );
+    await expect(PG_Services.icn_Image(Image)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Image Icon as : " + Image,
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_OurServices.lbl_H5Title(SubTitle),
-      "Element not exist",
-    );
+    await expect(PG_OurServices.lbl_H5Title(SubTitle)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the H5 Header as : " + SubTitle,
     );
-
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_OurServices.lbl_DescriptionOfEntrustYourCorporateSoftwareDevelopmentNeedsToUs(
         SubTitle,
         Description,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Title as : " +
         SubTitle +
@@ -106,18 +96,12 @@ class OurServices {
     Job,
     Description,
   ) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Services.icn_Image(Image),
-      "Element not exist",
-    );
+    await expect(PG_Services.icn_Image(Image)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Image Icon as : " + Image,
     );
     await LIB_Common.bc_VerifyH6Header(Name);
-    await assertionHandler.assertElementDisplayed(
-      PG_OurServices.lbl_PersonNameWithJob(Name, Job),
-      "Element not exist",
-    );
+    await expect(PG_OurServices.lbl_PersonNameWithJob(Name, Job)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Client name as : " +
         Name +
@@ -126,14 +110,13 @@ class OurServices {
         " , it is present.",
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_OurServices.lbl_PersonNameWithJobAndDescription(
         Name,
         Job,
         Description,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Client name as : " +
         Name +
@@ -149,24 +132,21 @@ class OurServices {
    * a method to Verify Successful Client project tile
    */
   async bc_VerifySuccessfulClientProjectTile(Title, Description) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_OurServices.ele_SuccessfulProjectTile(Title, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Successful Client Project Title as : " +
         Title +
         " and Description as : " +
         Description,
     );
-    let linkedInURL =
-      await PG_OurServices.lnk_SuccessfulProjectTileReadMore(
-        Title,
-      ).getAttribute("href");
-    await assertionHandler.assertElementDisplayed(
+    let linkedInURL = await PG_OurServices.lnk_SuccessfulProjectTileReadMore(
+      Title,
+    ).getAttribute("href");
+    await expect(
       PG_OurServices.lnk_SuccessfulProjectTileReadMore(Title),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Successful Client Project Title as : " +
         Title +

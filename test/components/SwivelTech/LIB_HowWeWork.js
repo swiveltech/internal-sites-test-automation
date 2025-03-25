@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_HowWeWork from "../../pages/SwivelTech/PG_HowWeWork.js";
 import LIB_Common from "../LIB_Common.js";
 class HowWeWork {
@@ -6,18 +5,14 @@ class HowWeWork {
    * a method to Verify the Step Tile
    */
   async bc_VerifyStepTile(Count, Header, Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_HowWeWork.lbl_StepHeader(Count, Header),
-      "Element not exist",
-    );
+    await expect(PG_HowWeWork.lbl_StepHeader(Count, Header)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Step Number as : " + Count + " , and Header as : " + Header,
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_HowWeWork.lbl_StepHeaderWithDescription(Count, Header, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Header as : " +
         Header +
@@ -37,28 +32,23 @@ class HowWeWork {
       inline: "nearest",
     });
     await browser.pause(3000);
-    await assertionHandler.assertElementDisplayed(
-      PG_HowWeWork.lbl_FAQsQuestionsTitle(Question),
-      "Element not exist",
-    );
+    await expect(PG_HowWeWork.lbl_FAQsQuestionsTitle(Question)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the FAQs question as : " + Question,
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_HowWeWork.lbl_FAQsQuestionsTitleWithArrow(Question),
-      "Element not exist",
-    );
+    ).toBePresent();
     await PG_HowWeWork.lbl_FAQsQuestionsTitleWithArrow(Question).click();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Arrow Down icon is present against FAQs question as : " +
         Question +
         " , It is clicked and now it is expanded.",
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_HowWeWork.lbl_FAQsQuestionsTitleWithAnswers(Question, Answer),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the FAQs question as : " +
         Question +
@@ -75,18 +65,14 @@ class HowWeWork {
    * a method to Verify the FAQs questions and icons
    */
   async bc_VerifyFAQsQuestionsAndIcon(Question) {
-    await assertionHandler.assertElementDisplayed(
-      PG_HowWeWork.lbl_FAQsQuestionsTitle(Question),
-      "Element not exist",
-    );
+    await expect(PG_HowWeWork.lbl_FAQsQuestionsTitle(Question)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the FAQs question as : " + Question,
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_HowWeWork.lbl_FAQsQuestionsTitleWithArrow(Question),
-      "Element not exist",
-    );
+    ).toBePresent();
     await PG_HowWeWork.lbl_FAQsQuestionsTitleWithArrow(Question).click();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Arrow Down icon is present against FAQs question as : " +
@@ -99,10 +85,9 @@ class HowWeWork {
    * a method to Verify the FAQs answers
    */
   async bc_VerifyFAQsAnswers(Question, Answer) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_HowWeWork.lbl_FAQsQuestionsTitleGetTheAnswers(Question),
-      "Element not exist",
-    );
+    ).toBePresent();
     await expect(
       PG_HowWeWork.lbl_FAQsQuestionsTitleGetTheAnswers(Question),
     ).toHaveTextContaining(Answer, { timeout: 5000 });
@@ -142,17 +127,10 @@ class HowWeWork {
    * a method to Verify the Benefits Of Choosing This Option
    */
   async bc_VerifyBenefitsOfChoosingThisOption(Header, Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_HowWeWork.lbl_H5Header(Header),
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Benefits Of Choosing This Option Header as : " + Header,
-    );
-    await assertionHandler.assertElementDisplayed(
+    await LIB_Common.bc_VerifyH5Header(Header);
+    await expect(
       PG_HowWeWork.lbl_BenefitsDescription(Header, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Benefits Of Choosing This Option Header as : " +
         Header +

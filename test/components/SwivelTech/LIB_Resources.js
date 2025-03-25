@@ -1,20 +1,6 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_Resources from "../../pages/SwivelTech/PG_Resources.js";
 import LIB_Common from "../LIB_Common.js";
 class Resources {
-  /**
-   * a method to Verify the H6 Header
-   */
-  async bc_VerifyH6Header(Header) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Resources.lbl_H6Header(Header),
-      "Element not exist",
-    );
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the H6 Header as : " + Header,
-    );
-  }
-
   /**
    * a method to Verify the Categories Options
    */
@@ -25,10 +11,9 @@ class Resources {
         : [Options];
 
     for (const optionToCheck of optionsToVerify) {
-      await assertionHandler.assertElementDisplayed(
+      await expect(
         PG_Resources.ele_CategoriesOptions(Header, optionToCheck),
-        "Element not exist",
-      );
+      ).toBePresent();
       await LIB_Common.bc_LogAllureReportAndLogs(
         "Verify the Categories Options as : " + optionToCheck,
       );
@@ -42,20 +27,18 @@ class Resources {
   async bc_VerifyCategoriesTile(Title, Description) {
     await LIB_Common.bc_VerifyH4Header(Title);
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Resources.ele_CategoriesTile(Title, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Categories Title as : " +
         Title +
         " , Description as : " +
         Description,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Resources.lnk_CategoriesTileReadMore(Title, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     let URL = await PG_Resources.lnk_CategoriesTileReadMore(
       Title,
       Description,
@@ -79,16 +62,14 @@ class Resources {
     Description3,
   ) {
     await LIB_Common.bc_VerifyH4Header(Title);
-
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Resources.ele_CategoriesTile3Text(
         Title,
         Description1,
         Description2,
         Description3,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Categories Title as : " +
         Title +
@@ -99,15 +80,14 @@ class Resources {
         " " +
         Description3,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Resources.lnk_CategoriesTileReadMore3Text(
         Title,
         Description1,
         Description2,
         Description3,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     let URL = await PG_Resources.lnk_CategoriesTileReadMore3Text(
       Title,
       Description1,

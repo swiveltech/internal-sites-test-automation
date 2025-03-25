@@ -329,7 +329,7 @@ describe("Swivel Tech Site -> How We Work -> Project Based Page", () => {
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.Blogs_Top_Description,
     );
-    await LIB_Resources.bc_VerifyH6Header("Categories");
+    await LIB_Common.bc_VerifyH6Header("Categories");
     await LIB_Common.bc_VerifyTheAppURL("blogs");
 
     await LIB_Home.bc_ClickOnTopTab(

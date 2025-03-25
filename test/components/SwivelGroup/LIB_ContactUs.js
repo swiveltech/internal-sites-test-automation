@@ -1,5 +1,4 @@
 import PG_ContactUs from "../../pages/SwivelGroup/PG_ContactUs.js";
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 class ContactUs {
@@ -7,46 +6,29 @@ class ContactUs {
    * a method to Verify the Contact Us
    */
   async bc_VerifyContactUsPage() {
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.lnk_SendUsAMessage,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.lnk_SendUsAMessage).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Send Us a Message in contact us page",
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.lbl_SendUsAMessage,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.lbl_SendUsAMessage).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Sub Header as Send Us a Message in contact us page",
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.tf_Email,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.tf_Email).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs("Verify the Email text box");
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.tf_Name,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.tf_Name).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs("Verify the Name text box");
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.dd_Subject,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.dd_Subject).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs("Verify the Subject drop down");
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.tf_PhoneNumber,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.tf_PhoneNumber).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Phone number text box",
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.tf_Message,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.tf_Message).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs("Verify the Message text area");
     await LIB_Common.bc_VerifyTheButton("Send", 1);
   }
@@ -61,7 +43,7 @@ class ContactUs {
     addressLine2,
     phoneNumber,
   ) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.ele_VisitUsLocation(
         subLocationHeader,
         companyName,
@@ -69,8 +51,8 @@ class ContactUs {
         addressLine2,
         phoneNumber,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Visit Us location as " +
         subLocationHeader +
@@ -89,10 +71,10 @@ class ContactUs {
    * a method to Verify the Email us
    */
   async bc_VerifyEmailUs(emailAddress) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.lbl_EmailUsWithAddress(emailAddress),
-      "Element not exist",
-    );
+    ).toBePresent();
+
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Email us as " + emailAddress,
     );
@@ -102,31 +84,19 @@ class ContactUs {
    * a method to Verify Footer
    */
   async bc_VerifyFooterCopyRightWithLogo(footerWord) {
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.lbl_Footer(footerWord),
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.lbl_Footer(footerWord)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Footer as " + footerWord,
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.icn_FooterLogo,
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.icn_FooterLogo).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Footer Application Logo",
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_CookiePolicy,
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_CookiePolicy).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Footer Cookie Policy link",
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_PrivacyPolicy,
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_PrivacyPolicy).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Privacy Policy link in Footer",
     );
@@ -174,10 +144,7 @@ class ContactUs {
    * a method to Verify the Error Message
    */
   async bc_VerifyErrorMessage(errorMessage) {
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.lbl_ErrorMessage(errorMessage),
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.lbl_ErrorMessage(errorMessage)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Error Message as " + errorMessage,
     );

@@ -2,9 +2,6 @@ class ResourcesPage {
   /**
    * define selectors using getter methods
    */
-  lbl_H6Header(Label) {
-    return $(`//h6[contains(text(),"${Label}")]`);
-  }
 
   ele_CategoriesOptions(Label, Option) {
     return $(

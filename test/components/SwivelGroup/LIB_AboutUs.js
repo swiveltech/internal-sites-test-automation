@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_AboutUs from "../../pages/SwivelGroup/PG_AboutUs.js";
 import LIB_Common from "../LIB_Common.js";
 class AboutUs {
@@ -6,18 +5,14 @@ class AboutUs {
    * a method to Verify the Sub Headers with description in bottom
    */
   async bc_VerifyH4SubHeaderAndDescriptionInBottom(header, description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.lbl_H4Header(header),
-      "Element not exist",
-    );
+    await expect(PG_AboutUs.lbl_H4Header(header)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the H4 Sub Header as : " + header,
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_AboutUs.lbl_H4HeaderWithDescriptionInBottom(header, description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the sub header as " +
         header +
@@ -30,18 +25,14 @@ class AboutUs {
    * a method to Verify the Sub Headers with description
    */
   async bc_VerifyH4SubHeaderAndDescription(header, description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.lbl_H4Header(header),
-      "Element not exist",
-    );
+    await expect(PG_AboutUs.lbl_H4Header(header)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the H4 Sub Header as : " + header,
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_AboutUs.lbl_H4HeaderWithDescription(header, description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the sub header as " +
         header +
@@ -54,17 +45,13 @@ class AboutUs {
    * a method to Verify the Sub Headers with description for our client
    */
   async bc_VerifyH4SubHeaderAndDescriptionForOurClient(header, description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.lbl_H4Header(header),
-      "Element not exist",
-    );
+    await expect(PG_AboutUs.lbl_H4Header(header)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the H4 Sub Header as : " + header,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_AboutUs.lbl_H4HeaderWithDescriptionForOurClient(header, description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the sub header as " +
         header +
@@ -78,19 +65,15 @@ class AboutUs {
    */
   async bc_VerifyLeadership(name, designation) {
     //Verify the name part
-    await assertionHandler.assertElementDisplayed(
-      PG_AboutUs.lbl_LeadershipPersonName(name),
-      "Element not exist",
-    );
+    await expect(PG_AboutUs.lbl_LeadershipPersonName(name)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Leadership full name  as : " + name,
     );
 
     //Verify the name with designation
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_AboutUs.lbl_LeadershipPersonNameWithDesignation(name, designation),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Leadership full name  as : " +
         name +
@@ -98,13 +81,12 @@ class AboutUs {
         designation,
     );
     //Verify the name with designation and linked icon
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_AboutUs.lnk_LeadershipPersonNameWithDesignationLinkedIn(
         name,
         designation,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Leadership full name  as : " +
         name +

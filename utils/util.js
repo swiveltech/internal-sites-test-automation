@@ -40,10 +40,12 @@ export function getCapabilities() {
           "goog:chromeOptions": {
             args: [
               "--disable-gpu",
+              "--disable-web-security",
               "--window-size=1920,1080",
+              "--allow-running-insecure-content",
               "--disable-dev-shm-usage", // Prevent shared memory issues
               "--no-sandbox", // Required for running in CI
-              "--remote-debugging-port=9222"
+              "--remote-debugging-port=9222",
             ],
           },
           ...commonBrowserConfig, // Spread the common browser config object

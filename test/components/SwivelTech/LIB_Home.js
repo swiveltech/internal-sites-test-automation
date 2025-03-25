@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_Home from "../../pages/SwivelTech/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
 import LIB_Common from "../LIB_Common.js";
@@ -7,10 +6,7 @@ class Home {
    * a method to Verify the Swivel Tech logo
    */
   async bc_VerifyHomePageLogo() {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.img_SwivelTechLogo,
-      "Element not exist",
-    );
+    await expect(PG_Home.img_SwivelTechLogo).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech logo on top of the Home page",
     );
@@ -28,10 +24,7 @@ class Home {
    * a method to Verify the Footer Swivel Tech logo
    */
   async bc_VerifyHomeFooterPageLogo() {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.img_SwivelTechLogoInFooter,
-      "Element not exist",
-    );
+    await expect(PG_Home.img_SwivelTechLogoInFooter).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Footer Swivel Tech logo on top of the Home page",
     );
@@ -47,10 +40,7 @@ class Home {
         : [Options];
 
     for (const tabName of tabNamesToVerify) {
-      await assertionHandler.assertElementDisplayed(
-        PG_Home.lnk_FooterOption(Header, tabName),
-        "Element not exist",
-      );
+      await expect(PG_Home.lnk_FooterOption(Header, tabName)).toBePresent();
       await LIB_Common.bc_LogAllureReportAndLogs(
         `Verify the Swivel Tech Footer main option is : ${Header} and option as : ${tabName} is present.`,
       );
@@ -65,10 +55,7 @@ class Home {
       : [tabNames];
 
     for (const tabName of tabNamesToVerify) {
-      await assertionHandler.assertElementDisplayed(
-        PG_Home.ele_HeaderTab(tabName),
-        "Element not exist",
-      );
+      await expect(PG_Home.ele_HeaderTab(tabName)).toBePresent();
       await LIB_Common.bc_LogAllureReportAndLogs(
         `Verify the Swivel Tech Tab name ${tabName} is present.`,
       );
@@ -79,19 +66,13 @@ class Home {
    * a method to Verify the Contact Top panel
    */
   async bc_VerifyContactTopPanel(phoneNumber) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_ContactNumber(phoneNumber),
-      "Element not exist",
-    );
+    await expect(PG_Home.ele_ContactNumber(phoneNumber)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech Contact number as : " +
         phoneNumber +
         " is present. ",
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.btn_LetsTalk,
-      "Element not exist",
-    );
+    await expect(PG_Home.btn_LetsTalk).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech Let's talk button is present. ",
     );
@@ -107,10 +88,7 @@ class Home {
       block: "start",
       inline: "nearest",
     });
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_ServicesWithCount(Label, Count),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_ServicesWithCount(Label, Count)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech Services as : " +
         Label +
@@ -124,10 +102,7 @@ class Home {
    * a method to Verify the Software Solutions We Deliver tile
    */
   async bc_VerifySoftwareSolutionsWeDeliverTile(Label) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_SoftwareSolutionsWeDeliver(Label),
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_SoftwareSolutionsWeDeliver(Label)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech Company deliver as : " + Label + " is present.",
     );
@@ -153,15 +128,14 @@ class Home {
    * a method to Verify the How We Work tile
    */
   async bc_VerifyHowWeWork(Title, Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_HowWeWorks(Title),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_HowWeWorks(Title)).toBePresent();
     let applicationText = await PG_Home.lbl_HowWeWorks(Title).getText();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "System Description as : " + applicationText,
     );
-    expect(applicationText).toHaveTextContaining(Description);
+    await expect(PG_Home.lbl_HowWeWorks(Title)).toHaveText(
+      expect.stringContaining(Description),
+    );
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech Project model as : " +
         Title +
@@ -175,24 +149,19 @@ class Home {
    * a method to Verify Why Choose us 1 Tile
    */
   async bc_VerifyWhyChooseUsTile1(Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.icn_AccessTheBestTalentInTheIndustry,
-      "Element not exist",
-    );
+    await expect(PG_Home.icn_AccessTheBestTalentInTheIndustry).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Access The Best Talent In The Industry in Home page",
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.ele_AccessTheBestTalentInTheIndustryTitle,
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Title as Access The Best Talent In The Industry",
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.ele_AccessTheBestTalentInTheIndustryDescription(Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Description as : " + Description,
     );
@@ -202,25 +171,20 @@ class Home {
    * a method to Verify Why Choose us 2 Tile
    */
   async bc_VerifyWhyChooseUsTile2(Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.icn_RobustEmployeePerformanceManagement,
-      "Element not exist",
-    );
+    await expect(PG_Home.icn_RobustEmployeePerformanceManagement).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Robust Employee Performance Management in Home page",
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.ele_RobustEmployeePerformanceManagementTitle,
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Title as Robust Employee Performance Management",
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.ele_RobustEmployeePerformanceManagementDescription(Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Description as : " + Description,
     );
@@ -230,25 +194,21 @@ class Home {
    * a method to Verify Why Choose us 3 Tile
    */
   async bc_VerifyWhyChooseUsTile3(Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.icn_AgileApproachToSoftwareDevelopment,
-      "Element not exist",
-    );
+    await expect(PG_Home.icn_AgileApproachToSoftwareDevelopment).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Agile Approach To Software Development in Home page",
     );
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.ele_AgileApproachToSoftwareDevelopmentTitle,
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Title as Agile Approach To Software Development",
     );
-    await assertionHandler.assertElementDisplayed(
+
+    await expect(
       PG_Home.ele_AgileApproachToSoftwareDevelopmentDescription(Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Description as : " + Description,
     );
@@ -258,25 +218,19 @@ class Home {
    * a method to Verify Why Choose us 4 Tile
    */
   async bc_VerifyWhyChooseUsTile4(Description) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.icn_EliminateOverheadCosts,
-      "Element not exist",
-    );
+    await expect(PG_Home.icn_EliminateOverheadCosts).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Eliminate Overhead Costs in Home page",
     );
 
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.ele_EliminateOverheadCostsTitle,
-      "Element not exist",
-    );
+    await expect(PG_Home.ele_EliminateOverheadCostsTitle).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Title as Eliminate Overhead Costs",
     );
-    await assertionHandler.assertElementDisplayed(
+
+    await expect(
       PG_Home.ele_EliminateOverheadCostsDescription(Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Description as : " + Description,
     );
@@ -290,38 +244,32 @@ class Home {
     ClientJob,
     Description,
   ) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.icn_WhatOurClientSay(ClientName),
-      "Element not exist",
-    );
+    await expect(PG_Home.icn_WhatOurClientSay(ClientName)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Client Name as : " + ClientName,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.lbl_WhatOurClientSayWithName(ClientName),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon and name of Client Name as : " + ClientName,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.lbl_WhatOurClientSayWithNameDesignation(ClientName, ClientJob),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Client Name as : " +
         ClientName +
         " and the Designation as : " +
         ClientJob,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.lbl_WhatOurClientSayWithNameDesignationAndDescription(
         ClientName,
         ClientJob,
         Description,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Icon of Client Name as : " +
         ClientName +
@@ -336,24 +284,21 @@ class Home {
    * a method to Verify Successful Client project tile
    */
   async bc_VerifySuccessfulClientProjectTile(Title, Description) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.ele_SuccessfulProjectTile(Title, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Successful Client Project Title as : " +
         Title +
         " and Description as : " +
         Description,
     );
-    let linkedInURL =
-      await PG_Home.lnk_SuccessfulProjectTileReadMore(Title).getAttribute(
-        "href",
-      );
-    await assertionHandler.assertElementDisplayed(
+    let linkedInURL = await PG_Home.lnk_SuccessfulProjectTileReadMore(
+      Title,
+    ).getAttribute("href");
+    await expect(
       PG_Home.lnk_SuccessfulProjectTileReadMore(Title),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Successful Client Project Title as : " +
         Title +
@@ -371,10 +316,9 @@ class Home {
     DateInSystem,
     Description,
   ) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.lbl_OurLatestInsights(Title, Category, DateInSystem),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Our Latest Insights tile Title as : " +
         Title +
@@ -383,18 +327,13 @@ class Home {
         " , and Date as : " +
         DateInSystem,
     );
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_LatestDescription(Description),
-      "Element not exist",
-    );
-    await assertionHandler.assertElementDisplayed(
+    await expect(PG_Home.lbl_LatestDescription(Description)).toBePresent();
+    await expect(
       PG_Home.lbl_LatestDescriptionReadMore(Description),
-      "Element not exist",
-    );
-    let href =
-      await PG_Home.lbl_LatestDescriptionReadMore(Description).getAttribute(
-        "href",
-      );
+    ).toBePresent();
+    let href = await PG_Home.lbl_LatestDescriptionReadMore(
+      Description,
+    ).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Our Latest Insights Description as : " + Description,
     );
@@ -407,10 +346,7 @@ class Home {
    * a method to Verify the Swivel Tech Top Page Header
    */
   async bc_VerifyTopSubPageHeader(pageHeader) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_TopSubPageHeaderInSpan(pageHeader),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_TopSubPageHeaderInSpan(pageHeader)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Swivel Tech Top Page Header as " + pageHeader,
     );
@@ -454,10 +390,7 @@ class Home {
    * a method to Verify the Sub PageHeader In P Tag all match
    */
   async bc_VerifySubPageHeaderToMatchAllInPTag(Title) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_DescriptionToMatchAllInPTag(Title),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_DescriptionToMatchAllInPTag(Title)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the header as : " + Title,
     );
@@ -467,10 +400,7 @@ class Home {
    * a method to Verify the Sub PageHeader In P Tag
    */
   async bc_VerifySubPageHeaderInPTag(Title) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_LatestDescription(Title),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_LatestDescription(Title)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the header as : " + Title,
     );
@@ -480,10 +410,7 @@ class Home {
    * a method to Verify the Sub PageHeader In H1 Tag
    */
   async bc_VerifySubPageHeaderInH1(Title) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_H1WithNormalizeSpace(Title),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_H1WithNormalizeSpace(Title)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the H1 header as : " + Title,
     );
@@ -505,10 +432,7 @@ class Home {
    * a method to Verify the footer email Sign Up for Our Newsletter
    */
   async bc_VerifySignUpForOurNewsletter() {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.tf_EmailForOurNewsletter,
-      "Element not exist",
-    );
+    await expect(PG_Home.tf_EmailForOurNewsletter).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Footer email for our news letter is present.",
     );
@@ -528,10 +452,7 @@ class Home {
    * a method to Verify the Error message under email Field
    */
   async bc_VerifyErrorMessageUnderEmail(message) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_ErrorMessageUnderEmail(message),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_ErrorMessageUnderEmail(message)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the error message under the email as : " + message,
     );
@@ -541,10 +462,7 @@ class Home {
    * a method to Verify the Thank you message under email Field
    */
   async bc_VerifyThankYouMessageUnderEmail(message) {
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lbl_ThankYouSigningUp(message),
-      "Element not exist",
-    );
+    await expect(PG_Home.lbl_ThankYouSigningUp(message)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Thank you message under the email as : " + message,
     );
@@ -555,37 +473,25 @@ class Home {
    */
   async bc_VerifySocialMediaIconsAndURL() {
     // Facebook Icon and URL
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_SocialMedia(1),
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_SocialMedia(1)).toBePresent();
     let appURL = await PG_Home.lnk_SocialMedia(1).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Facebook icon and app url as : " + appURL,
     );
     // Instagram Icon and URL
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_SocialMedia(2),
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_SocialMedia(2)).toBePresent();
     appURL = await PG_Home.lnk_SocialMedia(2).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Instagram icon and app url as : " + appURL,
     );
     // Twitter Icon and URL
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_SocialMedia(3),
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_SocialMedia(3)).toBePresent();
     appURL = await PG_Home.lnk_SocialMedia(3).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Twitter icon and app url as : " + appURL,
     );
     // LinkedIn Icon and URL
-    await assertionHandler.assertElementDisplayed(
-      PG_Home.lnk_SocialMedia(4),
-      "Element not exist",
-    );
+    await expect(PG_Home.lnk_SocialMedia(4)).toBePresent();
     appURL = await PG_Home.lnk_SocialMedia(4).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the LinkedIn icon and app url as : " + appURL,
@@ -736,10 +642,9 @@ class Home {
     DateInSystem,
     Description,
   ) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.lbl_OurLatestInsights(Title, Category, DateInSystem),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Our Latest Insights tile Title as : " +
         Title +
@@ -748,18 +653,15 @@ class Home {
         " , and Date as : " +
         DateInSystem,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Home.lbl_DescriptionToMatchAllInPTag(Description),
-      "Element not exist",
-    );
-    await assertionHandler.assertElementDisplayed(
+    ).toBePresent();
+    await expect(
       PG_Home.lbl_LatestDescriptionReadMoreInP(Description),
-      "Element not exist",
-    );
-    let href =
-      await PG_Home.lbl_LatestDescriptionReadMoreInP(Description).getAttribute(
-        "href",
-      );
+    ).toBePresent();
+    let href = await PG_Home.lbl_LatestDescriptionReadMoreInP(
+      Description,
+    ).getAttribute("href");
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Our Latest Insights Description as : " + Description,
     );

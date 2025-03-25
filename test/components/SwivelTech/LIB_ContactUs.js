@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_ContactUs from "../../pages/SwivelTech/PG_ContactUs.js";
 import LIB_Common from "../LIB_Common.js";
 class ContactUs {
@@ -8,24 +7,22 @@ class ContactUs {
   async bc_VerifyCompanyAddress(country, addressWithCompanyName, phoneNumber) {
     await LIB_Common.bc_VerifyH3Header(country);
 
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.ele_CountryWithAddress(country, addressWithCompanyName),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Country as : " +
         country +
         " , Address as : " +
         addressWithCompanyName,
     );
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.ele_CountryWithAddressWithContactNumber(
         country,
         addressWithCompanyName,
         phoneNumber,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Phone Number Under Address as : " +
         addressWithCompanyName +
@@ -38,10 +35,9 @@ class ContactUs {
    * a method to Verify the Contact number
    */
   async bc_VerifyContactNumber(text, phoneNumber) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.lbl_ContactNumber(text, phoneNumber),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Phone Number as : " + phoneNumber,
     );
@@ -51,10 +47,9 @@ class ContactUs {
    * a method to Verify the Contact number
    */
   async bc_VerifyEmail(text, emailAddress) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.lbl_EmailAddress(text, emailAddress),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Email Address as : " + emailAddress,
     );
@@ -64,10 +59,9 @@ class ContactUs {
    * a method to Verify the Error Message
    */
   async bc_VerifyErrorMessage(label, errorMessage) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.lbl_ErrorMessage(label, errorMessage),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Error Message as : " +
         errorMessage +

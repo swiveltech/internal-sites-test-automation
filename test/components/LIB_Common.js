@@ -30,7 +30,11 @@ class Common {
     await pageHeaderElement.waitForDisplayed({ timeout: 5000 });
 
     // Scroll into view if necessary
-    await pageHeaderElement.scrollIntoView();
+    await pageHeaderElement.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
 
     // Check if the element is displayed
     await expect(pageHeaderElement).toBeDisplayedInViewport();
@@ -47,7 +51,7 @@ class Common {
     if (await element.isExisting()) {
       await element.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
         inline: "nearest",
       });
       await element.click();
@@ -70,7 +74,11 @@ class Common {
     await buttonWithLabelElement.waitForDisplayed({ timeout: 5000 });
 
     // Scroll into view if necessary
-    await buttonWithLabelElement.scrollIntoView();
+    await buttonWithLabelElement.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
 
     // Check if the element is displayed
     await expect(buttonWithLabelElement).toBeDisplayedInViewport();
@@ -111,7 +119,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -133,7 +141,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -155,7 +163,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -177,7 +185,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -197,7 +205,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -219,7 +227,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -239,7 +247,7 @@ class Common {
     await browser.pause(3000);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     await browser.pause(2000);
@@ -260,7 +268,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -280,7 +288,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -341,7 +349,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 
@@ -363,7 +371,7 @@ class Common {
     // Scroll into view if necessary
     await headerElement.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
 

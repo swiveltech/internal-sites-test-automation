@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_ContactUs from "../../pages/SwivelFinance/PG_ContactUs.js";
 import LIB_Common from "../LIB_Common.js";
 
@@ -52,10 +51,9 @@ class ContactUs {
    * a method to Verify the Error message under label
    */
   async bc_VerifyErrorMessageUnderLabel(Label, ErrorMessage) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.lbl_ErrorMessage(Label, ErrorMessage),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Error Message as : " +
         ErrorMessage +
@@ -68,10 +66,7 @@ class ContactUs {
    * a method to Verify the Title with Value
    */
   async bc_VerifyTitleWitValue(Title, Value) {
-    await assertionHandler.assertElementDisplayed(
-      PG_ContactUs.lbl_HeaderWithValue(Title, Value),
-      "Element not exist",
-    );
+    await expect(PG_ContactUs.lbl_HeaderWithValue(Title, Value)).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Title as : " +
         Title +
@@ -90,7 +85,7 @@ class ContactUs {
     AddressLine2,
     PhoneNumber,
   ) {
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_ContactUs.lbl_AddressWithCompanyNameAndPhoneNumber(
         Country,
         CompanyName,
@@ -98,8 +93,7 @@ class ContactUs {
         AddressLine2,
         PhoneNumber,
       ),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Country as : " +
         Country +

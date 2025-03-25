@@ -38,10 +38,6 @@ class HowWeWorkPage {
     return $(`//div[contains(text(),"${Question}")]/following-sibling::div[1]`);
   }
 
-  lbl_H5Header(Header) {
-    return $(`//h5[contains(text(),"${Header}")]`);
-  }
-
   lbl_BenefitsDescription(Header, Description) {
     return $(
       `//h5[contains(text(),"${Header}")]/following-sibling::p[contains(text(),"${Description}")]`,

@@ -1,4 +1,3 @@
-import assertionHandler from "../../../infrastructure/common/assertionHandler.js";
 import PG_Careers from "../../pages/SwivelTech/PG_Careers.js";
 import LIB_Common from "../LIB_Common.js";
 
@@ -8,10 +7,9 @@ class Careers {
    */
   async bc_VerifyOurBenefitsTile(SubTitle, Description) {
     await LIB_Common.bc_VerifyH3Header(SubTitle);
-    await assertionHandler.assertElementDisplayed(
+    await expect(
       PG_Careers.ele_OurBenefitsDescription(SubTitle, Description),
-      "Element not exist",
-    );
+    ).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Description as : " +
         Description +
@@ -33,20 +31,18 @@ class Careers {
    * a method to Verify there is search record found
    */
   async bc_VerifyTheSearchRecordAvailable() {
-    await assertionHandler.assertElementDisplayed(
-      PG_Careers.lbl_FirstRecordInTable,
-      "Element not exist",
-    );
+    await expect(PG_Careers.lbl_FirstRecordInTable).toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify There is search record available",
     );
   }
+
   /**
    * a method to Verify there is search record not found
    */
   async bc_VerifyTheSearchRecordIsNotAvailable() {
-    let element = await PG_Careers.lbl_FirstRecordInTable.isDisplayed();
-    await assertionHandler.assertFalse(element);
+    let element = await PG_Careers.lbl_FirstRecordInTable;
+    await expect(element).not.toBePresent();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify There is no search record available",
     );
