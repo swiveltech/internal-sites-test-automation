@@ -3,7 +3,7 @@ name: Automation Tests - Swivel Group
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: 
+    workflows:
       - "Group Frontend - Automatically Build and Deploy to Amazon Lightsail"
       - "Group Frontend - Manual Build and Deploy to Amazon Lightsail"
       - "Group Frontend - Manually Build and Deploy to Amazon Lightsail"
@@ -29,8 +29,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
-          
+          npm install --legacy-peer-deps
+
       - name: Install Allure
         run: npm install -g allure-commandline
 
@@ -48,10 +48,10 @@ jobs:
       #- name: Find and Save Report Path
       #  run: |
       #    allure generate --clean --single-file allure-results
-       # run: |
-       #   allure generate ./reports/allure-results --clean -o ./reports
-       #   ls reports/
-          
+      # run: |
+      #   allure generate ./reports/allure-results --clean -o ./reports
+      #   ls reports/
+
       - name: Generate Timestamp
         shell: pwsh
         run: |

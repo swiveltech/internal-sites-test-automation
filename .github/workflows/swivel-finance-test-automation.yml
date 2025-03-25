@@ -3,7 +3,7 @@ name: Automation Tests - Swivel Finance
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: 
+    workflows:
       - "Finance Frontend - Manual Build and Deploy to Amazon Lightsail"
       - "Finance Frontend - Automatically Build and Deploy to Amazon Lightsail"
     types:
@@ -28,8 +28,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
-          
+          npm install --legacy-peer-deps
+
       - name: Install Allure
         run: npm install -g allure-commandline
 
@@ -47,10 +47,10 @@ jobs:
       #- name: Find and Save Report Path
       #  run: |
       #    allure generate --clean --single-file allure-results
-       # run: |
-       #   allure generate ./reports/allure-results --clean -o ./reports
-       #   ls reports/
-          
+      # run: |
+      #   allure generate ./reports/allure-results --clean -o ./reports
+      #   ls reports/
+
       - name: Generate Timestamp
         shell: pwsh
         run: |
