@@ -1,4 +1,3 @@
-import assertionHandler from "../../infrastructure/common/assertionHandler.js";
 import PG_Common from "../pages/PG_Common.js";
 import allureReporter from "@wdio/allure-reporter";
 
@@ -25,22 +24,25 @@ class Common {
 
   //Common component for click on button in popups
   async bc_VerifyPageHeader(pageHeader, index) {
-    await PG_Common.lbl_PageHeader(pageHeader, index).waitForDisplayed(5000);
-    const element = await PG_Common.lbl_PageHeader(
-      pageHeader,
-      index,
-    ).isDisplayed();
-    const elementToScroll = await PG_Common.lbl_PageHeader(pageHeader, index);
-    await elementToScroll.scrollIntoView();
-    assertionHandler.assertTrue(element, "element not visible");
+    let pageHeaderElement = await PG_Common.lbl_PageHeader(pageHeader, index);
+
+    // Wait for the element to be displayed
+    await pageHeaderElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await pageHeaderElement.scrollIntoView();
+
+    // Check if the element is displayed
+    await expect(pageHeaderElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
-      "Verify the page header as " + pageHeader,
+      `Verify the page header as ${pageHeader}`,
     );
   }
 
   //Common component for click on button
   async bc_ClickOnButton(label, Index) {
-    const element = await PG_Common.btn_ButtonWithLabel(label, Index);
+    let element = await PG_Common.btn_ButtonWithLabel(label, Index);
 
     if (await element.isExisting()) {
       await element.scrollIntoView({
@@ -59,17 +61,19 @@ class Common {
   }
 
   async bc_VerifyTheButton(label, Index) {
-    let elementToScroll = await PG_Common.btn_ButtonWithLabel(label, Index);
-    await elementToScroll.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-    let element = await PG_Common.btn_ButtonWithLabel(
+    let buttonWithLabelElement = await PG_Common.btn_ButtonWithLabel(
       label,
       Index,
-    ).isDisplayed();
-    assertionHandler.assertTrue(element, "element not visible");
+    );
+
+    // Wait for the element to be displayed
+    await buttonWithLabelElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await buttonWithLabelElement.scrollIntoView();
+
+    // Check if the element is displayed
+    await expect(buttonWithLabelElement).toBeDisplayedInViewport();
     await this.bc_LogAllureReportAndLogs(
       "Verify the button with label: " + label + " , and Index : " + Index,
     );
@@ -87,34 +91,33 @@ class Common {
     );
 
     // Get the current URL
-    const currentUrl = await browser.getUrl();
+    let currentUrl = await browser.getUrl();
     console.log(`Full URL After Navigating: ${currentUrl}`);
 
     // Extract the last segment of the URL
-    const lastPathSegment = currentUrl.split("/").filter(Boolean).pop();
+    await expect(browser).toHaveUrl(expect.stringContaining(expectedSegment));
 
-    // Verify the last path segment
-    assertionHandler.assertEqual(
-      lastPathSegment,
-      expectedSegment,
-      `Expected "${expectedSegment}" but got "${lastPathSegment}"`,
-    );
     await this.bc_LogAllureReportAndLogs(
       `Navigated to the correct page. Current URL: ${currentUrl}, Expected segment: ${expectedSegment}`,
     );
   }
   //Common component to verify H1 Header
   async bc_VerifyH1Header(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H1Header(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H1Header(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H1Header(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H1 page header as " + pageHeader,
     );
@@ -122,16 +125,21 @@ class Common {
 
   //Common component to verify H1 Header For match all
   async bc_VerifyH1HeaderText(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H1HeaderWithDot(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H1HeaderWithDot(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H1HeaderWithDot(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H1 page header as " + pageHeader,
     );
@@ -139,16 +147,21 @@ class Common {
 
   //Common component to verify H2 Header
   async bc_VerifyH2Header(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H2Header(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H2Header(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H2Header(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H2 page header as " + pageHeader,
     );
@@ -156,34 +169,41 @@ class Common {
 
   //Common component to verify Header or any text
   async bc_VerifyAnyText(textValue, index) {
-    let elementToScroll = await PG_Common.lbl_PageHeaderWithDot(
-      textValue,
-      index,
-    );
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_PageHeaderWithDot(textValue, index);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_PageHeaderWithDot(textValue, index),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs("Verify the Text as " + textValue);
   }
 
   //Common component to verify H3 Header
   async bc_VerifyH3Header(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H3Header(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H3Header(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H3Header(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H3 page header as " + pageHeader,
     );
@@ -191,16 +211,21 @@ class Common {
 
   //Common component to verify H4 Header
   async bc_VerifyH4Header(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H4Header(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H4Header(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H4Header(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H4 page header as " + pageHeader,
     );
@@ -227,25 +252,41 @@ class Common {
    * method to Verify links
    */
   async bc_VerifyLinks(name) {
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lnk_Navigation(name),
-      "element not visible",
-    );
+    let headerElement = await PG_Common.lnk_Navigation(name);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs("Verify the link : " + name);
   }
 
   //Common component to verify paragraph
   async bc_VerifyTheParagraph(paragraph) {
-    let elementToScroll = await PG_Common.lbl_Paragraph(paragraph);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_Paragraph(paragraph);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_Paragraph(paragraph),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the Paragraph as " + paragraph,
     );
@@ -292,16 +333,21 @@ class Common {
 
   //Common component to verify H5 Header
   async bc_VerifyH5Header(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H5Header(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H5Header(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H5Header(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H5 page header as " + pageHeader,
     );
@@ -309,16 +355,21 @@ class Common {
 
   //Common component to verify H6 Header
   async bc_VerifyH6Header(pageHeader) {
-    let elementToScroll = await PG_Common.lbl_H6Header(pageHeader);
-    await elementToScroll.scrollIntoView({
+    let headerElement = await PG_Common.lbl_H6Header(pageHeader);
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-    assertionHandler.assertElementDisplayed(
-      PG_Common.lbl_H6Header(pageHeader),
-      "element not visible",
-    );
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
     await this.bc_LogAllureReportAndLogs(
       "Verify the H6 page header as " + pageHeader,
     );
