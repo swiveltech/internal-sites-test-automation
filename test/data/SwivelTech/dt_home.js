@@ -1,5 +1,5 @@
 export default {
-  Top_Header1: "Building, Automating, and Evolving",
+  Top_Header1: "Building, Automating, and",
   Top_Header2: "Software with AI Precision",
   Top_Description:
     "Bridging Innovation and Expertise Through Our Outsourced Software Development Services",
