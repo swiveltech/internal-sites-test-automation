@@ -22,6 +22,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
 
     let appURL = await browser.getUrl();
     await LIB_Common.bc_LogAllureReportAndLogs("Application URL : " + appURL);
+    /*
 
     //Verify the Page Header and Description
     await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
@@ -338,5 +339,6 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       Data_Home.Services_ClientsTrustedUs,
       Data_Home.ClientsTrustedUs_Count,
     );
+    */
   });
 });

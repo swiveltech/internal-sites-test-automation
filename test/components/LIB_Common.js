@@ -24,7 +24,7 @@ class Common {
 
   //Common component for click on button in popups
   async bc_VerifyPageHeader(pageHeader, index) {
-    let pageHeaderElement = await PG_Common.lbl_PageHeader(pageHeader, index);
+    const pageHeaderElement = await PG_Common.lbl_PageHeader(pageHeader, index);
 
     // Wait for the element to be displayed
     // await pageHeaderElement.waitForDisplayed({ timeout: 5000 });
