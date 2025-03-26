@@ -24,9 +24,9 @@ jobs:
         run: |
           npm install --legacy-peer-deps
 
-      - name: Fix Npm issues
-        run: |
-          npm audit fix --force
+      # - name: Fix Npm issues
+      #   run: |
+      #     npm audit fix --force
 
       - name: Install Allure
         run: npm install -g allure-commandline

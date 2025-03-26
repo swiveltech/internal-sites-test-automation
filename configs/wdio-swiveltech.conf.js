@@ -1,9 +1,9 @@
 import fs from "fs";
 import process from "process";
 import { getCapabilities, allureEnv } from "../utils/util.js";
+import specConfig from "../swivel_tech_specfiles.js";
 const utils = getCapabilities();
 import kill from "kill-port";
-import specConfig from "../swivel_tech_specfiles.js";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";

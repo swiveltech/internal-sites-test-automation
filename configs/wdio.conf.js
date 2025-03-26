@@ -1,9 +1,12 @@
 import fs from "fs";
 import process from "process";
+// const getCapabilities = require("../utils/util.js");
+// const allureEnv = require("../utils/util.js");
+// const specConfig = require("../specfiles.js");
 import { getCapabilities, allureEnv } from "../utils/util.js";
+import specConfig from "../specfiles.js";
 const utils = getCapabilities();
 import kill from "kill-port";
-import specConfig from "../specfiles.js";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";

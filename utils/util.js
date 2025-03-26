@@ -1,5 +1,7 @@
-import configs from "../config.json" assert { type: "json" };
+import configs from "../config.js";
 import timeOutManager from "../infrastructure/web/timeOutManager.js";
+// const configs = require("../config.json");
+// const timeOutManager = require("../infrastructure/web/timeOutManager.js");
 
 export function getCapabilities() {
   /*getCapabilities() function invoke the browser with the browser capabilities

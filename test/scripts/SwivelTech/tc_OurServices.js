@@ -1,12 +1,17 @@
-import config from "../../../config.json" assert { type: "json" };
+// import fs from "fs";
+// const config = require("../../../config.json");
+// const LIB_Common = require("../../components/LIB_Common.js");
+// const Data_Home = require("../../data/SwivelTech/dt_home.json");
+
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import PG_Common from "../../pages/PG_Common.js";
-import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
-import LIB_OurServices from "../../components/SwivelTech/LIB_OurServices.js";
-import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
-import Data_OurServices from "../../data/SwivelTech/dt_ourServices.json" assert { type: "json" };
-import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
-import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelTech/dt_home.js";
+// import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
+// import PG_Common from "../../pages/PG_Common.js";
+// import LIB_OurServices from "../../components/SwivelTech/LIB_OurServices.js";
+// import Data_OurServices from "../../data/SwivelTech/dt_ourServices.json";
+// import Data_Resources from "../../data/SwivelTech/dt_resources.json";
+// import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json";
 
 describe("Swivel Tech Site -> Our Services Pages", () => {
   it("Verify the Our Services Pages", async () => {
