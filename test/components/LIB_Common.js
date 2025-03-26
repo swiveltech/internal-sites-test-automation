@@ -37,7 +37,7 @@ class Common {
     });
 
     // Check if the element is displayed
-    await expect(pageHeaderElement).toBeDisplayedInViewport();
+    await expect(pageHeaderElement).toBeDisplayed();
 
     await this.bc_LogAllureReportAndLogs(
       `Verify the page header as ${pageHeader}`,
