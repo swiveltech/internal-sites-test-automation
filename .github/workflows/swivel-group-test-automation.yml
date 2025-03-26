@@ -2,13 +2,6 @@ name: Automation Tests - Swivel Group
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - "Group Frontend - Automatically Build and Deploy to Amazon Lightsail"
-      - "Group Frontend - Manual Build and Deploy to Amazon Lightsail"
-      - "Group Frontend - Manually Build and Deploy to Amazon Lightsail"
-    types:
-      - completed
 
 permissions:
   id-token: write
