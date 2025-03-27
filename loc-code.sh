@@ -1,7 +1,7 @@
 #!/bin/bash
 
-start_date="2025-02-28"
-end_date="2025-03-06"
+start_date="2025-02-21"
+end_date="2025-03-28"
 branch="main"
 
 # Checkout the specified branch and pull the latest changes

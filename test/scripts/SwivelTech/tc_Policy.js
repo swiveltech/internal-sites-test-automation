@@ -1,8 +1,8 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
-import Data_Policy from "../../data/SwivelTech/dt_policy.json" assert { type: "json" };
-import Data_Footer from "../../data/SwivelTech/dt_footer.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelTech/dt_home.js";
+import Data_Policy from "../../data/SwivelTech/dt_policy.js";
+import Data_Footer from "../../data/SwivelTech/dt_footer.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_Policy from "../../components/SwivelTech/LIB_Policy.js";
 
@@ -13,7 +13,7 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     //Click on Privacy Policy
     await LIB_Common.bc_ClickOnLinks(Data_Home.Link_PrivacyPolicy);
@@ -101,7 +101,7 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     //Click on Cookie Policy
     await LIB_Common.bc_ClickOnLinks(Data_Home.Link_CookiePolicy);

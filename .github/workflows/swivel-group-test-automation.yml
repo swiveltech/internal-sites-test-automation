@@ -18,11 +18,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install Dependencies
         run: |
           npm install --legacy-peer-deps
+
+      # - name: Fix Npm issues
+      #   run: |
+      #     npm audit fix --force
 
       - name: Install Allure
         run: npm install -g allure-commandline
@@ -67,9 +71,9 @@ jobs:
         shell: pwsh
         run: |
           $REPORT_URL="https://internal-test-automation.s3.ap-southeast-2.amazonaws.com/swivel-group/index-$env:TIMESTAMP.html"
-    
+
           $htmlContent = "<html><body><h2>Automation Test Report - SwivelGroup</h2><p>Click <a href=""$REPORT_URL"">here</a> to view the report.</p></body></html>"
-    
+
           $messageObj = @{
             Subject = @{ Data = "Automation Test Report - SwivelGroup" }
             Body = @{
@@ -77,7 +81,7 @@ jobs:
               Html = @{ Data = $htmlContent }
             }
           }
-          
+
           $messageJson = ConvertTo-Json -Depth 4 -Compress $messageObj
-          
+
           aws ses send-email --from "serviceaccount@swivelgroup.com.au" --destination "ToAddresses=dilshan@swivelgroup.com.au" --message $messageJson --region "ap-southeast-2"

@@ -1,7 +1,7 @@
 export default {
   projectType: "web",
   headless: "false",
-  browserName: "chrome",
+  browserName: "microsoftEdge",
   OS_Name: "Windows",
   OS_Version: "10",
   platformName: "ios",

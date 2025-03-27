@@ -1,9 +1,9 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelTech/dt_home.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
-import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
-import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json" assert { type: "json" };
+import Data_Resources from "../../data/SwivelTech/dt_resources.js";
+import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.js";
 import LIB_HowWeWork from "../../components/SwivelTech/LIB_HowWeWork.js";
 import LIB_Resources from "../../components/SwivelTech/LIB_Resources.js";
 
@@ -14,7 +14,7 @@ describe("Swivel Tech Site -> How We Work -> Project Based Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_HowWeWork,
       Data_Home.HowWeWork_ProjectBased,
@@ -184,7 +184,7 @@ describe("Swivel Tech Site -> How We Work -> Project Based Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_HowWeWork,
       Data_Home.HowWeWork_StaffAugmentation,

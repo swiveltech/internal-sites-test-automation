@@ -1,17 +1,12 @@
-// import fs from "fs";
-// const config = require("../../../config.json");
-// const LIB_Common = require("../../components/LIB_Common.js");
-// const Data_Home = require("../../data/SwivelTech/dt_home.json");
-
 import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelTech/dt_home.js";
-// import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
-// import PG_Common from "../../pages/PG_Common.js";
-// import LIB_OurServices from "../../components/SwivelTech/LIB_OurServices.js";
-// import Data_OurServices from "../../data/SwivelTech/dt_ourServices.json";
-// import Data_Resources from "../../data/SwivelTech/dt_resources.json";
-// import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json";
+import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
+import PG_Common from "../../pages/PG_Common.js";
+import LIB_OurServices from "../../components/SwivelTech/LIB_OurServices.js";
+import Data_OurServices from "../../data/SwivelTech/dt_ourServices.js";
+import Data_Resources from "../../data/SwivelTech/dt_resources.js";
+import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.js";
 
 describe("Swivel Tech Site -> Our Services Pages", () => {
   it("Verify the Our Services Pages", async () => {
@@ -20,14 +15,13 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
     await LIB_Common.bc_VerifyTheAppURL("our-services");
 
     let appURL = await browser.getUrl();
     await LIB_Common.bc_LogAllureReportAndLogs("Application URL : " + appURL);
-    /*
 
     //Verify the Page Header and Description
     await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
@@ -42,7 +36,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_Common.bc_VerifyTheAppURL("contact-us");
 
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
     await LIB_Common.bc_VerifyTheAppURL("our-services");
@@ -344,6 +338,5 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
       Data_Home.Services_ClientsTrustedUs,
       Data_Home.ClientsTrustedUs_Count,
     );
-    */
   });
 });

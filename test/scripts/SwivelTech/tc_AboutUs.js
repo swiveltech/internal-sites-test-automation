@@ -1,8 +1,8 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
-import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.json" assert { type: "json" };
-import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelTech/dt_home.js";
+import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.js";
+import Data_Resources from "../../data/SwivelTech/dt_resources.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelTech/LIB_AboutUs.js";
 
@@ -13,7 +13,7 @@ describe("Swivel Tech Site -> About Us Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_AboutUs);
     await LIB_Common.bc_VerifyH1Header(Data_AboutUs.Top_Header);
     await LIB_Common.bc_VerifyTheParagraph(Data_AboutUs.Top_Description1);

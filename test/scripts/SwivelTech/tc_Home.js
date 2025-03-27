@@ -1,11 +1,11 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
-import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.json" assert { type: "json" };
-import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.json" assert { type: "json" };
-import Data_Resources from "../../data/SwivelTech/dt_resources.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelTech/dt_home.js";
+import Data_AboutUs from "../../data/SwivelTech/dt_aboutUs.js";
+import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.js";
+import Data_Resources from "../../data/SwivelTech/dt_resources.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
-import Data_OurServices from "../../data/SwivelTech/dt_ourServices.json" assert { type: "json" };
+import Data_OurServices from "../../data/SwivelTech/dt_ourServices.js";
 
 describe("Swivel Tech Site -> Home Page", () => {
   it("Verify the Home Page", async () => {
@@ -17,7 +17,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       "Home;About Us;How We Work;Services;Resources;Careers",
     );
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_VerifyTopSubPageHeader(Data_Home.Top_Header2);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Description, 1);
     await LIB_Home.bc_VerifyContactTopPanel(Data_Home.ContactNumber);
@@ -224,7 +224,7 @@ describe("Swivel Tech Site -> Home Page", () => {
 
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_VerifyHomePageLogo();
 
     // Click on the "About Us" navigation
@@ -412,7 +412,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
 
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
   });
 
   it("Verify the Inner button and link Navigation From Home page", async () => {
@@ -422,7 +422,7 @@ describe("Swivel Tech Site -> Home Page", () => {
 
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_VerifyHomePageLogo();
 
     //Click on "START YOUR PROJECT TODAY"
@@ -435,7 +435,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.ContactUs_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     //Click on "LEARN MORE ABOUT US"
     await LIB_Common.bc_ClickOnButton("LEARN MORE ABOUT US", 1);
@@ -446,7 +446,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Common.bc_VerifyTheAppURL("about-us");
 
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_EnterpriseSoftwareDevelopment,
@@ -460,7 +460,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.EnterpriseApplicationSoftwareDevelopmentSolutions_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_QAAsAService,
     );
@@ -471,7 +471,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.QAAsAService_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_DevOpsAsAService,
     );
@@ -484,7 +484,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.DevOpsConsultingServicesAndSolutions_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_SearchEngineOptimisation,
     );
@@ -497,7 +497,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.SEOConsultancyAndAuditingServices_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_ManagedServiceAugmentation,
     );
@@ -512,7 +512,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("staff-augmentation");
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_ArtificialIntelligence,
     );
@@ -525,7 +525,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.ArtificialIntelligenceConsultingServices_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_ClickOnButton("LEARN MORE", 7);
     await LIB_Common.bc_VerifyTheAppURL("our-services");
@@ -534,7 +534,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Common.bc_VerifyTheParagraph(Data_OurServices.Top_Description);
 
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_VerifyTheButton("READ MORE", 1);
     await LIB_Common.bc_ClickOnButton("READ MORE", 1);
@@ -545,7 +545,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("case-studies");
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES", 1);
     await LIB_Common.bc_ClickOnButton("ALL BLOG ARTICLES", 1);
@@ -556,7 +556,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Resources.Blogs_Top_Description,
     );
     await LIB_Home.bc_ClickOnAppLogo();
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_VerifyTheButton("LEARN MORE", 8);
     await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);

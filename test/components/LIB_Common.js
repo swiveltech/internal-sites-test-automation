@@ -6,7 +6,6 @@ class Common {
    * method to Open the Application
    */
   async bc_OpenApplication(url) {
-    await browser.deleteCookies();
     await browser.url(url);
     await browser.waitUntil(
       async function () {
@@ -35,7 +34,7 @@ class Common {
     const pageHeaderElement = await PG_Common.lbl_PageHeader(pageHeader, index);
 
     // Wait for the element to be displayed
-    // await pageHeaderElement.waitForDisplayed({ timeout: 5000 });
+    await pageHeaderElement.waitForDisplayed({ timeout: 5000 });
 
     // Scroll into view if necessary
     await pageHeaderElement.scrollIntoView({
@@ -68,7 +67,9 @@ class Common {
       );
       await browser.pause(2000);
     } else {
-      console.warn(`Button with label "${label}" not found.`);
+      await this.bc_LogAllureReportAndLogs(
+        `Button with label "${label}" not found.`,
+      );
     }
   }
 

@@ -14,6 +14,7 @@
     "dotenv": "^16.3.1",
     "kill-port": "^2.0.1",
     "wdio-chromedriver-service": "^8.1.1",
+    "wdio-edgedriver-service": "^3.0.3",
     "wdio-safaridriver-service": "^2.1.1"
   },
   "scripts": {
@@ -27,5 +28,8 @@
     "web-BS": " wdio run ./configs/web-browserstack.conf.js && npm run allure-report || npm run allure-report",
     "mobile-web-BS": " wdio run ./configs/mobile-web-browserstack.conf.js && npm run allure-report || npm run allure-report",
     "real-ios-device": " wdio run ./configs/wdioMobile.conf.js safaridriver --enable && npm run allure-report || npm run allure-report"
+  },
+  "dependencies": {
+    "edgedriver": "^6.1.1"
   }
 }

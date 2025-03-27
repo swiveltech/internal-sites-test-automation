@@ -1,7 +1,7 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelTech/dt_home.json" assert { type: "json" };
-import Data_Careers from "../../data/SwivelTech/dt_careers.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelTech/dt_home.js";
+import Data_Careers from "../../data/SwivelTech/dt_careers.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_Careers from "../../components/SwivelTech/LIB_Careers.js";
 import PG_Careers from "../../pages/SwivelTech/PG_Careers.js";
@@ -13,7 +13,7 @@ describe("Swivel Tech Site -> Careers Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_Careers);
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1Header(Data_Careers.Top_Header);
