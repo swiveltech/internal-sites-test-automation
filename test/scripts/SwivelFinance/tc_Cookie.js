@@ -1,7 +1,7 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelFinance/dt_home.json" assert { type: "json" };
-import Data_CookiePolicy from "../../data/SwivelFinance/dt_cookiePolicy.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelFinance/dt_home.js";
+import Data_CookiePolicy from "../../data/SwivelFinance/dt_cookiePolicy.js";
 import LIB_Policy from "../../components/SwivelFinance/LIB_Policy.js";
 
 describe("Swivel Finance Site -> Cookie Page", () => {

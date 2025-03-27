@@ -1,6 +1,6 @@
 import config from "../../../config.json" assert { type: "json" };
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelFinance/dt_home.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelFinance/dt_home.js" assert { type: "json" };
 import Data_AboutUs from "../../data/SwivelFinance/dt_aboutUs.json" assert { type: "json" };
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelFinance/LIB_AboutUs.js";

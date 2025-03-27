@@ -6,11 +6,17 @@ class Common {
    * method to Open the Application
    */
   async bc_OpenApplication(url) {
+    await browser.deleteCookies();
     await browser.url(url);
-    await browser.waitUntil(async () => (await browser.getUrl()) === url, {
-      timeout: 3000, // Adjust timeout as needed
-      timeoutMsg: `URL did not load correctly: Expected ${url}, but got a different page.`,
-    });
+    await browser.waitUntil(
+      async function () {
+        return (await browser.getUrl()) === url;
+      },
+      {
+        timeout: 5000,
+        timeoutMsg: `URL did not load correctly: Expected ${url}, but got a different page.`,
+      },
+    );
     await this.bc_LogAllureReportAndLogs("Loaded the URL: " + url);
   }
 
@@ -18,7 +24,9 @@ class Common {
    * method to Take Screenshot
    */
   async bc_TakeScreenShot(name) {
-    await browser.saveScreenshot("./Screenshots/" + name + ".png");
+    await browser.saveScreenshot("./Screenshots/" + name + ".png", {
+      fullPage: true,
+    });
     await this.bc_LogAllureReportAndLogs("Screenshot name : " + name);
   }
 

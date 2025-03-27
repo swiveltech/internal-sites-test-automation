@@ -4,6 +4,7 @@ class CommonPage {
    */
   lbl_PageHeader(PageHeader, Index) {
     return $(
+      // `(//span[contains(.,'${PageHeader}')])[${Index}]`,
       `(//*[contains(normalize-space(text()), "${PageHeader}")])[${Index}]`,
     );
   }

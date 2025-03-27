@@ -20,7 +20,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    // await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
     await LIB_Common.bc_VerifyTheAppURL("our-services");

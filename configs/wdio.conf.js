@@ -4,7 +4,7 @@ import process from "process";
 // const allureEnv = require("../utils/util.js");
 // const specConfig = require("../specfiles.js");
 import { getCapabilities, allureEnv } from "../utils/util.js";
-import specConfig from "../specfiles.js";
+import specConfig from "../swivel_tech_specfiles.js";
 const utils = getCapabilities();
 import kill from "kill-port";
 import dotenv from "dotenv";
