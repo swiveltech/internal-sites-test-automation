@@ -1,15 +1,13 @@
 {
   "prettier.trailingComma": "all",
   "editor.codeActionsOnSave": {
-    "editor.formatOnSave": "never",
-    "[javascript]": {
-      "editor.formatOnSave": true
-    }
+    "source.fixAll": "always"
   },
-
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "cSpell.words": [
     "Cremorne",

@@ -1,8 +1,8 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelGroup/dt_home.json" assert { type: "json" };
-import Data_Cookies from "../../data/SwivelGroup/dt_cookie.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelGroup/dt_home.js";
+import Data_Cookies from "../../data/SwivelGroup/dt_cookie.js";
 
 describe("Swivel Group Site -> Cookie Page", () => {
   // Covered Test Case Number : SG-38 , SG-39 , SG-40 , SG-42

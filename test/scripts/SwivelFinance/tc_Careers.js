@@ -1,10 +1,10 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelFinance/dt_home.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelFinance/dt_home.js";
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 import LIB_Careers from "../../components/SwivelFinance/LIB_Careers.js";
-import Data_ContactUs from "../../data/SwivelFinance/dt_contactUs.json" assert { type: "json" };
-import Data_Careers from "../../data/SwivelFinance/dt_careers.json" assert { type: "json" };
+import Data_ContactUs from "../../data/SwivelFinance/dt_contactUs.js";
+import Data_Careers from "../../data/SwivelFinance/dt_careers.js";
 import PG_Careers from "../../pages/SwivelFinance/PG_Careers.js";
 
 describe("Swivel Finance Site -> Careers Page", () => {

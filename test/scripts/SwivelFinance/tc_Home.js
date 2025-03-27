@@ -1,13 +1,13 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelFinance/dt_home.json" assert { type: "json" };
-import Data_AboutUs from "../../data/SwivelFinance/dt_aboutUs.json" assert { type: "json" };
-import Data_Careers from "../../data/SwivelFinance/dt_careers.json" assert { type: "json" };
-import Data_ContactUs from "../../data/SwivelFinance/dt_contactUs.json" assert { type: "json" };
-import Data_CookiePolicy from "../../data/SwivelFinance/dt_cookiePolicy.json" assert { type: "json" };
-import Data_PrivacyPolicy from "../../data/SwivelFinance/dt_privacyPolicy.json" assert { type: "json" };
-import Data_SuccessfulClientProject from "../../data/SwivelFinance/dt_successfulClientProject.json" assert { type: "json" };
-import Data_ThoughtLeadership from "../../data/SwivelFinance/dt_thoughtLeadership.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelFinance/dt_home.js";
+import Data_AboutUs from "../../data/SwivelFinance/dt_aboutUs.js";
+import Data_Careers from "../../data/SwivelFinance/dt_careers.js";
+import Data_ContactUs from "../../data/SwivelFinance/dt_contactUs.js";
+import Data_CookiePolicy from "../../data/SwivelFinance/dt_cookiePolicy.js";
+import Data_PrivacyPolicy from "../../data/SwivelFinance/dt_privacyPolicy.js";
+import Data_SuccessfulClientProject from "../../data/SwivelFinance/dt_successfulClientProject.js";
+import Data_ThoughtLeadership from "../../data/SwivelFinance/dt_thoughtLeadership.js";
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 
 describe("Swivel Finance Site -> Home Page", () => {

@@ -1,7 +1,7 @@
 // wdio.conf.js
 
 import { config } from "./wdio.conf.js";
-import configs from "../config.json" assert { type: "json" };
+import configs from "../config.js";
 
 config.user = configs.BS_User;
 config.key = configs.BS_Key;

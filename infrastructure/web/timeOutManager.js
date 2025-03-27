@@ -1,5 +1,5 @@
 import config from "../../config.js";
-// const config = require("../../config.json");
+
 //Default timeouts
 const pause = "3000";
 const waitUntilClickable = "3000";

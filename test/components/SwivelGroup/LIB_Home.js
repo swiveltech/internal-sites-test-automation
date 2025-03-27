@@ -1,7 +1,7 @@
 import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 import PG_Common from "../../pages/PG_Common.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 class Home {
   /**
    * a method to Verify the Swivel Group logo

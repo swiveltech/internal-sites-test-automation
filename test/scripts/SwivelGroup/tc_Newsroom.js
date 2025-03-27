@@ -1,10 +1,10 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Newsroom from "../../components/SwivelGroup/LIB_Newsroom.js";
 import LIB_Common from "../../components/LIB_Common.js";
 import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
-import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
-import Data_Newsroom from "../../data/SwivelGroup/dt_newsroom.json" assert { type: "json" };
+import Data_Careers from "../../data/SwivelGroup/dt_careers.js";
+import Data_Newsroom from "../../data/SwivelGroup/dt_newsroom.js";
 
 describe("Swivel Group Site -> Newsroom", () => {
   // Covered Test Case Number : SG-25, SG-26, SG-27

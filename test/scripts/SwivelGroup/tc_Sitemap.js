@@ -1,14 +1,14 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Sitemap from "../../components/SwivelGroup/LIB_Sitemap.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Sitemap from "../../data/SwivelGroup/dt_sitemap.json" assert { type: "json" };
-import Data_AboutUs from "../../data/SwivelGroup/dt_aboutUs.json" assert { type: "json" };
-import Data_SwivelFinance from "../../data/SwivelGroup/dt_swivelFinance.json" assert { type: "json" };
-import Data_SwivelTalent from "../../data/SwivelGroup/dt_swivelTalent.json" assert { type: "json" };
-import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
-import Data_PrivacyPolicy from "../../data/SwivelGroup/dt_privacyPolicy.json" assert { type: "json" };
-import Data_Cookies from "../../data/SwivelGroup/dt_cookie.json" assert { type: "json" };
-import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.json" assert { type: "json" };
+import Data_Sitemap from "../../data/SwivelGroup/dt_sitemap.js";
+import Data_AboutUs from "../../data/SwivelGroup/dt_aboutUs.js";
+import Data_SwivelFinance from "../../data/SwivelGroup/dt_swivelFinance.js";
+import Data_SwivelTalent from "../../data/SwivelGroup/dt_swivelTalent.js";
+import Data_Careers from "../../data/SwivelGroup/dt_careers.js";
+import Data_PrivacyPolicy from "../../data/SwivelGroup/dt_privacyPolicy.js";
+import Data_Cookies from "../../data/SwivelGroup/dt_cookie.js";
+import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
 

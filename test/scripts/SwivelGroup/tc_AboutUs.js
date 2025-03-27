@@ -1,9 +1,9 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_AboutUs from "../../data/SwivelGroup/dt_aboutUs.json" assert { type: "json" };
-import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
+import Data_AboutUs from "../../data/SwivelGroup/dt_aboutUs.js";
+import Data_Careers from "../../data/SwivelGroup/dt_careers.js";
 
 describe("Swivel Group Site -> About Us", () => {
   // Covered Test Case Number : SG-19, SG-20, SG-21, SG-22, SG-23, SG24

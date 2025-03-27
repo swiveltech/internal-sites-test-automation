@@ -1,7 +1,7 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Careers from "../../data/SwivelGroup/dt_careers.json" assert { type: "json" };
+import Data_Careers from "../../data/SwivelGroup/dt_careers.js";
 import LIB_Careers from "../../components/SwivelGroup/LIB_Careers.js";
 import PG_Careers from "../../pages/SwivelGroup/PG_Careers.js";
 

@@ -1,10 +1,10 @@
-import config from "../../../config.json" assert { type: "json" };
+import config from "../../../config.js";
 import LIB_Common from "../../components/LIB_Common.js";
-import Data_Home from "../../data/SwivelFinance/dt_home.js" assert { type: "json" };
-import Data_AboutUs from "../../data/SwivelFinance/dt_aboutUs.json" assert { type: "json" };
+import Data_Home from "../../data/SwivelFinance/dt_home.js";
+import Data_AboutUs from "../../data/SwivelFinance/dt_aboutUs.js";
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelFinance/LIB_AboutUs.js";
-import Data_ContactUs from "../../data/SwivelFinance/dt_contactUs.json" assert { type: "json" };
+import Data_ContactUs from "../../data/SwivelFinance/dt_contactUs.js";
 
 describe("Swivel Finance Site -> Who We Are Page", () => {
   it("Verify the About Us Page", async () => {
