@@ -16,7 +16,7 @@ export default {
     "The team can combine Work from Office (WFO) and Work from Home (WFH) to support a healthy work-life balance.",
   OurBenefits_SubTitle_HealthInsurance: "Health Insurance",
   HealthInsurance_Description:
-    "Out–Patient (OPD), Hospitalization Cover and Life Cover for all staff members from Day One.",
+    "Out–Patient (OPD), Hospitalisation Cover and Life Cover for all staff members from Day One.",
   OurBenefits_SubTitle_LeaveBenefits: "Leave Benefits",
   LeaveBenefits_Description:
     "All Swivel employees receive Medical Leave, Birthday Leave, Christmas Shopping Leave, Paternity Leave and Bereavement Leave apart from their usual quota.",

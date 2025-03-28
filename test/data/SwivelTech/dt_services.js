@@ -103,7 +103,7 @@ export default {
   SubTitle_HelpDevOps3: "Configuration Management",
   Description_HelpDevOps3:
     "Maintain consistent environments with automated tools like Ansible and Terraform.",
-  SubTitle_HelpDevOps4: "Monitoring and Performance Optimization",
+  SubTitle_HelpDevOps4: "Monitoring and Performance Optimisation",
   Description_HelpDevOps4:
     "We monitor applications and infrastructure to detect and resolve issues proactively.",
   SubTitle_HelpDevOps5: "Security and Compliance",

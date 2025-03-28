@@ -1,5 +1,5 @@
 export default {
-  Top_Header1: "Building, Automating, and",
+  Top_Header1: "Building, Automating, and Evolving",
   Top_Header2: "Software with AI Precision",
   Top_Description:
     "Bridging Innovation and Expertise Through Our Outsourced Software Development Services",
@@ -25,6 +25,7 @@ export default {
   Tile_SearchEngineOptimisation: "Search Engine Optimisation",
   Tile_ManagedServiceAugmentation: "Managed Service Augmentation",
   Tile_ArtificialIntelligence: "Artificial Intelligence",
+  Tile_MVPFactory: "MVP Factory",
   SubTitle_HowWeWork: "How We Work",
   HowWeWork_AugmentedModel: "Augmented Model",
   AugmentedModel_Description:

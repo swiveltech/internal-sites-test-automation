@@ -30,7 +30,7 @@ export default {
   Leader5_Name: "Andrew Rooke",
   Leader5_Job: "Advisor",
   Leader5_Description:
-    "Andrew, formerly an Executive Director of a $100M AUD global fintech firm, has over 20 years of experience in professional services, finance, banking, and technology. Now a CEO, Entrepreneur, and Executive Coach, Andrew helps high-performing executives, business owners, and athletes achieve their highest potential. He draws on his leadership experience and expertise in business, psychology, neuroscience, and human behavior to guide his clients in creating successful businesses and enhancing their wellbeing.",
+    "Andrew, formerly an Executive Director of a $100M AUD global fintech firm, has over 20 years of experience in professional services, finance, banking, and technology. Now a CEO, Entrepreneur, and Executive Coach, Andrew helps high-performing executives, business owners, and athletes achieve their highest potential. He draws on his leadership experience and expertise in business, psychology, neuroscience, and human behaviour to guide his clients in creating successful businesses and enhancing their wellbeing.",
   Header_OurTeamCulture: "OUR TEAM CULTURE",
   Title_OurTeamCulture1: "Swivel Retreat & Glam Night",
   Description_OurTeamCulture1:

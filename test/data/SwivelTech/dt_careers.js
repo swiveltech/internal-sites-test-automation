@@ -16,7 +16,7 @@ export default {
     "The team can combine Work from Office (WFO) and Work from Home (WFH) to support a healthy work-life balance.",
   SubHeader_OurBenefits3: "Health Insurance",
   Description_OurBenefits3:
-    "Out–Patient (OPD), Hospitalization Cover and Life Cover for all staff members from Day One.",
+    "Out–Patient (OPD), Hospitalisation Cover and Life Cover for all staff members from Day One.",
   SubHeader_OurBenefits4: "Leave Benefits",
   Description_OurBenefits4:
     "Besides standard leave, employees receive additional leave for birthdays, Christmas shopping, paternity, and bereavement.",

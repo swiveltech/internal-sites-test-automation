@@ -80,7 +80,9 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Home.bc_VerifySoftwareSolutionsWeDeliverTile(
       Data_Home.Tile_ArtificialIntelligence,
     );
-
+    await LIB_Home.bc_VerifySoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_MVPFactory,
+    );
     // Verify the How We Work
     await LIB_Common.bc_VerifyH2Header(Data_Home.SubTitle_HowWeWork);
     await LIB_Home.bc_VerifyHowWeWork(
@@ -107,7 +109,8 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Home.WhyChooseUs_Description4,
     );
 
-    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 7);
+    //Verify the Why Choose Us? -> "LEARN MORE" button
+    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 8);
 
     // Verify the Hear What Our Clients Have to Say
     await LIB_Common.bc_VerifyH2Header(
@@ -191,7 +194,8 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Common.bc_VerifyTheParagraph(
       Data_Home.Description_DrivingInnovationBeyondImagination,
     );
-    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 8);
+    //Verify the Driving Innovation, Beyond Imagination -> "LEARN MORE" button
+    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 9);
     await LIB_Common.bc_VerifyH3Header(Data_Home.Title_HowCanWeHelpYou);
     await LIB_Common.bc_VerifyTheParagraph(
       Data_Home.SubTitle_WeHaveHelped200ClientsWithOurTechOffshoringServices,
@@ -527,7 +531,23 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Home.bc_ClickOnAppLogo();
     //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
-    await LIB_Common.bc_ClickOnButton("LEARN MORE", 7);
+    await LIB_Home.bc_ClickSoftwareSolutionsWeDeliverTile(
+      Data_Home.Tile_MVPFactory,
+    );
+    await LIB_Common.bc_VerifyTheAppURL("mvp-factory");
+    //Verify the top header and description
+    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_MVPFactory);
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+      Data_Resources.MVPFactory_Description2,
+    );
+    await LIB_Home.bc_ClickOnAppLogo();
+    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+
+    // Verify the Why Choose Us? -> "LEARN MORE" button
+    await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
     await LIB_Common.bc_VerifyTheAppURL("our-services");
     //Verify the Page Header and Description
     await LIB_Common.bc_VerifyH1HeaderText(Data_OurServices.Top_Header);
@@ -558,8 +578,9 @@ describe("Swivel Tech Site -> Home Page", () => {
     await LIB_Home.bc_ClickOnAppLogo();
     //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
-    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 8);
-    await LIB_Common.bc_ClickOnButton("LEARN MORE", 8);
+    //Verify the Driving Innovation, Beyond Imagination -> "LEARN MORE" button
+    await LIB_Common.bc_VerifyTheButton("LEARN MORE", 9);
+    await LIB_Common.bc_ClickOnButton("LEARN MORE", 9);
     // Get parent window GUID
     let parentGUID = await browser.getWindowHandle();
     // Wait until a new window appears

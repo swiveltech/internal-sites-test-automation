@@ -16,7 +16,7 @@ export default {
     "The team can combine Work from Office (WFO) and Work from Home (WFH) to support a healthy work-life balance.",
   SubTitle_OurBenefits3: "Health Insurance",
   OurBenefits3_Description:
-    "Out–Patient (OPD), Hospitalization Cover and Life Cover for all staff members from Day One.",
+    "Out–Patient (OPD), Hospitalisation Cover and Life Cover for all staff members from Day One.",
   SubTitle_OurBenefits4: "Learning & Development",
   OurBenefits4_Description:
     "All employees can receive reimbursement for professional certifications, membership and exam fees that fall in line with the L&D policy.",
