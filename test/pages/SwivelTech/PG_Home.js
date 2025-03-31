@@ -204,6 +204,18 @@ class HomePage {
   get lbl_Year() {
     return $(`(//div[contains(text(),"Years in Business")])[1]`);
   }
+
+  get ele_HamburgerIcon() {
+    return $(`(//button[@aria-controls='navbar-default'])[1]`);
+  }
+
+  ele_MainItemArrowDown(Option) {
+    return $(`(//a[text()='${Option}'])[1]/following-sibling::button`);
+  }
+
+  get ele_CloseIcon() {
+    return $(`(//button[@aria-controls='navbar-default'])[2]`);
+  }
 }
 
 export default new HomePage();

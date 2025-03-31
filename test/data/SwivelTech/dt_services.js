@@ -122,9 +122,9 @@ export default {
   Step4_Header: "Deployment & Integration",
   Step4_Description:
     "We ensure smooth deployment of DevOps solutions with minimal disruptions, integrating them seamlessly into your environment.",
-  Step5_Header: "Monitoring, Optimization & Ongoing Support",
+  Step5_Header: "Monitoring, Optimisation & Ongoing Support",
   Step5_Description:
-    "Our work doesn’t end at deployment—we offer continuous monitoring, optimization, and support to keep your DevOps systems running smoothly.",
+    "Our work doesn’t end at deployment—we offer continuous monitoring, optimisation, and support to keep your DevOps systems running smoothly.",
   Header_ElevateYourBusinessWithDevOpsSolutionsOfTheHighestQuality:
     "Elevate Your Business with DevOps Solutions of the Highest Quality",
   Q1: "What is DevOps Automation and how can automation streamline my software development process?",

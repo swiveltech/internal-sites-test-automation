@@ -90,7 +90,7 @@ class Common {
     });
 
     // Check if the element is displayed
-    await expect(buttonWithLabelElement).toBeDisplayedInViewport();
+    await expect(buttonWithLabelElement).toBeDisplayed();
     await this.bc_LogAllureReportAndLogs(
       "Verify the button with label: " + label + " , and Index : " + Index,
     );

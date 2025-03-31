@@ -53,12 +53,30 @@ class Home {
     let tabNamesToVerify = tabNames.includes(";")
       ? tabNames.split(";")
       : [tabNames];
-
-    for (const tabName of tabNamesToVerify) {
-      await expect(PG_Home.ele_HeaderTab(tabName)).toBePresent();
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isExisting()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      for (const tabName of tabNamesToVerify) {
+        await expect(PG_Common.lnk_Navigation(tabName)).toBePresent();
+        await LIB_Common.bc_LogAllureReportAndLogs(
+          `Verify the Swivel Tech Tab name ${tabName} is present.`,
+        );
+      }
+      await expect(PG_Home.ele_CloseIcon).toBePresent();
       await LIB_Common.bc_LogAllureReportAndLogs(
-        `Verify the Swivel Tech Tab name ${tabName} is present.`,
+        `Verify the Swivel Tech Close icon is present.`,
       );
+      await PG_Home.ele_CloseIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        `Click on the Swivel Tech Close icon is present.`,
+      );
+    } else {
+      for (const tabName of tabNamesToVerify) {
+        await expect(PG_Home.ele_HeaderTab(tabName)).toBePresent();
+        await LIB_Common.bc_LogAllureReportAndLogs(
+          `Verify the Swivel Tech Tab name ${tabName} is present.`,
+        );
+      }
     }
   }
 
@@ -358,25 +376,45 @@ class Home {
   async bc_ClickOnTopTab(tabName, Option) {
     let OptionToSelect = Option;
     await browser.pause(6000);
-    await PG_Home.ele_HeaderTab(tabName).moveTo();
-    await browser.pause(6000);
-    if (!OptionToSelect) {
-      await PG_Home.ele_HeaderTab(tabName).click();
-      await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isExisting()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
+      if (!OptionToSelect) {
+        await PG_Common.lnk_Navigation(tabName).click();
+        await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
+      } else {
+        await PG_Home.ele_MainItemArrowDown(tabName).click();
+        await LIB_Common.bc_LogAllureReportAndLogs(
+          "Click on Main Tab : " + tabName + " arrow down icon.",
+        );
+        await PG_Common.lnk_NavigationForSecondElement(OptionToSelect).click();
+        await LIB_Common.bc_LogAllureReportAndLogs(
+          "Click on Sub Tab : " + OptionToSelect,
+        );
+      }
+      await browser.pause(6000);
     } else {
-      await PG_Common.lnk_Navigation(OptionToSelect).moveTo({
-        block: "center",
-        inline: "center",
-      });
-      await browser.pause(5000);
-      await PG_Common.lnk_Navigation(OptionToSelect).click();
-      await LIB_Common.bc_LogAllureReportAndLogs(
-        "Click on Tab : " +
-          tabName +
-          " and Sub Tab as : " +
-          Option +
-          " from the Home page",
-      );
+      await PG_Home.ele_HeaderTab(tabName).moveTo();
+      await browser.pause(6000);
+      if (!OptionToSelect) {
+        await PG_Home.ele_HeaderTab(tabName).click();
+        await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
+      } else {
+        await PG_Common.lnk_Navigation(OptionToSelect).moveTo({
+          block: "center",
+          inline: "center",
+        });
+        await browser.pause(5000);
+        await PG_Common.lnk_Navigation(OptionToSelect).click();
+        await LIB_Common.bc_LogAllureReportAndLogs(
+          "Click on Tab : " +
+            tabName +
+            " and Sub Tab as : " +
+            Option +
+            " from the Home page",
+        );
+      }
     }
     await browser.pause(5000);
     await PG_Home.img_SwivelTechLogo.moveTo({
@@ -668,6 +706,24 @@ class Home {
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Verify the Our Latest Insights Have Read More link and URL : " + href,
     );
+  }
+
+  /**
+   * a method to click on Let's Talk button
+   *
+   */
+  async bc_ClickOnLetsTalkButton(buttonName) {
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isExisting()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      await PG_Common.lnk_Navigation(buttonName).click();
+      await this.bc_LogAllureReportAndLogs(
+        "Clicked on Hamburger Icon and button with label: " + buttonName,
+      );
+    } else {
+      await LIB_Common.bc_ClickOnButton(buttonName, 1);
+    }
+    await browser.pause(2000);
   }
 }
 export default new Home();
