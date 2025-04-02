@@ -11,7 +11,7 @@ export default {
   Australia_AddressLine1: "10-20 Gwynne Street,",
   Australia_AddressLine2: "Cremorne, VIC 3121, Australia.",
   Country_SriLanka: "Sri Lanka",
-  CompanyName_SwivelTech: "SwivelTech",
+  CompanyName_SwivelTech: "Swivel Tech",
   SriLanka_AddressLine1: "229/1 Kirula Rd, Colombo 05,",
   SriLanka_AddressLine2: "Sri Lanka.",
   TechOffice_SriLanka_AddressLine1: "31 Queen’s Rd, Colombo 03,",

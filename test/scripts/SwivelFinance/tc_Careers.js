@@ -59,7 +59,7 @@ describe("Swivel Finance Site -> Careers Page", () => {
     );
 
     //Verify the "Our Job Openings"
-    await LIB_Common.bc_VerifyH1Header(Data_Careers.Header_OurJobOpenings);
+    await LIB_Common.bc_VerifyH2Header(Data_Careers.Header_OurJobOpenings);
 
     //Get the first record before search
     let searchKey = await PG_Careers.lbl_GetFirstRecord.getText();

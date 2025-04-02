@@ -10,7 +10,7 @@ class CareersPage {
 
   get tf_SearchBox() {
     return $(
-      `//h1[contains(text(),"OUR JOB OPENINGS")]/following-sibling::div/div/input`,
+      `//h2[contains(text(),"OUR JOB OPENINGS")]/following-sibling::div/div/div/input`,
     );
   }
 

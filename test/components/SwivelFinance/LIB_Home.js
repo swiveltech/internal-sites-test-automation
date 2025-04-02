@@ -341,13 +341,23 @@ class Home {
    * a method to Click on Let's Talk button on top of the screen
    */
   async bc_ClickOnLetsTalkButton() {
-    const button = await PG_Home.btn_LetsTalk;
-    await button.waitForDisplayed({ timeout: 5000 });
-    await button.waitForClickable({ timeout: 5000 });
-    await button.click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on Let's Talk button on top of the screen",
-    );
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isExisting()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
+      await PG_Home.btn_LetsTalkForiPad.click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Click on Let's Talk button on Hamburger icon.",
+      );
+    } else {
+      const button = await PG_Home.btn_LetsTalk;
+      await button.waitForDisplayed({ timeout: 5000 });
+      await button.waitForClickable({ timeout: 5000 });
+      await button.click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Click on Let's Talk button on top of the screen",
+      );
+    }
   }
 
   /**
@@ -355,11 +365,22 @@ class Home {
    */
   async bc_ClickOnTabFromTopPanel(tabName) {
     await browser.pause(5000);
-    await PG_Home.ele_HeaderTab(tabName).click();
-    await browser.pause(5000);
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on Tab as : " + tabName + " on top of the screen",
-    );
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isExisting()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
+      await PG_Home.ele_HeaderTabForiPad(tabName).click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Click on Tab as : " + tabName + " on Hamburger icon.",
+      );
+    } else {
+      await PG_Home.ele_HeaderTab(tabName).click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Click on Tab as : " + tabName + " on top of the screen",
+      );
+    }
+
+    await browser.pause(3000);
   }
 
   /**

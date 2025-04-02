@@ -7,7 +7,7 @@ config.capabilities = [
     platformName: "iOS",
     browserName: "Safari",
     "appium:deviceName": "Swivel’s iPad",
-    "appium:platformVersion": "18.3",
+    "appium:platformVersion": "18.4",
     "appium:automationName": "XCUITest",
     "appium:udid": "00008110-001A09E41E07801E",
   },

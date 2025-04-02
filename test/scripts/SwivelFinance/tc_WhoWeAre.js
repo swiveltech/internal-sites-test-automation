@@ -36,7 +36,7 @@ describe("Swivel Finance Site -> Who We Are Page", () => {
     );
 
     //Verify the "OUR LEADERSHIP TEAM"
-    await LIB_Common.bc_VerifyH1Header(Data_AboutUs.Header_OurLeadershipTeam);
+    await LIB_Common.bc_VerifyH2Header(Data_AboutUs.Header_OurLeadershipTeam);
     await LIB_Common.bc_VerifyTheParagraph(
       Data_AboutUs.OurLeadershipTeam_Description,
     );
@@ -72,7 +72,7 @@ describe("Swivel Finance Site -> Who We Are Page", () => {
     );
 
     //Verify the "OUR TEAM CULTURE"
-    await LIB_Common.bc_VerifyH1Header(Data_AboutUs.Header_OurTeamCulture);
+    await LIB_Common.bc_VerifyH2Header(Data_AboutUs.Header_OurTeamCulture);
     await LIB_AboutUs.bc_VerifyOurTeamCulture(
       "Glam 3.png",
       Data_AboutUs.Title_OurTeamCulture1,

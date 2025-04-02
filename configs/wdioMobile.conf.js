@@ -1,10 +1,11 @@
 import process from "process";
-import specConfig from "../swivel_tech_specfiles.js";
+import specConfig from "../specfiles.js";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename);
+import kill from "kill-port";
 
 const env = process.env.ENV || "credentials";
 
@@ -81,7 +82,7 @@ export const config = {
       platformName: "iOS",
       browserName: "safari",
       "appium:deviceName": "Swivel’s iPad",
-      "appium:platformVersion": "18.3",
+      "appium:platformVersion": "18.4",
       "appium:automationName": "XCUITest",
       "appium:udid": "00008110-001A09E41E07801E",
       "appium:fullReset": true,
@@ -181,8 +182,23 @@ export const config = {
    * @param {object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  // onPrepare: function (config, capabilities) {
-  // },
+  onPrepare: async function (config, capabilities) {
+    await kill(4723, "tcp");
+    const allureResultsPath = path.join(process.cwd(), "./allure-results");
+    try {
+      if (fs.existsSync(allureResultsPath)) {
+        fs.rmdirSync(allureResultsPath, { recursive: true });
+        console.log(`${allureResultsPath} is deleted`);
+      }
+    } catch (error) {
+      console.log("Error while deliting");
+    }
+    const logFilePath = "./logs/allure-log.log";
+
+    if (fs.existsSync(logFilePath)) {
+      fs.writeFileSync(logFilePath, "");
+    }
+  },
   /**
    * Gets executed before a worker process is spawned and can be used to initialize specific service
    * for that worker as well as modify runtime environments in an async fashion.
@@ -238,8 +254,9 @@ export const config = {
   /**
    * Function to be executed before a test (in Mocha/Jasmine) starts.
    */
-  // beforeTest: function (test, context) {
-  // },
+  beforeTest: async function (test, context) {
+    await kill(4723, "tcp");
+  },
   /**
    * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
    * beforeEach in Mocha)

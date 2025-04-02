@@ -22,6 +22,12 @@ class HomePage {
     return $(`//div[@class="flex"]/div/button[text()="Let’s Talk"]`);
   }
 
+  get btn_LetsTalkForiPad() {
+    return $(
+      `(//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()="Let's Talk"])`,
+    );
+  }
+
   ele_FooterTab(textValue) {
     return $(`//nav[@aria-label="Main"]/li/a[text()="${textValue}"]`);
   }
@@ -100,6 +106,16 @@ class HomePage {
 
   img_Leadership(Image) {
     return $(`//img[@alt="${Image}"]`);
+  }
+
+  get ele_HamburgerIcon() {
+    return $(`(//button[@aria-controls='navbar-default'])[1]`);
+  }
+
+  ele_HeaderTabForiPad(tabName) {
+    return $(
+      `((//div[@class='flex items-center justify-center']/ul[1]/descendant::a[text()='${tabName}']) | (//div[@class='flex items-center justify-center']/ul[1]/descendant::div[text()='${tabName}']))[2]`,
+    );
   }
 }
 

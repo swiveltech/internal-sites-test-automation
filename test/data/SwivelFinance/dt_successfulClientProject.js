@@ -5,7 +5,7 @@ export default {
     "A leading accounting firm, experienced a surge in income tax return filings during peak season. As managing a high volume of returns with tight deadlines was resource-intensive, additional support from Swivel Finance was sought to provide the best possible service for their clients.",
   SubTitle_TheSolution: "The Solution",
   TheSolution_Description:
-    "Swivel Finance recognized the need for immediate support. To alleviate QC Accountants' workload, we seamlessly integrated our in-house, managed tax team into the process. These specialists collaborated directly with QC Accountants to handle the overflow of income tax returns, ensuring a smooth and efficient workflow.",
+    "Swivel Finance recognised the need for immediate support. To alleviate QC Accountants' workload, we seamlessly integrated our in-house, managed tax team into the process. These specialists collaborated directly with QC Accountants to handle the overflow of income tax returns, ensuring a smooth and efficient workflow.",
   SubTitle_TheResult: "The Result",
   TheResult_Description:
     "Swivel Finance's tax team successfully prepared and submitted all the income tax returns on time. We delivered comprehensive return packages and work papers to the accounting firm, allowing them to meet their clients' filing obligations efficiently and effectively. This timely intervention ensured the accounting firms' continued success during the busy tax season.",

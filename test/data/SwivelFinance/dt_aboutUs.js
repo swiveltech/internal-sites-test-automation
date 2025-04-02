@@ -1,7 +1,7 @@
 export default {
   Header_AboutUs: "About Us",
   AboutUs_Description:
-    "Swivel Finance, based in Melbourne, Australia, with support centers in Sri Lanka is a Great Place to Work Certified business. We connect international workforces and drive business value worldwide, supported by a people-first culture and rigorous 6-stage recruitment process. Leveraging Sri Lanka's Chartered Accountants, we offer cost-effective finance solutions from bookkeeping to Business Activity Statements (BAS) and Income Tax Returns.",
+    "Swivel Finance, based in Melbourne, Australia, with support centres in Sri Lanka is a Great Place to Work Certified business. We connect international workforces and drive business value worldwide, supported by a people-first culture and rigorous 6-stage recruitment process. Leveraging Sri Lanka's Chartered Accountants, we offer cost-effective finance solutions from bookkeeping to Business Activity Statements (BAS) and Income Tax Returns.",
   Label_Year: "- Years in Business -",
   Year_Count: "5",
   Label_ClientsTrustedUs: "- Clients Trusted Us -",
@@ -14,7 +14,7 @@ export default {
   Leader1_Name: "Shanil Dissanayake",
   Leader1_Job: "CEO / Co-Founder",
   Leader1_Description:
-    "As CEO Shanil collaborates with businesses to maximize efficiency and value for clients, drawing on over 20 years of experience in the Australian market across practice and industry. A Monash University graduate with a Bachelor of Commerce, Shanil serves as a Mentor at Monash and RMIT Universities, leveraging his CPA knowledge and experience with ASX100 businesses to empower the future of Accounting. His vision to connect and leverage global markets has enabled Swivel Group to partner with household names across Australia, New Zealand and the UK.",
+    "As CEO Shanil collaborates with businesses to maximise efficiency and value for clients, drawing on over 20 years of experience in the Australian market across practice and industry. A Monash University graduate with a Bachelor of Commerce, Shanil serves as a Mentor at Monash and RMIT Universities, leveraging his CPA knowledge and experience with ASX100 businesses to empower the future of Accounting. His vision to connect and leverage global markets has enabled Swivel Group to partner with household names across Australia, New Zealand and the UK.",
   Leader2_Name: "Dmitry Loukine",
   Leader2_Job: "CGO / Co-Founder",
   Leader2_Description:
@@ -26,11 +26,11 @@ export default {
   Leader4_Name: "Anthony Wickramaratne",
   Leader4_Job: "Finance Business Partner",
   Leader4_Description:
-    "Anthony is a seasoned professional with over seven years of experience working with clients across the UK, USA, and Australia. His expertise spans finance, CIMA certification, and international business management. Anthony specializes in fostering strong client relationships, delivering exceptional service, and driving business growth through strategic management. His international exposure and financial acumen enable him to provide tailored solutions and adeptly navigate complex business environments. Committed to continuous learning and innovation, Anthony is a trusted partner dedicated to achieving business success",
+    "Anthony is a seasoned professional with over seven years of experience working with clients across the UK, USA, and Australia. His expertise spans finance, CIMA certification, and international business management. Anthony specialises in fostering strong client relationships, delivering exceptional service, and driving business growth through strategic management. His international exposure and financial acumen enable him to provide tailored solutions and adeptly navigate complex business environments. Committed to continuous learning and innovation, Anthony is a trusted partner dedicated to achieving business success",
   Leader5_Name: "Andrew Rooke",
   Leader5_Job: "Advisor",
   Leader5_Description:
-    "Andrew, formerly an Executive Director of a $100M AUD global fintech firm, has over 20 years of experience in professional services, finance, banking, and technology. Now a CEO, Entrepreneur, and Executive Coach, Andrew helps high-performing executives, business owners, and athletes achieve their highest potential. He draws on his leadership experience and expertise in business, psychology, neuroscience, and human behaviour to guide his clients in creating successful businesses and enhancing their wellbeing.",
+    "Andrew, formerly an Executive Director of a $100M AUD global fintech firm, has over 20 years of experience in professional services, finance, banking, and technology. Now a CEO, Entrepreneur, and Executive Coach, Andrew helps high-performing executives, business owners, and athletes achieve their highest potential. He draws on his leadership experience and expertise in business, psychology, neuroscience, and human behavior to guide his clients in creating successful businesses and enhancing their wellbeing.",
   Header_OurTeamCulture: "OUR TEAM CULTURE",
   Title_OurTeamCulture1: "Swivel Retreat & Glam Night",
   Description_OurTeamCulture1:
