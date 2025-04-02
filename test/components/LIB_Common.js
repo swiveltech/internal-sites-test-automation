@@ -53,6 +53,7 @@ class Common {
 
   //Common component for click on button
   async bc_ClickOnButton(label, Index) {
+    await browser.pause(3000);
     let element = await PG_Common.btn_ButtonWithLabel(label, Index);
 
     if (await element.isExisting()) {
@@ -65,7 +66,7 @@ class Common {
       await this.bc_LogAllureReportAndLogs(
         "Clicked on button with label: " + label + " , and Index : " + Index,
       );
-      await browser.pause(2000);
+      await browser.pause(3000);
     } else {
       await this.bc_LogAllureReportAndLogs(
         `Button with label "${label}" not found.`,

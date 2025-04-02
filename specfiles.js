@@ -15,7 +15,7 @@ const specConfig = [
       "../test/scripts/SwivelGroup/tc_PrivacyPolicy.js",
       "../test/scripts/SwivelGroup/tc_Sitemap.js",
 
-      // // This is Swivel Finance Test cases
+      // This is Swivel Finance Test cases
       "../test/scripts/SwivelFinance/tc_Home.js",
       "../test/scripts/SwivelFinance/tc_WhoWeAre.js",
       "../test/scripts/SwivelFinance/tc_Careers.js",
@@ -23,7 +23,7 @@ const specConfig = [
       "../test/scripts/SwivelFinance/tc_PrivacyPolicy.js",
       "../test/scripts/SwivelFinance/tc_ContactUs.js",
 
-      // // This is Swivel Tech Test cases
+      // This is Swivel Tech Test cases
       "../test/scripts/SwivelTech/tc_Home.js",
       "../test/scripts/SwivelTech/tc_Resources.js",
       "../test/scripts/SwivelTech/tc_Careers.js",

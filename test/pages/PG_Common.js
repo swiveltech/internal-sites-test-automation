@@ -47,12 +47,11 @@ class CommonPage {
   }
 
   lnk_Navigation(Label) {
-    return $(`(//a[text()='${Label}'])[1]`);
+    return $(`(//a[text()="${Label}"])[1]`);
   }
 
-
   lnk_NavigationForSecondElement(Label) {
-    return $(`(//a[text()='${Label}'])[2]`);
+    return $(`(//a[text()="${Label}"])[2]`);
   }
 
   lbl_Paragraph(TextValue) {

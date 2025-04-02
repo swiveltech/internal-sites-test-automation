@@ -311,7 +311,7 @@ describe("Swivel Tech Site -> Home Page", () => {
     );
 
     // Click on the Let's Talk navigation
-    await LIB_Home.bc_ClickOnLetsTalkButton("Let’s Talk");
+    await LIB_Home.bc_ClickOnLetsTalkButton("Let's Talk");
     await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.ContactUs_Description,

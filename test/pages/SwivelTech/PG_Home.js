@@ -210,7 +210,7 @@ class HomePage {
   }
 
   ele_MainItemArrowDown(Option) {
-    return $(`(//a[text()='${Option}'])[1]/following-sibling::button`);
+    return $(`(//a[text()='${Option}']/following-sibling::button)[1]`);
   }
 
   get ele_CloseIcon() {
