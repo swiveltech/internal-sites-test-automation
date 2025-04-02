@@ -54,7 +54,7 @@ class Home {
       ? tabNames.split(";")
       : [tabNames];
     let element = await PG_Home.ele_HamburgerIcon;
-    if (await element.isExisting()) {
+    if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       for (const tabName of tabNamesToVerify) {
         await expect(PG_Common.lnk_Navigation(tabName)).toBePresent();
@@ -377,7 +377,7 @@ class Home {
     let OptionToSelect = Option;
     await browser.pause(6000);
     let element = await PG_Home.ele_HamburgerIcon;
-    if (await element.isExisting()) {
+    if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
       if (!OptionToSelect) {
@@ -714,7 +714,7 @@ class Home {
    */
   async bc_ClickOnLetsTalkButton(buttonName) {
     let element = await PG_Home.ele_HamburgerIcon;
-    if (await element.isExisting()) {
+    if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await PG_Common.lnk_Navigation(buttonName).click();
       await this.bc_LogAllureReportAndLogs(

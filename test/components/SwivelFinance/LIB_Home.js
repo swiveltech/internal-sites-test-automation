@@ -342,7 +342,7 @@ class Home {
    */
   async bc_ClickOnLetsTalkButton() {
     let element = await PG_Home.ele_HamburgerIcon;
-    if (await element.isExisting()) {
+    if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
       await PG_Home.btn_LetsTalkForiPad.click();
@@ -366,7 +366,7 @@ class Home {
   async bc_ClickOnTabFromTopPanel(tabName) {
     await browser.pause(5000);
     let element = await PG_Home.ele_HamburgerIcon;
-    if (await element.isExisting()) {
+    if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
       await PG_Home.ele_HeaderTabForiPad(tabName).click();

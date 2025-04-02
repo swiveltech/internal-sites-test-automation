@@ -56,7 +56,7 @@ class Common {
     await browser.pause(3000);
     let element = await PG_Common.btn_ButtonWithLabel(label, Index);
 
-    if (await element.isExisting()) {
+    if (await element.isDisplayed()) {
       await element.scrollIntoView({
         behavior: "smooth",
         block: "center",
