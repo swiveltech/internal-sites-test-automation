@@ -12,9 +12,24 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Set screen resolution
-        run: wmic desktopmonitor where DeviceID="DesktopMonitor1" call SetScreenResolution 1920,1080
-        shell: cmd
+      - name: Set Screen Resolution
+        run: |
+          Add-Type -TypeDefinition @"
+          using System;
+          using System.Runtime.InteropServices;
+          public class ScreenResolution {
+              [DllImport("user32.dll")]
+              public static extern long ChangeDisplaySettings(ref DEVMODE devMode, int flags);
+          }
+          "@ -Language CSharp
+          $devmode = New-Object PSObject
+          $devmode.dmSize = 156
+          $devmode.dmPelsWidth = 1920
+          $devmode.dmPelsHeight = 1080
+          $devmode.dmBitsPerPel = 32
+          $devmode.dmFields = 0x40000 -bor 0x80000 -bor 0x200000
+          [ScreenResolution]::ChangeDisplaySettings([ref]$devmode, 0)
+        shell: pwsh
   
       - name: Checkout Repository
         uses: actions/checkout@v4
