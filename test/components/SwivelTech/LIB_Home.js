@@ -380,7 +380,7 @@ class Home {
     if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
-      await browser.pause(3000);
+      await browser.pause(5000);
       if (!OptionToSelect) {
         await PG_Common.lnk_Navigation(tabName).click();
         await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
@@ -389,6 +389,7 @@ class Home {
         await LIB_Common.bc_LogAllureReportAndLogs(
           "Click on Main Tab : " + tabName + " arrow down icon.",
         );
+        await browser.pause(3000);
         await PG_Common.lnk_NavigationForSecondElement(OptionToSelect).click();
         await LIB_Common.bc_LogAllureReportAndLogs(
           "Click on Sub Tab : " + OptionToSelect,

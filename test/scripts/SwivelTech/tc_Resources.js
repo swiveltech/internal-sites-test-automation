@@ -4,6 +4,7 @@ import Data_Home from "../../data/SwivelTech/dt_home.js";
 import Data_Resources from "../../data/SwivelTech/dt_resources.js";
 import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import LIB_Resources from "../../components/SwivelTech/LIB_Resources.js";
+import PG_Home from "../../pages/SwivelTech/PG_Home.js";
 
 describe("Swivel Tech Site -> Resources Page", () => {
   it("Verify the Resources Page -> Blogs Page", async () => {
@@ -22,11 +23,19 @@ describe("Swivel Tech Site -> Resources Page", () => {
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.Blogs_Top_Description,
     );
-    await LIB_Common.bc_VerifyH6Header("Categories");
-    await LIB_Resources.bc_VerifyCategoriesOptions(
-      "Categories",
-      "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
-    );
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Resources.bc_VerifyCategoriesOptionsInTab(
+        "Categories",
+        "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
+      );
+    } else {
+      await LIB_Common.bc_VerifyH6Header("Categories");
+      await LIB_Resources.bc_VerifyCategoriesOptions(
+        "Categories",
+        "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
+      );
+    }
 
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights1_Title,
@@ -153,11 +162,19 @@ describe("Swivel Tech Site -> Resources Page", () => {
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.CaseStudies_Description,
     );
-    await LIB_Common.bc_VerifyH6Header("Categories");
-    await LIB_Resources.bc_VerifyCategoriesOptions(
-      "Categories",
-      "All;DevOps;Software Development;App Development;Enterprise Development",
-    );
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Resources.bc_VerifyCategoriesOptionsInTab(
+        "Categories",
+        "All;DevOps;Software Development;App Development;Enterprise Development",
+      );
+    } else {
+      await LIB_Common.bc_VerifyH6Header("Categories");
+      await LIB_Resources.bc_VerifyCategoriesOptions(
+        "Categories",
+        "All;DevOps;Software Development;App Development;Enterprise Development",
+      );
+    }
 
     //Verify the Categories tiles
     await LIB_Resources.bc_VerifyCategoriesTile(

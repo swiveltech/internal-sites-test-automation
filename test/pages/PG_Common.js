@@ -61,6 +61,10 @@ class CommonPage {
   lbl_PageHeaderWithDot(PageHeader, Index) {
     return $(`(//*[contains(normalize-space(.), "${PageHeader}")])[${Index}]`);
   }
+
+  lbl_SpanText(Text) {
+    return $(`//span[text()='${Text}']`);
+  }
 }
 
 export default new CommonPage();
