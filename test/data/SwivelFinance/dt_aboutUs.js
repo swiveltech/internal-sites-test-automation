@@ -14,7 +14,7 @@ export default {
   Leader1_Name: "Shanil Dissanayake",
   Leader1_Job: "CEO / Co-Founder",
   Leader1_Description:
-    "As CEO Shanil collaborates with businesses to maximise efficiency and value for clients, drawing on over 20 years of experience in the Australian market across practice and industry. A Monash University graduate with a Bachelor of Commerce, Shanil serves as a Mentor at Monash and RMIT Universities, leveraging his CPA knowledge and experience with ASX100 businesses to empower the future of Accounting. His vision to connect and leverage global markets has enabled Swivel Group to partner with household names across Australia, New Zealand and the UK.",
+    "Shanil collaborates with businesses to maximise efficiency and value for clients, drawing on over 20 years of experience in the Australian market across practice and industry. A Monash University graduate with a Bachelor of Commerce, Shanil serves as a Mentor at Monash and RMIT Universities, leveraging his CPA knowledge and experience with ASX100 businesses to empower the future of Accounting. His vision to connect and leverage global markets has enabled Swivel Group to partner with household names across Australia, New Zealand and the UK.",
   Leader2_Name: "Dmitry Loukine",
   Leader2_Job: "CGO / Co-Founder",
   Leader2_Description:

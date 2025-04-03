@@ -14,7 +14,7 @@ class CareersPage {
 
   get lbl_FirstRecordInTable() {
     return $(
-      `(//input[@name="searchTerm"]/../following-sibling::div/div[@class="rooster-job"]/a/h3)[1]`,
+      `(//input[@name="searchTerm"]/../following-sibling::div/div[@class="rooster-job" and @data-job-department="Development"]/a/h3)[1]`,
     );
   }
 

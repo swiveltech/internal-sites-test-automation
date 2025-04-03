@@ -7,7 +7,7 @@ export default {
   Title_ExpertsIn: "Experts In",
   Title_OurStory: "Our Story",
   OurStory_Description:
-    "Since 2019, our driving force is prioritising people and community. As we grow, our culture evolves inclusively, guided by values. Together with our R&D division, learning opportunities and flat structure, we ensure that our staff is always on the move.",
+    "Since 2019, our driving force has been prioritising people and community. As we grow, our culture evolves inclusively, guided by our values. Through our R&D division, continuous learning opportunities, and flat structure, we ensure that our staff are constantly up-to-date, delivering current and valuable services.",
   Title_ServicesWeDeliver: "Services We Deliver",
   SubTile_GeneralLedgerAccounting: "General Ledger Accounting",
   SubTile_BusinessActivityStatements: "Business Activity Statements",
@@ -32,13 +32,13 @@ export default {
     "Swivel Group has a proven track record of over 200 successful client projects, consistently delivering innovative solutions tailored to diverse business needs. We continue to excel, working tirelessly to exceed expectations. Have a look at some of our work.",
   SubTitle_SuccessfulClient1: "A Leading Accounting Firm",
   SuccessfulClient1_Description:
-    "This client experienced a surge in income tax return filings during peak season. As managing a high volume of returns with tight deadlines was resource...",
+    "This client experienced a surge in income tax return filings during peak season. As managing a high volume of returns with tight deadlines was...",
   SubTitle_SuccessfulClient2: "A Top 100 Accounting Firm",
   SuccessfulClient2_Description:
-    "Required additional support to supplement the growth of the business. Assistance was required around reconciliations, monthly reporting....",
+    "The firm required additional support to supplement the growth of the business. Assistance was required around reconciliation...",
   SubTitle_SuccessfulClient3: "A Leading Australian Health Provider",
   SuccessfulClient3_Description:
-    "Faced a challenge with their financial operations. Backlogs had accumulated in critical areas including accounts payable....",
+    "The organisation faced a challenge with their financial operations. Backlogs had accumulated in critical areas including accoun...",
   Title_WeHaveWorkedWithThousandsOfAmazingPeople:
     "We have worked with thousands\nof amazing people",
   People1_Description:
