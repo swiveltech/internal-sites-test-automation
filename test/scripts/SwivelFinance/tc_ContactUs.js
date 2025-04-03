@@ -101,14 +101,14 @@ describe("Swivel Finance Site -> Contact Us Page", () => {
     await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_VisitUs);
     await LIB_ContactUs.bc_VerifyCompanyNameWithAddressAndPhoneNumber(
       Data_ContactUs.Country_Australia,
-      Data_ContactUs.CompanyName_SwivelGroup,
+      Data_ContactUs.CompanyName_SwivelGroupForAustralia,
       Data_ContactUs.Australia_AddressLine1,
       Data_ContactUs.Australia_AddressLine2,
       Data_ContactUs.Australia_Office_ContactNumber,
     );
     await LIB_ContactUs.bc_VerifyCompanyNameWithAddressAndPhoneNumber(
       Data_ContactUs.Country_SriLanka,
-      Data_ContactUs.CompanyName_SwivelGroup,
+      Data_ContactUs.CompanyName_SwivelGroupForSriLanka,
       Data_ContactUs.SriLanka_AddressLine1,
       Data_ContactUs.SriLanka_AddressLine2,
       Data_ContactUs.SriLanka_Office_ContactNumber,
