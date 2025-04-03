@@ -8,7 +8,7 @@ export default {
   Header_HowWeUseCookies: "How We Use Cookies",
   HowWeUseCookies_Description1: "We use cookies for the following purposes:",
   HowWeUseCookies_Description2:
-    "Forms related cookies: When you submit data through a form, such as those found on contact pages or fundraiser forms, cookies may be set to remember your user details for future correspondence.",
+    "Forms-related cookies: When you submit data through a form, such as those found on contact pages or fundraiser forms, cookies may be set to remember your user details for future correspondence.",
   HowWeUseCookies_Description3:
     "We also use third-party cookies provided by trusted partners, such as Google Analytics, to track and analyse usage data. This helps us understand how you use the site and ways that we can improve your experience.",
   Header_DisablingCookies: "Disabling Cookies",

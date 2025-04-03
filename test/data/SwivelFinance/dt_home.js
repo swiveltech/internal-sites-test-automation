@@ -32,7 +32,7 @@ export default {
     "Swivel Group has a proven track record of over 200 successful client projects, consistently delivering innovative solutions tailored to diverse business needs. We continue to excel, working tirelessly to exceed expectations. Have a look at some of our work.",
   SubTitle_SuccessfulClient1: "A Leading Accounting Firm",
   SuccessfulClient1_Description:
-    "Experienced a surge in income tax return filings during peak season. As managing a high volume of returns with tight deadlines was resource....",
+    "This client experienced a surge in income tax return filings during peak season. As managing a high volume of returns with tight deadlines was resource...",
   SubTitle_SuccessfulClient2: "A Top 100 Accounting Firm",
   SuccessfulClient2_Description:
     "Required additional support to supplement the growth of the business. Assistance was required around reconciliations, monthly reporting....",
