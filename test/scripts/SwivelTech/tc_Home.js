@@ -13,10 +13,10 @@ describe("Swivel Tech Site -> Home Page", () => {
       "Swivel Tech -> Home Page Verification",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
     await LIB_Home.bc_VerifyHomeScreenTopPanel(
       "Home;About Us;How We Work;Services;Resources;Careers",
     );
-    await LIB_Common.bc_ClickOnButton("Accept", 1);
     //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
     await LIB_Home.bc_VerifyTopSubPageHeader(Data_Home.Top_Header2);
     await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Description, 1);

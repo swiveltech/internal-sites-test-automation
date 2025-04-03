@@ -46,7 +46,7 @@ class OurServices {
       );
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     await PG_OurServices.lnk_OurSoftwareDevelopmentServicesLearnMore(

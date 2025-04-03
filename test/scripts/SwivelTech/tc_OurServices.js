@@ -316,7 +316,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     );
     await element.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     await browser.pause(5000);

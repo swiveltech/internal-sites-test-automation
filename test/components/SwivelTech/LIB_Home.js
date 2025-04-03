@@ -133,7 +133,7 @@ class Home {
     let elementToScroll = await PG_Home.lnk_SoftwareSolutionsWeDeliver(Label);
     await elementToScroll.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     await PG_Home.lnk_SoftwareSolutionsWeDeliver(Label).click();
@@ -380,6 +380,7 @@ class Home {
     if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
+      await browser.pause(3000);
       if (!OptionToSelect) {
         await PG_Common.lnk_Navigation(tabName).click();
         await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
@@ -717,7 +718,7 @@ class Home {
     if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await PG_Common.lnk_Navigation(buttonName).click();
-      await this.bc_LogAllureReportAndLogs(
+      await LIB_Common.bc_LogAllureReportAndLogs(
         "Clicked on Hamburger Icon and button with label: " + buttonName,
       );
     } else {
