@@ -16,7 +16,7 @@ describe("Swivel Tech Site -> Contact Us Page", () => {
     //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
 
     // Verify the Let's Talk navigation
-    await LIB_Home.bc_ClickOnLetsTalkButton("Let's Talk");
+    await LIB_Home.bc_ClickOnLetsTalkButton("Let’s Talk");
     await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.ContactUs_Description,

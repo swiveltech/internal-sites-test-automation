@@ -15,9 +15,9 @@ export default {
   BS_Key: "6oKgNPk3mSqhuUHE7WVL",
   DEFAULT_URL: "",
   URLS: {
-    SWIVEL_GROUP: "https://devrevampfusion.swivelgroup.com.au/",
+    SWIVEL_GROUP: "https://swivelgroup.com.au/",
     SWIVEL_TECH: "https://stage.swiveltech.io/",
-    SWIVEL_FINANCE: "https://swivelfinance.com.au/",
+    SWIVEL_FINANCE: "https://stage.swivelfinance.com.au/",
   },
   RETRY: "1",
   RETRY_INTERVAL: "8000",

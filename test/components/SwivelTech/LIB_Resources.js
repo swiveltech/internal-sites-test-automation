@@ -101,5 +101,22 @@ class Resources {
         URL,
     );
   }
+
+  /**
+   * a method to Click on Load More Button
+   *
+   */
+  async bc_ClickOnLoadMoreButton() {
+    let element = await PG_Resources.btn_LoadMore;
+    if (await element.isExisting()) {
+      await PG_Resources.btn_LoadMore.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Click on Load more button.");
+      await browser.pause(5000);
+    } else {
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Load more button is not present.",
+      );
+    }
+  }
 }
 export default new Resources();

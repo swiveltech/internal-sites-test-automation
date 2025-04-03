@@ -65,6 +65,10 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights6_Date,
       Data_Resources.OurLatestInsights6_SubDescription,
     );
+
+    //Check the load more
+    await LIB_Resources.bc_ClickOnLoadMoreButton();
+
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights7_Title,
       Data_Resources.OurLatestInsights7_Category,
@@ -101,6 +105,10 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights12_Date,
       Data_Resources.OurLatestInsights12_SubDescription,
     );
+
+    //Check the load more
+    await LIB_Resources.bc_ClickOnLoadMoreButton();
+
     await LIB_Home.bc_VerifyOurLatestInsightsTileInPTag(
       Data_Resources.OurLatestInsights13_Title,
       Data_Resources.OurLatestInsights13_Category,
@@ -176,6 +184,9 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.CaseStudies_Header_Tile6,
       Data_Resources.Tile6_Description,
     );
+    //Check the load more
+    await LIB_Resources.bc_ClickOnLoadMoreButton();
+
     await LIB_Resources.bc_VerifyCategoriesTile(
       Data_Resources.CaseStudies_Header_Tile7,
       Data_Resources.Tile7_Description,

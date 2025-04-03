@@ -35,6 +35,10 @@ class ResourcesPage {
       `//h4[text()="${Title}"]/../following-sibling::div/p[contains(.,"${Description}")]/following-sibling::div/div/a/button[text()="Read More"]/..`,
     );
   }
+
+  get btn_LoadMore() {
+    return $(`//button[text()="LOAD MORE"]`);
+  }
 }
 
 export default new ResourcesPage();
