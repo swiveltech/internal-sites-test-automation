@@ -12,6 +12,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Set screen resolution
+        run: wmic desktopmonitor where DeviceID="DesktopMonitor1" call SetScreenResolution 1920,1080
+        shell: cmd
+  
       - name: Checkout Repository
         uses: actions/checkout@v4
 
