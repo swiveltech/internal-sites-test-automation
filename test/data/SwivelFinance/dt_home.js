@@ -22,7 +22,7 @@ export default {
   Title_HowWeWork: "How We Work",
   HowWeWork_SubTitle_Augmented: "Augmented",
   HowWeWork_Augmented_Description:
-    "In our Augmented Model, we source and hire a dedicated Accounting Professional signed to your requirements. This Consultant is then inducted into the Swivel ecosystem, working directly and exclusively to you. A team of Managers and Team Leads are also assigned to your business to ensure quality, timeliness and support required for a long term partnership. Typically, suits clients wanting to have autonomy in the management of staff and processes.",
+    "In our Augmented Model, we source and hire a dedicated accounting professional signed to your requirements. This consultant is then inducted into the Swivel ecosystem, working directly and exclusively for you. A team of managers and team leads are also assigned to your business to ensure quality, timeliness and support required for a long term partnership. Typically, suits clients wanting to have autonomy in the management of staff and processes.",
   HowWeWork_SubTitle_JobBased: "Job Based",
   HowWeWork_JobBased_Description:
     "In our Job-Based Model, we are your Delivery Partner focused in turning around work by Job. Swivel will work with your teams to onboard new work, process and then deliver to you within the agreed Scope and Timeframes. This is a fixed fee arrangement, where we absorb the job margin risk for you. This suits clients looking to pass on overflow work during busy periods or would like to focus more on the growth of their business and less time managing staff.",

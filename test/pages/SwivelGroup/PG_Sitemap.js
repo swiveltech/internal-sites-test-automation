@@ -13,5 +13,9 @@ class Sitemap {
       `//p[text()="${title}"]/following-sibling::div/a/p[text()="${option}"]/..`,
     );
   }
+
+  get lnk_Donate() {
+    return $(`(//a[text()='DONATE'])[1]`);
+  }
 }
 export default new Sitemap();

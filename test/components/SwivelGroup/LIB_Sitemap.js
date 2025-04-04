@@ -26,5 +26,17 @@ class Sitemap {
         appURL,
     );
   }
+  /**
+   * a method to Verify The Donate Button
+   */
+  async bc_VerifyTheDonateButton() {
+    let element = await PG_Sitemap.lnk_Donate;
+    // Check if the element is displayed
+    await expect(element).toBeDisplayedInViewport();
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Donate button in Swivel Foundation page ",
+    );
+  }
 }
 export default new Sitemap();

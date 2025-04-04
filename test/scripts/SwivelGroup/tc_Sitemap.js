@@ -167,7 +167,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
     // switch to child tab
     await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot("Swivel Foundation Page From Sitemap");
-    await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
+    await LIB_Sitemap.bc_VerifyTheDonateButton();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Verify the page navigation Careers -> Intro

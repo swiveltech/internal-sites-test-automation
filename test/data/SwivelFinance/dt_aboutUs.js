@@ -22,7 +22,7 @@ export default {
   Leader3_Name: "Usha Rajapaksha",
   Leader3_Job: "Head of Human Resources",
   Leader3_Description:
-    "Usha brings over 14 years of experience in Human Resource Management with exposure into different industries, such as manufacturing, pharmaceuticals and IT sector. With stronger business acumen, analytical skills and numerical skills along with passion for HR, she has been able to contributes to deliver exceptional business outcomes. Her expertise lies in overall HR operations, businesses restructuring, managing Mergers/Acquisitions, new business implementation, business integration, policy formulation/ implementation and business strategy.",
+    "Usha brings over 14 years of experience in Human Resource Management with exposure to different industries, such as manufacturing, pharmaceuticals and the IT sector. With stronger business acumen, analytical skills and numerical skills along with a passion for HR, she has been able to contribute to delivering exceptional business outcomes. Her expertise lies in overall HR operations, business restructuring, managing mergers/acquisitions, new business implementation, business integration, policy formulation/ implementation and business strategy.",
   Leader4_Name: "Anthony Wickramaratne",
   Leader4_Job: "Finance Business Partner",
   Leader4_Description:

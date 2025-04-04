@@ -21,7 +21,7 @@ export default {
   TheNeed_DescriptionForProject3:
     "A leading Australian provider of hearing healthcare, faced a challenge with their financial operations. Backlogs had accumulated in critical areas including accounts payable (invoice processing), bank reconciliations (accounts receivable), and debt recovery. Creainge inefficiencies and potentisl impact on their cash flow.",
   TheSolution_DescriptionForProject3:
-    "Swivel Finance recognized the need for immediate and targeted support. To address the client's challenges, we designed a customized solution via establishing a fully managed team comprised of specialists in accounts payable and accounts receivable. This dedicated team worked directly with the client to tackle the backlogs and streamline their financial processes.",
+    "Swivel Finance recognised the need for immediate support. To alleviate QC Accountants' workload, we seamlessly integrated our in-house, managed tax team into the process. These specialists collaborated directly with QC Accountants to handle the overflow of income tax returns, ensuring a smooth and efficient workflow.",
   TheResult_DescriptionForProject3:
     "The collaboration with Swivel Finance and the client yielded positive results, via the dedicated team diligently working to clear backlogs in accounts payable and bank reconciliations. They also implemented efficient management processes to ensure ongoing control over these critical areas. The success of the project led to the integration of a dedicated finance analyst into the team.",
 };

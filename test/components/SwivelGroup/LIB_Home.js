@@ -69,7 +69,15 @@ class Home {
    * a method to navigate to tab from navigation
    */
   async bc_NavigateToTabFromTopNavigation(tabName) {
-    await PG_Home.ele_HeaderTab(tabName).click();
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
+      await browser.pause(5000);
+      await PG_Home.ele_HeaderTabForTab(tabName).click();
+    } else {
+      await PG_Home.ele_HeaderTab(tabName).click();
+    }
     await browser.pause(2000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Navigate to the " + tabName + " tab from the top navigation",

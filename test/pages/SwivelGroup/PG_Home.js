@@ -10,6 +10,12 @@ class HomePage {
     return $(`//div[@id='header-nav']/descendant::a[text()='${tabName}']`);
   }
 
+  ele_HeaderTabForTab(tabName) {
+    return $(
+      `//ul[contains(@class,'navbar-nav d-block')]/descendant::a[text()='${tabName}']`,
+    );
+  }
+
   ele_ContactNumber(contactNumber) {
     return $(
       `//div[@id='contact']/descendant::span[text()='${contactNumber}']`,
@@ -80,6 +86,10 @@ class HomePage {
 
   get lnk_ForMoreNews() {
     return $(`//p[contains(text(),"For More News")]/..`);
+  }
+
+  get ele_HamburgerIcon() {
+    return $(`(//button[@aria-controls='navbarSupportedContent'])[1]`);
   }
 }
 
