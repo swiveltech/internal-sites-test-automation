@@ -1,4 +1,4 @@
-name: Automation Tests - Swivel Tech
+name: Screen Size
 
 on:
   workflow_dispatch:
