@@ -28,6 +28,7 @@
     "swivelfinance": "wdio run ./configs/wdio-swivelfinance.conf.js && npm run allure-report || npm run allure-report",
     "web-BS": " wdio run ./configs/web-browserstack.conf.js && npm run allure-report || npm run allure-report",
     "mobile-web-BS": " wdio run ./configs/mobile-web-browserstack.conf.js && npm run allure-report || npm run allure-report",
-    "real-ios-device": " wdio run ./configs/wdioMobile.conf.js safaridriver --enable && npm run allure-report || npm run allure-report"
+    "real-ios-device": " wdio run ./configs/wdioMobile.conf.js safaridriver --enable && npm run allure-report || npm run allure-report",
+    "screensize": "wdio run ./configs/screenSize.js && npm run allure-report || npm run allure-report"
   }
 }
