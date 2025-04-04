@@ -382,13 +382,32 @@ class Home {
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
       await browser.pause(5000);
       if (!OptionToSelect) {
-        await PG_Common.lnk_Navigation(tabName).click();
+        let e1 = await PG_Common.lnk_Navigation(tabName);
+        e1.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+        e1.click();
         await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
       } else {
-        await PG_Home.ele_MainItemArrowDown(tabName).click();
-        await LIB_Common.bc_LogAllureReportAndLogs(
-          "Click on Main Tab : " + tabName + " arrow down icon.",
-        );
+        let elementToExpand = await PG_Home.ele_MainItemArrowDown(tabName);
+        if (elementToExpand.isExisting()) {
+          let e2 = await PG_Home.ele_MainItemArrowDown(tabName);
+          e2.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest",
+          });
+          e2.click();
+          await LIB_Common.bc_LogAllureReportAndLogs(
+            "Click on Main Tab : " + tabName + " arrow down icon.",
+          );
+        } else {
+          await LIB_Common.bc_LogAllureReportAndLogs(
+            "Main Tab : " + tabName + " arrow down icon already expand.",
+          );
+        }
         await browser.pause(3000);
         await PG_Common.lnk_NavigationForSecondElement(OptionToSelect).click();
         await LIB_Common.bc_LogAllureReportAndLogs(

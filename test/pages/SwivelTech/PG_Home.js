@@ -210,7 +210,9 @@ class HomePage {
   }
 
   ele_MainItemArrowDown(Option) {
-    return $(`(//a[text()='${Option}']/following-sibling::button)[1]`);
+    return $(
+      `(//a[text()='${Option}']/following-sibling::button/*[@class="transition-transform "])[1]`,
+    );
   }
 
   get ele_CloseIcon() {
