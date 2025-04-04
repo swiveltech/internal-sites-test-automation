@@ -13,8 +13,8 @@ describe("Swivel Tech Site -> Home Page", () => {
       "Swivel Tech -> Home Page Verification",
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
-    console.log("Width", window.screen.width);
-    console.log("Height", window.screen.heigth);
+    const windowSize = await browser.getWindowSize();
+    console.log(windowSize);
     await LIB_Common.bc_TakeScreenShot("Screen Size");
   });
 });
