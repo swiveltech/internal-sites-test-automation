@@ -40,7 +40,7 @@ jobs:
       #   run: google-chrome --version
 
       - name: Run WebdriverIO Tests
-        run: npm run swiveltech
+        run: npm run screensize
 
       #- name: Find and Save Report Path
       #  run: |
