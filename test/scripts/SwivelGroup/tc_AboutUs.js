@@ -29,6 +29,7 @@ describe("Swivel Group Site -> About Us", () => {
       Data_AboutUs.OurClients_Description,
     );
 
+    await LIB_Common.bc_VerifyH4Header(Data_AboutUs.SubTitle_OurClients);
     // Take screenshot in our client
     await LIB_Common.bc_TakeScreenShot("About Us Our Client Section");
 
@@ -37,6 +38,8 @@ describe("Swivel Group Site -> About Us", () => {
       Data_AboutUs.SubTitle_OurLeadershipTeam,
       Data_AboutUs.OurLeadershipTeam_Description,
     );
+
+    await LIB_Common.bc_VerifyH4Header(Data_AboutUs.SubTitle_OurLeadershipTeam);
 
     // Take screenshot in Our Leadership Team
     await LIB_Common.bc_TakeScreenShot("About Us Our Leadership Team");
