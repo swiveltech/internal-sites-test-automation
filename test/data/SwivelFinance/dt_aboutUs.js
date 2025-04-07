@@ -37,7 +37,7 @@ export default {
     "From serene retreat moments to glamorous award nights, Swivel created lasting memories! We recharged and bonded during the retreat, followed by a dazzling night of recognition at the Glam Night.",
   Title_OurTeamCulture2: "5th Anniversary",
   Description_OurTeamCulture2:
-    "Our Elegance office buzzed with celebration for our 5th anniversary! We reminisced with a throwback video, heard inspiring messages from directors and HOD’s, and enjoyed cake and gifts for the whole crew. Here is to many more years of success together!",
+    "Our Swivel office buzzed with celebration for our 5th anniversary! We reminisced with a throwback video, heard inspiring messages from Directors and HOD’s, and enjoyed cake and gifts for the whole crew. Here is to many more years of success together!",
   Title_OurTeamCulture3: "Christmas Party",
   Description_OurTeamCulture3:
     "We turned up the glamour for the holidays! Our team celebrated at the Galle Face Hotel in style, decked out in their finest attire. It was a dazzling way to celebrate the season and all our year-end achievements!",

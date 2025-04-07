@@ -321,13 +321,14 @@ class Common {
     let parentGUID = allGUIDs.find((guid) => guid !== currentGUID);
 
     await browser.closeWindow();
-
+    await browser.pause(4000);
     // Ensure the previous window is available before switching
     await browser.waitUntil(
       async () => (await browser.getWindowHandles()).length === 1,
     );
 
     await browser.switchToWindow(parentGUID);
+    await browser.pause(4000);
     await this.bc_LogAllureReportAndLogs(
       "Closed the current tab and switched to the first tab",
     );

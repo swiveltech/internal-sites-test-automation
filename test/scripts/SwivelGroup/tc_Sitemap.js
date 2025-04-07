@@ -219,18 +219,23 @@ describe("Swivel Group Site -> Sitemap Page", () => {
     );
     allGUIDs = await browser.getWindowHandles();
     childGUID = allGUIDs.find((guid) => guid !== parentGUID);
-
     // switch to child tab
     await browser.switchToWindow(childGUID);
     //Verify the 'Newsroom' Section
     let elementForHamburger = await PG_Home.ele_HamburgerIcon;
     if (await elementForHamburger.isDisplayed()) {
       await LIB_Common.bc_VerifyPageHeader("Newsroom", 3);
+      await LIB_Common.bc_TakeScreenShot(
+        "Newsroom - Swivel Group From Sitemap Tab View",
+      );
     } else {
       await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+      await LIB_Common.bc_TakeScreenShot(
+        "Newsroom - Swivel Group From Sitemap",
+      );
     }
-    await LIB_Common.bc_TakeScreenShot("Newsroom - Swivel Group From Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+
     // Verify the page navigation Others -> Contact Us
     await LIB_Sitemap.bc_ClickOnSubOption(
       Data_Sitemap.Title_Others,

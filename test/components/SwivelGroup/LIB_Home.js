@@ -491,7 +491,7 @@ class Home {
     let element = await PG_Home.ele_OurBrandsWithLink(brandTitle, brandLink);
     await element.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     await element.click();
