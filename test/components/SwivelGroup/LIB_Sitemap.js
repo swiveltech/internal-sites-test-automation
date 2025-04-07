@@ -1,6 +1,5 @@
 import PG_Sitemap from "../../pages/SwivelGroup/PG_Sitemap.js";
 import LIB_Common from "../LIB_Common.js";
-import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 class Sitemap {
   /**
    * a method to Click on Sub option
