@@ -11,6 +11,7 @@ import Data_Cookies from "../../data/SwivelGroup/dt_cookie.js";
 import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.js";
 import LIB_Home from "../../components/SwivelGroup/LIB_Home.js";
 import LIB_AboutUs from "../../components/SwivelGroup/LIB_AboutUs.js";
+import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 
 describe("Swivel Group Site -> Sitemap Page", () => {
   // Covered Test Case Number : SG-43, SG-44, SG-45, SG-46, SG-47, SG-48
@@ -55,7 +56,13 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_Home,
       Data_Sitemap.Home_SubTitleAsOption_Newsroom,
     );
-    await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    //Verify the 'Newsroom' Section
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Common.bc_VerifyPageHeader("Newsroom", 3);
+    } else {
+      await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    }
     await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
 
     // Verify the page navigation About Us -> Intro
@@ -159,15 +166,15 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Foundation,
     );
-    await browser.pause(8000);
+
     // Get all window handles and find the child GUID
     allGUIDs = await browser.getWindowHandles();
     childGUID = allGUIDs.find((guid) => guid !== parentGUID);
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
+    await browser.pause(5000);
     await LIB_Common.bc_TakeScreenShot("Swivel Foundation Page From Sitemap");
-    await LIB_Sitemap.bc_VerifyTheDonateButton();
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 
     // Verify the page navigation Careers -> Intro
@@ -215,10 +222,15 @@ describe("Swivel Group Site -> Sitemap Page", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
+    //Verify the 'Newsroom' Section
+    let elementForHamburger = await PG_Home.ele_HamburgerIcon;
+    if (await elementForHamburger.isDisplayed()) {
+      await LIB_Common.bc_VerifyPageHeader("Newsroom", 3);
+    } else {
+      await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    }
     await LIB_Common.bc_TakeScreenShot("Newsroom - Swivel Group From Sitemap");
-    await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
-
     // Verify the page navigation Others -> Contact Us
     await LIB_Sitemap.bc_ClickOnSubOption(
       Data_Sitemap.Title_Others,

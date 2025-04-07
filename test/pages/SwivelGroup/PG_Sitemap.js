@@ -14,8 +14,8 @@ class Sitemap {
     );
   }
 
-  get lnk_Donate() {
-    return $(`(//a[text()='DONATE'])[1]`);
+  get ele_HamburgerIcon() {
+    return $(`//a[@aria-label="mobile menu"]`);
   }
 }
 export default new Sitemap();

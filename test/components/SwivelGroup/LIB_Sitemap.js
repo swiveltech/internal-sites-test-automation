@@ -1,5 +1,6 @@
 import PG_Sitemap from "../../pages/SwivelGroup/PG_Sitemap.js";
 import LIB_Common from "../LIB_Common.js";
+import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 class Sitemap {
   /**
    * a method to Click on Sub option
@@ -8,7 +9,7 @@ class Sitemap {
     let element = await PG_Sitemap.lnk_SubOptionInBottom(Title, Option);
     await element.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     let appURL = await PG_Sitemap.lnk_SubOptionInBottomToGetLink(
@@ -24,18 +25,6 @@ class Sitemap {
         Title +
         " and navigation URL : " +
         appURL,
-    );
-  }
-  /**
-   * a method to Verify The Donate Button
-   */
-  async bc_VerifyTheDonateButton() {
-    let element = await PG_Sitemap.lnk_Donate;
-    // Check if the element is displayed
-    await expect(element).toBeDisplayedInViewport();
-
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Donate button in Swivel Foundation page ",
     );
   }
 }

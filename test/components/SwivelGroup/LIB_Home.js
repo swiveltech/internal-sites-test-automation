@@ -17,7 +17,12 @@ class Home {
    * a method to Click on the Swivel Group logo
    */
   async bc_ClickOnApplicationLogoAndVerifyTheAppURL() {
-    await PG_Home.img_SwivelGroupLogo.click();
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await PG_Home.img_SwivelGroupLogoForTable.click();
+    } else {
+      await PG_Home.img_SwivelGroupLogo.click();
+    }
     await browser.pause(2000);
     // Get the current URL
     let currentUrl = await browser.getUrl();
@@ -438,10 +443,19 @@ class Home {
    * a method to Click on Lets talk button and Verify Contact Us Page
    */
   async bc_ClickOnLetsTalkButtonAndVerifyContactUsPage() {
-    await PG_Home.btn_LetsTalk.click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on Lets Talk button in Home page",
-    );
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await PG_Home.ele_HamburgerIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
+      await browser.pause(5000);
+      await LIB_Common.bc_ClickOnButton("Let's Talk", 2);
+    } else {
+      await PG_Home.btn_LetsTalk.click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Click on Lets Talk button in Home page",
+      );
+    }
+
     await LIB_Common.bc_VerifyH1Header("Contact Us");
     await LIB_Common.bc_VerifyTheAppURL("contact-us");
   }
@@ -508,7 +522,7 @@ class Home {
     let element = await PG_Home.lnk_ForMoreNews;
     await element.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     await browser.pause(2000);

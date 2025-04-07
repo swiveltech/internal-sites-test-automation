@@ -6,6 +6,10 @@ class HomePage {
     return $('//div[@class="image-min-width"]/a/img');
   }
 
+  get img_SwivelGroupLogoForTable() {
+    return $('(//img[contains(@alt,"Swivel_Group_Logo_")])[1]');
+  }
+
   ele_HeaderTab(tabName) {
     return $(`//div[@id='header-nav']/descendant::a[text()='${tabName}']`);
   }

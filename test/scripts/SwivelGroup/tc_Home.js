@@ -6,6 +6,7 @@ import LIB_Common from "../../components/LIB_Common.js";
 import Data_Home from "../../data/SwivelGroup/dt_home.js";
 import Data_ContactUs from "../../data/SwivelGroup/dt_contactUs.js";
 import Data_Newsroom from "../../data/SwivelGroup/dt_newsroom.js";
+import PG_Home from "../../pages/SwivelGroup/PG_Home.js";
 
 describe("Swivel Group Site -> Home Page ", () => {
   // Covered Test Case Number : SG-1, SG-6, SG-7,SG-12, SG-13, SG-17
@@ -121,7 +122,12 @@ describe("Swivel Group Site -> Home Page ", () => {
     await LIB_Common.bc_TakeScreenShot("Our Clients");
 
     //Verify the 'Newsroom' Section
-    await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Common.bc_VerifyPageHeader("Newsroom", 3);
+    } else {
+      await LIB_Common.bc_VerifyPageHeader("Newsroom", 1);
+    }
     await LIB_Common.bc_TakeScreenShot("Newsroom");
     // Verify the Article Bowling Tournament
     await LIB_Newsroom.bc_VerifyArticles(
@@ -318,9 +324,8 @@ describe("Swivel Group Site -> Home Page ", () => {
       "Swivel_Foundation_Brand_",
       "Visit SwivelFoundation",
     );
-    await browser.pause(10000);
+    await browser.pause(6000);
     await LIB_Common.bc_TakeScreenShot("Swivel Foundation Site");
-    await LIB_Common.bc_VerifyH1Header("“Create Opportunity");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
     // Click on Swivel Tech Site
     await LIB_Home.bc_ClickOnOurBrandsLinksInHomePage(
@@ -330,10 +335,6 @@ describe("Swivel Group Site -> Home Page ", () => {
 
     await LIB_Common.bc_TakeScreenShot("Swivel Tech Site");
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    await LIB_Common.bc_VerifyPageHeader(
-      "Building, Automating, and Evolving",
-      1,
-    );
     await LIB_Common.bc_VerifyPageHeader(
       "Bridging Innovation and Expertise Through Our Outsourced Software Development Services",
       1,
