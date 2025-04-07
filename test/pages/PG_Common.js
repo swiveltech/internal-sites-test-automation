@@ -62,6 +62,10 @@ class CommonPage {
     return $(`(//*[contains(normalize-space(.), "${PageHeader}")])[${Index}]`);
   }
 
+  lbl_PageHeaderWithDotForPTab(PageHeader, Index) {
+    return $(`(//p[contains(normalize-space(.), "${PageHeader}")])[${Index}]`);
+  }
+
   lbl_SpanText(Text) {
     return $(`//span[text()='${Text}']`);
   }

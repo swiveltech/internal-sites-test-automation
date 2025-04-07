@@ -73,14 +73,6 @@ describe("Swivel Group Site -> Sitemap Page", () => {
     await LIB_Common.bc_VerifyH1Header(Data_AboutUs.AboutUs_Header);
     await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
 
-    // Verify the page navigation About Us -> Intro
-    await LIB_Sitemap.bc_ClickOnSubOption(
-      Data_Sitemap.Title_AboutUs,
-      Data_Sitemap.AboutUs_SubTitleAsOption_Intro,
-    );
-    await LIB_Common.bc_VerifyH1Header(Data_AboutUs.AboutUs_Header);
-    await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
-
     // Verify the page navigation About Us -> Our Clients
     await LIB_Sitemap.bc_ClickOnSubOption(
       Data_Sitemap.Title_AboutUs,

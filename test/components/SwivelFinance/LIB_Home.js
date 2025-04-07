@@ -425,5 +425,29 @@ class Home {
     );
     await LIB_Common.bc_VerifyTheButton("Download eBook", 1);
   }
+
+  async bc_VerifyAnyTextForPTag(textValue, index) {
+    let headerElement = await PG_Common.lbl_PageHeaderWithDotForPTab(
+      textValue,
+      index,
+    );
+
+    // Wait for the element to be displayed
+    await headerElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view if necessary
+    await headerElement.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+
+    // Check if the element is displayed
+    await expect(headerElement).toBeDisplayedInViewport();
+
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      "Verify the Text as " + textValue,
+    );
+  }
 }
 export default new Home();

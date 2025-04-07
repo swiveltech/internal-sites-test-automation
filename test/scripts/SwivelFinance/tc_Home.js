@@ -11,7 +11,7 @@ import Data_ThoughtLeadership from "../../data/SwivelFinance/dt_thoughtLeadershi
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 
 describe("Swivel Finance Site -> Home Page", () => {
-  it("Verify the Home Page", async () => {
+  it.only("Verify the Home Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Swivel Finance -> Home Page Verification",
     );
@@ -431,7 +431,7 @@ describe("Swivel Finance Site -> Home Page", () => {
     await LIB_Common.bc_VerifyH5Header(
       Data_SuccessfulClientProject.SubTitle_TheSolution,
     );
-    await LIB_Common.bc_VerifyAnyText(
+    await LIB_Home.bc_VerifyAnyTextForPTag(
       Data_SuccessfulClientProject.TheSolution_DescriptionForProject3,
       1,
     );

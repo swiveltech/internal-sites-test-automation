@@ -6,6 +6,7 @@ import Data_Resources from "../../data/SwivelTech/dt_resources.js";
 import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.js";
 import LIB_HowWeWork from "../../components/SwivelTech/LIB_HowWeWork.js";
 import LIB_Resources from "../../components/SwivelTech/LIB_Resources.js";
+import PG_Home from "../../pages/SwivelTech/PG_Home.js";
 
 describe("Swivel Tech Site -> How We Work -> Project Based Page", () => {
   it("Verify the How We Work -> Project Based Page", async () => {

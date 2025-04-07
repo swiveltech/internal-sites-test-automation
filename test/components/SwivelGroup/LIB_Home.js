@@ -219,9 +219,9 @@ class Home {
       block: "start",
       inline: "nearest",
     });
-    await browser.pause(2000);
+    await browser.pause(4000);
     await PG_Home.ele_FooterTab(tabName).click();
-    await browser.pause(2000);
+    await browser.pause(4000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on the Footer Tab name " + tabName + " is present.",
     );
@@ -484,6 +484,7 @@ class Home {
    * a method to Click on Our Brands links in home page
    */
   async bc_ClickOnOurBrandsLinksInHomePage(brandTitle, brandLink) {
+    await browser.pause(4000);
     // Get parent window GUID
     let parentGUID = await browser.getWindowHandle();
 
@@ -495,7 +496,7 @@ class Home {
       inline: "nearest",
     });
     await element.click();
-
+    await browser.pause(4000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       `Clicked on Our Brand title: ${brandTitle}, Brand link: ${brandLink}`,
     );
@@ -511,7 +512,7 @@ class Home {
 
     // Switch to child window
     await browser.switchToWindow(childGUID);
-    await browser.pause(2000);
+    await browser.pause(4000);
   }
 
   /**

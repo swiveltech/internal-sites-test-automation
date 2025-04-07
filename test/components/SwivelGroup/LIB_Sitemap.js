@@ -17,7 +17,7 @@ class Sitemap {
       Option,
     ).getAttribute("href");
     await PG_Sitemap.lnk_SubOptionInBottom(Title, Option).click();
-    await browser.pause(2000);
+    await browser.pause(4000);
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Option as : " +
         Option +
