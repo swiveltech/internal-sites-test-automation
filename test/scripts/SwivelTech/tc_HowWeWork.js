@@ -329,7 +329,19 @@ describe("Swivel Tech Site -> How We Work -> Project Based Page", () => {
     await LIB_Home.bc_VerifySubPageHeaderInPTag(
       Data_Resources.Blogs_Top_Description,
     );
-    await LIB_Common.bc_VerifyH6Header("Categories");
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Resources.bc_VerifyCategoriesOptionsInTab(
+        "Categories",
+        "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
+      );
+    } else {
+      await LIB_Common.bc_VerifyH6Header("Categories");
+      await LIB_Resources.bc_VerifyCategoriesOptions(
+        "Categories",
+        "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
+      );
+    }
     await LIB_Common.bc_VerifyTheAppURL("blogs");
 
     await LIB_Home.bc_ClickOnTopTab(
