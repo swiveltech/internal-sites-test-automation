@@ -27,11 +27,11 @@ jobs:
       - name: Install Allure
         run: npm install -g allure-commandline
 
-      - name: Install Chrome
-        run: apt-get update
+      - name: Install Chrome 1
+        run: wsl
 
-      - name: Install Chrome
-        run: apt-get install -y --no-install-recommends wget gnupg2
+      - name: Install Chrome 2
+        run: winget install --id GNU.Wget -e
 
       #     sudo apt-get install -y google-chrome-stable
       # - name: Verify Chrome Installation
