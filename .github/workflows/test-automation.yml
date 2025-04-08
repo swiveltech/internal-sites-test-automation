@@ -24,18 +24,16 @@ jobs:
         run: |
           npm install --legacy-peer-deps
 
-      # - name: Fix Npm issues
-      #   run: |
-      #     npm audit fix --force
-
       - name: Install Allure
         run: npm install -g allure-commandline
 
-      # - name: Install Chrome
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y google-chrome-stable
+      - name: Install Chrome
+        run: apt-get update
 
+      - name: Install Chrome
+        run: apt-get install -y --no-install-recommends wget gnupg2
+
+      #     sudo apt-get install -y google-chrome-stable
       # - name: Verify Chrome Installation
       #   run: google-chrome --version
 
