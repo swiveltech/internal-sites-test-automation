@@ -14,57 +14,77 @@ jobs:
     steps:
       - name: Set Screen Resolution
         run: |
-          Add-Type -TypeDefinition @"
-          using System;
-          using System.Runtime.InteropServices;
-          public class ScreenResolution {
-              [DllImport("user32.dll")]
-              public static extern int ChangeDisplaySettings(ref DEVMODE devMode, int flags);
-    
-              [StructLayout(LayoutKind.Sequential)]
-              public struct DEVMODE {
-                  [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
-                  public string dmDeviceName;
-                  public short dmSpecVersion;
-                  public short dmDriverVersion;
-                  public short dmSize;
-                  public short dmDriverExtra;
-                  public int dmFields;
-                  public int dmPositionX;
-                  public int dmPositionY;
-                  public int dmDisplayOrientation;
-                  public int dmColor;
-                  public int dmDuplex;
-                  public int dmYResolution;
-                  public int dmTTOption;
-                  public int dmCollate;
-                  [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
-                  public string dmFormName;
-                  public short dmLogPixels;
-                  public int dmBitsPerPel;
-                  public int dmPelsWidth;
-                  public int dmPelsHeight;
-                  public int dmDisplayFlags;
-                  public int dmDisplayFrequency;
-                  public int dmICMMethod;
-                  public int dmICMIntent;
-                  public int dmMediaType;
-                  public int dmDitherType;
-                  public int dmReserved1;
-                  public int dmReserved2;
-                  public int dmPanningWidth;
-                  public int dmPanningHeight;
-              }
+          # First try to list available resolutions
+          $code = @'
+          [DllImport("user32.dll")]
+          public static extern bool EnumDisplaySettings(string deviceName, int modeNum, ref DEVMODE devMode);
+          
+          [DllImport("user32.dll")]
+          public static extern int ChangeDisplaySettings(ref DEVMODE devMode, int flags);
+          
+          [StructLayout(LayoutKind.Sequential)]
+          public struct DEVMODE {
+              [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+              public string dmDeviceName;
+              public short dmSpecVersion;
+              public short dmDriverVersion;
+              public short dmSize;
+              public short dmDriverExtra;
+              public int dmFields;
+              public int dmPositionX;
+              public int dmPositionY;
+              public int dmDisplayOrientation;
+              public int dmDisplayFixedOutput;
+              public short dmColor;
+              public short dmDuplex;
+              public short dmYResolution;
+              public short dmTTOption;
+              public short dmCollate;
+              [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+              public string dmFormName;
+              public short dmLogPixels;
+              public int dmBitsPerPel;
+              public int dmPelsWidth;
+              public int dmPelsHeight;
+              public int dmDisplayFlags;
+              public int dmDisplayFrequency;
+              public int dmICMMethod;
+              public int dmICMIntent;
+              public int dmMediaType;
+              public int dmDitherType;
+              public int dmReserved1;
+              public int dmReserved2;
+              public int dmPanningWidth;
+              public int dmPanningHeight;
           }
-          "@ -Language CSharp
-    
-          $devmode = New-Object ScreenResolution+DEVMODE
-          $devmode.dmSize = [System.Runtime.InteropServices.Marshal]::SizeOf($devmode)
-          $devmode.dmPelsWidth = 1920
-          $devmode.dmPelsHeight = 1080
-          $devmode.dmBitsPerPel = 32
-          $devmode.dmFields = 0x40000 -bor 0x80000 -bor 0x200000
-          [ScreenResolution]::ChangeDisplaySettings([ref]$devmode, 0)
+          '@
+          
+          Add-Type -TypeDefinition $code -Namespace Win32 -Name Display
+          
+          $dm = New-Object Win32.Display+DEVMODE
+          $dm.dmSize = [System.Runtime.InteropServices.Marshal]::SizeOf($dm)
+          
+          # Try to set the resolution
+          $dm.dmPelsWidth = 1920
+          $dm.dmPelsHeight = 1080
+          $dm.dmBitsPerPel = 32
+          $dm.dmDisplayFrequency = 60
+          $dm.dmFields = 0x4000000 -bor 0x80000 -bor 0x200000 -bor 0x40000
+          
+          $result = [Win32.Display]::ChangeDisplaySettings([ref]$dm, 0)
+          
+          if ($result -eq 0) {
+              Write-Output "Resolution changed successfully"
+          } else {
+              Write-Output "Failed to change resolution. Error code: $result"
+              Write-Output "Trying alternative approach..."
+              
+              # Alternative approach using QRes utility
+              $qresPath = "$env:TEMP\qres.exe"
+              Invoke-WebRequest -Uri "https://www.winability.com/download/qres.zip" -OutFile "$env:TEMP\qres.zip"
+              Expand-Archive -Path "$env:TEMP\qres.zip" -DestinationPath $env:TEMP -Force
+              & "$env:TEMP\qres\x64\qres.exe" /x:1920 /y:1080
+          }
         shell: pwsh
   
       - name: Checkout Repository
@@ -139,4 +159,4 @@ jobs:
 
           $messageJson = ConvertTo-Json -Depth 4 -Compress $messageObj
 
-          aws ses send-email --from "serviceaccount@swivelgroup.com.au" --destination "ToAddresses=dilshan@swivelgroup.com.au" --message $messageJson --region "ap-southeast-2"
+          aws ses send-email --from "serviceaccount@swivelgroup.com.au" --destination "ToAddresses=dilshan@swivelgroup.com.au,shithu@swivelgroup.com.au" --message $messageJson --region "ap-southeast-2"
