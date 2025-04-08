@@ -173,10 +173,6 @@ class HomePage {
     );
   }
 
-  lbl_TopSubPageHeaderInSpan(PageHeader) {
-    return $(`//span[text()[normalize-space() = "${PageHeader}"]]`);
-  }
-
   lbl_H1WithNormalizeSpace(Description) {
     return $(`//h1[text()[normalize-space() = "${Description}"]]`);
   }
@@ -217,6 +213,18 @@ class HomePage {
 
   get ele_CloseIcon() {
     return $(`(//button[@aria-controls='navbar-default'])[2]`);
+  }
+
+  get ele_lblPageHeaderInHero() {
+    return $(
+      `(//span[contains(normalize-space(.), "Building, Automating, andEvolving Software withAI Precision")])[1]`,
+    );
+  }
+
+  get ele_lblPageHeaderInHeroInWeb() {
+    return $(
+      `(//span[contains(normalize-space(.), "Building, Automating, and EvolvingSoftware with AI Precision")])[1]`,
+    );
   }
 }
 

@@ -361,16 +361,6 @@ class Home {
   }
 
   /**
-   * a method to Verify the Swivel Tech Top Page Header
-   */
-  async bc_VerifyTopSubPageHeader(pageHeader) {
-    await expect(PG_Home.lbl_TopSubPageHeaderInSpan(pageHeader)).toBePresent();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Swivel Tech Top Page Header as " + pageHeader,
-    );
-  }
-
-  /**
    * a method to Click on Top Tab
    */
   async bc_ClickOnTopTab(tabName, Option) {
@@ -737,7 +727,7 @@ class Home {
     let element = await PG_Home.ele_HamburgerIcon;
     if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
-      await PG_Common.lnk_Navigation(buttonName).click();
+      await PG_Common.lnk_Navigation("Let's Talk").click();
       await LIB_Common.bc_LogAllureReportAndLogs(
         "Clicked on Hamburger Icon and button with label: " + buttonName,
       );
@@ -745,6 +735,40 @@ class Home {
       await LIB_Common.bc_ClickOnButton(buttonName, 1);
     }
     await browser.pause(2000);
+  }
+
+  /**
+   * a method to Verify the Swivel Tech Page Header
+   */
+  async bc_VerifyPageHeaderInHomePage() {
+    const isHamburgerVisible = await (
+      await PG_Home.ele_HamburgerIcon
+    ).isDisplayed();
+
+    // Choose the right element based on the condition
+    const pageHeaderElement = isHamburgerVisible
+      ? await PG_Home.ele_lblPageHeaderInHero
+      : await PG_Home.ele_lblPageHeaderInHeroInWeb;
+
+    const systemText = await pageHeaderElement.getText();
+
+    // Wait for the element to be displayed
+    await pageHeaderElement.waitForDisplayed({ timeout: 5000 });
+
+    // Scroll into view
+    await pageHeaderElement.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+
+    // Verify visibility
+    await expect(pageHeaderElement).toBeDisplayed();
+
+    // Log result
+    await LIB_Common.bc_LogAllureReportAndLogs(
+      `Verify the Swivel Tech Page Header in Home page as : ${systemText}`,
+    );
   }
 }
 export default new Home();

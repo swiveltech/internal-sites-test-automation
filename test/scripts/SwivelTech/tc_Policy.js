@@ -13,7 +13,7 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     //Click on Privacy Policy
     await LIB_Common.bc_ClickOnLinks(Data_Home.Link_PrivacyPolicy);
@@ -101,7 +101,7 @@ describe("Swivel Tech Site -> Policy Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     //Click on Cookie Policy
     await LIB_Common.bc_ClickOnLinks(Data_Home.Link_CookiePolicy);

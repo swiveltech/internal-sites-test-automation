@@ -13,7 +13,7 @@ describe("Swivel Tech Site -> About Us Pages", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
     await LIB_Home.bc_ClickOnTopTab(Data_Home.TabName_AboutUs);
     await LIB_Common.bc_VerifyH1Header(Data_AboutUs.Top_Header);
     await LIB_Common.bc_VerifyTheParagraph(Data_AboutUs.Top_Description1);

@@ -13,7 +13,7 @@ describe("Swivel Tech Site -> Resources Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Resources,
       Data_Home.Resources_Blogs,
@@ -152,7 +152,7 @@ describe("Swivel Tech Site -> Resources Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
     await LIB_Home.bc_ClickOnTopTab(
       Data_Home.TabName_Resources,
       Data_Home.Resources_CaseStudies,

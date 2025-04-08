@@ -14,7 +14,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "Artificial Intelligence" navigation
     await LIB_Home.bc_ClickOnTopTab(
@@ -240,7 +240,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "DevOps As A Service" navigation
     await LIB_Home.bc_ClickOnTopTab(
@@ -507,7 +507,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "Enterprise Software Development" navigation
     await LIB_Home.bc_ClickOnTopTab(
@@ -743,7 +743,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "Managed Service Augmentation" navigation
     await LIB_Home.bc_ClickOnTopTab(
@@ -920,7 +920,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "QA as a Service" navigation
     await LIB_Home.bc_ClickOnTopTab(
@@ -1185,7 +1185,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "Search Engine Optimisation" navigation
     await LIB_Home.bc_ClickOnTopTab(
@@ -1407,7 +1407,7 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
     await LIB_Common.bc_ClickOnButton("Accept", 1);
-    //    await LIB_Common.bc_VerifyPageHeader(Data_Home.Top_Header1, 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
 
     // Click on the "Services" -> "MVP Factory" navigation
     await LIB_Home.bc_ClickOnTopTab(
