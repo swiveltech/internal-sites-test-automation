@@ -17,17 +17,17 @@ export default {
   Header_TheCookiesWeSet: "The Cookies We Set",
   TheCookiesWeSet_Description1: "The cookies we set are listed below:",
   TheCookiesWeSet_Description2: "Forms related cookies.",
-  TheCookiesWeSet_Description3: "Third party cookies.",
+  TheCookiesWeSet_Description3: "Third-party cookies.",
   TheCookiesWeSet_Description4:
-    "In some special cases, we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site:",
+    "In some special cases, we also use cookies provided by trusted third parties. The following section details which third-party cookies you might encounter through this site:",
   TheCookiesWeSet_Description5:
-    "This site uses Google Analytics, which is one of the most widespread and trusted analytics solution on the web, for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.",
+    "This site uses Google Analytics, which is one of the most widespread and trusted analytics solutions on the web, to help us understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.",
   TheCookiesWeSet_Description6:
-    "Third-party analytics are used to track and measure usage of this site so that we can continue to produce engaging content.",
+    "Third-party analytics are used to track and measure the usage of this site so that we can continue to produce engaging content.",
   TheCookiesWeSet_Description7:
     "From time to time, we test new features and make subtle changes to the way that the site is delivered. When we are still testing new features, these cookies may be used to ensure that you receive a consistent experience while on the site while ensuring we understand which optimisations our users appreciate the most.",
   TheCookiesWeSet_Description8:
-    "We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including Facebook, Instagram, LinkedIn will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.",
+    "We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including Facebook, Instagram, and LinkedIn will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.",
   Header_MoreInformation: "More Information",
   MoreInformation_Description:
     "We hope that this has clarified any questions or concerns you may have had about our use of cookies. If you are unsure about whether you need cookies enabled to use a specific feature on our site, it is generally safer to leave them enabled. If you still have questions or would like more information, please feel free to contact us through one of our preferred methods of communication, such as by email at",

@@ -57,7 +57,7 @@ export default {
   TheCookiesWeSet_Description5:
     "From time to time, we test new features and make subtle changes to the way that the site is delivered. When we are still testing new features, these cookies may be used to ensure that you receive a consistent experience while on the site while ensuring we understand which optimisations our users appreciate the most.",
   TheCookiesWeSet_Description6:
-    "We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including Facebook, Instagram, LinkedIn will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.",
+    "We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including Facebook, Instagram, and LinkedIn will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.",
   Header_MoreInformation: "More information",
   MoreInformation_Description:
     "We hope that this has clarified any questions or concerns you may have had about our use of cookies. If you are unsure about whether you need cookies enabled to use a specific feature on our site, it is generally safer to leave them enabled. If you still have questions or would like more information, please feel free to contact us through one of our preferred methods of communication, such as by email at",
