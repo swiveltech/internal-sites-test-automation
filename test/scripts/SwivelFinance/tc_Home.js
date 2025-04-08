@@ -11,7 +11,7 @@ import Data_ThoughtLeadership from "../../data/SwivelFinance/dt_thoughtLeadershi
 import LIB_Home from "../../components/SwivelFinance/LIB_Home.js";
 
 describe("Swivel Finance Site -> Home Page", () => {
-  it.only("Verify the Home Page", async () => {
+  it("Verify the Home Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(
       "Swivel Finance -> Home Page Verification",
     );

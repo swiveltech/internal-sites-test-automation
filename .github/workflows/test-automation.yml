@@ -27,16 +27,6 @@ jobs:
       - name: Install Allure
         run: npm install -g allure-commandline
 
-      - name: Install Chrome 1
-        run: wsl
-
-      - name: Install Chrome 2
-        run: winget install --id GNU.Wget -e
-
-      #     sudo apt-get install -y google-chrome-stable
-      # - name: Verify Chrome Installation
-      #   run: google-chrome --version
-
       - name: Run WebdriverIO Tests with Console Logs
         run: npm run web
 
