@@ -4,6 +4,7 @@ import LIB_Home from "../../components/SwivelTech/LIB_Home.js";
 import Data_Resources from "../../data/SwivelTech/dt_resources.js";
 import Data_ContactUs from "../../data/SwivelTech/dt_contactUs.js";
 import LIB_ContactUs from "../../components/SwivelTech/LIB_ContactUs.js";
+import PG_Home from "../../pages/SwivelTech/PG_Home.js";
 
 describe("Swivel Tech Site -> Contact Us Page", () => {
   it("Verify the Contact Us Page", async () => {
@@ -27,30 +28,43 @@ describe("Swivel Tech Site -> Contact Us Page", () => {
       Data_Resources.ContactUs_Description,
     );
 
+    await LIB_ContactUs.bc_VerifyCountry(Data_ContactUs.Country1, 2);
     await LIB_ContactUs.bc_VerifyCompanyAddress(
       Data_ContactUs.Country1,
       Data_ContactUs.CompanyName1WithAddress,
       Data_ContactUs.Company1ContactNumber,
     );
 
+    await LIB_ContactUs.bc_VerifyCountry(Data_ContactUs.Country2, 3);
     await LIB_ContactUs.bc_VerifyCompanyAddress(
       Data_ContactUs.Country2,
       Data_ContactUs.CompanyName2WithAddress,
       Data_ContactUs.Company2ContactNumber,
     );
 
+    await LIB_ContactUs.bc_VerifyCountry(Data_ContactUs.Country2, 4);
     await LIB_ContactUs.bc_VerifyCompanyAddress(
       Data_ContactUs.Country2,
       Data_ContactUs.CompanyName3WithAddress,
       Data_ContactUs.Company3ContactNumber,
     );
 
-    await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_Email);
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Common.bc_VerifyPageHeader(Data_ContactUs.Header_Email, 2);
+    } else {
+      await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_Email);
+    }
     await LIB_ContactUs.bc_VerifyEmail(
       Data_ContactUs.Header_Email,
       Data_ContactUs.EmailAddress,
     );
-    await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_CallUs);
+
+    if (await element.isDisplayed()) {
+      await LIB_Common.bc_VerifyPageHeader(Data_ContactUs.Header_CallUs, 2);
+    } else {
+      await LIB_Common.bc_VerifyH3Header(Data_ContactUs.Header_CallUs);
+    }
     await LIB_ContactUs.bc_VerifyContactNumber(
       Data_ContactUs.Header_CallUs,
       Data_ContactUs.ContactNumber,

@@ -1,12 +1,11 @@
 import PG_ContactUs from "../../pages/SwivelTech/PG_ContactUs.js";
 import LIB_Common from "../LIB_Common.js";
+import PG_Home from "../../pages/SwivelTech/PG_Home.js";
 class ContactUs {
   /**
    * a method to Verify the How We Grew Over the Years
    */
   async bc_VerifyCompanyAddress(country, addressWithCompanyName, phoneNumber) {
-    await LIB_Common.bc_VerifyH3Header(country);
-
     await expect(
       PG_ContactUs.ele_CountryWithAddress(country, addressWithCompanyName),
     ).toBePresent();
@@ -106,6 +105,18 @@ class ContactUs {
     await PG_ContactUs.tf_Message.clearValue();
     await PG_ContactUs.tf_Message.addValue(message);
     await LIB_Common.bc_LogAllureReportAndLogs("Message type as " + message);
+  }
+
+  /**
+   * a method to Verify the Country
+   */
+  async bc_VerifyCountry(country, index) {
+    let element = await PG_Home.ele_HamburgerIcon;
+    if (await element.isDisplayed()) {
+      await LIB_Common.bc_VerifyPageHeader(country, index);
+    } else {
+      await LIB_Common.bc_VerifyH3Header(country);
+    }
   }
 }
 export default new ContactUs();
