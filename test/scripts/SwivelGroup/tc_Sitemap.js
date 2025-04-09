@@ -100,7 +100,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Tech,
     );
-    await browser.pause(6000);
+    await browser.pause(8000);
     // get all GUID's
     let allGUIDs = await browser.getWindowHandles();
 
@@ -116,6 +116,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_OurBrands,
       Data_Sitemap.OurBrands_SubTitleAsOption_Finance,
     );
+    await browser.pause(6000);
     await LIB_Common.bc_TakeScreenShot("Swivel Finance Page From Sitemap");
     await LIB_Common.bc_VerifyH1Header(Data_SwivelFinance.SwivelFinance_Header);
     await LIB_Common.bc_VerifyPageHeader(Data_SwivelFinance.Top_Description, 1);
@@ -209,6 +210,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_Others,
       Data_Sitemap.Others_SubTitleAsOption_Newsroom,
     );
+    await browser.pause(6000);
     allGUIDs = await browser.getWindowHandles();
     childGUID = allGUIDs.find((guid) => guid !== parentGUID);
     // switch to child tab
@@ -233,6 +235,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_Others,
       Data_Sitemap.Others_SubTitleAsOption_ContactUs,
     );
+    await browser.pause(6000);
     allGUIDs = await browser.getWindowHandles();
     childGUID = allGUIDs.find((guid) => guid !== parentGUID);
 
