@@ -13,7 +13,7 @@ export default {
   AboutUs_SubTitleAsOption_OurLeadershipTeam: "Our Leadership Team",
   Title_OurBrands: "Our Brands",
   OurBrands_SubTitleAsOption_Tech: "Swivel Tech",
-  OurBrands_SubTitleAsOption_Finance: "Swivel Finanace",
+  OurBrands_SubTitleAsOption_Finance: "Swivel Finance",
   OurBrands_SubTitleAsOption_Talent: "Swivel Talant",
   OurBrands_SubTitleAsOption_Foundation: "Swivel Foundation",
   Title_Careers: "Careers",

@@ -17,7 +17,7 @@ export default {
   SriLanka_TechOffice_Location_AddressLine1: "31 Queen’s Rd, Colombo 03,",
   SriLanka_TechOffice_Location_AddressLine2: "Sri Lanka.",
   SriLanka_TechOffice_Number: "+94 112 365797",
-  Footer_CopyRight: "© 2024 Swivel Group All Rights Reserved",
+  Footer_CopyRight: "© 2025 Swivel Group All Rights Reserved",
   ErrorMessage_EmailAddress: "Enter a valid email address.",
   ErrorMessage_Robot:
     "We were not able to confirm the captcha. Please try again.",
