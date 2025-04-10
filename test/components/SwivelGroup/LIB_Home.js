@@ -311,7 +311,7 @@ class Home {
     let element = await PG_Home.icn_Facebook;
     await element.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "center",
       inline: "nearest",
     });
     let appUrl = await element.getAttribute("href");
