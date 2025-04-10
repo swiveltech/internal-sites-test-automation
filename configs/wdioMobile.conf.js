@@ -80,7 +80,7 @@ export const config = {
     {
       // capabilities for local Appium web tests on iOS
       platformName: "iOS",
-      browserName: "safari",
+      browserName: "Safari",
       "appium:deviceName": "Swivel’s iPad",
       "appium:platformVersion": "18.4",
       "appium:automationName": "XCUITest",

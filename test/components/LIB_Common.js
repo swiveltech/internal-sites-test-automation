@@ -321,7 +321,7 @@ class Common {
     let parentGUID = allGUIDs.find((guid) => guid !== currentGUID);
 
     await browser.closeWindow();
-    await browser.pause(4000);
+    await browser.pause(8000);
     // Ensure the previous window is available before switching
     await browser.waitUntil(
       async () => (await browser.getWindowHandles()).length === 1,
