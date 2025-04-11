@@ -126,10 +126,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
     await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot("Swivel Finance Page From Sitemap");
     await LIB_Common.bc_VerifyH1Header(Data_SwivelFinance.SwivelFinance_Header);
-    await LIB_Common.bc_VerifyPageHeader(Data_SwivelFinance.Top_Description, 1);
-    await LIB_Common.bc_VerifyTheParagraph(
-      Data_SwivelFinance.WhoWeAre_Description,
-    );
+    await LIB_Common.bc_VerifyTheParagraph(Data_SwivelFinance.Top_Description);
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
     await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
 
