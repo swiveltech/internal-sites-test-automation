@@ -14,7 +14,7 @@ export default {
   Title_OurBrands: "Our Brands",
   OurBrands_SubTitleAsOption_Tech: "Swivel Tech",
   OurBrands_SubTitleAsOption_Finance: "Swivel Finance",
-  OurBrands_SubTitleAsOption_Talent: "Swivel Talant",
+  OurBrands_SubTitleAsOption_Talent: "Swivel Talent",
   OurBrands_SubTitleAsOption_Foundation: "Swivel Foundation",
   Title_Careers: "Careers",
   Careers_SubTitleAsOption_Intro: "Intro",
@@ -28,7 +28,7 @@ export default {
   Others_SubTitleAsOption_CookiePolicy: "Cookie Policy",
   Title_SocialMedia: "Social Media",
   SocialMedia_SubTitleAsOption_Facebook: "Facebook",
-  SocialMedia_SubTitleAsOption_Instagram: "Instragram",
+  SocialMedia_SubTitleAsOption_Instagram: "Instagram",
   SocialMedia_SubTitleAsOption_Twitter: "Twitter",
   SocialMedia_SubTitleAsOption_Linkedin: "Linkedin",
 };

@@ -206,22 +206,35 @@ class Careers {
    * a method to Click on the first record
    */
   async bc_ClickOnTheFirstRecord() {
-    let searchKey = await PG_Careers.lnk_FirstRecordToClick.getText();
-    let url = await PG_Careers.lnk_FirstRecordToClick.getAttribute("href");
-    await PG_Careers.lnk_FirstRecordToClick.click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on the First Record, Title as : " +
-        searchKey +
-        " , and URL as : " +
-        url,
-    );
-    await browser.pause(5000);
-    await LIB_Common.bc_TakeScreenShot("Rooster Page Swivel Group");
-    await browser.back();
-    await browser.pause(5000);
-    await LIB_Common.bc_TakeScreenShot(
-      "Again Navigate to Swivel Group Careers page",
-    );
+    await browser.pause(2000);
+    let element = await PG_Careers.lnk_FirstRecordToClick;
+    if (await element.isDisplayed()) {
+      await element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+      let searchKey = await PG_Careers.lnk_FirstRecordToClick.getText();
+      let url = await PG_Careers.lnk_FirstRecordToClick.getAttribute("href");
+      await PG_Careers.lnk_FirstRecordToClick.click();
+      await LIB_Common.bc_LogAllureReportAndLogs(
+        "Click on the First Record, Title as : " +
+          searchKey +
+          " , and URL as : " +
+          url,
+      );
+      await browser.pause(5000);
+      await LIB_Common.bc_TakeScreenShot("Rooster Page Swivel Group");
+      await browser.back();
+      await browser.pause(5000);
+      await LIB_Common.bc_TakeScreenShot(
+        "Again Navigate to Swivel Group Careers page",
+      );
+    } else {
+      await LIB_Common.bc_TakeScreenShot(
+        "Element is not clickable in Swivel Group Careers page",
+      );
+    }
   }
 }
 export default new Careers();

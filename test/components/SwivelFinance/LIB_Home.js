@@ -342,8 +342,10 @@ class Home {
    */
   async bc_ClickOnLetsTalkButton() {
     let element = await PG_Home.ele_HamburgerIcon;
+    await browser.pause(4000);
     if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
+      await browser.pause(4000);
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
       await PG_Home.btn_LetsTalkForiPad.click();
       await LIB_Common.bc_LogAllureReportAndLogs(
@@ -358,6 +360,7 @@ class Home {
         "Click on Let's Talk button on top of the screen",
       );
     }
+    await browser.pause(4000);
   }
 
   /**
