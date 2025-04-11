@@ -173,7 +173,7 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
     await LIB_Common.bc_VerifyH1Header(
       Data_Footer.Header_SEOConsultancyAndAuditingServices,
     );
-    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimisation");
 
     await LIB_Home.bc_ClickOnAppLogo();
     await LIB_Home.bc_VerifyPageHeaderInHomePage();

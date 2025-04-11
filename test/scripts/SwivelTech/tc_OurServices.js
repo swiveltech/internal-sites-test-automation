@@ -133,7 +133,7 @@ describe("Swivel Tech Site -> Our Services Pages", () => {
     await LIB_OurServices.bc_ClickOnOurSoftwareDevelopmentServicesTileLearnMoreLink(
       Data_OurServices.T4_OurSoftwareDevelopmentServices,
     );
-    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimisation");
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1HeaderText(
       Data_Resources.Header_SEOConsultancyAndAuditingServices,

@@ -1193,7 +1193,7 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Home.Services_SearchEngineOptimisation,
     );
 
-    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimisation");
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1HeaderText(
       Data_Resources.Header_SEOConsultancyAndAuditingServices,
@@ -1310,7 +1310,7 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Home.Services_SearchEngineOptimisation,
     );
 
-    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimisation");
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1HeaderText(
       Data_Resources.Header_SEOConsultancyAndAuditingServices,
@@ -1353,7 +1353,7 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Home.Services_SearchEngineOptimisation,
     );
 
-    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimization");
+    await LIB_Common.bc_VerifyTheAppURL("search-engine-optimisation");
     //Verify the top header and description
     await LIB_Common.bc_VerifyH1HeaderText(
       Data_Resources.Header_SEOConsultancyAndAuditingServices,
