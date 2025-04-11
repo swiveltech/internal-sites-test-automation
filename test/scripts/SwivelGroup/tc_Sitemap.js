@@ -117,17 +117,20 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.OurBrands_SubTitleAsOption_Finance,
     );
     await browser.pause(6000);
+    // get all GUID's
+    allGUIDs = await browser.getWindowHandles();
+
+    childGUID = allGUIDs.find((guid) => guid !== parentGUID);
+
+    // switch to child tab
+    await browser.switchToWindow(childGUID);
     await LIB_Common.bc_TakeScreenShot("Swivel Finance Page From Sitemap");
     await LIB_Common.bc_VerifyH1Header(Data_SwivelFinance.SwivelFinance_Header);
     await LIB_Common.bc_VerifyPageHeader(Data_SwivelFinance.Top_Description, 1);
-    await LIB_Common.bc_VerifyPageHeader(
-      Data_SwivelFinance.WhoWeAre_Description1,
-      1,
+    await LIB_Common.bc_VerifyTheParagraph(
+      Data_SwivelFinance.WhoWeAre_Description,
     );
-    await LIB_Common.bc_VerifyPageHeader(
-      Data_SwivelFinance.WhoWeAre_Description2,
-      1,
-    );
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
     await LIB_Home.bc_ClickOptionFromFooterPanel("Sitemap");
 
     // Verify the page navigation Our Brands -> Swivel Talent
@@ -210,7 +213,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
       Data_Sitemap.Title_Others,
       Data_Sitemap.Others_SubTitleAsOption_Newsroom,
     );
-    await browser.pause(6000);
+    await browser.pause(4000);
     allGUIDs = await browser.getWindowHandles();
     childGUID = allGUIDs.find((guid) => guid !== parentGUID);
     // switch to child tab
@@ -303,7 +306,7 @@ describe("Swivel Group Site -> Sitemap Page", () => {
 
     // switch to child tab
     await browser.switchToWindow(childGUID);
-    await browser.pause(10000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Twitter from Sitemap");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 

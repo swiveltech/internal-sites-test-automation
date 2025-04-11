@@ -397,8 +397,7 @@ describe("Swivel Group Site -> Home Page ", () => {
 
     // Click on Instagram and verify it
     await LIB_Home.bc_ClickOnInstagramIcon();
-    await browser.pause(8000);
+    await browser.pause(5000);
     await LIB_Common.bc_TakeScreenShot("Instagram From SwivelGroup");
-    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
   });
 });

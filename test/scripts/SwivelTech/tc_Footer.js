@@ -223,7 +223,7 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
 
     // Click on Twitter and verify it
     await LIB_Home.bc_ClickOnTwitterIcon();
-    await browser.pause(10000);
+    await browser.pause(8000);
     await LIB_Common.bc_TakeScreenShot("Twitter from Footer");
     await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
 

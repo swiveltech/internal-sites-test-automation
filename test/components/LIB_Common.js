@@ -324,7 +324,7 @@ class Common {
     await browser.pause(4000);
 
     await browser.switchToWindow(parentGUID);
-    await browser.pause(4000);
+    await browser.pause(3000);
     await this.bc_LogAllureReportAndLogs(
       "Closed the current tab and switched to the first tab",
     );
