@@ -108,4 +108,5 @@ export default {
   Link_PrivacyPolicy: "Privacy Policy",
   Link_CookiePolicy: "Cookie Policy",
   Services_MVPFactory: "MVP Factory",
+  Resources_SwivelTalk: "Swivel Talk"
 };

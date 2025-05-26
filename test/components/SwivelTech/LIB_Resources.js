@@ -1,6 +1,7 @@
 import PG_Common from "../../pages/PG_Common.js";
 import PG_Resources from "../../pages/SwivelTech/PG_Resources.js";
 import LIB_Common from "../LIB_Common.js";
+import Data_Resources from "../../data/SwivelTech/dt_resources.js"
 class Resources {
   /**
    * a method to Verify the Categories Options
@@ -119,32 +120,35 @@ class Resources {
       );
     }
   }
+  
+
   /**
-   * a method to Verify Categories Options In Tab
+   * a method to Verify Swivel Tak Cards
    *
    */
-  async bc_VerifyCategoriesOptionsInTab(Header, Options) {
-    await expect(PG_Common.lbl_SpanText(Header)).toBePresent();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Categories Header as : " + Header,
-    );
-    await PG_Common.lbl_SpanText(Header).click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on the Categories Header",
-    );
-    let optionsToVerify =
-      typeof Options === "string" && Options.includes(";")
-        ? Options.split(";")
-        : [Options];
-
-    for (const optionToCheck of optionsToVerify) {
-      await expect(
-        PG_Common.btn_ButtonWithLabel(optionToCheck, 1),
-      ).toBePresent();
-      await LIB_Common.bc_LogAllureReportAndLogs(
-        "Verify the Categories Options as : " + optionToCheck,
-      );
-    }
+  async bc_VerifySwivelTalkCards(Header, Date, Host, Description ) {
+    await LIB_Common.bc_VerifyH4Header(Header)
+    await LIB_Common.bc_VerifyAnyText(Date,1)
+    await LIB_Common.bc_VerifyAnyText(Host,1)
+    await LIB_Common.bc_VerifyTheParagraph(Description)
   }
+  
+  /**
+   * a method to Verify Youtube video ID
+   *
+   */
+
+  async bc_verifyWatchNowForEpisode(index, videoId) {
+    await LIB_Common.bc_VerifyTheButton(Data_Resources.WatchNow_Button, index);
+    await LIB_Common.bc_ClickOnButton(Data_Resources.WatchNow_Button, index);
+  
+    const allHandles = await browser.getWindowHandles();
+    await browser.switchToWindow(allHandles[1]);
+  
+    await LIB_Common.bc_VerifyYouTubeURL(videoId);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+  }
+  
 }
+
 export default new Resources();
