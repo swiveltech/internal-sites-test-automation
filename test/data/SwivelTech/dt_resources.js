@@ -162,4 +162,35 @@ export default {
     "Our team of experienced developers and product strategists follows a structured, focused 12-week process to bring your MVP to life. This approach ensures clarity, efficiency, and a high-quality product ready for market validation.",
   Header_ScheduleACallToSetUpYourMVPFactory:
     "Schedule a Call to Set Up Your MVP Factory",
+
+  Header_SwivelTalk: "Swivel Talk",
+  SwivelTalk_Description:"Looking for an insider's view into the tech and software world? SwivelTalk is your go-to tech and leadership podcast. Join host Simon Schifferle as he engages in insightful conversations with industry leaders – from visionary founders to top-level executives – uncovering the trends, innovations, and strategies shaping the future of tech and finance.",
+  SwivelTalk_H2Header1: "Our Latest Episode",
+  SwivelTalk_H2Header2: "Previously on Swivel Talk",
+  SwivelTalk_Episode1_title:"Swivel Talk: Episode 01 - Swivelin' On Tech",
+  SwivelTalk_Episode1_description:"Welcome to SwivelTalk, your go-to podcast for insights, inspiration, and innovation. Join host Simon Schifferle as he engages in thought-provoking conversations with industry leaders, visionaries, and experts. From the latest tech trends to groundbreaking business strategies, we dive deep into the minds of those shaping the world. Get ready to be inspired, informed, and entertained.",
+  SwivelTalk_Episode1_date:"08/12/2024",
+  SwivelTalk_Episode1_hosted:"Hosted by: Simon Schifferle",
+      
+  SwivelTalk_Episode2_title:"SwivelTalk: Episode 2 - Navigating Life and Business with Andrew Rooke",
+  SwivelTalk_Episode2_description:"Are you struggling to find balance between your personal and professional life? Join us as we delve into the world of values-driven leadership with Andrew Rooke, a renowned expert in helping CEOs thrive. Discover how understanding and aligning your personal values can lead to greater fulfillment and success in both your business and personal life. Don't miss this insightful episode!",
+  SwivelTalk_Episode2_date:"09/12/2024",
+  SwivelTalk_Episode2_hosted:"Hosted by: Simon Schifferle",
+      
+  SwivelTalk_Episode3_title:"SwivelTalk: Episode 3 - Swiveling Through Tech with David Erikson",
+  SwivelTalk_Episode3_description:"Join host Simon Schifferle on Swivel Talk as he chats with David Erikson, CTO of HitIQ, about his fascinating journey through the tech world.  David shares insights into his career, from building hardware and ASICs to leading teams and architecting complex systems.  He discusses the differences between the tech industries in the US and Australia, the challenges of being a CTO, and the importance of product management and market fit.  David also delves into the exciting work HitIQ is doing to improve concussion safety in sports, from professional leagues to community clubs.  They explore current tech trends, including AI, and David offers valuable advice for those looking to start or advance their tech careers.  Tune in for a 360-degree view of the tech industry and the inspiring story of David Erikson.",
+  SwivelTalk_Episode3_date:"02/18/2025",
+  SwivelTalk_Episode3_hosted:"Hosted by: Simon Schifferle",
+      
+  SwivelTalk_Episode4_title:"SwivelTalk: Episode 4 - Embracing the AI Wave with Shanil Dissanayake",
+  SwivelTalk_Episode4_description:"Discover the future of business with Shanil Dissanayake, CEO of Swivel Group.  This episode of Swivel Talk explores the revolutionary impact of AI, from streamlining accounting practices to creating innovative solutions for diverse industries. Shanil shares Swivel Group's journey, emphasizing the importance of AI adoption and its potential to reshape the workforce.  He even draws an unexpected comparison between AI's disruptive influence and the rise of LIV Golf!  Plus, learn about Swivel Foundation's commitment to sustainable communities.  A must-listen for anyone looking to navigate the age of AI.",
+  SwivelTalk_Episode4_date:"02/21/2025",
+  SwivelTalk_Episode4_hosted:"Hosted by: Simon Schifferle",
+
+  WatchNow_Button:"WATCH NOW",
+  //YouTube video IDs are unique and permanent for each video. They will not change over time unless the video is deleted or reuploaded
+  SwivelTalk_Episode4_videoId:"L4L-dwZJW3I",
+  SwivelTalk_Episode3_videoId:"WSwFIslPYJE",
+  SwivelTalk_Episode2_videoId:"mN4oDLtJyCk",
+  SwivelTalk_Episode1_videoId:"3G2RF3MfMUs",    
 };

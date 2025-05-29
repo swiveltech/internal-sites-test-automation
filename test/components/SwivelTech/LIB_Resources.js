@@ -119,32 +119,32 @@ class Resources {
       );
     }
   }
+  
   /**
-   * a method to Verify Categories Options In Tab
+   * a method to Verify Swivel Tak Cards
    *
    */
-  async bc_VerifyCategoriesOptionsInTab(Header, Options) {
-    await expect(PG_Common.lbl_SpanText(Header)).toBePresent();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Verify the Categories Header as : " + Header,
-    );
-    await PG_Common.lbl_SpanText(Header).click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on the Categories Header",
-    );
-    let optionsToVerify =
-      typeof Options === "string" && Options.includes(";")
-        ? Options.split(";")
-        : [Options];
-
-    for (const optionToCheck of optionsToVerify) {
-      await expect(
-        PG_Common.btn_ButtonWithLabel(optionToCheck, 1),
-      ).toBePresent();
-      await LIB_Common.bc_LogAllureReportAndLogs(
-        "Verify the Categories Options as : " + optionToCheck,
-      );
-    }
+  async bc_VerifySwivelTalkCards(Header, Date, Host, Description ) {
+    await LIB_Common.bc_VerifyH4Header(Header)
+    await LIB_Common.bc_VerifyAnyText(Date,1)
+    await LIB_Common.bc_VerifyAnyText(Host,1)
+    await LIB_Common.bc_VerifyTheParagraph(Description)
   }
+  
+  /**
+   * a method to Verify Youtube video ID
+   *
+   */
+
+  async bc_verifyWatchNowForEpisode(Button, Index, VideoId) {
+    await LIB_Common.bc_VerifyTheButton(Button, Index);
+    await LIB_Common.bc_ClickOnButton(Button, Index);
+  
+    const allHandles = await browser.getWindowHandles();
+    await browser.switchToWindow(allHandles[1]);
+  
+    await LIB_Common.bc_VerifyYouTubeURL(VideoId);
+    await LIB_Common.bc_CloseTheCurrentTabAndForceToFirstTab();
+  } 
 }
 export default new Resources();

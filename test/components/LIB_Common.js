@@ -389,5 +389,28 @@ class Common {
       "Verify the H6 page header as " + pageHeader,
     );
   }
+  
+
+  //Verifies that the current browser URL contains the expected YouTube video ID in swivel talk
+  // Updated to work with any YouTube format
+async bc_VerifyYouTubeURL(expectedVideoId) {
+  // Wait until any form of the YouTube video URL is detected
+  await browser.waitUntil(
+    async () => (await browser.getUrl()).includes(expectedVideoId),
+    {
+      timeout: 10000,
+      timeoutMsg: `Expected YouTube URL to contain video ID "${expectedVideoId}", but it didn't.`,
+    }
+  );
+
+  const currentUrl = await browser.getUrl();
+  console.log(`Current YouTube URL: ${currentUrl}`);
+
+  await expect(browser).toHaveUrl(expect.stringContaining(expectedVideoId));
+
+  await this.bc_LogAllureReportAndLogs(
+    `YouTube video URL verified: ${currentUrl}, expected to include ID: ${expectedVideoId}`
+  );
+}
 }
 export default new Common();
