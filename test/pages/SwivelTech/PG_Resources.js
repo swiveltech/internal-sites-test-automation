@@ -39,9 +39,6 @@ class ResourcesPage {
   get btn_LoadMore() {
     return $(`//button[text()="LOAD MORE"]`);
   }
-
- 
-
 }
 
 export default new ResourcesPage();

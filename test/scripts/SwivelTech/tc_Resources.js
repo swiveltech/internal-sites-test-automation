@@ -265,65 +265,64 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.SwivelTalk_H2Header1,
     );
     // Latest Episode
-  await LIB_Common.bc_VerifyH2Header(Data_Resources.SwivelTalk_H2Header1);
-  await LIB_Resources.bc_VerifySwivelTalkCards(
-    Data_Resources.SwivelTalk_Episode4_title,
-    Data_Resources.SwivelTalk_Episode4_date,
-    Data_Resources.SwivelTalk_Episode4_hosted,
-    Data_Resources.SwivelTalk_Episode4_description
-  );
-  await LIB_Resources.bc_verifyWatchNowForEpisode(1, Data_Resources.SwivelTalk_Episode4_videoId);
-
-  // Previous Episodes
-  await LIB_Common.bc_VerifyH2Header(Data_Resources.SwivelTalk_H2Header2);
-
-  await LIB_Resources.bc_VerifySwivelTalkCards(
-    Data_Resources.SwivelTalk_Episode3_title,
-    Data_Resources.SwivelTalk_Episode3_date,
-    Data_Resources.SwivelTalk_Episode3_hosted,
-    Data_Resources.SwivelTalk_Episode3_description
-  );
-  await LIB_Resources.bc_verifyWatchNowForEpisode(2, Data_Resources.SwivelTalk_Episode3_videoId);
-
-  await LIB_Resources.bc_VerifySwivelTalkCards(
-    Data_Resources.SwivelTalk_Episode2_title,
-    Data_Resources.SwivelTalk_Episode2_date,
-    Data_Resources.SwivelTalk_Episode2_hosted,
-    Data_Resources.SwivelTalk_Episode2_description
-  );
-  await LIB_Resources.bc_verifyWatchNowForEpisode(3, Data_Resources.SwivelTalk_Episode2_videoId);
-
-  // Load more and verify Episode 1
-  await LIB_Resources.bc_ClickOnLoadMoreButton();
-
-  await LIB_Resources.bc_VerifySwivelTalkCards(
-    Data_Resources.SwivelTalk_Episode1_title,
-    Data_Resources.SwivelTalk_Episode1_date,
-    Data_Resources.SwivelTalk_Episode1_hosted,
-    Data_Resources.SwivelTalk_Episode1_description
-  );
-  await LIB_Resources.bc_verifyWatchNowForEpisode(4, Data_Resources.SwivelTalk_Episode1_videoId);
-
-    await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
-    await LIB_Common.bc_VerifyTheParagraph(
-      Data_Resources.HowCanWeHelpYou_Description,
+    await LIB_Common.bc_VerifyH2Header(Data_Resources.SwivelTalk_H2Header1);
+    await LIB_Resources.bc_VerifySwivelTalkCards(
+      Data_Resources.SwivelTalk_Episode4_title,
+      Data_Resources.SwivelTalk_Episode4_date,
+      Data_Resources.SwivelTalk_Episode4_hosted,
+      Data_Resources.SwivelTalk_Episode4_description
     );
-    await LIB_Common.bc_VerifyTheButton(
-      Data_Resources.Header_BookADiscoveryCall,
-      1,
-    );
+    await LIB_Resources.bc_verifyWatchNowForEpisode(Data_Resources.WatchNow_Button,1, Data_Resources.SwivelTalk_Episode4_videoId);
 
-    //Click on Book A Discovery Call
-    await LIB_Common.bc_ClickOnButton(
-      Data_Resources.Header_BookADiscoveryCall,
-      1,
-    );
-    await LIB_Common.bc_VerifyTheAppURL("contact-us");
-    //Verify the top header and description
-    await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
-    await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
-      Data_Resources.ContactUs_Description,
-    );
-  });
+    // Previous Episodes
+    await LIB_Common.bc_VerifyH2Header(Data_Resources.SwivelTalk_H2Header2);
 
+    await LIB_Resources.bc_VerifySwivelTalkCards(
+      Data_Resources.SwivelTalk_Episode3_title,
+      Data_Resources.SwivelTalk_Episode3_date,
+      Data_Resources.SwivelTalk_Episode3_hosted,
+      Data_Resources.SwivelTalk_Episode3_description
+    );
+    await LIB_Resources.bc_verifyWatchNowForEpisode(Data_Resources.WatchNow_Button,2, Data_Resources.SwivelTalk_Episode3_videoId);
+
+    await LIB_Resources.bc_VerifySwivelTalkCards(
+      Data_Resources.SwivelTalk_Episode2_title,
+      Data_Resources.SwivelTalk_Episode2_date,
+      Data_Resources.SwivelTalk_Episode2_hosted,
+      Data_Resources.SwivelTalk_Episode2_description
+    );
+    await LIB_Resources.bc_verifyWatchNowForEpisode(Data_Resources.WatchNow_Button,3, Data_Resources.SwivelTalk_Episode2_videoId);
+
+    // Load more and verify Episode 1
+    await LIB_Resources.bc_ClickOnLoadMoreButton();
+
+    await LIB_Resources.bc_VerifySwivelTalkCards(
+      Data_Resources.SwivelTalk_Episode1_title,
+      Data_Resources.SwivelTalk_Episode1_date,
+      Data_Resources.SwivelTalk_Episode1_hosted,
+      Data_Resources.SwivelTalk_Episode1_description
+    );
+    await LIB_Resources.bc_verifyWatchNowForEpisode(Data_Resources.WatchNow_Button,4, Data_Resources.SwivelTalk_Episode1_videoId);
+
+      await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
+      await LIB_Common.bc_VerifyTheParagraph(
+        Data_Resources.HowCanWeHelpYou_Description,
+      );
+      await LIB_Common.bc_VerifyTheButton(
+        Data_Resources.Header_BookADiscoveryCall,
+        1,
+      );
+
+      //Click on Book A Discovery Call
+      await LIB_Common.bc_ClickOnButton(
+        Data_Resources.Header_BookADiscoveryCall,
+        1,
+      );
+      await LIB_Common.bc_VerifyTheAppURL("contact-us");
+      //Verify the top header and description
+      await LIB_Common.bc_VerifyH1HeaderText(Data_Resources.Header_ContactUs);
+      await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
+        Data_Resources.ContactUs_Description,
+      );
+    });
 });

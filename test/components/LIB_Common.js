@@ -412,7 +412,5 @@ async bc_VerifyYouTubeURL(expectedVideoId) {
     `YouTube video URL verified: ${currentUrl}, expected to include ID: ${expectedVideoId}`
   );
 }
-
-
 }
 export default new Common();
