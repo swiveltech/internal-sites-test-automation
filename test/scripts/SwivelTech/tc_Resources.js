@@ -27,16 +27,27 @@ describe("Swivel Tech Site -> Resources Page", () => {
     if (await element.isDisplayed()) {
       await LIB_Resources.bc_VerifyCategoriesOptionsInTab(
         "Categories",
-        "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
+        "All;MVP;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
       );
     } else {
       await LIB_Common.bc_VerifyH6Header("Categories");
       await LIB_Resources.bc_VerifyCategoriesOptions(
         "Categories",
-        "All;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
+        "All;MVP;Security;Staff Augmentation;Reporting;Software Development;Cloud Applications;AI",
       );
     }
-
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights14_Title,
+      Data_Resources.OurLatestInsights14_Category,
+      Data_Resources.OurLatestInsights14_Date,
+      Data_Resources.OurLatestInsights14_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights15_Title,
+      Data_Resources.OurLatestInsights15_Category,
+      Data_Resources.OurLatestInsights15_Date,
+      Data_Resources.OurLatestInsights15_SubDescription,
+    );
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights1_Title,
       Data_Resources.OurLatestInsights1_Category,
@@ -55,13 +66,15 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights3_Date,
       Data_Resources.OurLatestInsights3_SubDescription,
     );
-
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights4_Title,
       Data_Resources.OurLatestInsights4_Category,
       Data_Resources.OurLatestInsights4_Date,
       Data_Resources.OurLatestInsights4_SubDescription,
     );
+     //Check the load more
+     await LIB_Resources.bc_ClickOnLoadMoreButton();
+
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights5_Title,
       Data_Resources.OurLatestInsights5_Category,
@@ -74,10 +87,6 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights6_Date,
       Data_Resources.OurLatestInsights6_SubDescription,
     );
-
-    //Check the load more
-    await LIB_Resources.bc_ClickOnLoadMoreButton();
-
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights7_Title,
       Data_Resources.OurLatestInsights7_Category,
@@ -102,6 +111,10 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights10_Date,
       Data_Resources.OurLatestInsights10_SubDescription,
     );
+
+     //Check the load more
+     await LIB_Resources.bc_ClickOnLoadMoreButton();
+
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights11_Title,
       Data_Resources.OurLatestInsights11_Category,
@@ -114,16 +127,13 @@ describe("Swivel Tech Site -> Resources Page", () => {
       Data_Resources.OurLatestInsights12_Date,
       Data_Resources.OurLatestInsights12_SubDescription,
     );
-
-    //Check the load more
-    await LIB_Resources.bc_ClickOnLoadMoreButton();
-
     await LIB_Home.bc_VerifyOurLatestInsightsTileInPTag(
       Data_Resources.OurLatestInsights13_Title,
       Data_Resources.OurLatestInsights13_Category,
       Data_Resources.OurLatestInsights13_Date,
       Data_Resources.OurLatestInsights13_SubDescription,
     );
+
     await LIB_Common.bc_VerifyH3Header(Data_Resources.Header_HowCanWeHelpYou);
     await LIB_Common.bc_VerifyTheParagraph(
       Data_Resources.HowCanWeHelpYou_Description,

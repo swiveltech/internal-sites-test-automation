@@ -1,4 +1,5 @@
 export default {
+  //Blogs
   Blogs_Top_Header: "Blogs",
   Blogs_Top_Description:
     "Sharing knowledge and giving back to the software community is very important to us. See views, thoughts and insights below from various parts of the business based on experience and past engagements.",
@@ -77,6 +78,20 @@ export default {
     "Enterprise Resource Planning (ERP) systems have played a significant role in streamlining business operations and integrating data across a variety of functions including finance, supply chain, human resources, and customer relationship management. Despite its changing nature, the core processes of ERP systems have remained the same.  Artificial Intelligence (AI) is emerging as a powerful game changer, poised to revolutionize ERP systems by departing from traditional processes. The integration",
   OurLatestInsights13_Category: "AI / Enterprise Development",
   OurLatestInsights13_Date: "12/11/2024",
+  OurLatestInsights14_Title:
+    "The AI Startup Landscape in Australia",
+  OurLatestInsights14_SubDescription:
+    "AI startup landscape in Australia is booming. Explore market growth, key players, future trends & what fuels commercial AI solutions.",
+  OurLatestInsights14_Category: "AI",
+  OurLatestInsights14_Date: "04/21/2025",
+  OurLatestInsights15_Title:
+    "What is a Minimum Viable Product",
+  OurLatestInsights15_SubDescription:
+    "The ideal guide for Aussie founders that explains MVP types & building to launch successfully. Before we discuss what is a Minimum Viable Product (MVP), we should understand that every successful startup begins with a problem.",
+  OurLatestInsights15_Category: "MVP / Enterprise Development",
+  OurLatestInsights15_Date: "04/21/2025",
+
+  //How can we help you?
   Header_HowCanWeHelpYou: "How can we help you?",
   HowCanWeHelpYou_Description:
     "We have helped 200+ clients with our tech offshoring services.",
@@ -86,6 +101,8 @@ export default {
   Header_ContactUs: "Contact Us ",
   ContactUs_Description:
     "Looking to challenge your current methods of delivery? Got feedback? Talk to us today.",
+
+  //Case Studies
   Header_CaseStudies: "Case Studies",
   CaseStudies_Description:
     "With a proven track record of over 200 successful client projects, SwivelTech has consistently delivered innovative solutions tailored to diverse business needs. We continue to excel, working tirelessly to exceed expectations. Have a look at some of our work.",
@@ -129,7 +146,7 @@ export default {
     "Our client is a globally renowned British multinational corporation that operate in over 45 countries with a large customer base the spans up to 150 countries. Their rich heritage spanning over a century, they continue to set the standard for excellence in civil aerospace, power systems and defense sector. We were given the prestigious opportunity to work with their Safety Management System (SMS) Solution which aids various stakeholders including airlines, regulatory authorities, maintenance",
   CaseStudies_Header_Tile5: "DevOps Services for Ecommerce Website Management",
   Tile5_Description:
-    "We got the opportunity to work with one of Australia and New Zealand's chief retailers of home improvement and offers over 120,000 lifestyle products. The company was a leading supplier to the housing industry and commercial tradespeople with more than 200 warehouses and 60 trade stores across Australasia. The customer's internal IT team was understaffed and required a team of 5 DevOps engineers to enhance the e-commerce website's performance and reliability by managing the complex",
+    "We got the opportunity to work with one of Australia and New Zealand's chief retailers of home improvement and offers over 120,000 lifestyle products. The company was a leading supplier to the housing industry and commercial tradespeople with more than 200 warehouses and 60 trade stores across Australasia. ",
   CaseStudies_Header_Tile6: "FinTech Innovation: Blazor for Restaurant Tips",
   Tile6_Description:
     "In the dynamic landscape of FinTech, our team was presented with an innovative idea: to develop a user-friendly application for efficiently managing tipping amounts for restaurant staff. This app helps to accurately distribute the service charge provided by customers based on metrics such as working hours or area that they were designated to work. The goal was to accurately distribute service charges based on metrics such as working hours or designated work areas. With a tight deadline of",
@@ -163,6 +180,7 @@ export default {
   Header_ScheduleACallToSetUpYourMVPFactory:
     "Schedule a Call to Set Up Your MVP Factory",
 
+  //Swivel Talk
   Header_SwivelTalk: "Swivel Talk",
   SwivelTalk_Description:"Looking for an insider's view into the tech and software world? SwivelTalk is your go-to tech and leadership podcast. Join host Simon Schifferle as he engages in insightful conversations with industry leaders – from visionary founders to top-level executives – uncovering the trends, innovations, and strategies shaping the future of tech and finance.",
   SwivelTalk_H2Header1: "Our Latest Episode",
