@@ -297,30 +297,30 @@ describe("Swivel Tech Site -> How We Work -> Project Based Page", () => {
       Data_HowWeWork.OurProcess_Answer8,
     );
 
-    //Verify the Our Latest Insights
-    await LIB_Common.bc_VerifyH2Header(Data_Home.Title_OurLatestInsights);
-    await LIB_Common.bc_VerifyPageHeader(
-      Data_Home.OurLatestInsights_TopDescription,
-      1,
-    );
-    await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Resources.OurLatestInsights1_Title,
-      Data_Resources.OurLatestInsights1_Category,
-      Data_Resources.OurLatestInsights1_Date,
-      Data_Resources.OurLatestInsights1_SubDescription,
-    );
-    await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Resources.OurLatestInsights2_Title,
-      Data_Resources.OurLatestInsights2_Category,
-      Data_Resources.OurLatestInsights2_Date,
-      Data_Resources.OurLatestInsights2_SubDescription,
-    );
-    await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Resources.OurLatestInsights3_Title,
-      Data_Resources.OurLatestInsights3_Category,
-      Data_Resources.OurLatestInsights3_Date,
-      Data_Resources.OurLatestInsights3_SubDescription,
-    );
+     //Verify the Our Latest Insights
+        await LIB_Common.bc_VerifyH2Header(Data_Home.Title_OurLatestInsights);
+        await LIB_Common.bc_VerifyPageHeader(
+          Data_Home.OurLatestInsights_TopDescription,
+          1,
+        );
+        await LIB_Home.bc_VerifyOurLatestInsightsTile(
+          Data_Resources.OurLatestInsights14_Title,
+          Data_Resources.OurLatestInsights14_Category,
+          Data_Resources.OurLatestInsights14_Date,
+          Data_Resources.OurLatestInsights14_SubDescription,
+        );
+        await LIB_Home.bc_VerifyOurLatestInsightsTile(
+          Data_Resources.OurLatestInsights15_Title,
+          Data_Resources.OurLatestInsights15_Category,
+          Data_Resources.OurLatestInsights15_Date,
+          Data_Resources.OurLatestInsights15_SubDescription,
+        );
+        await LIB_Home.bc_VerifyOurLatestInsightsTile(
+          Data_Resources.OurLatestInsights1_Title,
+          Data_Resources.OurLatestInsights1_Category,
+          Data_Resources.OurLatestInsights1_Date,
+          Data_Resources.OurLatestInsights1_SubDescription,
+        );
 
     await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES ", 1);
     await LIB_Common.bc_ClickOnButton("ALL BLOG ARTICLES ", 1);
