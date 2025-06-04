@@ -59,6 +59,50 @@ class ContactUs {
       `//label[contains(text(),"${Label}")]/following-sibling::div/div/div[text()="${ErrorMessage}"]`,
     );
   }
+
+  get ele_HelpCardContainer() {
+    return $("//div[contains(@class, 'fixed') and contains(@class, 'bottom-10')]");
+  }
+
+  get ele_HelpCardHeading() {
+    return $("//div[contains(@class, 'fixed') and contains(@class, 'bottom-10')]//h4");
+  }
+
+  get ele_StartCallButton() {
+    return $("//div[contains(@class, 'fixed') and contains(@class, 'bottom-10')]//button[contains(text(), 'START A CALL')]");
+  }
+
+  get ele_CallEndingMsg() {
+    return $("//div[contains(text(),'Call ending in')]");
+    }
+    
+    get ele_CallTimer() {
+    return $("//div[contains(text(),'Call ending in')]/following-sibling::div");
+    }
+    
+    get ele_EndCallButton() {
+    return $("//button[normalize-space()='END CALL']");
+    }
+      get ele_MinimizeButton() {
+        return $("//img[@alt='minimize' or contains(@src,'keyboard_arrow_down.svg')]");
+      }
+      
+      get ele_MaximizeButton() {
+        return $("//img[@alt='maximize' or contains(@src,'keyboard_arrow_up.svg')]");
+      }
+      
+      get ele_CloseButton() {
+        return $("//img[@alt='close' and contains(@src,'close_small.svg')]");
+      }
+      
+      get ele_SupportCardFixed() {
+        return $("//div[contains(@class,'fixed') and contains(@class,'z-40')]");
+      }
+      
+      get ele_NeedHelpTextMinimized() {
+        return $("//div[normalize-space(text())='Need Help?']");
+      }
+
 }
 
 export default new ContactUs();

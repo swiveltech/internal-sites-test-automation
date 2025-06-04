@@ -112,4 +112,75 @@ describe("Swivel Tech Site -> Contact Us Page", () => {
       Data_ContactUs.ErrorMessage_EnterAValidEmailAddress,
     );
   });
+
+  it("Verify the AI Agent Support Card", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the AI Agent Support Card"
+    );
+
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+        await LIB_Common.bc_ClickOnButton("Accept", 1);
+        await LIB_Home.bc_VerifyPageHeaderInHomePage();
+
+     // Verify the Let's Talk navigation
+     await LIB_Home.bc_ClickOnLetsTalkButton("Let’s Talk");
+     await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+     await LIB_Home.bc_VerifySubPageHeaderInPTag(
+       Data_Resources.ContactUs_Description,
+     );
+     await LIB_Common.bc_VerifyTheAppURL("contact-us");
+
+     await LIB_ContactUs.bc_VerifyAIHelpCardContent({
+      AIAgentCard_Header: Data_ContactUs.AIAgentCard_Header
+    });
+
+    await LIB_ContactUs.bc_VerifyCallCardFunctionality({
+      cardHeader: Data_ContactUs.AIAgentCard_Header,
+      endingNote: Data_ContactUs.endingNote,
+      initialTime: Data_ContactUs.initialTime
+    });
+  });
+
+  it("Verify the AI Agent Minimize, Maximaize and Close Functionalities", async () => {
+    await LIB_Common.bc_StartAllureReportStep(
+      "Swivel Tech -> Verify the AI Agent Minimize, Maximaize and Close Functionalities"
+    );
+  
+    await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);
+    await LIB_Common.bc_ClickOnButton("Accept", 1);
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
+
+ // Verify the Let's Talk navigation
+ await LIB_Home.bc_ClickOnLetsTalkButton("Let’s Talk");
+ await LIB_Common.bc_VerifyH1Header(Data_Resources.Header_ContactUs);
+ await LIB_Home.bc_VerifySubPageHeaderInPTag(
+   Data_Resources.ContactUs_Description,
+ );
+ await LIB_Common.bc_VerifyTheAppURL("contact-us");
+  
+    // Verify AI Agent card content
+    await LIB_ContactUs.bc_VerifyAIHelpCardContent({
+      AIAgentCard_Header: Data_ContactUs.AIAgentCard_Header
+    });
+  
+    // Wait for the AI Agent widget to appear
+    await LIB_ContactUs.bc_WaitForAIAgentWidget();
+  
+    // Test minimize functionality
+    await LIB_ContactUs.bc_MinimizeAIAgentWidget();
+    await LIB_ContactUs.bc_VerifyAIAgentMinimizedState(Data_ContactUs.AIAgentCard_Header);
+  
+    // Test maximize functionality
+    await LIB_ContactUs.bc_MaximizeAIAgentWidget();
+    await LIB_ContactUs.bc_VerifyAIAgentMaximizedState();
+  
+    // Test close functionality
+    await LIB_ContactUs.bc_CloseAIAgentWidget();
+    await LIB_ContactUs.bc_VerifyAIAgentWidgetClosed();
+  
+    // Test widget reappears after refresh
+    await browser.refresh();
+    await LIB_ContactUs.bc_VerifyAIAgentWidgetReappears();
+  });
+
 });

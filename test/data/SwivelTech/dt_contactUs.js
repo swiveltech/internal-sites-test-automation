@@ -23,4 +23,7 @@ export default {
   Label_CustomerInquiry: "Customer Inquiry*",
   Label_Message: "Message*",
   ErrorMessage_EnterAValidEmailAddress: "Enter a valid email address.",
+  AIAgentCard_Header: "Need Help?",
+  endingNote: "Call ending in 5 minutes.",
+  initialTime: "04:59"
 };
