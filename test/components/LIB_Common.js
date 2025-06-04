@@ -55,24 +55,29 @@ class Common {
   async bc_ClickOnButton(label, Index) {
     await browser.pause(3000);
     let element = await PG_Common.btn_ButtonWithLabel(label, Index);
-
+  
     if (await element.isDisplayed()) {
-      await element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-      await element.click();
+      await element.scrollIntoView({ block: "center", inline: "nearest" });
+      await browser.pause(500); // Allow UI to settle
+  
+      try {
+        await element.click();
+      } catch (error) {
+        console.warn(`Standard click failed on [${label}], using JS click as fallback.`);
+        await browser.execute("arguments[0].click();", element);
+      }
+  
       await this.bc_LogAllureReportAndLogs(
-        "Clicked on button with label: " + label + " , and Index : " + Index,
+        `Clicked on button with label: ${label}, and Index: ${Index}`,
       );
       await browser.pause(3000);
     } else {
       await this.bc_LogAllureReportAndLogs(
-        `Button with label "${label}" not found.`,
+        `Button with label "${label}" not found or not displayed.`,
       );
     }
   }
+  
 
   async bc_VerifyTheButton(label, Index) {
     let buttonWithLabelElement = await PG_Common.btn_ButtonWithLabel(

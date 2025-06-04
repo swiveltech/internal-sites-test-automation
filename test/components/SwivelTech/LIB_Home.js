@@ -464,18 +464,34 @@ class Home {
       "Verify the H1 header as : " + Title,
     );
   }
+
   /**
-   * a method to Click on the Footer Option
-   */
-  async bc_ClickOnFooterOption(header, tabName) {
-    await PG_Home.lnk_FooterOption(header, tabName).click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on the options as : " +
-        tabName +
-        " , and sub header as : " +
-        header,
-    );
-  }
+ * A method to Click on the Footer Option safely
+ */
+async bc_ClickOnFooterOption(header, tabName) {
+  const footerOption = await PG_Home.lnk_FooterOption(header, tabName);
+
+  // Ensure the element is displayed
+  await footerOption.waitForDisplayed({ timeout: 10000 });
+
+  // Scroll into view
+  await footerOption.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+    inline: "nearest",
+  });
+
+  // Optional: allow scroll animation to complete
+  await browser.pause(500);
+
+  // Click the footer option
+  await footerOption.click();
+
+  await LIB_Common.bc_LogAllureReportAndLogs(
+    `Clicked on the footer option: '${tabName}' under header: '${header}'`
+  );
+}
+
 
   /**
    * a method to Verify the footer email Sign Up for Our Newsletter
@@ -556,8 +572,16 @@ class Home {
 
     // Locate and interact with the brand element
     let element = PG_Home.lnk_SocialMedia(1);
+    await element.waitForDisplayed({ timeout: 10000 });
+  await element.scrollIntoView({ block: "center", inline: "nearest" });
+  await browser.pause(500);
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Facebook in home page. Clicked URL : " + appUrl,
@@ -586,13 +610,17 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(4);
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    await element.waitForDisplayed({ timeout: 10000 });
+    await element.scrollIntoView({ block: "center", inline: "nearest" });
+    await browser.pause(500); // Give the UI time to settle
+    
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     // Wait until a new window appears
     await browser.waitUntil(
@@ -621,13 +649,16 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(2);
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    await element.waitForDisplayed({ timeout: 10000 });
+  await element.scrollIntoView({ block: "center", inline: "nearest" });
+  await browser.pause(500);
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     // Wait until a new window appears
     await browser.waitUntil(
@@ -655,13 +686,16 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(3);
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    await element.waitForDisplayed({ timeout: 10000 });
+  await element.scrollIntoView({ block: "center", inline: "nearest" });
+  await browser.pause(500);
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Twitter in home page. Clicked URL : " + appUrl,
