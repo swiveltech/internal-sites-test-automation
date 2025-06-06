@@ -49,22 +49,27 @@ class Podcast {
     }
     
     /**
-     * New method to click podcast buttons
+     * method to click podcast buttons
      */
     async bc_ClickPodcastButton(name) {
-        const button = await PG_Podcast.lnk_PodcastButton(name);
+      const button = await PG_Podcast.lnk_PodcastButton(name);
     
-        await button.waitForDisplayed({ timeout: 10000 });
-        await button.scrollIntoView({
-        behavior: "smooth",
+      await button.waitForDisplayed({ timeout: 10000 });
+      await button.scrollIntoView({
         block: "center",
         inline: "nearest",
-        });
+      });
     
-        await browser.pause(1000);
+      try {
+        await button.waitForClickable({ timeout: 5000 });
         await button.click();
-        await LIB_Common.bc_LogAllureReportAndLogs(`Clicked podcast button: ${name}`);
-        await browser.pause(1000);
-    }   
+      } catch (error) {
+        console.warn(`Standard click failed on [${name}], using JS click as fallback.`);
+        await browser.execute("arguments[0].click();", button);
+      }
+    
+      await LIB_Common.bc_LogAllureReportAndLogs(`Clicked podcast button: ${name}`);
+    }
+    
 }
 export default new Podcast();

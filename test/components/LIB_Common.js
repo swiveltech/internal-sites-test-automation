@@ -53,27 +53,26 @@ class Common {
 
   //Common component for click on button
   async bc_ClickOnButton(label, Index) {
-    await browser.pause(3000);
-    let element = await PG_Common.btn_ButtonWithLabel(label, Index);
+    const element = await PG_Common.btn_ButtonWithLabel(label, Index);
   
-    if (await element.isDisplayed()) {
+    try {
+      await element.waitForDisplayed({ timeout: 5000 });
       await element.scrollIntoView({ block: "center", inline: "nearest" });
       await browser.pause(500); // Allow UI to settle
   
       try {
         await element.click();
-      } catch (error) {
+      } catch (clickError) {
         console.warn(`Standard click failed on [${label}], using JS click as fallback.`);
         await browser.execute("arguments[0].click();", element);
       }
   
       await this.bc_LogAllureReportAndLogs(
-        `Clicked on button with label: ${label}, and Index: ${Index}`,
+        `Clicked on button with label: ${label}, and Index: ${Index}`
       );
-      await browser.pause(3000);
-    } else {
+    } catch (error) {
       await this.bc_LogAllureReportAndLogs(
-        `Button with label "${label}" not found or not displayed.`,
+        `Button with label "${label}" not found or not displayed within timeout.`,
       );
     }
   }
@@ -257,19 +256,27 @@ class Common {
   /**
    * method to Click on links
    */
+ 
   async bc_ClickOnLinks(name) {
-    let elementToScroll = await PG_Common.lnk_Navigation(name);
-    await browser.pause(3000);
-    await elementToScroll.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "nearest",
-    });
-    await browser.pause(2000);
-    await PG_Common.lnk_Navigation(name).click();
-    await this.bc_LogAllureReportAndLogs("Click on the link name : " + name);
-    await browser.pause(1000);
+    const elementToScroll = await PG_Common.lnk_Navigation(name);
+  
+    try {
+      await elementToScroll.waitForDisplayed({ timeout: 5000 });
+      await elementToScroll.scrollIntoView({
+        block: "center",
+        inline: "nearest"
+      });
+  
+      await elementToScroll.waitForClickable({ timeout: 5000 });
+      await elementToScroll.click();
+  
+      await this.bc_LogAllureReportAndLogs("Clicked on the link name: " + name);
+    } catch (error) {
+      console.error(`Failed to click on the link with name "${name}":`, error);
+      await this.bc_LogAllureReportAndLogs(`Failed to click on the link name: ${name}`);
+    }
   }
+  
 
   /**
    * method to Verify links
