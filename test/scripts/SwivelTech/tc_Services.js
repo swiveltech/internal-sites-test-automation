@@ -6,7 +6,7 @@ import Data_Resources from "../../data/SwivelTech/dt_resources.js";
 import Data_Services from "../../data/SwivelTech/dt_services.js";
 import LIB_Services from "../../components/SwivelTech/LIB_Services.js";
 import LIB_HowWeWork from "../../components/SwivelTech/LIB_HowWeWork.js";
-
+import Data_HowWeWork from "../../data/SwivelTech/dt_howWeWork.js"
 describe("Swivel Tech Site -> Services Page", () => {
   it("Verify the Artificial Intelligence Page", async () => {
     await LIB_Common.bc_StartAllureReportStep(
@@ -752,9 +752,13 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("managed-service-augmentation");
     //Verify the top header and description
-    await LIB_Common.bc_VerifyH1HeaderText(
-      Data_Resources.Header_SeamlesslyExpandYourTeamWithStaffAugmentation,
-    );
+     await LIB_Common.bc_VerifyH1Header(
+          Data_HowWeWork.StaffAugmentation_Top_Header1,
+        );
+        await LIB_Home.bc_VerifySubPageHeaderInH1(
+          Data_HowWeWork.StaffAugmentation_Top_Header2,
+          1,
+        );
     await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
       Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
     );
@@ -854,22 +858,22 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
 
     await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights14_Title,
+      Data_Resources.OurLatestInsights14_Category,
+      Data_Resources.OurLatestInsights14_Date,
+      Data_Resources.OurLatestInsights14_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
+      Data_Resources.OurLatestInsights15_Title,
+      Data_Resources.OurLatestInsights15_Category,
+      Data_Resources.OurLatestInsights15_Date,
+      Data_Resources.OurLatestInsights15_SubDescription,
+    );
+    await LIB_Home.bc_VerifyOurLatestInsightsTile(
       Data_Resources.OurLatestInsights1_Title,
       Data_Resources.OurLatestInsights1_Category,
       Data_Resources.OurLatestInsights1_Date,
       Data_Resources.OurLatestInsights1_SubDescription,
-    );
-    await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Resources.OurLatestInsights2_Title,
-      Data_Resources.OurLatestInsights2_Category,
-      Data_Resources.OurLatestInsights2_Date,
-      Data_Resources.OurLatestInsights2_SubDescription,
-    );
-    await LIB_Home.bc_VerifyOurLatestInsightsTile(
-      Data_Resources.OurLatestInsights3_Title,
-      Data_Resources.OurLatestInsights3_Category,
-      Data_Resources.OurLatestInsights3_Date,
-      Data_Resources.OurLatestInsights3_SubDescription,
     );
 
     await LIB_Common.bc_VerifyTheButton("ALL BLOG ARTICLES ", 1);
@@ -889,8 +893,12 @@ describe("Swivel Tech Site -> Services Page", () => {
     );
     await LIB_Common.bc_VerifyTheAppURL("managed-service-augmentation");
     //Verify the top header and description
-    await LIB_Common.bc_VerifyH1HeaderText(
-      Data_Resources.Header_SeamlesslyExpandYourTeamWithStaffAugmentation,
+    await LIB_Common.bc_VerifyH1Header(
+      Data_HowWeWork.StaffAugmentation_Top_Header1,
+    );
+    await LIB_Home.bc_VerifySubPageHeaderInH1(
+      Data_HowWeWork.StaffAugmentation_Top_Header2,
+      1,
     );
     await LIB_Home.bc_VerifySubPageHeaderToMatchAllInPTag(
       Data_Resources.SeamlesslyExpandYourTeamWithStaffAugmentation_Description,
@@ -1694,4 +1702,5 @@ describe("Swivel Tech Site -> Services Page", () => {
       Data_Resources.ContactUs_Description,
     );
   });
+
 });

@@ -68,4 +68,5 @@ export default {
   Tab_WhoWeAre: "Who we are",
   Tab_Careers: "Careers",
   Tab_Home: "Home",
+  Tab_PodCast: "Podcast",
 };
