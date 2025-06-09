@@ -360,80 +360,67 @@ class Home {
     );
   }
 
-  /**
-   * a method to Click on Top Tab
+ /**
+   * a method to Click On Top Tab
    */
   async bc_ClickOnTopTab(tabName, Option) {
-    let OptionToSelect = Option;
-    await browser.pause(6000);
-    let element = await PG_Home.ele_HamburgerIcon;
-    if (await element.isDisplayed()) {
-      await PG_Home.ele_HamburgerIcon.click();
-      await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
-      await browser.pause(5000);
-      if (!OptionToSelect) {
-        let e1 = await PG_Common.lnk_Navigation(tabName);
-        e1.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "nearest",
-        });
-        e1.click();
-        await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
+    const hamburgerIcon = await PG_Home.ele_HamburgerIcon;
+  
+    if (await hamburgerIcon.isDisplayed()) {
+      await hamburgerIcon.waitForClickable({ timeout: 5000 });
+      await hamburgerIcon.click();
+      await LIB_Common.bc_LogAllureReportAndLogs("Clicked on Hamburger icon.");
+  
+      if (!Option) {
+        const tabLink = await PG_Common.lnk_Navigation(tabName);
+        await tabLink.waitForDisplayed({ timeout: 5000 });
+        await tabLink.scrollIntoView({ block: "center", inline: "nearest" });
+        await tabLink.click();
+        await LIB_Common.bc_LogAllureReportAndLogs("Clicked on Tab: " + tabName);
       } else {
-        let elementToExpand = await PG_Home.ele_MainItemArrowDown(tabName);
-        if (elementToExpand.isExisting()) {
-          let e2 = await PG_Home.ele_MainItemArrowDown(tabName);
-          e2.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "nearest",
-          });
-          e2.click();
+        const arrowDown = await PG_Home.ele_MainItemArrowDown(tabName);
+        if (await arrowDown.isExisting()) {
+          await arrowDown.scrollIntoView({ block: "center", inline: "nearest" });
+          await arrowDown.waitForClickable({ timeout: 5000 });
+          await arrowDown.click();
           await LIB_Common.bc_LogAllureReportAndLogs(
-            "Click on Main Tab : " + tabName + " arrow down icon.",
+            "Clicked on Main Tab: " + tabName + " arrow down icon."
           );
         } else {
           await LIB_Common.bc_LogAllureReportAndLogs(
-            "Main Tab : " + tabName + " arrow down icon already expand.",
+            "Main Tab: " + tabName + " arrow down icon already expanded."
           );
         }
-        await browser.pause(3000);
-        await PG_Common.lnk_NavigationForSecondElement(OptionToSelect).click();
-        await LIB_Common.bc_LogAllureReportAndLogs(
-          "Click on Sub Tab : " + OptionToSelect,
-        );
+  
+        const subTab = await PG_Common.lnk_NavigationForSecondElement(Option);
+        await subTab.waitForClickable({ timeout: 5000 });
+        await subTab.click();
+        await LIB_Common.bc_LogAllureReportAndLogs("Clicked on Sub Tab: " + Option);
       }
-      await browser.pause(6000);
     } else {
-      await PG_Home.ele_HeaderTab(tabName).moveTo();
-      await browser.pause(6000);
-      if (!OptionToSelect) {
-        await PG_Home.ele_HeaderTab(tabName).click();
-        await LIB_Common.bc_LogAllureReportAndLogs("Click on Tab : " + tabName);
+      const headerTab = await PG_Home.ele_HeaderTab(tabName);
+      await headerTab.moveTo();
+  
+      if (!Option) {
+        await headerTab.waitForClickable({ timeout: 5000 });
+        await headerTab.click();
+        await LIB_Common.bc_LogAllureReportAndLogs("Clicked on Tab: " + tabName);
       } else {
-        await PG_Common.lnk_Navigation(OptionToSelect).moveTo({
-          block: "center",
-          inline: "center",
-        });
-        await browser.pause(5000);
-        await PG_Common.lnk_Navigation(OptionToSelect).click();
+        const subTab = await PG_Common.lnk_Navigation(Option);
+        await subTab.scrollIntoView({ block: "center", inline: "nearest" });
+        await subTab.waitForClickable({ timeout: 5000 });
+        await subTab.click();
         await LIB_Common.bc_LogAllureReportAndLogs(
-          "Click on Tab : " +
-            tabName +
-            " and Sub Tab as : " +
-            Option +
-            " from the Home page",
+          `Clicked on Tab: ${tabName} and Sub Tab: ${Option} from the Home page`
         );
       }
     }
-    await browser.pause(5000);
-    await PG_Home.img_SwivelTechLogo.moveTo({
-      block: "center",
-      inline: "center",
-    });
-    await browser.pause(4000);
+  
+    // Scroll to SwivelTech logo to ensure UI reset
+    const logo = await PG_Home.img_SwivelTechLogo;
+    await logo.scrollIntoView({ block: "center", inline: "nearest" });
   }
+  
 
   /**
    * a method to Verify the Sub PageHeader In P Tag all match
@@ -464,18 +451,34 @@ class Home {
       "Verify the H1 header as : " + Title,
     );
   }
+
   /**
-   * a method to Click on the Footer Option
-   */
-  async bc_ClickOnFooterOption(header, tabName) {
-    await PG_Home.lnk_FooterOption(header, tabName).click();
-    await LIB_Common.bc_LogAllureReportAndLogs(
-      "Click on the options as : " +
-        tabName +
-        " , and sub header as : " +
-        header,
-    );
-  }
+ * A method to Click on the Footer Option safely
+ */
+async bc_ClickOnFooterOption(header, tabName) {
+  const footerOption = await PG_Home.lnk_FooterOption(header, tabName);
+
+  // Ensure the element is displayed
+  await footerOption.waitForDisplayed({ timeout: 10000 });
+
+  // Scroll into view
+  await footerOption.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+    inline: "nearest",
+  });
+
+  // Optional: allow scroll animation to complete
+  await browser.pause(500);
+
+  // Click the footer option
+  await footerOption.click();
+
+  await LIB_Common.bc_LogAllureReportAndLogs(
+    `Clicked on the footer option: '${tabName}' under header: '${header}'`
+  );
+}
+
 
   /**
    * a method to Verify the footer email Sign Up for Our Newsletter
@@ -556,8 +559,16 @@ class Home {
 
     // Locate and interact with the brand element
     let element = PG_Home.lnk_SocialMedia(1);
+    await element.waitForDisplayed({ timeout: 10000 });
+  await element.scrollIntoView({ block: "center", inline: "nearest" });
+  await browser.pause(500);
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Facebook in home page. Clicked URL : " + appUrl,
@@ -586,13 +597,17 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(4);
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    await element.waitForDisplayed({ timeout: 10000 });
+    await element.scrollIntoView({ block: "center", inline: "nearest" });
+    await browser.pause(500); // Give the UI time to settle
+    
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     // Wait until a new window appears
     await browser.waitUntil(
@@ -621,13 +636,16 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(2);
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    await element.waitForDisplayed({ timeout: 10000 });
+  await element.scrollIntoView({ block: "center", inline: "nearest" });
+  await browser.pause(500);
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     // Wait until a new window appears
     await browser.waitUntil(
@@ -655,13 +673,16 @@ class Home {
 
     // Locate and interact with the brand element
     let element = await PG_Home.lnk_SocialMedia(3);
-    await element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    await element.waitForDisplayed({ timeout: 10000 });
+  await element.scrollIntoView({ block: "center", inline: "nearest" });
+  await browser.pause(500);
     let appUrl = await element.getAttribute("href");
-    await element.click();
+    try {
+      await element.click();
+    } catch (error) {
+      console.warn("Standard click failed, using JS click");
+      await browser.execute("arguments[0].click();", element);
+    }
 
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Twitter in home page. Clicked URL : " + appUrl,

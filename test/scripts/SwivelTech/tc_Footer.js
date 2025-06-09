@@ -76,6 +76,18 @@ describe("Swivel Tech Site -> Footer Section in Home Page and Navigation", () =>
     await LIB_Home.bc_VerifyPageHeaderInHomePage();
     await LIB_Common.bc_VerifyTheAppURL(appURL);
 
+    //Click on Swivel Talk Podcast
+    await LIB_Home.bc_ClickOnFooterOption(
+      Data_Home.Footer_MainMenu1,
+      Data_Footer.SubMenu_Podcast,
+    );
+    await LIB_Common.bc_VerifyH1Header(Data_Footer.Header_Podcast);
+    await LIB_Common.bc_VerifyTheAppURL("swivel-talk");
+
+    await LIB_Home.bc_ClickOnAppLogo();
+    await LIB_Home.bc_VerifyPageHeaderInHomePage();
+    await LIB_Common.bc_VerifyTheAppURL(appURL);
+
     //Click on Artificial Intelligence
     await LIB_Home.bc_ClickOnFooterOption(
       Data_Home.Footer_MainMenu2,

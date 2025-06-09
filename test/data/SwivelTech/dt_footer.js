@@ -8,6 +8,8 @@ export default {
   Header_CaseStudies: "Case Studies",
   SubMenu_Blogs: "Blogs",
   Header_Blogs: "Blogs",
+  SubMenu_Podcast: "Swivel Talk Podcast",
+  Header_Podcast: "Swivel Talk",
   SubMenu_ArtificialIntelligence: "Artificial Intelligence",
   Header_ArtificialIntelligenceConsultingServices:
     "Artificial Intelligence Consulting Services",
