@@ -141,9 +141,9 @@ describe("Swivel Tech Site -> Contact Us Page", () => {
     });
   });
 
-  it("Verify the AI Agent Minimize, Maximaize and Close Functionalities", async () => {
+  it("Verify the AI Agent Minimize, Maximize and Close Functionalities", async () => {
     await LIB_Common.bc_StartAllureReportStep(
-      "Swivel Tech -> Verify the AI Agent Minimize, Maximaize and Close Functionalities"
+      "Swivel Tech -> Verify the AI Agent Minimize, Maximize and Close Functionalities"
     );
   
     await LIB_Common.bc_OpenApplication(config.URLS.SWIVEL_TECH);

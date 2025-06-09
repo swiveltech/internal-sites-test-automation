@@ -26,7 +26,7 @@ describe("Swivel Finance Site -> PodCast Page", () => {
     await LIB_Common.bc_VerifyH1Header(Data_Podcast.Header_Podcast);
     await LIB_Common.bc_VerifyTheParagraph(Data_Podcast.Podcast_Description);
     
-    await LIB_Common.bc_VerifyH2Header(Data_Podcast.Podcast_H2Header1,);
+    await LIB_Common.bc_VerifyH2Header(Data_Podcast.Podcast_H2Header1);
     // Latest Episode
     await LIB_Podcast.bc_VerifyPodcastCards(
         Data_Podcast.Podcast_Episode1_title,
@@ -47,7 +47,7 @@ describe("Swivel Finance Site -> PodCast Page", () => {
     // Previous Episodes
     await LIB_Common.bc_VerifyH2Header(Data_Podcast.Podcast_H2Header2);
     
-       
+    // We Would Love To Help You Section  
     await LIB_Common.bc_VerifyH3Header(Data_Home.Title_WeWouldLoveToHelpYou);
     await LIB_Common.bc_VerifyTheButton("Connect With Us", 1);
     //Click on Connect With Us

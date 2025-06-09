@@ -365,10 +365,7 @@ describe("Swivel Tech Site -> Home Page", () => {
       Data_Home.Services_ManagedServiceAugmentation,
     );
     await LIB_Common.bc_VerifyTheAppURL("managed-service-augmentation");
-    //Verify the top header and description
-    // await LIB_Common.bc_VerifyH1HeaderText(
-    //   Data_Resources.Header_SeamlesslyExpandYourTeamWithStaffAugmentation,
-    // );
+  
     await LIB_Common.bc_VerifyH1Header(
       Data_HowWeWork.StaffAugmentation_Top_Header1,
     );
