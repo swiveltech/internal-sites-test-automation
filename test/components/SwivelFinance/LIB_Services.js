@@ -17,7 +17,7 @@ class AboutUs {
     }
 
   /**
-   * a method to Verify Podcast Cards
+   * a method to Verify what we offer Cards
    *
    */
     async bc_VerifywhatweofferCards(Header, Description ) {
