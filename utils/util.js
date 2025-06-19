@@ -77,7 +77,11 @@ export function getCapabilities() {
               "--disable-dev-shm-usage", // Prevent shared memory issues
               "--no-sandbox", // Required for running in CI
               "--remote-debugging-port=9222",
+              "--use-fake-ui-for-media-stream"
             ],
+            prefs: {
+              "profile.default_content_setting_values.media_stream_mic": 1
+            }
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
@@ -112,7 +116,13 @@ export function getCapabilities() {
         {
           browserName: "MicrosoftEdge",
           "ms:edgeOptions": {
-            args: ["--headless"],
+            args: [
+              "--headless",
+              "--use-fake-ui-for-media-stream"
+            ],
+            prefs: {
+              "profile.default_content_setting_values.media_stream_mic": 1
+            }
           },
           ...commonBrowserConfig, // Spread the common browser config object
         },
