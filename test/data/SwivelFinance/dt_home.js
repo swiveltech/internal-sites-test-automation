@@ -9,6 +9,8 @@ export default {
   OurStory_Description:
     "Since 2019, our driving force has been prioritising people and community. As we grow, our culture evolves inclusively, guided by our values. Through our R&D division, continuous learning opportunities, and flat structure, we ensure that our staff are constantly up-to-date, delivering current and valuable services.",
   Title_ServicesWeDeliver: "Services We Deliver",
+  Title_OurServices: "Our Services",
+  Description_OurServices: "Outsource financial services with confidence through Swivel Finance, your trusted partner delivering expert outsourced financial and accountancy solutions that save you time, reduce costs, and ensure compliance. We support reputed financial firms and growing businesses with flexible, high-quality services tailored to meet the demands of today’s fast-paced market. Whether you need help with tax planning, payroll, or bookkeeping, or you’re looking to extend your internal team with experienced professionals, our outsourcing models offer the agility and assurance you need.",
   SubTile_GeneralLedgerAccounting: "General Ledger Accounting",
   SubTile_BusinessActivityStatements: "Business Activity Statements",
   SubTile_IncomeTaxReturns: "Income Tax Returns",

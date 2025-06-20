@@ -18,9 +18,10 @@ class Home {
    * a method to Click on Swivel Finance logo on top of the screen
    */
   async bc_ClickOnTopAppLogo() {
-    await browser.pause(5000);
-    await PG_Home.img_SwivelFinanceLogo.click();
-    await browser.pause(5000);
+    const logo = await PG_Home.img_SwivelFinanceLogo;
+    await logo.waitForDisplayed({ timeout: 5000 });
+    await logo.waitForClickable({ timeout: 5000 });  
+    await logo.click();
     await LIB_Common.bc_LogAllureReportAndLogs(
       "Click on Swivel Finance logo on top of the screen",
     );
@@ -367,24 +368,29 @@ class Home {
    * a method to Click on Tab from the top panel
    */
   async bc_ClickOnTabFromTopPanel(tabName) {
-    await browser.pause(5000);
-    let element = await PG_Home.ele_HamburgerIcon;
+    const element = await PG_Home.ele_HamburgerIcon;
+    await element.waitForExist({ timeout: 5000 });
+  
     if (await element.isDisplayed()) {
       await PG_Home.ele_HamburgerIcon.click();
       await LIB_Common.bc_LogAllureReportAndLogs("Click on Hamburger icon.");
-      await PG_Home.ele_HeaderTabForiPad(tabName).click();
+  
+      const tabElement = await PG_Home.ele_HeaderTabForiPad(tabName);
+      await tabElement.waitForClickable({ timeout: 5000 });
+      await tabElement.click();
       await LIB_Common.bc_LogAllureReportAndLogs(
         "Click on Tab as : " + tabName + " on Hamburger icon.",
       );
     } else {
-      await PG_Home.ele_HeaderTab(tabName).click();
+      const topTab = await PG_Home.ele_HeaderTab(tabName);
+      await topTab.waitForClickable({ timeout: 5000 });
+      await topTab.click();
       await LIB_Common.bc_LogAllureReportAndLogs(
         "Click on Tab as : " + tabName + " on top of the screen",
       );
     }
-
-    await browser.pause(3000);
   }
+  
 
   /**
    * a method to Click on Tab from the Footer panel

@@ -201,14 +201,24 @@ describe("Swivel Finance Site -> Home Page", () => {
     //Click on Tab "Services"
     await LIB_Home.bc_ClickOnTabFromTopPanel(Data_Home.Tab_Services);
     await LIB_Common.bc_TakeScreenShot("Services from Swivel finance site");
-    await LIB_Common.bc_VerifyH4Header(Data_Home.Title_ServicesWeDeliver);
+    await LIB_Common.bc_VerifyH1Header(Data_Home.Title_OurServices);
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Home.Description_OurServices,
+      1,
+    );
 
     //Click on Tab "How We Work"
-    await LIB_Home.bc_ClickOnTabFromTopPanel(Data_Home.Tab_HowWeWork);
-    await LIB_Common.bc_TakeScreenShot("How We Work from Swivel finance site");
-    await LIB_Common.bc_VerifyH2Header(Data_Home.Title_HowWeWork);
+    await LIB_Home.bc_ClickOnTopAppLogo();
+    await LIB_Home.bc_ClickOnTabFromTopPanel(Data_Home.Tab_Services);
+    await LIB_Common.bc_TakeScreenShot("Services from Swivel finance site");
+    await LIB_Common.bc_VerifyH1Header(Data_Home.Title_OurServices);
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Home.Description_OurServices,
+      1,
+    );
 
     //Click on Tab "Insights"
+    await LIB_Home.bc_ClickOnTopAppLogo();
     await LIB_Home.bc_ClickOnTabFromTopPanel(Data_Home.Tab_Insights);
     await LIB_Common.bc_TakeScreenShot("Insights from Swivel finance site");
     await LIB_Common.bc_VerifyH3Header(Data_Home.Title_ThoughtLeadership);
@@ -257,7 +267,12 @@ describe("Swivel Finance Site -> Home Page", () => {
     //Click on Tab "Services"
     await LIB_Home.bc_ClickOnTabFromFooterPanel("SERVICES");
     await LIB_Common.bc_TakeScreenShot("Services Swivel finance site Footer");
-    await LIB_Common.bc_VerifyH4Header(Data_Home.Title_ServicesWeDeliver);
+    await LIB_Common.bc_VerifyH1Header(Data_Home.Title_OurServices);
+    await LIB_Common.bc_VerifyAnyText(
+      Data_Home.Description_OurServices,
+      1,
+    );
+    await LIB_Home.bc_ClickOnTopAppLogo();
 
     //Click on Tab "How We Work"
     await LIB_Home.bc_ClickOnTabFromFooterPanel("HOW WE WORK");

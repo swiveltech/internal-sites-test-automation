@@ -12,7 +12,8 @@ const specConfig = [
       "../test/scripts/SwivelFinance/tc_Cookie.js",
       "../test/scripts/SwivelFinance/tc_PrivacyPolicy.js",
       "../test/scripts/SwivelFinance/tc_ContactUs.js",
-      "../test/scripts/SwivelFinance/tc_PodCast.js"
+      "../test/scripts/SwivelFinance/tc_PodCast.js",
+      "../test/scripts/SwivelFinance/tc_Services.js"
     ],
     testingPlan: "smoke",
     maxInstances: 1,
